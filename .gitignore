@@ -4,3 +4,6 @@
 /Release/*.zip
 /Release/*.exe
 /Release/*.ini
+__history
+*.dcu
+*.~dsk

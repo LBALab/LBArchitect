@@ -148,7 +148,7 @@
 			<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
 			<VersionInfo Name="AutoIncBuild">True</VersionInfo>
 			<VersionInfo Name="MajorVer">1</VersionInfo>
-			<VersionInfo Name="MinorVer">1</VersionInfo>
+			<VersionInfo Name="MinorVer">2</VersionInfo>
 			<VersionInfo Name="Release">0</VersionInfo>
 			<VersionInfo Name="Build">10</VersionInfo>
 			<VersionInfo Name="Debug">False</VersionInfo>
@@ -162,7 +162,7 @@
 		<VersionInfoKeys>
 			<VersionInfoKeys Name="CompanyName">Kazimierz Król (Zink)</VersionInfoKeys>
 			<VersionInfoKeys Name="FileDescription">Little Grid Builder - part of Little Big Architect</VersionInfoKeys>
-			<VersionInfoKeys Name="FileVersion">1.1.0.10</VersionInfoKeys>
+			<VersionInfoKeys Name="FileVersion">1.2.0.10</VersionInfoKeys>
 			<VersionInfoKeys Name="InternalName">Builder</VersionInfoKeys>
 			<VersionInfoKeys Name="LegalCopyright">Freeware - GPL</VersionInfoKeys>
 			<VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
@@ -171,6 +171,9 @@
 			<VersionInfoKeys Name="ProductVersion">1.1</VersionInfoKeys>
 			<VersionInfoKeys Name="Comments"></VersionInfoKeys>
 		</VersionInfoKeys>  
+    
+    
+    
     <Excluded_Packages>
       <Excluded_Packages Name="c:\prog\delphiturbo2006\Bin\dclsmp100.bpl">Borland Sample Components</Excluded_Packages>
     </Excluded_Packages>

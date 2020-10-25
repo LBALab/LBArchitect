@@ -35,5 +35,6 @@
     <Transaction>2013-07-12 18:54:07.871.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\DebugMsg.dfm=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\DebugLog.dfm</Transaction>
     <Transaction>2013-07-12 18:58:21.708.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\LtUsage.pas=</Transaction>
     <Transaction>2013-07-12 18:58:21.708.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\LtUsage.dfm=</Transaction>
+    <Transaction>2020-10-25 18:25:58.273.pas,D:\Programowanie\LBA\LBArchitect\Builder\Unit1.pas=D:\Programowanie\LBA\LBArchitect\Builder\SmartCombo.pas</Transaction>
   </Transactions>
 </BorlandProject>

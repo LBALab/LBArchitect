@@ -1384,7 +1384,7 @@ begin
     if SceneProjectGetInt(lines, 'ACTOR ' + stemp, 'Mode', itemp) then
       sc.Actors[a].CtrlMode:= Byte(itemp) else Exit;
     if SceneProjectGetInt(lines, 'ACTOR ' + stemp, 'ModeFlag', itemp) then
-      sc.Actors[a].CtrlUnk:= Byte(itemp) else Exit;
+      sc.Actors[a].CtrlUnk:= Byte(itemp) else sc.Actors[a].CtrlUnk:= 0; //LBA2 only?
     if SceneProjectGetInt(lines, 'ACTOR ' + stemp, 'CropLeft', itemp) //backward compat
     or SceneProjectGetInt(lines, 'ACTOR ' + stemp, 'Info0', itemp) then
       sc.Actors[a].Info0:= SmallInt(itemp) else Exit;

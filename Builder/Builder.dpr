@@ -109,7 +109,8 @@ uses
   scTrackScript2HL in 'SceneLib\scTrackScript2HL.pas',
   scLifeScript2HL in 'SceneLib\scLifeScript2HL.pas',
   SceneVis in 'Dialogs\SceneVis.pas' {fmSceneVis},
-  DebugLog in 'Dialogs\DebugLog.pas' {fmDebugLog};
+  DebugLog in 'Dialogs\DebugLog.pas' {fmDebugLog},
+  SmartCombo in 'SmartCombo.pas';
 
 {$R *.res}
 //{$R napisy.res}

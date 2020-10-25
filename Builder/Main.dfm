@@ -51,7 +51,6 @@ object fmMain: TfmMain
     Align = alClient
     BevelOuter = bvLowered
     TabOrder = 3
-    ExplicitHeight = 492
     DesignSize = (
       498
       433)
@@ -62,7 +61,6 @@ object fmMain: TfmMain
       Height = 403
       Anchors = []
       TabOrder = 0
-      ExplicitTop = 43
       DesignSize = (
         642
         403)
@@ -4718,7 +4716,6 @@ object fmMain: TfmMain
     BevelOuter = bvNone
     FullRepaint = False
     TabOrder = 0
-    ExplicitHeight = 492
     object paGrid: TPanel
       Left = 0
       Top = 0
@@ -4728,7 +4725,6 @@ object fmMain: TfmMain
       BevelOuter = bvLowered
       FullRepaint = False
       TabOrder = 0
-      ExplicitHeight = 438
       DesignSize = (
         498
         379)
@@ -5162,7 +5158,6 @@ object fmMain: TfmMain
         TabOrder = 0
         OnChange = VScrChange
         OnScroll = VScrScroll
-        ExplicitHeight = 419
       end
       object HScr: TScrollBar
         Left = 1
@@ -5177,7 +5172,6 @@ object fmMain: TfmMain
         TabOrder = 1
         OnChange = VScrChange
         OnScroll = VScrScroll
-        ExplicitTop = 420
       end
       object paCoords: TPanel
         Left = 464
@@ -5209,7 +5203,6 @@ object fmMain: TfmMain
       BevelOuter = bvLowered
       FullRepaint = False
       TabOrder = 1
-      ExplicitTop = 438
       DesignSize = (
         498
         54)
@@ -5238,7 +5231,6 @@ object fmMain: TfmMain
     FullRepaint = False
     TabOrder = 1
     Visible = False
-    ExplicitHeight = 492
     DesignSize = (
       160
       433)
@@ -5360,9 +5352,11 @@ object fmMain: TfmMain
       OnChange = pcControlsChange
       OnChanging = pcControlsChanging
       OnDrawTab = pcControlsDrawTab
-      ExplicitHeight = 393
       object tsGrid: TTabSheet
         Caption = 'Grid'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 365
         object GroupBox4: TGroupBox
           Left = 0
@@ -6029,6 +6023,10 @@ object fmMain: TfmMain
           object SelOpts: TTabSheet
             Caption = 'SelOpts'
             TabVisible = False
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object GroupBox5: TGroupBox
               Left = 1
               Top = 0
@@ -6380,6 +6378,10 @@ object fmMain: TfmMain
             Caption = 'PlaceOpts'
             ImageIndex = 1
             TabVisible = False
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object gbPlaceOpts: TGroupBox
               Left = 3
               Top = 0
@@ -6445,6 +6447,10 @@ object fmMain: TfmMain
             Caption = 'InvOpts'
             ImageIndex = 2
             TabVisible = False
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object GroupBox7: TGroupBox
               Left = 1
               Top = 0
@@ -6773,7 +6779,6 @@ object fmMain: TfmMain
       object tsScene: TTabSheet
         Caption = 'Scene'
         ImageIndex = 1
-        ExplicitHeight = 365
         object GroupBox1: TGroupBox
           Left = 0
           Top = -2
@@ -7736,6 +7741,9 @@ object fmMain: TfmMain
         Caption = 'Frag test'
         ImageIndex = 2
         TabVisible = False
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
         ExplicitHeight = 365
         object CheckBox1: TCheckBox
           Left = 3
@@ -7948,7 +7956,6 @@ object fmMain: TfmMain
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitHeight = 492
     object paLayout: TPanel
       Left = 0
       Top = 0
@@ -7960,7 +7967,6 @@ object fmMain: TfmMain
       FullRepaint = False
       TabOrder = 0
       Visible = False
-      ExplicitHeight = 492
       DesignSize = (
         1
         433)
@@ -8000,7 +8006,6 @@ object fmMain: TfmMain
         SmallChange = 50
         TabOrder = 0
         OnChange = LScrChange
-        ExplicitHeight = 489
       end
     end
     object paObjInspector: TPanel
@@ -8011,7 +8016,6 @@ object fmMain: TfmMain
       Align = alClient
       BevelOuter = bvLowered
       TabOrder = 1
-      ExplicitHeight = 492
     end
   end
   object DlgOpen: TOpenDialog

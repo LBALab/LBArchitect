@@ -17,11 +17,10 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, StrUtils, ExtCtrls, DePack, ListForm, HQDesc, Buttons,
-  Maps, Math, Utils;
+  Maps, Math, Utils, SmartCombo;
 
 type
   TfmOpenSim = class(TForm)
-    cbSimGrid: TComboBox;
     lbCaption: TLabel;
     rbLba1: TRadioButton;
     rbLba2: TRadioButton;
@@ -42,7 +41,9 @@ type
     FFragmentMode: Boolean;
     FFileName: String;
     FFileIndex: Integer;
+    procedure EnableBtOpen(Sender: TObject);
   public
+    cbSimGrid: TSmartComboBox;
     //For Main Map opening
     function ShowDialogMain(): Boolean;
     //For addditional Fragment opening
@@ -328,20 +329,38 @@ end;
 procedure TfmOpenSim.FormCreate(Sender: TObject);
 begin
  //rb21Click(Self);
+ cbSimGrid:= TSmartComboBox.Create(Self);
+ cbSimGrid.Name:= 'cbSimGrid';
+ cbSimGrid.Parent:= Self;
+ cbSimGrid.DropDownCount:= 20;
+ cbSimGrid.Height:= 21;
+ cbSimGrid.ItemHeight:= 13;
+ cbSimGrid.Left:= 16;
+ cbSimGrid.TabOrder:= 0;
+ cbSimGrid.Top:= 60;
+ cbSimGrid.Width:= 409;
+ cbSimGrid.AutoDropDown:= True;
+ cbSimGrid.OnChange:= EnableBtOpen;
+end;
+
+procedure TfmOpenSim.EnableBtOpen(Sender: TObject);
+begin
+  if FFragmentMode then
+   btOpen.Enabled:= ((rbLba1.Checked or rbLba2.Checked) and (cbSimGrid.ItemIndex > -1))
+                  or (rbLbaCustom.Checked and (FFileName <> ''))
+ else
+   btOpen.Enabled:= cbSimGrid.ItemIndex > -1;
 end;
 
 procedure TfmOpenSim.rbLba1Click(Sender: TObject);
 begin
  if rbLba1.Checked then LoadCombo(cbSimGrid, 1, etGridFrag)
  else if rbLba2.Checked then LoadCombo(cbSimGrid, 2, etGridFrag);
+ cbSimGrid.InitSmartCombo();
  cbSimGrid.Visible:= rbLba1.Checked or rbLba2.Checked;
  stSimGrid.Visible:= not cbSimGrid.Visible;
  btSimGrid.Visible:= stSimGrid.Visible;
- if FFragmentMode then
-   btOpen.Enabled:= ((rbLba1.Checked or rbLba2.Checked) and (cbSimGrid.ItemIndex > -1))
-                  or (rbLbaCustom.Checked and (FFileName <> ''))
- else
-   btOpen.Enabled:= cbSimGrid.ItemIndex > -1;
+ EnableBtOpen(nil);
 end;
 
 function TfmOpenSim.ShowDialogMain(): Boolean;

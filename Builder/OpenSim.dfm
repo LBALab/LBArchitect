@@ -40,17 +40,6 @@ object fmOpenSim: TfmOpenSim
       'ose File->Open advanced.'
     WordWrap = True
   end
-  object cbSimGrid: TComboBox
-    Left = 16
-    Top = 60
-    Width = 409
-    Height = 21
-    Style = csDropDownList
-    DropDownCount = 20
-    ItemHeight = 0
-    TabOrder = 0
-    OnChange = rbLba1Click
-  end
   object rbLba1: TRadioButton
     Left = 15
     Top = 32
@@ -58,7 +47,7 @@ object fmOpenSim: TfmOpenSim
     Height = 17
     Caption = 'LBA 1'
     Checked = True
-    TabOrder = 1
+    TabOrder = 0
     TabStop = True
     OnClick = rbLba1Click
   end
@@ -68,7 +57,7 @@ object fmOpenSim: TfmOpenSim
     Width = 49
     Height = 17
     Caption = 'LBA 2'
-    TabOrder = 2
+    TabOrder = 1
     OnClick = rbLba1Click
   end
   object btOpen: TBitBtn
@@ -78,7 +67,7 @@ object fmOpenSim: TfmOpenSim
     Height = 25
     Anchors = [akLeft, akBottom]
     Caption = 'Open'
-    TabOrder = 3
+    TabOrder = 2
     Kind = bkOK
   end
   object btCancel: TBitBtn
@@ -87,7 +76,7 @@ object fmOpenSim: TfmOpenSim
     Width = 113
     Height = 25
     Anchors = [akLeft, akBottom]
-    TabOrder = 4
+    TabOrder = 3
     Kind = bkCancel
   end
   object paMode: TPanel
@@ -96,7 +85,7 @@ object fmOpenSim: TfmOpenSim
     Width = 241
     Height = 33
     BevelOuter = bvNone
-    TabOrder = 5
+    TabOrder = 4
     object rbGridMode: TRadioButton
       Left = 16
       Top = 0
@@ -122,7 +111,7 @@ object fmOpenSim: TfmOpenSim
     Width = 58
     Height = 17
     Caption = 'Custom'
-    TabOrder = 6
+    TabOrder = 5
     OnClick = rbLba1Click
   end
   object btSimGrid: TButton
@@ -137,7 +126,7 @@ object fmOpenSim: TfmOpenSim
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     OnClick = btSimGridClick
   end
   object stSimGrid: TStaticText
@@ -154,7 +143,7 @@ object fmOpenSim: TfmOpenSim
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 7
   end
   object DlgOpen: TOpenDialog
     Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
