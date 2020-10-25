@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - GOTO_POINT</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="overview.htm">Track Script</a>: <b>GOTO_POINT</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>GOTO_POINT</b> makes the <a href="../actors.htm">Actor</a> go to specified <a href="../points.htm">Point</a> using current <a href="../animations.htm">Animation</a>.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName"> GOTO_POINT</span><span class="ComParams"> id</span>(0 to 255 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">id</span> is the index of the target <a href="../points.htm">Point</a>. The Point must exist in the Scene.</li>
+</ul>
+
+<p class="just">This command uses Animation that has been assigned to the Actor, for example with <a href="anim.htm">ANIM</a> command. If the Animation is a static animation (doesn't move the character), for example standing Animation, the Actor will not make a move. To make the Actor move it is necessary to assign a moving Animation to it (a walking Animation for instance) and then point it in desired direction with <b>GOTO_POINT</b> command.</p>
+
+<p>When the Actor reaches the target point it won't stop by itself, but will walk infinitely around the Point. To make it stop a static Animation must be assigned to it again.</p>
+
+<p><b>GOTO_POINT</b> command pauses execution of the script until Actor reaches the desired point. Thus it is not necessary to use any waiting commands, as for door commands. In the example below the <span class="scmd">ANIM</span> <span class="sparam">0</span> line will be executed only after the Actor reaches the Point 1.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="sctrl">LABEL</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">ANIM</span> <span class="sparam">1</span> <span class="scom">//assign walking animation</span><br />
+  <span class="scmd indent0">GOTO_POINT</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">ANIM</span> <span class="sparam">0</span> <span class="scom">//assign standing animation</span><br />
+  <span class="skey indent0">STOP</span><br />
+  <span class="sctrl">END</span><br />
+</div>
+
+<p>The Actor will go towards the target Point using the shortest possible way on the ground, i.e. it will turn around to face the Point and go staight to it. But the turning around and walking will begin simultaneously, so if the Actor's rotation speed is too low, it may never meet the target Point.</p>
+
+<p>If the Actor cannot fall (one of the flags: <a href="../static_flags.htm#brick_col">Can collide with Bricks</a> or <a href="../static_flags.htm#can_fall">Can fall</a> is not set) and the Y (upright) position of the target Point is not the same as the Actor's Y position, the next command will be executed when the Actors meets the target X and Z position only.</p>
+
+<p>There is no implied "logic" to go around obstacles.</p>
+
+<p>In the example above if the target Point cannot be reached by the Actor (because of an obstacle on the way for example) it will go as far as it can and stop moving while still playing the current Animation (e.g. walking) endlessly (a lock-up situation). The Track Script execution will never reach the <span class="scmd">ANIM</span> <span class="sparam">0</span> line, but the execution may still be interrupted by a Life Script command (<a href="../LifeScript/cmd/set_track.htm">SET_TRACK(_OBJ)</a>, <a href="../LifeScript/cmd/stop_current_track.htm">STOP_CURRENT_TRACK</a>). Example situations where Actor cannot reach the target Point:</p>
+<ul>
+  <li>an obstacle on the way - to avoid a lock-up situation more Points should be added on the Actor's path so that it will walk around the obstacle,</li>
+  <li>a gap or water on the way - solution as in the above point,</li>
+  <li>the target Point is on a higher level - the Actor will lock up when it reaches the step - there is no jump-on-steps logic also; if the step is really necessary, it is possible to make the Actor jump on the step by creating a Zone near the step and selecting a jumping animation when the Actor reaches the Zone, but this solution is not recommended, because the code will become vulnerable to random events (Actor may not walk into the Zone because it is pushed by another Actor); it is recommended not to create steps on the Actor's paths, but use gentle slopes instead,</ul>
+</ul>
+
+<h5>See also:</h5>
+<ul>
+  <li>Track Script: <a href="goto_point_3d.htm">GOTO_POINT_3D</a></li>
+  <li>Track Script: <a href="anim.htm">ANIM</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

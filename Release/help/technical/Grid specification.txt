@@ -1,0 +1,124 @@
+---------------------------------------------------------------
+ LBA Grid file format 
+ Author: Kazimierz Król (zink)
+ Revision: 1.0b
+---------------------------------------------------------------
+
+ Grid files are all entries of lba_gri.hqr file from LBA 1
+  and entries 2 ~ 149 of lba_bkg.hqr file from LBA 2. 
+
+ Grid files from LBA 1 and 2 are almost the same. The main difference is position of header block between LBA 1 and LBA 2 files. It will be explained further.
+
+ Grids contain "maps of columns", that are involved in creating rooms (and also islands in LBA 1). Each grid file references to appropriate layout library file. In LBA 1 it is just the library, that has the same position in lba_bll file. In LBA 2 library index is included in the Grid header block. 
+
+ 
+ Strange header block in LBA 2 files:
+--------------------------------------
+
+ LBA 2 files have 34 additional bytes (called by me: "header block") at the beginning of a the file, before the offset block. Strange thing is that the offset block isn't affected by these bytes, offsets have values as if the header block didn't exist. First offset has always value of 8192 (0x2000), but in fact it points to byte 8192 + 34 = 8226 (0x2022). So to get LBA 2 grid file you have to take LBA 1 grid file, add 34 bytes at the beginning without changing the rest of data. Actually LBA 1 files also have this block, but in them it is located at the end of the file and has only 32 bytes (it doesn't contain two first bytes).
+
+ The meaning of header block in LBA 2 files is as follows:
+
+ Offset  Type  Meaning
+
+ 0x00    BYTE  Index of layout library file that will be used with this file (start with 0)
+ 0x01    BYTE  Index of Grid Fragment file that will be used with this file (start with 0). All Grids have this value even if they don't use any Grid Fragment, in that case this byte can be any value.
+ 
+ WARNING: In original lba_bkg.hqr file the Fragments are arranged in the same order as they appear in the Grids, e.g. if Grids 10, 15 and 18 (and none between them) use Fragments, then the appropriate framgents will be in the order: first the one for Grid 10, then the one for Grid 15, and finally the one for Grid 18. Thus the Fragment Indexes in the Grids never decrease when going from the first Grid in the hqr file to the last. The Fragment Indexes are also arranged in the way, that if a Grid doesn't use any Fragment, the Index is an index of the next Fragment that will be used.
+Grids at the end, that doesn't have any Fragment using Grid that follows them have the Fragment Indexes set to one larger than the highest Fragment Index is. This way the arrangement works also for the last Grid that uses a Fragment.
+It is possible that a Grid uses two Fragments. In such case, the next Grid has Fragment Index increased by two from the one in the previous Grid.
+For example:
+ Grid | fragment index
+  20         2
+  21         2
+  22         2  <- this Grid uses Fragment 2
+  23         3
+  24         3  <- this Grid uses Fragment 3
+  25         4
+  26         4
+  27         4  <- this Grid uses two Frgments: 4 and 5
+  28         6
+  29         6
+It is not known why the indexes are arranged in this way, and whether it will work good if it is changed, so it is important to keep this arragment when editing lbq_bkg.hqr file or creating a custom one, just in case it matters. This arrangemet should be kept also because it is the only way of auto-detecting the proper Library to open a Fragment with, when editing a Fragment.
+
+ Next 32 bytes describe which Layouts will be used in this Grid (probably for better memory management).
+ Let's say that this 32 bytes are just one sequence of bits, it will be 256 bits. We number them from left to right starting with zero. Then each bit means one Layout in the associated library file. But first layout has number 1, so bit 0 has no meaning and it is always zero. Then if a bit is 1, then appropriate layout will be used in current grid, if 0, then it will not (and the game will not have to waste memory for it).
+ If a library contains less Layouts than 255, the remaining bits should have value of 0.
+
+ After this strange header the normal Grid file begins, it will be described as if the header didn't exist (for better understanding) - all offsets are counted from the beginning of the offset block!
+
+
+ Data description:
+--------------------
+
+ At the beginning there is offset block. All offsets are WORDs. The offset block is similar to the one from *.hqr files, but it doesn't have the length of entire file at the end! Last offset is just a pointer to the last grid cell in the file. 
+ Length of the offset block is always the same and is value of 8192 bytes (contains 4096 offsets).
+
+ Offsets point to Grid cells. One cell contains one column. A column can contain maximum of 25 blocks (Bricks). Grid has 64 x 64 cells organized as follows:
+
+             /\    
+            /  \  
+           / 0  \
+          /\    /\
+         /  \  /  \
+        / 64 \/ 1  \
+       /\    /\    /\
+      /  \  /  \  /  \
+     /... \/ 65 \/... \
+    /\    /\    /\    /\
+   /  \  /  \  /  \  /  \
+  /4032\/... \/... \/ 63 \
+  \    /\    /\    /\    /
+   \  /  \  /  \  /  \  /
+    \/4033\/... \/ 127\/
+     \    /\    /\    /
+      \  /  \  /  \  /
+       \/... \/... \/
+        \    /\    /
+         \  /  \  /
+          \/4095\/
+           \    /
+            \  /
+             \/
+
+
+ Although each offset mean one cell, if two cells are identical, they doesn't have to be repeated twice. The next cell that is identical to any cell before it can have just the same offset as that one, so pointing to the same place in the file. It is similar to "repeated entries" in *.hqr files.
+
+ 
+ Construction of each column in the file:
+------------------------------------------ 
+
+ First byte of column is number of sub-columns that this column have (cannot be less than 1)
+
+ The next data describes sub-columns. It repeats as many times as the number of sub-cloumns is.
+
+ First byte of the sub-column contains flags and height of the sub-column:
+  bits 7 and 6 are flags and their values can be as follows:
+   00 - no blocks here (space), no block indexes after the first byte,
+   01 - each block of sub-column has its own index, there are so many block indexes
+         after the first byte as the height of sub-column is,
+   10 - all blocks of sub-column have the same block index, there is one block index
+         after the first byte,
+   11 - should not be used, can make the game crash.
+  bit 5 isn't used, should be always zero, otherwise the game may crash,
+  bits 4 ~ 0 describe the height of current sub-column (in blocks) decreased by 1 (00000(bin) = 1 block).
+ 
+ After the flag/length byte there may be no bytes or a number of block indexes (depending on the flags). Block indexes are always two-byte long, and refer to Layouts in the associated Library.
+ 
+ Each block index consists of two bytes. 
+  First byte is Layout index in associated Library file, counted from 1.
+   If this byte is zero, then no block will be displayed here (empty space). Such empty block is not "physically" transparent, but acts like a wall. In LBA 1 invisible walls are made this way.
+  Second byte is index of block inside the layout, counted from 0.
+
+ At the very end of each LBA 1 Grid file there is 32-bytes block that describes which layouts are used in current grid (for better memory management). For more information see "Strange header block in LBA 2 files" section. Note that for LBA 1 this block doesn't contain Layout index byte nor the Grid Fragment index byte. It is only 32 bytes long and contains Layout usage data only.
+
+--------------------------------------------------------------------
+ That is all I know. 
+ If you know something more, I will be grateful if you let me know.
+ e-mail:   zink@poczta.onet.pl
+ web page: moonbase.kazekr.net
+--------------------------------------------------------------------
+
+Revision history:
+ 1.0c - fragment index information updated
+ 1.0b - specification revised

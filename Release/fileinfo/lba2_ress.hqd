@@ -1,0 +1,389 @@
+This file contains various resources
+49
+
+
+
+*ress*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:pal|Main game palette
+1:lfn|Main game font
+5:sad|Sprite Actor information
+6:lim|Small pattern textures
+8:lm2|Game Over model
+9:pal|Black palette
+10:pal|Foggy palette
+11:lim|Cloud textures
+13:lim|Water textures
+14:lim|Emerald Moon textures
+15:lim|Gas textures
+16:lim|Lava textures
+17:lim|Lava textures
+18:lim|Lava textures
+19:lim|Gas textures
+20:lim|Gas textures
+21:lim|Gas textures
+22:lim|Lava textures
+26:lim|Water textures
+27:lim|Shading palettes
+28:lim|Shading palettes
+29:lim|Shading palettes
+30:lim|Shading palettes
+31:lim|Shading palettes
+32:lim|Shading palettes
+33:lim|Shading palettes
+34:lim|Shading palettes
+35:lim|Shading palettes
+36:lim|Shading palettes
+37:lim|Shading palettes
+38:lim|Shading palettes
+42:lim|Shading palettes
+44:f3d|Characters information
+  E000:Twinsen, normal mode
+  E001:Twinsen, sporty mode
+  E002:Twinsen, aggressive mode
+  E003:Twinsen, discreet mode
+  E004:Twinsen, protopack mode
+  E005:Twinsen with Zoé
+  E006:Twinsen with Triton's Horn
+  E007:Twinsen in space suit
+  E008:Twinsen, super Jetpack mode
+  E009:Twinsen in space suit
+  E010:Twinsen in space suit
+  E011:Twinsen in space suit
+  E012:Twinsen in the car
+  E013:Twinsen X-rayed
+  E014:Nitro-Mecha-Penguin
+  E015:Zoé
+  E016:Piece of flying saucer
+  E017:Holomap
+  E018:Three darts
+  E019:Raph the Lighthouse keeper
+  E020:Tralu
+  E021:Snake
+  E022:Rabbibunny skeleton
+  E023:Flying rat
+  E024:Quetch (not from Citadel Island)
+  E025:Rabbibunny (Chez Luc's)
+  E026:Luc
+  E027:Tim (Chez Luc waiter)
+  E028:Sphero
+  E029:Quetch girl (Raph's friend)
+  E030:Sup in light-green dressing
+  E031:Yellow Franco with pistol
+  E032:Esmer dog without muzzle
+  E033:Grobo (Baggage Claim)
+  E034:Propeller (Baggage Claim)
+  E035:Rabbibunny (Baggage Claim)
+  E036:Crate-pushing apparatus
+  E037:Quetch (Baggage Claim)
+  E038:Grobo (Mr. Paul)
+  E039:Quetch (Citadel ticket office)
+  E040:Mrs. Brune (Citadel ticket office)
+  E041:Twinsen's neighbour
+  E042:Cart (Temple of Bù)
+  E043:Arrow (Temple of Bù)
+  E044:Painter (Citadel sewers)
+  E045:Female rabbibunny
+  E046:Nitro-Mecha-Penguin
+  E047:Flying Saucer
+  E048:Water platform (Esmer base)
+  E049:Franco guard with spike
+  E050:Sup
+  E051:Franco policeman with a gun
+  E052:Franco policeman with a stick
+  E053:Franco survivor
+  E054:Franco guard suit
+  E055:Baldino in space suit
+  E056:Franco guard
+  E057:Franco guard
+  E058:Grobo (Mr. Bazoo)
+  E059:Clerk (Citadel museum)
+  E060:Quetch
+  E061:Mrs. Bloop
+  E062:Tunic Container (museum)
+  E063:Trunk (sewers)
+  E064:Bird (Citadel Island)
+  E065:Little Tralu
+  E066:Joe the Elf
+  E067:Weather wizard
+  E068:Stove hologram (Wizard's cave)
+  E069:Pharmacist
+  E070:Sphero (pharmacy customer)
+  E071:Rabbibunny (pharmacy thief)
+  E072:Nomad Grobo (Desert Island)
+  E073:Quetch
+  E074:Female rabbibunny in swimming suit
+  E075:Female Grobo (Hacienda bath)
+  E076:School of Magic dean
+  E077:Female Rabbibunny (School of Magic)
+  E078:Ghost (School of Magic)
+  E079:Grobo student (School of Magic)
+  E080:Grobo student (School of Magic)
+  E081:Nomad Sphero (Desert Island)
+  E082:Male Grobo (Hacienda bath)
+  E083:Empty space suit
+  E084:Blowgun test target
+  E085:Hourglass (blowgun test)
+  E086:Flask of gallic acid
+  E087:Rabbibunny (Desert Island shop)
+  E088:Rabbibunny child
+  E089:Teacher (Citadel Island)
+  E090:Grobo child
+  E091:Quetch child
+  E092:Quetch child with a rope
+  E093:Jerome Baldino
+  E094:Memory viewer
+  E095:Notebook
+  E096:Grobo (Desert Island hotel)
+  E097:Blue dressed Sup (flying saucer)
+  E098:Female Sup (flying saucer)
+  E099:Translator
+  E100:Motorbike Rabbibunny
+  E101:Quetch (not from Citadel Island)
+  E102:Bob (covered head)
+  E103:Johnny Rocket
+  E104:Elevator
+  E105:Robot
+  E106:Felix (Citadel Island)
+  E107:Crab
+  E108:Hovercraft ferry
+  E109:Dino-Fly
+  E110:Zed
+  E111:Quetch (in love with pharmacist)
+  E112:Mushroom
+  E113:Female Rabbibunny (Raph's fiance)
+  E114:Giant crab piece
+  E115:Light beam
+  E116:Twinsen and Zoé with umbrella down
+  E117:Quetch child 1
+  E118:Quetch child 2 without rope
+  E119:Rosa the cow
+  E120:Quetch child 3 (pharmacy ceiling)
+  E121:Quetch dressed black
+  E122:Trash can (with hidden Esmer)
+  E123:Rabbibunny male with his child
+  E124:Teacher with a Quetch child
+  E125:Luc with Grobo child
+  E126:Franco with plates
+  E127:Franco with glass
+  E128:Sphero wizard (Ker'aooc)
+  E129:Female Quetch wizard (Tabata)
+  E130:Grobo wizard
+  E131:Drunk Franco
+  E132:Mosquibee
+  E133:Wannie
+  E134:Mosquibees Queen
+  E135:Mosquibee fan guy
+  E136:Quetch child 3 with cake
+  E137:Female Rabbibunny (School of Magic)
+  E138:Sup sailor with a glass
+  E139:Twinsen with a piece of cake
+  E140:Mosquibee with a full tub
+  E141:Zoé with pushchair
+  E142:Franco nurse with a child
+  E143:Franco child
+  E144:Wannie child
+  E145:Zed (on the beach)
+  E146:Woodbridge wheel
+  E147:Woodbridge transport platform
+  E148:Giant spider (Citadel Island)
+  E149:Moya the turtle
+  E150:Cactus (disguised Esmer)
+  E151:Bell (turtle call)
+  E152:Empty car
+  E153:Clover box
+  E154:Desert flower
+  E155:Desert sphero
+  E156:Camel
+  E157:Car with the racer
+  E158:Sphero (bowling player)
+  E159:Quetch (bowling player)
+  E160:Gray ball (bowling)
+  E161:Red ball
+  E162:Female quetch (swimming costume and book)
+  E163:Franco with beard (bowling player)
+  E164:Light green shirt Sup (bowling player)
+  E165:Quetch guard (Temple Park)
+  E166:Sup guy in swimming costume
+  E167:Green shell (Joe the elf)
+  E168:Eye (School of Magic)
+  E169:Chedil Amiradoo
+  E170:Balsam flower
+  E171:Sphero (near Port Ludo)
+  E172:Grobo policeman (Temple Park)
+  E173:Rabbibunny
+  E174:Yellow duck
+  E175:Twinsen with tunic and balloons
+  E176:Balloons
+  E177:Desert Grobo
+  E178:Old Rabbibunny with guitar
+  E179:Snake basket
+  E180:Sup in space suit
+  E181:Giraffe guy with a camera
+  E182:Ant guy with a backpack
+  E183:Two-head monster (Emperor's palace)
+  E184:Emperor's Sup soldier
+  E185:Sup in swimming costume
+  E186:Old Sup lady (Imperial Hotel)
+  E187:Franco guard (Imperial Hotel)
+  E188:Franco policeman
+  E189:Female Franco
+  E190:Narrow electric barrier
+  E191:Mosquibee dissident
+  E192:Sup guard (Emperor's palace)
+  E193:Leontine (zeppelin-boat)
+  E194:Old Franco
+  E195:Motor flyer driver 1
+  E196:Motor flyer driver 2
+  E197:Motor flyer
+  E198:Crate (mine company)
+  E199:Franco policeman in a car
+  E200:Shotgun
+  E201:Franco trooper
+  E202:Sup priest
+  E203:Franco (Otringal gas station)
+  E204:Green Gloom (alligator)
+  E205:Gray Gloom (alligator) holding Twinsen
+  E206:Gray Gloom (alligator)
+  E207:Franco with a drum
+  E208:Car (Otringal gas station)
+  E209:Zeelichian car without a gun
+  E210:Car gun
+  E211:Dark Monk's key
+  E212:Fire ball
+  E213:Franco survivor
+  E214:Kangaroo 1
+  E215:Kangaroo 2
+  E216:Franco priest
+  E217:Dark Monk
+  E218:Lava stone
+  E219:Mosquibee guy with a beard
+  E220:Wannie priest
+  E221:Drunk Franco guy
+  E222:Gas moster
+  E223:Wannie
+  E224:Wannie child
+  E225:Firefly
+  E226:Frog
+  E227:Ferryman in a boat
+  E228:Wannie guy
+  E229:Gem
+  E230:Undergas elevator
+  E231:Small gas monster (blue)
+  E232:Small gas monster (gray)
+  E233:Wannie guy with a pickaxe
+  E234:Undergas crane
+  E235:Undergas crane carrier 1
+  E236:Undergas crane carrier 2
+  E237:Little yellow pig
+  E238:Train locomotive with a Wannie
+  E239:Train wagon
+  E240:Firefly tart
+  E241:Red ball (Wannie house)
+  E242:Wannie's glove
+  E243:Gas monster (gray)
+  E244:Glass plate
+  E245:Mosquibees key fragment box cover
+  E246:Mosquibees Queen
+  E247:Mosquibee (green)
+  E248:Franco trooper with UZI
+  E249:Franco trooper with an explosive box
+  E250:Green Mosquibee with a flag
+  E251:Mosquibee carrying Twinsen
+  E252:Monkey monster
+  E253:Franco trooper with a parachute
+  E254:Flag
+  E255:Mosquibee entrance rope
+  E256:Franco trooper with UZI and grenade
+  E257:Double-zeppelin transporter
+  E258:Female dog (Francos Island)
+  E259:Franco worker
+  E260:Franco with a metal detector
+  E261:Franco worker with a red hat
+  E262:Mechanic owl
+  E263:Gas monster
+  E264:Rocket launcher (Island CX)
+  E265:Wannie guy with one glove
+  E266:Sup (orange dressing)
+  E267:Sup getting in a garbage can
+  E268:Sup getting in a cactus
+  E269:Light green Sup dressing with a newspaper
+  E270:Wannie guy
+  E271:Toys (of a Wannie child)
+  E272:Wannies key fragment
+  E273:Spider web
+  E274:Old Wannie
+  E275:Monkey monster
+  E276:Wannie child with a firefly
+  E277:Feet
+  E278:Sup with a cigar
+  E279:Sup with papers
+  E280:Gray ball
+  E281:Fat Mosquibee
+  E282:Blowtron
+  E283:Green Mosquibee with a red flag
+  E284:Lava fire ball
+  E285:Wheel of fortune
+  E286:Big gray Gloom with a big stick
+  E287:Female Franco dancer
+  E288:Franco fireman
+  E289:Heavy-metal Sup guy
+  E290:Female Franco dancer
+  E291:Reptile-thing (Casino)
+  E292:Dog (Casino)
+  E293:Sup (Casino)
+  E294:Green Gloom (Casino)
+  E295:Sailor
+  E296:Glass of drink
+  E297:Sailor
+  E298:Sup sailor with a glass of drink
+  E299:Young wannie with a stone
+  E300:Half of a Franco
+  E301:Franco with a gray hat and a glass
+  E302:Rick
+  E303:Gas monster
+  E304:Female Franco
+  E305:Can of Gazogem
+  E306:Twinsunian shop salesman (Otringal)
+  E307:Wizard's diploma
+  E308:Ferry ticket
+  E309:Umbrella
+  E310:Franco dissident
+  E311:Wannie guy
+  E312:Small spider
+  E313:Pighead in red dressing with a hammer
+  E314:Pighead in brown dressing with a rake
+  E315:Pighead in yellow dressing with a broom
+  E316:Stan from Time Commando
+  E317:Shy Sup girl (Imperial hotel)
+  E318:Gray Franco spy (Imperial hotel)
+  E319:Tape recorder
+  E320:Female Franco (Francos Island shop)
+  E321:Pickaxe
+  E322:Franco
+  E323:Old Franco scientist
+  E324:Female Franco nurse
+  E325:Franco child with a red hat
+  E326:Franco child
+  E327:Small Franco child
+  E328:Franco Burgermeister's brother
+  E329:Gas monster (gray)
+  E330:The Emperor
+  E331:The Emperor's wife
+  E332:Spikes (protection spell cave)
+  E333:Protection spell guardian monster
+  E334:Protection spell
+  E335:Teleportation beam
+  E336:Mechanic groboclone
+  E337:Mechanic groboclone with a missile launcher
+  E338:Quetch child
+  E339:Piece of metal
+  E340:Grobo child
+  E341:Rabbibunny child
+  E342:Quetch child
+  E343:Piece of metal
+46:lsh|Main game vector shapes
+48:txt|SMK movie index

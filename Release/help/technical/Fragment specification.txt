@@ -1,0 +1,68 @@
+---------------------------------------------------------------
+ LBA Grid Fragment file format 
+ Author: Kazimierz Król (zink)
+ Revision: 1.0a
+---------------------------------------------------------------
+
+ Grid Fragment files are entries 150 ~ 179 of lba_bkg.hqr file from LBA 2.
+There are no files of this format in LBA 1.
+
+ Fragment files' format is similar to Layout format, but axes are in different order, and they contain indexes pointing to Layouts (just like in Grids).
+
+
+ Data description:
+-------------------
+
+ Offset  Type  Meaning
+
+  0x00   BYTE  Number of blocks (dimension of the Fragment) in X axis
+  0x01   BYTE  Number of blocks in Y axis
+  0x02   BYTE  Number of blocks in Z axis
+
+ One or more dimension can be a value of 0. In this case the Fragment will be empty.
+
+ Next data describes blocks. A Fragment has as many blocks as the multiplication of its dimensions. E.g. after the dimension bytes there are X * Y * Z blocks.
+
+ Each block has 2 bytes:
+
+  First byte is index of Layout from the Library that is used by the Grid that the Fragment belongs to.
+  Second byte is index of block inside the Layout, counted from 0.
+
+
+ Simple, isn't it? :P
+
+
+ On the Fragment Indexes (IMPORTANT):
+--------------------------------------
+
+ In original lba_bkg.hqr file the Fragments are arranged in the same order as they appear in the Grids, e.g. if Grids 10, 15 and 18 (and none between them) use Fragments, then the appropriate framgents will be in the order: first the one for Grid 10, then the one for Grid 15, and finally the one for Grid 18. Thus the Fragment Indexes in the Grids never decrease when going from the first Grid in the hqr file to the last. The Fragment Indexes are also arranged in the way, that if a Grid doesn't use any Fragment, the Index is an index of the next Fragment that will be used.
+Grids at the end, that doesn't have any Fragment using Grid that follows them have the Fragment Indexes set to one larger than the highest Fragment Index is. This way the arrangement works also for the last Grid that uses a Fragment.
+It is possible that a Grid uses two Fragments. In such case, the next Grid has Fragment Index increased by two from the one in the previous Grid.
+
+
+ For example:
+
+ Grid | fragment index
+  20         2
+  21         2
+  22         2  <- this Grid uses Fragment 2
+  23         3
+  24         3  <- this Grid uses Fragment 3
+  25         4
+  26         4
+  27         4  <- this Grid uses two Frgments: 4 and 5
+  28         6
+  29         6
+
+It is not known why the indexes are arranged in this way, and if it will work good if it is changed, so it is important to keep this arragment when editing lbq_bkg.hqr file or creating a custom one, just in case it matters. This arrangemet should be kept also because it is the only way of auto-detecting the proper Library to open a Fragment with, when editing a Fragment.
+
+
+--------------------------------------------------------------------
+ That is all I know. 
+ If you know something more, I will be grateful if you let me know.
+ e-mail:   zink@poczta.onet.pl
+ web page: moonbase.kazekr.net
+--------------------------------------------------------------------
+
+Revision history:
+ 1.0a - indexes information added

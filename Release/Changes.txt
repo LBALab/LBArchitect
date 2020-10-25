@@ -1,0 +1,295 @@
+### Changes in version 1.1:
+Builder:
+ - Fixed: Actor was always placed on the lowest layer
+ - Fixed: Zone targer position was not properly saved into Scene (file and HQR)
+
+### Changes in version 1.0.0 up to beta 10:
+
+Builder:
+ - Fixed: Actors/Points/Zones placement did not work on levels higher then zero (reported by Necdilzor)
+ - Fixed: Scene coordinate info was incorrect
+
+### Changes in version 1.0.0 up to beta 9:
+
+Builder:
+ - Added LBA 2 Scenes support (opening, editing and saving). Script compilation should work 100% compatible with the original scripts. Designer cannot build LBA2 stages yet.
+ - New scrollable and resizeable Object Inspector (some LBA2 properties may not work correctly).
+ - You can name each Object. Names are saved in Scenarios only.
+ - Double-click an Actor to open its Scripts.
+ - Show/hide Zone types panel has been moved to a new Show/hide Objects dialog.
+ - Fixed bug in Camera Zone point settings (value boxes were messed around).
+ - Stuff I forgot.
+
+Factory:
+ - Added feature to automatically convert palettes when importing Layouts. This means that you can now easily import Layouts from the other version of LBA.
+
+### Changes in version 1.0.0 up to beta 8:
+
+Builder:
+ - Builder should now be able to recover from a "not enough memory" exception when creating new Fragments, but if you want to test that, please save your work before :).
+ - Script editor: Added code completion lists for almost all listable Scene elements, like: Actors, Zones, Points, Entities, Bodies, Animations, text lines, sound samples, Track Labels, Comportements.
+ - Scene reference manual is now almost complete! You can find it in \help directory and in the Help menu in Builder.
+ - In Grid Mode selection size and position can be changed with NumPad keys (NumLock must be on) - 7,8,9,1,2,3 keys move the selection, the same kesy with Ctrl - resize the selection.
+ 
+Factory:
+ - Layout "sort by index" option now tries to utilize more horizontal space.
+ - Layouts now can be imported from external Scenrios.
+ 
+ - Fixed bugs made in beta 6.
+
+### Changes in version 1.0.0 up to beta 7:
+
+Builder:
+ - Main Feature of the release: New Grid handling style. There can now be more than one Grid opened in Builder at the same time. The first one is called 'Main Map' or 'Main Grid', and the rest are 'Fragments' or 'Disappearing ceiling grids'. There are features to move selected areas between theese Grids, create/remove them, and so on. The Fragments are used to temporarily replace existing areas in the Main Grid at run time (by the Scripts and Zones). Example of Fragment usage is the Twinsen's House's basement roof that diasappears when player enters it. The usage of Fragments implies some memory issues that are almost impossible to solve by separate Fragment and Main Grid editing (they would require manual hex-editing of Grids and complicated calculations by designers). By itroducing this feature designers don't have to think about it any more, and it creates new design help possibilities (planned to be implemented in future).
+ - Scenario format has been changed to keep all the Maps inside. Backward compatibility is retained.
+ - The dialog appearing when closing the program while there are unsaved files have been revamped.
+ - Feature: You can now view paths to all currently opened files (View -> List of open files).
+ - Size and layout of the Script Editor window are now remembered across program runs. Code completion window sizes are now stored too.
+ - Script Editor code positions are now kept for each Actor spearately while switching between Actors.
+ - Added Select All function (Ctrl + A or right-click menu) in Grid Mode.
+ - Advanced opening dialog has been revamped. Most bugs should be resolved, but new ones may have been introduced :).
+ - Feature: List of recently opened Scenarios.
+ - Thumbnail is now redrawn in two passes: first is rough and quick, just to show the contents, then refreshing goes to background and draws more smooth (doubled size scaled down with interpolation) image in the mean time.
+ 
+Designer:
+ - The list view have been revamped. Now most of the space is occupied by map descriptions (filled up automatically when adding a Scenario and editable manually). The list also have been split to two lists: one for Grids and one for Fragments (the latter can be hidden). This makes Fragment creation easier.
+ - Feature: Automatic Fragment creation. This is connected with the new Grid handling style in Builder. If user creates a Fragment in addition to the Main Grid in Builder, he can reference it in the Scripts and Zones by its name rather than index (because index is not known at that point). Later when he saves his work to a Scenario and uses that Scenario in Designer the used Fragment will be created by the program and all name references will be changed to the Fragment index - automagically.
+ - Feature: Automatic generation of HQD files from map descriptions defined in the list.
+ 
+ - Fixed some bugs related and not related to the new and old features.
+
+
+### Changes in version 1.0.0 up to beta 6:
+
+Builder:
+ - Version convention change. Since this version the version number now consists of three elements: the leftmost number indicates the major program version (it indicates breakthough changes), the one in the middle indicates important changes, and the one of the right indicates small changes and bug fixes.
+ - Builder is now integrated with Alexfont's LBA Story Coder in the way that the Scene and Grid handling has been implemented in a single program.
+ - Changed: Standard LBA 1 and 2 files selection page (Settings) is now replaced with selecting the LBA directories with option to set up to three standard directories for both LBA 1 and 2 and select one that should be used. This is to make working on multiple LBA modification projects easier.
+ - Changed: "New" menu option (File menu) has been merged with the advanced opening menu. You can now select to create a new Grid in the Grid frame in the advanced opening dialog.
+ - Fixed: Single library files (*.bl1 and *.bl2) could not be opened (reported by OBrasilo).
+ - Fixed: In Advanced opening dialog Library combo was not always set properly according to the Grid combo selection.
+ - Fixed: When running program for the first time (without builder.ini file) and setting hqr paths from the incentive dialog, the program crashed when trying to open a room (reported by OBrasilo).
+ - Fixed: Buider might crash or behave incorrectly if custom-made hqr files containing blank entries were set as default LBA 1 files (gotta check that for LBA 2 also).
+ - Fixed: When fast-scrolling in Scene mode the screen might become garbled when the scrolling had been performed by clicking in a dark area on the thumbnail view and previous view was not in a dark area.
+ - Improved: Exporting to bitmap feature now works a lot faster.
+ - Improved: Exporting to bitmap feature now checks if there is enough disk space before saving (but not when exporting to a remote drive).
+ - Improved: Coords panel now updates immediately during moving elements with mouse (not only when mouse is held still for a while).
+ - Changed: Mouse Wheels now work in opposite directions (now they work in the way they should). You still can change this by checking/unchecking the "Invert ... axis" box in "Mouse Wheel" settings.
+ - Improved: Invisible Wall creating has now option (set in "General" settings) to stay enabled after placing a single wall. This way you are able to place multiple Invisible Walls without clicking "Create" every time (just like for placing Layouts).
+ - Changed the way of Scenario handling. You can now open and save Scenarios as regular files, and the program can be in two "States" (strange name, I know, but "modes" have been taken already): "Scenario State" and "Grid+Scene State". The States determine two things:
+    1. Ctrl+S shortcut action - In Scenario State it saves current Scenario, and in Scene+Grid State it save Scene or Grid depending on the Mode.
+    2. The dialog shown when user tries to close the program with some element unsaved. In "Scenario State" the dialog simply asks if the user wants to save the Scenario before exiting. In the "Grid+Scene State" the dialog is more advanced, providing the following options: saving the Grid only, saving the Scene only, saving both Grid and Scene, saving everything as a Scenario, not saving anything and cancelling exiting the program.
+ - You can now choose to index HQR entries starting with 0 instead of 1 (Settings -> General)
+ - Actor Templates - you can now save Actors as templates and use these templates in different Scenes. As a part of this keyword 'SELF' can be used in Actor scripts to point to the current Actor for commands that take Actor ID as a parameter.
+ - Builder now detects invalid Brick data and displays information about it instead of crashing.
+ - It is now possible to open a HQS file though the command line (or just by dropping the file on the program's icon).
+
+Factory:
+ - Fixed: Some bugs in exporting Layouts to bitmaps.
+ - Fixed: When a Bricks HQR have been created it was then saved as a single Brick instead of HQR (reported by OBrasilo).
+ - Factory now detects invalid Brick data and displays information about it instead of crashing. Also it displays a list of broken Bricks so they can be found easily.
+
+
+### Changes in version 0.10:
+
+ - New: Builder and Factory now have completely new HQR entries description system. This system is based on HQR Description (HQD) files, which contain descriptions for entries. Descriptions can now be made by users and assigned to non-standard HQR files. See HQD Specification in the docs directory for details.
+ 
+ - New: In this version third program is added to the LBArchitect. This new program, called Designer, is able to create HQR files containing complete room and scene information for the game. The HQR files can be made of single entries as well as from HQS files, thus eliminating the need for arduous editing existing HQR files from the game. Program has some advanced optimization features that allow automatic creating of repeated entries and compressing entries that meet specified criteria. At the current stage the program can only create HQR files for LBA 1.
+
+Builder:
+ - Fixed: an important bug, that caused saving grids with errors under some circumstances.
+ - SceneMode: Snapping to Grid feature. If enabled in settings, this feature will snap moved Scene elements to Grid intersections (actually, in X and Z axes they will be snapped as if the Grid was twice as dense, with steps by 256 scene units). Snapping does not work for creating new elements. You can move an element after creation to snap it to the Grid.
+ - Fixed: Empty spaces of newly created Grids were filled with invisible bricks after saving and re-loading. It was a problem with creating new Grids, so you will have to remove the invisible Bricks from your new Grids manually (simple opening and re-saving will not work).
+ - Changed: Settings are now under Edit menu istead of View menu.
+
+Factory:
+ - Fixed: Factory could not be able to open if the last library HQR contained less entries than before.
+ - New: You can now open another HQR entry without re-opening the file (File -> Choose another HQR entry).
+ 
+ - Some minor bugs fixed in both Builder and Factory.
+
+
+### Changes in version 0.09:
+
+Builder:
+ - Fixed: Message saying that there are no invisible bricks in the library was sometimes shown even if there were invisible bricks in the library.
+ - Fixed: In some cases empty bricks was highlighted (not only invisible ones) when entering Invisible bricks mode, or when turning Highlighting of invisible bricks on, which caused the whole grid to be covered with invisible brick frames.
+ - Changed: All invisible bricks will now be shown (when in Invisible bricks mode or when Highlight invisible bricks option is turned on), even the ones that have different indexes that regular invisible bricks, but are still recognized as ones by the game (you can't pass through them).
+ - Scene mode: Adding Tracks and Actors is now possible in Builder by clicking appropriate buttons or by holding Shift (for Tracks) or Ctrl+Shift (for Actors).
+ - Scene mode: Changed the way of moving scene elements. First click now only selects an element, and to move it you have to release the mouse button and click the selected element for the second time.
+ - Scene mode: Sprite actors are now displayed at right places (path to ress.hqr must be set in options).
+ - Scene mode: Actors and Tracks are now drawn with relations to their surrounding area (i.e. they can be covered by walls, etc.). Selection rectangle is always drawn on top of everything else, so it will be visible even if the element is fully covered.
+
+
+
+### Changes in version 0.08a (first version with HQS support):
+
+ - Feature: Builder and Factory now support High Quality Scenarios (*.hqr), which will help creating new stories for the games. Scenarios are files containing all necessary files required for a single room, that is: palette (if it is other than regular), library, grid, all bricks necessary for the library (and no other bricks), story script and script project file (with useful comments on the script). In addition scenarios contain other useful information, like description. Custom palettes are not supported in Factory in this version. Opening Scenarios is possible from, the main menu or by dropping a Scenario on the program executable (Factory.exe or Builder.exe). You can also edit scenarios using LBA Package Editor version 0.11+ (released at the same time as the Architect).
+ 
+Factory: 
+ - Fixed: When closing Factory if there were unsaved bricks and user chosed to save them, an invalid class typecast error occured.
+ 
+
+### Changes in version 0.08 (first version with Fragments editing):
+
+Builder:
+ - Fixed: If you choose "yes" in the dialog that appears when you close the program, the action will be "save", not "save as...".
+ - Fixed: You will be able to resize Layout panel after second file open.
+ - Feature: You can now edit grid fragments (*.grf) from LBA 2 (the files that appear after grids in lba_bkg.hqr). The files contain grids of smaller size (and different format) than the regular ones. During editing fragments you should be careful when adding new layouts to the fragment. If you add a layout that doesn't already appear in the fragment or in the grid that the fragment is associated with, the game will crash. It's because grid contains a list of used layouts for itself and for the associated fragments. If new Layout is used, but not included in the list (hold in the Grid, not in the Fragment), the game will try to display non-existent Layout, and thus crash. Still you can't create new Fragments nor change sizes of existing Fragments.
+ - Fixed: Improper displaying of shapes for newly added Layouts.
+ - Changed: When placing a Layout, all transparent blocks will be also placed replacing original grid content (i.e. the full Lyaout solid will be placed).
+ - Feature: (experimental) you can now choose between three main image frame styles (new style is selected by default).
+ - Fixed: Access violation when selecting invisible bricks using "by layout" method.
+ - Fixed: Terrible bug in compression procedure, that sometimes caused files to be saved with errors when option "use compression when saving files" was enabled.
+ - SceneMode: Support for displaying Actors and Zones,
+ - SceneMode: Backward Communication Mode - allows "visual" editing of Scene elements if a scene editor supports this feature (see the Scene mode info.txt file for details).
+
+Factory:
+ - Improved: Layout and Brick drawing speed is now increased.
+ - Fixed: you weren't able to select whole image of a big Layout.
+ - Fixed: Layout with index 1 wasn't able to select with the mouse.
+ - New feature: You can now copy selected block(s) in structure editor by dragging them with mouse.
+ - Feature: You can now choose to sort layouts by their indexes, however they will not be arranged to fit the sceen in that case.
+ - Fixed: When resizing the main window under certain conditions, error message "ScrollBar propoerty out of range" could pop up.
+ - Fixed: You will no longer see empty Layouts with invisible active "Layouts" tab when opening program if there was a single brick opened previously.
+ - Feature: You can now open and save single Layouts as well as single Bricks.
+ - Feat u're :) New options added for Brick selecting popup panel (in Structure editor): None - Which sets the brick index for current block(s) to zero; Temporary empty - which sets the Brick index to 65535 (Factory internal value, not used in LBAs) and causes a new Brick to be created for the current block on editor exiting; Custom - which allows you to manually enter Brick index.
+ - Changed: Now when you edit a Layout structure and increase size of the Layout, new blocks will have default status "Temporary empty", which means that new empty Bricks will be created for them when you close the editor with saving changes.
+ - Changed: If you open a Library and you have not opened any Brick HQR, you will got a message, that you will have to open a Brick HQR in order to see and edit Layouts.
+
+
+### Changes in version 0.07 (first version with Layouts editing):
+
+Builder:
+ - Fixed: Auto library function worked incorrectly when opening LBA 1 grids form a hqr.
+ - Improved: I you open a grid file from a HQR, you can now save it into the same HQR (use "Save" option) with the same index. Also you can use compression for them (adjustable in options).
+ - Improved: Decreased time to load by removing Bricks pre-buffering. Now Bricks are buffered on-the-fly, just when the program needs them. It introduces some slideshow-type effects, but they disappear once all the bricks are buffered, and they are not that unpleasant as one would expect.
+ - Fixed: access violation error when loading files for a new grid.
+ - Fixed: When choosing new grid the empty blocks were able to select
+ - New: New menu "Toys" with one option as for now: Show physical shapes - which allows you to see what shapes bricks will have in the game.
+ - Improved: you can now see Net at all three dimensional planes, not only at the bottom one.
+ - Improved: the Helper can now work in three dimensions.
+ - Fixed: "Cursor" option now works.
+ - Fixed: "Moved frames" option in "Select" mode now works.
+ - Fixed: The program now uses the real palette that is used in the LBA2, not the one from ress.hqr.
+ - Scene Mode: Changed communication system. It is now performed by Windows messages instead of memory files.
+ - Scene Mode: added command to close the program and command to load another grid.
+
+Factory:
+ - Fixed: Saving LBA 2's bricks inside LBA_BKG.HQR file is now possible.
+ - Fixed: Scroll bars in editor are now disabled when decreasing zoom factor
+ - Fixed: If you go with pen through the border and then return at different point, the program will no draw a line between these points any more
+ - Fixed: Another saving bug, that caused bricks with some specific content to be incorrectly saved.
+ - Improved: when you paste an image from clipboard, the program will now try to determine nearest colours in the palette (for colours that doesn't have identical equivalents in the palette), instead of putting them black, so now you can put ANY image as a Brick!
+ - New: Option: "Auto palette" which will adjust the palette depending on what Brick files are loaded. This feature will not work for single Brick files because there is no way to test if they are from LBA 1 or LBA 2.
+ - Fixed: The program now uses the real palette that is used in the LBA2, not the one from ress.hqr.
+ - Fixed: some minor bugs.
+ - Added: some minor enhancements.
+
+
+### Changes in version 0.06+:
+
+ - Fixed: Menus are now working properly under Win98 (thanks OBrasilo)
+
+### Changes in version 0.06 - first version with Bricks editing:
+
+Builder:
+ - Fixed: Thumbnail is now refreshed when deleting a layer and when using undo/redo cammnds.
+ - Fixed: Deleted area now disappears immediately after deleting
+ - Fixed: File paths are now set properly when opening the settings by the first-run dialog.
+ - New: You may now adjust the way the coordinates are displayed (whole new tab in Settings)
+ - Improved: Colour settings now use the free ColorButton component by Brad Stowers (Delphi Free Stuff), thanks Brad.
+ - Improved: Program now uses my unit that gives XP-style to menus and toolbars instead of Delphi's ActionToolbar, thus you will be able to open source code in Delphi 7 Personal, and the program looks overally nicer.
+ - Improved: Menu items now have icons.
+ - Scene mode: Flags insted of big red crosses
+ - Scene mode: Added deleting flags (tracks, points)
+ - Scene mode: Communication should be faster now
+ - Scene mode: Flags now disappear immediately after deleting/moving. 
+ 
+Factory:
+ - Improved: Bricks are now displayed in a way that makes browsing more comfortable
+ - New: You can edit Bricks and save them into *.hqr archives
+ - New: You can save particular Bricks into *.brk files
+ - Pity: Layouts editing is still not possible
+
+### Changes in version 0.05+:
+
+Builder:
+ - Axes are back as they were before: Y is vertical and Z is East-North.
+
+### Changes in version 0.05:
+
+Builder:
+ - "Frames" option doesn't draw frames around invisible bricks any more
+ - New option: "Highlight invisible bricks"
+ - New mode: "Invisible Bricks Mode", that allows you to focus on invisible bricks and walls only.
+ - Builder should now save invisible bricks for LBA 1 correctly
+ - Fixed bug that "place options" sometimes did't show after clicking on Placer button.
+ - You can now pan image in all modes using middle mouse button (it will work only if there is no program that changes middle mouse button's behaviour running).
+ - Mouse wheel support
+ - You can move the current selection using Num keys (NumLock must be on). Keys 1, 3, 7 and 9 move selection along x and z axes, and keys 2 and 8 move it along y (vertical) axis.
+ - Added Undo and Redo commands. I set 20 undo buffers, tell me if it's too few for you.
+ - Flipped Y and Z axes in coordinates displaying - for better scene coordinates matching and for avoiding mixups. Thus Z axis is now vertical and Y is East-North.
+ - Changed coordinates displaying method. They are now displayed on a panel, that can be hidden.
+ - Added scene coordinates displaying - working in Selector mode. You can now see what scene coordinates the point at mouse cursor will have.
+ - Fixed bug that caused Limits to be reaset after minimizing and expanding the panel again.
+ - New splash screen - thanks to Alexfont who I have stolen the idea from - please don't blame me for that :P
+ - Added "Restore defaults" button in colour settings.
+ - You can now delete all contents of specified layer.
+ - Added Advanced panel, that allows you to expand current layout to specified numbers of bricks in all axes, and place such expanded layout wherever you want. This feature is accessible in Placer mode only.
+
+Factory: no changes
+
+
+### Changes in version 0.04:
+
+Grid Editor:
+ - Name changed to Little Grid Builder
+ - No dlls, the program now takes less disk space
+ - Fixed bug that raised a critical exception when you tried to create a new grid
+ - Fixed bug that caused open dialog not to open when hqr package was chosen for grid or library in advenced opening dialog
+ - Fixed bug that caused opening always first library for custom LBA 2 grids
+ - You can now select package entries by names not by numbers
+ 
+Layout viewer:
+ - Name changed to Little Big Factory
+
+
+### Changes in version 0.03 - first version that could edit Grids:
+
+Grid Editor:
+ - Main thing: Grid viewer is now Grid EDITOR. Yes, you can edit grids from LBA 1 and 2!
+ - Added a lot of features that were necessary for editing to be possible
+ - You can now change frame colours (settings)
+ - Hint box that displays hints regarding items you are currently pointing at
+ - Increased performance: you can now scroll the image smoothly even in fullscreen with 1024x768 resolution on old computers (tested on Pentium 366 MHz) 
+ - New image exporting procedure, it now works under Win98 and uses less memory, but is generally much slower (takes a bit more than a minute)
+ - Single grid files (*.gri) are now able to open
+ - Fixed bug that caused exception during opening rooms in Dark Monk's statue
+ - Fixed bug that sometimes caused displaying black colour as transparent
+ - Fixed path displaying bug in open dialog
+ - Fixed library combo box bug in open dialog
+ - Open dialog changed a bit
+ - Some changes that I don't remember at the moment
+
+Layout Viewer: no changes
+
+### Changes in version 0.02:
+
+Grid Viewer:
+ - Almost all code rewritten
+ - Decreased memory usage
+ - Decreased time needed to load files
+ - Should now work under Windows 98 (exporting still doesn't work)
+ - Removed "Visual drawing" feature (it may return some day, you never know ;))
+ - Added thumbnail (you may click on it to view wanted part of the image)
+ - Changed opening method
+
+Layout Viewer:
+ - Layout Viewer and Brick Viewer are now one program
+ - Changed method of drawing
+ - You can now open any type of file by dropping it on the executable (or from command-line)
+
+### Version 0.01:
+ 
+ - First release

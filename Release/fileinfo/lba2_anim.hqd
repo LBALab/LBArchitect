@@ -1,0 +1,161 @@
+This file contains animations for LBA 2 3D models
+2083
+
+
+
+*anim*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:an2|Twinsen standing in normal mode animation
+1:an2|Twinsen walking animation
+2:an2|Twinsen walking backwards animation
+3:an2|Twinsen turning anti-clockwise animation
+4:an2|Twinsen turning clockwise animation
+5:an2|Twinsen falling animation
+6:an2|Twinsen throwing an object animation
+7:an2|Twinsen punching 1 animation
+8:an2|Twinsen kicking 1 animation
+9:an2|Twinsen backing when hurt animation
+10:an2|Twinsen falling (short jump) animation
+11:an2|Twinsen falling (long jump) animation
+12:an2|Twinsen crawling animation
+13:an2|Twinsen dying, part 1 animation
+14:an2|Twinsen activating something animation
+15:an2|Twinsen climbing up a ladder animation
+16:an2|Twinsen climbing up, fixed position animation
+17:an2|Twinsen jumping animation
+18:an2|Twinsen crawling? animation
+19:an2|Twinsen climbung up another thing animation
+20:an2|Twinsen ?? animation
+21:an2|Twinsen turning a wheel animation
+22:an2|Twinsen sinking animation
+23:an2|Twinsen just got an inventory object animation
+24:an2|Twinsen crawling? animation
+25:an2|Twinsen throwing something animation
+26:an2|Twinsen after walking on oil animation
+27:an2|Twinsen after walking on oil, backwards animation
+28:an2|Twinsen drinking something animation
+29:an2|Twinsen sitting down 1 animation
+30:an2|Twinsen sitting down 2 animation
+31:an2|Twinsen with a headache animation
+32:an2|Twinsen falling in unconscious state 1 animation
+33:an2|Twinsen falling in unconscious state 2 animation
+34:an2|Twinsen waking up from unconscious state animation
+35:an2|Twinsen rising from bed animation
+36:an2|Twinsen diving animation
+37:an2|Twinsen punching 2 animation
+38:an2|Twinsen fighting? animation
+39:an2|Twinsen shooting with laser pistol animation
+40:an2|Twinsen talking 1 animation
+41:an2|Twinsen taking out his sword animation
+42:an2|Twinsen fighting with sword (normal mode) animation
+43:an2|Twinsen talking 2 animation
+44:an2|Twinsen dead animation
+45:an2|Twinsen turning something animation
+46:an2|Twinsen using wannie's glove animation
+47:an2|Twinsen ?? animation
+48:an2|Twinsen going up (fixed position) animation
+49:an2|Twinsen invoking lightning animation
+50:an2|Twinsen talking on Portable Radio animation
+51:an2|Twinsen ending the jump animation
+52:an2|Twinsen jumping X+Forward animation
+53:an2|Twinsen jumping X+Backwards animation
+54:an2|Twinsen jumping X+Left animation
+55:an2|Twinsen jumping X+Right animation
+56:an2|Twinsen sinking in gas or lava animation
+57:an2|Twinsen waking up after crash animation
+58:an2|Twinsen starting the jump animation
+59:an2|Twinsen sinking in gas or lava animation
+60:an2|Twinsen turning anti-clockwise (another behavior) animation
+61:an2|Twinsen turning clockwise (another behavior) animation
+62:an2|Twinsen falling 2 animation
+63:an2|Twinsen's hand gest when talking animation
+64:an2|Twinsen ?? animation
+65:an2|Twinsen usign the Triton's horn animation
+66:an2|Twinsen standing in sporty mode animation
+67:an2|Twinsen running animation
+68:an2|Twinsen going backwards in sporty mode animation
+69:an2|Twinsen turning anti-clockwise in sporty mode animation
+70:an2|Twinsen turning clockwise in sporty mode animation
+71:an2|Twinsen starting to jump animation
+72:an2|Twinsen rapidly dying animation
+73:an2|Twinsen running and jumping animation
+74:an2|Twinsen jumping animation
+75:an2|Twinsen using his sword in sporty mode animation
+76:an2|Twinsen diving under water? animation
+77:an2|Twinsen running backwards animation
+78:an2|Twinsen rotating to left animation
+79:an2|Twinsen rotating to right animation
+80:an2|Twinsen turning anti-clockwise in sporty mode (slower) animation
+81:an2|Twinsen turning clockwise in sporty mode (slower) animation
+82:an2|Twinsen standing in aggressive mode animation
+83:an2|Twinsen walking in aggressive mode animation
+84:an2|Twinsen walking backwards in aggressive mode animation
+85:an2|Twinsen talking to someone in aggressive mode animation
+86:an2|Twinsen being aggressive animation
+87:an2|Twinsen kicking 2 animation
+88:an2|Twinsen punching again animation
+89:an2|Twinsen punching yet again animation
+90:an2|Twinsen slashing with sword (aggressive) animation
+91:an2|Twinsen turning left (aggressive) animation
+92:an2|Twinsen turning right (aggressive) animation
+93:an2|Twinsen standing in discreet mode animation
+94:an2|Twinsen walking in discreet mode animation
+95:an2|Twinsen walking backwards in discreet mode animation
+96:an2|Twinsen turning left (discreet) animation
+97:an2|Twinsen turning right (discreet) animation
+98:an2|Twinsen crouching (discreet) animation
+99:an2|Twinsen slashing sword (discreet) animation
+100:an2|Twinsen jumping X+left animation
+101:an2|Twinsen jumping X+right animation
+102:an2|Twinsen turning left (discreet) animation
+103:an2|Twinsen turning right (discreet) animation
+104:an2|Twinsen standing with proto-pack animation
+105:an2|Twinsen flying forward (proto-pack) animation
+106:an2|Twinsen walking backward (proto-pack) animation
+107:an2|Twinsen turning left (proto-pack, walking) animation
+108:an2|Twinsen turning right (proto-pack, walking) animation
+109:an2|Twinsen turning left (proto-pack, flying) animation
+110:an2|Twinsen turning right (proto-pack, flying) animation
+111:an2|Twinsen getting hurt (proto-pack) animation
+112:an2|Twinsen falling part 1 (proto-pack) animation
+113:an2|Twinsen falling part 2 (proto-pack) animation
+114:an2|Twinsen falling part 3 (proto-pack) animation
+115:an2|Twinsen falling in water? (proto-pack) animation
+116:an2|Twinsen blowing on Gawley's horn animation
+117:an2|Twinsen jumping forward (proto-pack) animation
+118:an2|Twinsen jumping backward (proto-pack) animation
+119:an2|Twinsen jumping left (proto-pack) animation
+120:an2|Twinsen jumping right (proto-pack) animation
+121:an2|Twinsen flying forward, wobbling and spinning (proto-pack malfunction?) animation
+122:an2|Twinsen holding umbrella + Zoe animation
+123:an2|Twinsen holding umbrella + Zoe and walking forward animation
+124:an2|Twinsen holding umbrella + Zoe and turning right animation
+125:an2|Twinsen holding umbrella + Zoe and turning left animation
+126:an2|Twinsen holding umbrella + Zoe and walking backward animation
+127:an2|Twinsen holding umbrella + Zoe looking around animation
+128:an2|Twinsen holding umbrella + Zoe falling animation
+129:an2|Twinsen holding umbrella + Zoe dying animation
+130:an2|Twinsen holding umbrella + Zoe rising after falling from a small height animation
+131:an2|Twinsen holding umbrella + Zoe rising after falling from a great height animation
+132:an2|Twinsen holding umbrella + Zoe pushing something? animation
+133:an2|Twinsen holding umbrella + Zoe drowning animation
+134:an2|Twinsen holding umbrella + Zoe jumping (to activate a platform) animation
+135:an2|Twinsen holding umbrella + Zoe looking to their right animation
+136:an2|Twinsen holding umbrella + Zoe looking at each other animation
+137:an2|Twinsen walking forward (triton horn) animation
+138:an2|Twinsen walking backward (triton horn) animation
+139:an2|Twinsen using triton horn animation
+140:an2|Twinsen walking (space suit) animation
+141:an2|Bob walking (I think) animation
+142:an2|Twinsen turning right (space suit) animation
+143:an2|Twinsen turning left (space suit) animation
+144:an2|Twinsen walking backward (space suit) animation
+145:an2|Twinsen in an odd pose (space suit) animation
+146:an2|Twinsen getting hurt, spinning and collapsing (space suit) animation
+147:an2|Twinsen standing (space suit) animation
+148:an2|Twinsen getting hurt (space suit) animation
+149:an2|Twinsen spinning backward (space suit) animation
+150:an2|Twinsen getting hurt and doing a backflip (space suit) animation

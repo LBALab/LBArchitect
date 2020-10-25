@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SET_FLAG_CUBE, SET_FLAG_GAME</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SET_FLAG_CUBE</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>SET_FLAG_GAME</b> (command)<br /></h1>
+
+<div class="content">
+
+<p><b>SET_FLAG_CUBE</b> changes value of specified Cube Flag, <b>SET_FLAG_GAME</b> changes value of specified Game Flag.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName"> SET_FLAG_CUBE</span><span class="ComParams"> id</span>(0 to 255 integer)<span class="ComParams"> value</span>(0 to 255 integer)</li>
+  <li><span class="ComName"> SET_FLAG_GAME</span><span class="ComParams"> id</span>(0 to 255 integer)<span class="ComParams"> value</span>(0 to 255 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">id </span>is index of the flag to change. There are 256 Cube Flags and another 256 Game Flags for custom usage.</li>
+  <li><span class="ComParams">value </span>is the new value the Flag will be set to.</li>
+</ul>
+
+<p>There are two kinds of Flags in the scripting engine: Cube Flags and Game Flags. Cube Flags are <i>local</i> to the current Scene instance, i.e. they are reset to zero when a new Scene is loaded, be it by a <a href="../../zones.htm#sceneric">Sceneric Zone</a>, or <a href="change_cube.htm">CHANGE_CUBE</a> command. They can be used only in the current <i>run</i> of the Scene. Game Flags in turn are global to all Scenes, i.e. value set in one Scene can be read in another Scene or after reloading the same Scene, and even after restarting the game (because Game Flags are stored in the game save files).</p>
+
+<p>Both kinds of Flags have following common properties:</p>
+<ul class="spaced">
+  <li>They can contain any value from 0 to 255,</li>
+  <li>They can be written and read in Life Script only,</li>
+  <li>They can be written only with a constant value, not with another Flag or game variable value,</li>
+  <li>Their value may be only read by performing comparison to a contant value (using <a href="../var/flag_xx.htm">FLAG_CUBE and FLAG_GAME</a> variables), not to another Flag or game variable value,</li>
+  <li>It is not possible to perform arithmetical or logical operations on the Flag values, neither to transfer Flag value to a game variable directly (there is a way to do this, but it is so code-heavy and time consuming, that it's usage is questionable; it requires comparing the Flag value against all values from 0 to 255 and setting the variable when the condition is met; since Life Script does not have increment or decrement commands this would require building up 256 if-else conditions).</li>
+</ul>
+
+<p>The following Game Flags are reserved for controlling the game behaviour (their behaviour is hard-coded in the game engine):
+<ul>
+  <li>0..27: Inventory items - when 1 corresponding item is present in the Hero's inventory, when 0 it is not present.</li>
+  <li>70: Inventory Disabled flag - when 1 the player cannot open the inventory.</li>
+</ul>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="scmd">set_flag_cube</span> <span class="sparam">1</span> <span class="sparam">10</span> <span class="scom">//set Cube Flag 1 to value of 10</span><br />
+  <span class="skey">if</span> <span class="svar">flag_cube</span> <span class="sparam">1</span> <span class="sop">&gt;</span> <span class="sparam">20</span> <span class="scom">//test if Cube Flag 1 has value greater than 20</span><br />
+  <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="../var/flag_xx.htm">FLAG_CUBE, FLAG_GAME</a> (variables)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

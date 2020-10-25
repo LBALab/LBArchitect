@@ -1,0 +1,32 @@
+[options]
+lastdir=E:\Delphi Progs\=LBA=\LBAPackEd
+text1=2003/2004
+text2=2003/2005
+lastdir1=E:\Delphi Progs\=LBA=\LBArchitect\Factory
+lastdir2=E:\Delphi Progs\=LBA=\LBArchitect\Source\LBArchitect\Factory
+[files]
+0=*.pas
+1=*.dfm
+2=*dpr
+3=*cfg
+4=*dof
+5=*.res
+6=*.bdsproj
+[exclusions]
+0=1MjShellUtils.pas
+1=strdata.pas
+[dirs]
+0From=E:\Delphi Progs\=LBA=\LBArchitect\Builder
+0To=E:\Delphi Progs\=LBA=\LBArchitect\Source\LBArchitect\Builder
+1From=E:\Delphi Progs\=LBA=\LBArchitect\Libs
+1To=E:\Delphi Progs\=LBA=\LBArchitect\Source\LBArchitect\Libs
+2From=E:\Delphi Progs\=LBA=\LBArchitect\Designer
+2To=E:\Delphi Progs\=LBA=\LBArchitect\Source\LBArchitect\Designer
+3From=E:\Delphi Progs\=LBA=\LBArchitect\Components
+3To=E:\Delphi Progs\=LBA=\LBArchitect\Source\LBArchitect\Components
+4From=E:\Delphi Progs\=LBA=\LBArchitect\Factory
+4To=E:\Delphi Progs\=LBA=\LBArchitect\Source\LBArchitect\Factory
+5From=E:\Delphi Progs\=LBA=\LBArchitect\Factory
+5To=E:\Delphi Progs\=LBA=\LBArchitect\Source\LBArchitect\Factory
+6From=E:\Delphi Progs\=LBA=\Libs
+6To=E:\Delphi Progs\=LBA=\LBArchitect\Source\Libs

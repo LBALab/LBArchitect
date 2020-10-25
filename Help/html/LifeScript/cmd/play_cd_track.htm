@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - PLAY_CD_TRACK</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>PLAY_CD_TRACK</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>PLAY_CD_TRACK</b> plays specified CD music track.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">PLAY_CD_TRACK</span><span class="ComParams"> track</span>(0 to 255 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">track </span>is the CD track index to be played</li>
+</ul>
+
+<p class="just"><b>PLAY_CD_TRACK</b> uses different track indexes than the Music ID <a href="../../scene_props.htm">Scene property</a>. This command uses the indexes of the Tracks as they appear on the CD. Track 0 is the data track, thus it cannot be played, and can be used to stop the music (<span class="scmd">PLAY_CD_TRACK</span> <span class="sparam">0</span>).</p>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="play_midi.htm">PLAY_MIDI</a> (command)</li>
+  <li>Life Script: <a href="midi_off.htm">MIDI_OFF</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - GOTO_POINT_3D</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="overview.htm">Track Script</a>: <b>GOTO_POINT_3D</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>GOTO_POINT_3D</b> makes the <a href="../actors.htm">Sprite Actor</a> move to specified <a href="../points.htm">Point</a>.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName"> GOTO_POINT_3D</span><span class="ComParams"> id</span>(0 to 255 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">id</span> is the index of the target <a href="../points.htm">Point</a>. The Point must exist in the Scene.</li>
+</ul>
+
+<p class="just">Unlike the <a href="goto_point.htm">GOTO_POINT</a> this command works for Sprite Actors only, and (obviously) doesn't use any Animations (Sprite Actors cannot have Animations assigned). To make the Actor move its speed should be set first (using the <a href="speed.htm">SPEED</a> command). If the speed is not set before calling <b>GOTO_POINT_3D</b>, the Actor will move, but it may behave strangely (move in one axis and then stop for example).</p>
+
+<p>The command should be generally used to move Actors along only one axis at a time. If the position difference between the target Point and the current Actor is in more than one axis, the Actor's move will be unforeseen. It will sometimes move in all axes simultaneously (obliquely) and then it may start moving in one axis only, and later move on all axes again, until it reaches the target Point. The behaviour depends on the mutual positions between the Actor and the target Point. If moving the Actor in more than one axis simultaneously is desired, it is recommended to test the behaviour of the Actor first, to avoid unexpected results.</p>
+
+<p>When the Actor reaches the target Point it won't stop by itself, but will move infinitely in the last direction it had when it reached the Point. To make it stop its speed must be set to zero.</p>
+
+<p><b>GOTO_POINT_3D</b> pauses execution of the script until Actor reaches the desired Point. Thus it is not necessary to use any waiting commands, as for <a href="overview.htm#door">door commands</a>. In the example below the <a href="speed.htm">SPEED</a> <span class="sparam">0</span> line will be executed only after the Actor have reached the Point 1.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="sctrl">LABEL</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">SPEED</span> <span class="sparam">900</span> <span class="scom">//set the speed</span><br />
+  <span class="scmd indent0">GOTO_POINT_3D</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">SPEED</span> <span class="sparam">0</span> <span class="scom">//stop the Actor</span><br />
+  <span class="skey indent0">STOP</span> <span class="scom">//stop the script</span><br />
+  <span class="sctrl">END</span><br />
+</div>
+
+<p>As for the GOTO_POINT command, there is no implied "logic" to go around obstacles. In the example above if the Actor encounters an obstacle on its way, and its <a href="../static_flags.htm#brick_col">Can collide with Bricks</a> Static Flag is set, it will move as far as it can and stop while still "trying to execute" the <b>GOTO_POINT_3D</b> line endlessly (a lock-up situation). The Track Script execution will never reach the <a href="speed.htm">SPEED</a> <span class="sparam">0</span> line, but the execution may still be interrupted by a Life Script command (see <a href="../Life Script/overview.htm#track">Life Script commands for Track Script management</a>). For examples of lock-up situations and how to avoid them see <a href="goto_point.htm">GOTO_POINT</a> command.</p>
+
+<h5>See also:</h5>
+<ul>
+  <li>Track Script: <a href="goto_point.htm">GOTO_POINT</a></li>
+  <li>Track Script: <a href="speed.htm">SPEED</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+HQS file format is designed to simplify development of new LBA-bsed games.
+Its purpose is to keep together all necessary files needed for a single scene (a Grid, Library, Bricks, Scene, and more). In addition it can hold descriptions and other information that will not be necessary in the final game, but may be useful in the development process.
+
+HQS stands for High Quality Scenario (derived from HQR - High Quality Resource file format used for keeping game datas in the LBA games).
+
+It's construction is identical to HQR files. The only thing that is necessary to be described here is what particular entries are for.
+
+#################
+ List of entries
+#################
+
+  1. Information file (see the specification below).
+  2. Description file (regular .txt file with any info, the entry may be blank)
+  3. Library (.bl1 or .bl2)
+  4. Grid (.gr1 or .gr2)
+  5. Palette (.pal). This entry may be blank. In such case defult LBA 1 or 2 palette shall be used.
+  6. Fragment name list (names separated with \n (0x0A) character), including Main Grid!
+  7. Fragment association data - see specification below
+  8. Scene Text Project (.stp)
+  9. Binary Scene file (.ls1 or .ls2) (compiled version of above)
+ 10. [blank - reserved]
+ 11. [blank - reserved]
+
+ -- here more entries may be added in the future. See the Information file
+    specification for information on where Grid Fragments and Bricks start.
+ 
+ xx. First Fragment entry (if exists), or Brick entry (if there are no Fragments)
+     The Fragment entries are:
+       - for LBA 1: regular Grids (*.gr1)
+       - for LBA 2: Grid Fragments (*.grf)
+
+ xx. First Brick entry (if exists, and there shouldn't be situation where Bricks
+     don't exist in a Scenario).
+     For both LBA 1 and 2 these entries are in regular Brick format (*.brk)
+
+
+##############################################
+ Information file (first entry) specification
+##############################################
+
+All values are UNSIGNED and Little Endian unless otherwise noted.
+
+  offset   length (bytes)   meaning
+  ------   --------------   -------
+  0x0000         1          LBA version: 1 = LBA 1, 2 = LBA 2. This value determines
+                              formats of most of the other files inside the HQS.
+  0x0001        255         Short description. It always has to have 255 characters.
+                              If the description is shorter, it should be padded with
+                              spaces.
+  0x0100         2          HQS file version (integer). See version history below.
+  0x0102         2          First Grid Fragment entry index (indexing starts with 0).
+                              Value equal to zero means that there ar no Fragments
+                              attached.
+  0x0104         2          Number of Grid Fragment entries. Must be zero if there are
+                              no Fragments attached.
+  0x0106         2          First Brick entry index (indexing starts with 0).
+                              Zero means that there are no Bricks (should never happen).
+  0x0108         4          Number of Brick entries attached.
+
+
+##############################################
+ Fragment info file (7th entry) specification
+##############################################
+
+All values are UNSIGNED and Little Endian unless otherwise noted.
+
+This entry may be empty (must not be blank) if there is no binary Script included
+  (Script has errors that prevent compilation). It would be unusable in such case
+  anyway.
+
+Each entry describes one association of a Fragment with specific place (offset) in the
+  binary Scene. Each entry has a constant length of 5 bytes. There may be several
+  entries for one Fragment (but not for one offset), and they don't have to be
+  in any specific order.
+
+Structure of one 5-byte entry is follwing:
+
+  offset   length (bytes)   meaning
+  ------   --------------   -------
+  0x0000         1          Index of the Fragment the entry applies to (starts with 0,
+                              relative to the first Fragment in the Scenario).
+  0x0001         4          Offset in the binary Scene the Fragment is associated with.
+  
+After one entry the next one begins.
+
+
+########################################
+ Version history of the HQS file format
+########################################
+
+Version 2:
+ - version value extended to 2 bytes from initial 1.
+ - structure changed: added Grid Fragment entries and now Brick entries don't
+   have fixed position.
+ - information on where to find Fragments and Bricks has been added to the
+   first entry.
+ - added Fragment names list entry (6), and Fragment information entry (7).
+
+Version 1:
+ - "version" byte added,
+ - entry 8 now contains Scene Text Project (*.stp) instead of StoryCoder project.
+
+Version 0:
+ - the initial HQS version

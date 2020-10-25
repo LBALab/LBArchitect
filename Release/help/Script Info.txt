@@ -1,0 +1,9 @@
+
+LBA 1 Script weirdnesses:
+
+1. END_COMPORTEMENT in the middle of actual comportement
+2. SET_COMPORTEMENT references an inexisting comportement (i.e. a comp. that does not start after end of previous comportement).
+3. GOTO -1 in Track Scripts, which probably means the same as STOP
+4. SET_COMPORTEMENT -1 in Life Scripts
+5. SET_COMPORTEMENT that points to the END in Life Scripts
+6. Two or more LABELs in a TrackScript have identical IDs (GOTO points to the last one).

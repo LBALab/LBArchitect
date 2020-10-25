@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - ANGLE_RND</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="overview.htm">Track Script</a>: <b>ANGLE_RND</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>ANGLE_RND</b> changes angle of facing for the actor turning it in a random direction by about 90&deg;.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName"> ANGLE_RND</span><span class="ComParams"> max_rand</span>(1 to 32767 integer)</li>
+</ul>
+
+<h5>Parameters</h5>
+<ul>
+  <li><span class="ComParams">max_rand </span>defines the randomness range around 90&deg;. <span class="ComParams">max_rand = 0</span> <b>will crash the game</b>, so it has been disabled in LBArchitect. The parameter is in Scene units, not degrees - see <a href="angle.htm">ANGLE</a> for more information.</li>
+</ul>
+
+<p class="just">The parameter defines randomness range of the resulting angle around 90&deg;. The resulting angle is calculated from equation: Rnd(&plusmn;) 256 + <span class="ComParams">max_rand</span>/2 - Rnd(<span class="ComParams">max_rand</span>). Thus the center of random range is at 90&deg;, and the value may differ from 90&deg;-(<span class="ComParams">max_rand</span>/2) to 90&deg;+(<span class="ComParams">max_rand</span>/2). For example <span class="ComParams">max_rand = 6</span> will turn the Actor left or right by &plusmn; 90 &plusmn; 1 degrees, while <span class="ComParams">max_rand = 256</span> will turn the Actor by &plusmn; 90 &plusmn; 45 degrees.</p>
+
+<p class="just"><b>ANGLE_RND</b> will make the actor "visually" turn around from the old angle to the new one.</p>
+
+<p class="just">Rotation speed is determined by the <a href="../actors.htm#rotation">Rotation delay</a> Actor property.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="scmd">angle_rnd</span> <span class="sparam">256</span>
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Track Script: <a href="angle.htm">ANGLE</a></li>
+  <li>Track Script: <a href="beta.htm">BETA</a></li>
+  <li>Track Script: <a href="face_hero.htm">FACE_HERO</a></li>
+  <li>Actor properties: <a href="../actors.htm#angle">Angle</a></li>
+  <li>Actor properties: <a href="../actors.htm#rotation">Rotation delay</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

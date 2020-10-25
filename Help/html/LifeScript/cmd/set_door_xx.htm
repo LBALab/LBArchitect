@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - SET_DOOR_DOWN, SET_DOOR_LEFT, SET_DOOR_RIGHT, SET_DOOR_UP</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SET_DOOR_DOWN</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>SET_DOOR_LEFT</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>SET_DOOR_RIGHT</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>SET_DOOR_UP</b> (command)</h1>
+
+<div class="content">
+
+<p class="just">These commands set the door Actor at specified position along desired direction.</p>
+
+<img src="door_dir.gif">
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SET_DOOR_DOWN</span><span class="ComParams"> distance</span>(-32768 to 32767 integer)</li>
+  <li><span class="ComName">SET_DOOR_LEFT</span><span class="ComParams"> distance</span>(-32768 to 32767 integer)</li>
+  <li><span class="ComName">SET_DOOR_RIGHT</span><span class="ComParams"> distance</span>(-32768 to 32767 integer)</li>
+  <li><span class="ComName">SET_DOOR_UP</span><span class="ComParams"> distance</span>(-32768 to 32767 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">distance </span>is the distance the Actor should be put by from the <i>closed</i> position along the desired direction in Scene units.</li>
+</ul>
+
+<p class="just">These commands will set the door position at the specified distance from the <i>closed</i> position. The actor must be a Sprite Actor and must <a href="../../static_flags.htm#clipped">use clipping</a>. After loading the Scene all doors are in <i>closed</i> positions by default (the initial positions as seen in Architect or other Scene editor). These commands are used mainly to change the initial positions of the doors (to ensure the doors are open when the Hero walks out of a building). See <a href="../../common_scripts/door.htm">common door script</a> for an example usage.</p>
+
+<h5>See also:</h5>
+<ul>
+  <li>Actor Static Flags: <a href="../../static_flags.htm#clipped">Uses clipping</a></li>
+  <li>Track Script: <a href="../../TrackScript/open_xxx.htm">OPEN_XXX</a></li>
+  <li>Track Script: <a href="../../TrackScript/close.htm">CLOSE</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

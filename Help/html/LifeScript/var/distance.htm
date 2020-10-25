@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - DISTANCE, DISTANCE_3D</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>DISTANCE</b> (variable)<br />
+    <a href="../overview.htm">Life Script</a>: <b>DISTANCE_3D</b> (variable)</h1>
+
+<div class="content">
+
+<p><b>DISTANCE</b> returns distance between the current Actor and another Actor in X and Z axes, <b>DISTANCE_3D</b> also takes Y (upright) axis into consideration.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li>if<span class="ComName"> DISTANCE </span><span class="ComParams">actor</span>(0 to 255 integer) == <span class="ComParams"> value</span>(0 to 32000 integer)</li>
+  <li>if<span class="ComName"> DISTANCE_3D </span><span class="ComParams">actor</span>(0 to 255 integer) == <span class="ComParams"> value</span>(0 to 32000 integer)</li>
+</ul>
+<p class="hint">(<b>if</b> can be also: or_if, swif, oneif; <b>==</b> can be also: !=, &gt;, &lt;, &gt;=, &lt;=)</p>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">actor </span>is the index of the target Actor (the Actor must exist in the Scene).</li>
+</ul>
+
+<h5>Return value:</h5>
+<ul>
+  <li><b>DISTANCE</b> and <b>DISTANCE_3D</b> return distance in Scene units between the current Actor and Actor specified in the parameter.</li>
+</ul>
+
+<p>It is not recommended to use equality operator (==), as the condition will most likely never be met.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="scmd">distance</span> <span class="sparam">3</span> <span class="sop">&lt;=</span> <span class="sparam">1500</span> <span class="scom">//if current Actor is 1500 units or less away from the Actor 3</span><br />
+  <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="cone_view.htm">CONE_VIEW</a> (variable)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

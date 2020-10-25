@@ -1,0 +1,130 @@
+This file contains Scenes from LBA 1
+120
+
+
+
+*scene*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:ls1|Scene 0: Citadel Island, Prison
+1:ls1|Scene 1: Citadel Island, outside the citadel
+2:ls1|Scene 2: Citadel Island, near the tavern
+3:ls1|Scene 3: Citadel Island, near the pharmacy
+4:ls1|Scene 4: Citadel Island, near twinsens house
+5:ls1|Scene 5: Citadel Island, inside Twinsens house
+6:ls1|Scene 6: Citadel Island, Harbor
+7:ls1|Scene 7: Citadel Island, Pharmacy
+8:ls1|Scene 8: White Leaf Desert, Temple of Bú 1st scene
+9:ls1|Scene 9: Hamalayi Mountains, landing place
+10:ls1|Scene 10: Principal Island, Library
+11:ls1|Scene 11: Principal Island, Harbor
+12:ls1|Scene 12: Principal Island, outside the fortress
+13:ls1|Scene 13: Principal Island, Lupin Burg
+14:ls1|Scene 14: Citadel Island, Tavern
+15:ls1|Scene 15: Hamalayi Mountains, Rabbibunny village
+16:ls1|Scene 16: Citadel Island, inside a Rabbibunny house
+17:ls1|Scene 17: Principal Island, Ruins
+18:ls1|Scene 18: Principal Island, outside the library
+19:ls1|Scene 19: Principal Island, Militairy camp
+20:ls1|Scene 20: Citadel Island, Architects house
+21:ls1|Scene 21: Citadel Island, secret chamber in the house
+22:ls1|Scene 22: Principal Island, Ticket office
+23:ls1|Scene 23: Principal Island, Prison
+24:ls1|Scene 24: Principal Island, Port Belooga
+25:ls1|Scene 25: Principal Island, Peg Leg Street
+26:ls1|Scene 26: Principal Island, Shop
+27:ls1|Scene 27: Principal Island, Locksmith
+28:ls1|Scene 28: Principal Island, inside a Rabbibunny house
+29:ls1|Scene 29: Principal Island, Astronimers House
+30:ls1|Scene 30: Principal Island, Tavern
+31:ls1|Scene 31: Principal Island, Basement of the Astronomer
+32:ls1|Scene 32: Principal Island, Stables
+33:ls1|Scene 33: Citadel Island, Cellar of the Tavern
+34:ls1|Scene 34: Citadel Island, Sewer of the 1st scene
+35:ls1|Scene 35: Citadel Island, Warehouse
+36:ls1|Scene 36: White Leaf Desert, outside the Temple of Bú
+37:ls1|Scene 37: Principal Island, outside the water tower
+38:ls1|Scene 38: Principal Island, inside the water tower
+39:ls1|Scene 39: White Leaf Desert, Militairy camp
+40:ls1|Scene 40: White Leaf Desert, Temple of Bú 2nd scene
+41:ls1|Scene 41: White Leaf Desert, Temple of Bú 3rd scene
+42:ls1|Scene 42: Proxima Island, Proxim City
+43:ls1|Scene 43: Proxima Island, Museum
+44:ls1|Scene 44: Proxima Island, near the Inventors house
+45:ls1|Scene 45: Proxima Island, upper rune stone
+46:ls1|Scene 46: Proxima Island, lower rune stone
+47:ls1|Scene 47: Proxima Island, befor the upper rune stone
+48:ls1|Scene 48: Proxima Island, Forgers house
+49:ls1|Scene 49: Proxima Island, Prison
+50:ls1|Scene 50: Proxima Island, Shop
+51:ls1|Scene 51: Proxima Island, Sewer
+52:ls1|Scene 52: Principal Island, house at Peg Leg Street
+53:ls1|Scene 53: Proxima Island, Grobo house
+54:ls1|Scene 54: Proxima Island, Inventors house
+55:ls1|Scene 55: Citadel Island, Sewer (secret)
+56:ls1|Scene 56: Principal Island, Sewer (secret)
+57:ls1|Scene 57: White Leaf Desert, Maze
+58:ls1|Scene 58: Principal Island, House with the TV
+59:ls1|Scene 59: Rebelion Island, Harbor
+60:ls1|Scene 60: Rebelion Island, Rebel camp
+61:ls1|Scene 61: Some room (cut-out ?)
+62:ls1|Scene 62: Hamalayi Mountains, 1st fighting scene
+63:ls1|Scene 63: Hamalayi Mountains, 2nd fighting scene
+64:ls1|Scene 64: Hamalayi Mountains, Prison
+65:ls1|Scene 65: Hamalayi Mountains, outside the transporter
+66:ls1|Scene 66: Hamalayi Mountains, inside the transporter
+67:ls1|Scene 67: Hamalayi Mountains, Mutation centre 1st scene
+68:ls1|Scene 68: Hamalayi Mountains, Mutation centre 2nd scene
+69:ls1|Scene 69: Hamalayi Mountains, 3rd fighting scene
+70:ls1|Scene 70: Hamalayi Mountains, Entrance to the prison
+71:ls1|Scene 71: Hamalayi Mountains, outside the prison
+72:ls1|Scene 72: Hamalayi Mountains, Catamaran dock
+73:ls1|Scene 73: Hamalayi Mountains, Bunker near clear water
+74:ls1|Scene 74: Tippet Island, Village
+75:ls1|Scene 75: Tippet Island, Secret passage scene 2
+76:ls1|Scene 76: Tippet Island, near the bar
+77:ls1|Scene 77: Tippet Island, Secret passage scene 1
+78:ls1|Scene 78: Tippet Island, near the Dino-Fly
+79:ls1|Scene 79: Tippet Island, Secret passage scene 3
+80:ls1|Scene 80: Tippet Island, Twinsun Cafe
+81:ls1|Scene 81: Hamalayi Mountains, Sacret Carrot
+82:ls1|Scene 82: Hamalayi Mountains, Backdoor of the prison
+83:ls1|Scene 83: Fortress Island, inside the fortress
+84:ls1|Scene 84: Fortress Island, outside the forstress
+85:ls1|Scene 85: Fortress Island, Secret passage scene 1
+86:ls1|Scene 86: Fortress Island, Secret in the fortress
+87:ls1|Scene 87: Fortress Island, near Zoes cell
+88:ls1|Scene 88: Fortress Island, Swimming pool
+89:ls1|Scene 89: Fortress Island, Cloning centre
+90:ls1|Scene 90: Fortress Island, Rune stone
+91:ls1|Scene 91: Hamalayi Mountains, Behind th sacret carrot
+92:ls1|Scene 92: Hamalayi Mountains, Clear water lake
+93:ls1|Scene 93: Fortress Island, outside fortress destroyed
+94:ls1|Scene 94: Brundle Island, outside the teleportation
+95:ls1|Scene 95: Brundle Island, inside the teleportation
+96:ls1|Scene 96: Hamalayi Mountains, Ski resort
+97:ls1|Scene 97: Brundle Island, Docks
+98:ls1|Scene 98: Brundle Island, Secret room
+99:ls1|Scene 99: Brundle Island, near the telepods
+100:ls1|Scene 100: Fortress Island, Docks
+101:ls1|Scene 101: Tippet Island, Shop
+102:ls1|Scene 102: Principal Island, house in port Belooga
+103:ls1|Scene 103: Brundle Island, Painters house
+104:ls1|Scene 104: Citadel Island, Ticket Office
+105:ls1|Scene 105: Principal Island, inside the fortress
+106:ls1|Scene 106: Polar Island, 2nd scene
+107:ls1|Scene 107: Polar Island, 3rd scene
+108:ls1|Scene 108: Polar Island, Before the rocky peak
+109:ls1|Scene 109: Polar Island, 4th scene
+110:ls1|Scene 110: Polar Island, The rocky peak
+111:ls1|Scene 111: Polar Island, on the rocky peak
+112:ls1|Scene 112: Polar Island, Before the end room
+113:ls1|Scene 113: Polar Island, Final Battle
+114:ls1|Scene 114: Polar Island, end scene
+115:ls1|Scene 115: Polar Island, 1st scene
+116:ls1|Scene 116: Citadel Island, end sequence (1)
+117:ls1|Scene 117: Citadel Island, end sequence (2)
+118:ls1|Scene 118: Citadel Island, Twinsens house destroyed
+119:ls1|Scene 119: Credits List Sequence

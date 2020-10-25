@@ -1,0 +1,171 @@
+---------------------------------------------------------------
+ LBA Brick Layout Library file format 
+ Author: Kazimierz Król (zink)
+ Revision: 1.1
+---------------------------------------------------------------
+
+ Library files are all entries of lba_bll.hqr file from LBA 1
+  and entries 180 ~ 197 of lba_bkg.hqr file from LBA 2. 
+
+ Library files from LBA 1 and 2 are almost the same. The only difference is between sound bytes, what will be explained further.
+
+ Libraries contain groups of Layouts. Layouts in turn contain groups of Bricks that are then used to design rooms. Each entry contains groups groups of Bricks (these groups can be called objects, but it's not precise definition) specific to room appearance.
+
+
+  Data description:
+--------------------
+
+ At the beginning there is offset block. All offsets are DWORDs. The offset block is similar to the one from *.hqr files, but it doesn't have the length of entire file at the end! Last offset is just a pointer to the last Layout in the file. Size of the offset block can be obtained by reading first offset: 
+ 
+ Offset_Block_Size = First_Offset_Value
+
+ To get the number of offsets in the offset block you have to divide the offset block size by 4.
+
+ 
+ Construction of each layout in the file:
+------------------------------------------ 
+
+ Offset  Type  Meaning
+
+  0x00   BYTE  Number of blocks (object dimension) in X axis
+  0x01   BYTE  Number of blocks (object dimension) in Y axis
+  0x02   BYTE  Number of blocks (object dimension) in Z axis
+
+ The above 3 bytes must have values greater than zero.
+
+
+  Axes:      /\ X 
+            /  \     Y - upright
+            \  /
+             \/ Z
+
+
+ Next data describes blocks. A layout has as many blocks as the multiplication of its dimensions. E.g. after the dimension bytes there are X * Y * Z blocks. 
+
+ Each block has 4 bytes:
+
+  First byte describes physical shape of the block. List of all physical shapes is at the end of this file.
+ 
+  Second byte has different meaning regarding Which game it is from:
+   #In LBA 1 files:
+     Describes sounds when somebody walks over the block. First and last
+     nibble mean separate sounds that are played alternately, starting 
+     with the last one. Although all blocks have sounds bytes, the whole
+     layout has the sounds of the first block, regardless of which sounds
+     are specified in remaining blocks, no idea why is that. Sound numbers are 
+     listed at the end of this file.
+   #In LBA 2 files:
+     Describes sound and floor type. 
+     The higher nibble describes the floor type. Types are listed at the end of this file.
+     The lower nibble describes sound of the block (unlike LBA 1, you can
+     define only one sound for a Layout). Like in the LBA 1 files,the whole Layout
+     has the sound of the first block. Sounds are listed at the end of this file.
+ 
+  The remaining two bytes are WORD number which is index of a Brick from lba_brk or lba_bkg file. A value of 1 signifies the first brick. If this value is zero, then no brick should be there (empty space).
+
+
+########## APPENDIX ###########
+
+ Physical shape numbers for LBA 1 and 2 (hex):
+-----------------------------------------------
+
+ 00: theoretically - no shape (i.e. you can walk/fall through it), but only when it is only one block of that shape. If there are more, only the top one acts like the one with no shape. Thus, you can't make a wall that Twinsen could pass through. (Never used in the game)
+ 01: solid (cube)
+
+ 02: stairs: top left edge at the ground (example: brick 1075)
+ 03: stairs: top right edge at the ground (example: brick 1345)
+ 04: stairs: bottom left edge at the ground (example: brick 166)
+ 05: staris: bottom right edge at the ground (example: brick 167)
+ 
+ 06: double-sided stairs 1 (corner at the ground, two egdes at the ceiling): top corner at the ground (example: brick 3815)
+ 07: double-sided stairs 1: bottom corner at the ground (example: brick 3169)
+ 08: double-sided stairs 1: left corner at the ground (example: brick 3814)
+ 09: double-sided stairs 1: right corner at the ground (example: brick 3813)
+
+ 0A: double-sided stairs 2 (two edges at the ground, cornet at the ceiling): top corner at the ground (example: bricks 1347, 3238)
+ 0B: double-sided stairs 2: bottom corner at the ground (example: brick 579)
+ 0C: double-sided stairs 2: left cornet at the ground (example: brick 1349)
+ 0D: double-sided stairs 2: right corner at the ground (example: brick 1348)
+
+ 0E: flat bottom only, but acts weird, for example when there are two or more of them in a column, you can jump into them like into a box. (Not used in the game)
+ 0F ~ FF: same as 0E
+
+ Images of the physical shapes are in Shapes.gif file for better understanding.
+
+
+ Sound numbers for LBA 1 (hex):
+--------------------------------
+
+ 0: floor
+ 1: carpet
+ 2: metal
+ 3: wood
+ 4: snow
+ 5: rock in a cave (not used in the game, probably)
+ 6: sand
+ 7: wet floor
+ 8: grass
+ 9: flowers (uhms!)
+ A: similar to 5, but muffled (used in all caves and the for dwimming pool (Fortress Island))
+ B: rumbling sound (used for some moving platforms in caves and for the rubber pontoon in the museum)
+ C: very wet floor (used for sewer floors and for the pot of soup in the Rabbibunny village)
+ D: no sound (not used in the game)
+ E: no sound (not used in the game)
+ F: special - if the first nibble is F, the second nibble can be of values:
+     0: no sound
+     1: the Layout is water, and characters will drown when they step on it
+
+
+ Sound numbers for LBA 2 (hex):
+--------------------------------
+
+ 0: no sound
+ 1: floor
+ 2: same as 1 (but used for conveyor belts, railway tracks, and some other terrains)
+ 3: wood
+ 4: sand
+ 5: rock (in a cave)
+ 6: metal
+ 7: rock (different than 5, used for some blocks in caves)
+ 8: carpet
+ 9: flowers
+ A: wood (different than 3)
+ B: wet floor
+ C: metal (same as 6)
+ D: rock (different than 5 and 7, used for the labyrinth under the Dome of the Slate)
+ E: floor (same as 1, not used in the game) 
+ F: sound of protection spell :) (not used)
+
+
+ Floor types for LBA 2 (hex):
+------------------------------
+
+  0: normal floor
+* 1: water
+* 2: something shooting from the floor (never used in the game)
+  3: conveyor belt bottom-right -> top-left
+  4: conveyor belt top-left -> bottom-right
+  5: conveyor belt bottom-left -> top-right
+  6: conveyor belt top-right -> bottom-left
+  7: normal floor (used for the labyrinth under the Dome of the Slate)
+  8: normal floor (used for spikes in caves - hurting is probably coded in the script)
+* 9: lava
+  A: normal floor
+* B: gas (e.g. on the island CX)
+  C: don't use, acts like a normal floor, but sometimes acts weird (in some situations that should never happen during normal playing, but you never know), use 0 instead.
+  D: same as 9 *
+  E: same as B *
+  F: same as 1 *
+
+ * - characters die when they step on it
+
+
+--------------------------------------------------------------------
+ That is all I know. 
+ If you know something more, I will be grateful if you let me know.
+ e-mail:   zink@poczta.onet.pl
+ web page: moonbase.kazekr.net
+--------------------------------------------------------------------
+
+Revision history:
+ 1.1 - specificeation revised, some info corrected, added physical shapes for LBA 2

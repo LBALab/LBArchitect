@@ -1,0 +1,71 @@
+
+HQD files are made to make information about the HQR files easier to manage.
+
+LBArchitect holds HQD files for standard LBA 1 and 2 HQRs in the fileinfo directory. Programs should check if the HQD file matches the appropriate HQR file, for example by the number of entries.
+
+The idea of the HQD files is that they can be custom-made to describe any HQR file in any directory, not only inside the LBA directories. To make a description of a HQR file, just write a HQD file following this specification and put it together with the HQR file. The HQD file should have the same name as the HQR file it describes. Architect will, when it is about to display the content of a HQR file, check if there is a HQD file with the same name in the same directory, and load the description for it.
+
+In case Architect won't find a HQD file together with HQS file with the same name, it will check if any of the HQD files in the fileinfo directory matches the HQR file, and if yes, then it will load its information. The HQD files held together with HQR files have higher priority than the HQD files that are in fileinfo directory, even if it is an LBA directory.
+
+=======================
+ STRUCTURE:
+=======================
+
+ HQD files are organized by lines. At the beginning there are some data lines, which help checking if the file matches a HQR file, and after that there are lines describing the entries of the HQR.
+ 
+ Line 1: HQR Description - it is one-line short description of what entries the HQR contains. For example "This file contain room construction data".
+ Line 2: Total number of visible entries - this means: normal entries, blank entries and repeated entries. Number of hidden entries should NOT be counted as these entries may come and go without changing the real HQR structure.
+ Line 3: Number of normal entries - may be empty for HQR files for which the number of normal entries varies (for example when normal entries are coverted to blank and repeated entries, and vice-versa).
+ Line 4: Number of repeated entries - may be empty.
+ Line 5: Number of blank entries - may be empty.
+ Line 6: File name mask - it helps programs in checking if the HQD file matches a HQR file. Asterisk (*) and quotation mark (?) may be used. * replaces any number of any characters (including no characters), and ? replaces exactly one character. Example of the line 6: 
+  *lba_bkg*.hqr
+ The mask can also be a single *. In this case all the file names match the HQD file (file name is ignored in checking).
+ Line 7: reserved for future use.
+ Line 8: reserved
+ Line 9: reserved
+ Line 10: reserved
+ 
+ Here the data lines end, and next lines describe the HQR entries. Each line describes one entry. A line is constructed as follows:
+ 
+ Nr:ext|description.
+ 
+ Nr - is the index of the entry. The index of the first entry is zero. Blank and repeated entries should not be omitted while calculating indexes.
+ ext - is the extension of the entry. It sould be typed without using capital letters, and should be three letters long. If there is no extension assigned the entry type, the extension should be omitted.
+ description - is the description of the entry. Description may contain any characters without control characters (with codes from 0x00 to 0x19).
+ 
+ Example of a line:
+ 
+ 20:gr1|Inside Twinsen's house
+
+
+ Example of a line wthout an extension:
+
+ 20:|Inside Twinse's house
+
+ The description lines have to be arranged from the one with the smallest index to the one with largest index.
+ Not all entries have to be described, and the described blocks may have gaps between them, for example the description lines may look like this:
+ 
+ 3:gr1|Twinsen's house
+ 4:gr1|Somebody's else house
+ 10:gr1|Desert Island
+ 11:gr1|A house on Desert Island
+
+ For line indentation, leading zeros can be inserted, like the following:
+
+ 003:gr1|Twinsen's house
+
+ If a particular entry is a container for other objects that need descriptions (like LBA2's Character Information, ress.hqr entry 44), the objects can be described right after the entry definition line, in the following format:
+
+E0:Twinsen
+E1:Grobo
+E002:Rabbibunny
+E010:Soldier
+E011:Zoe
+
+ Just like the entries descriptions, the objects can also be not consecutive, and contain leading zeros. Also the entry descriptions can be indented to make the HQD file easier to read.
+ 
+
+ The HQD files doesn't have to end with any special line or character.
+
+ -------- END --------

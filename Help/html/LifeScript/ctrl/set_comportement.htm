@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SET_COMPORTEMENT, SET_COMPORTEMENT_OBJ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SET_COMPORTEMENT</b> (control statement)<br />
+    <a href="../overview.htm">Life Script</a>: <b>SET_COMPORTEMENT_OBJ</b> (control statement)</h1>
+
+<div class="content">
+
+<p class="just"><b>SET_COMPORTEMENT</b> sets the next executed loop (comportement) to another one for the current Actor, <b>SET_COMPORTEMENT_OBJ</b> does the same, but allows target Actor to be specified in the parameter.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName"> SET_COMPORTEMENT</span><span class="ComParams"> name</span>(text)</li>
+  <li><span class="ComName"> SET_COMPORTEMENT_OBJ</span><span class="ComParams"> actor</span>(0 to 255 integer)<span class="ComParams"> name</span>(text)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">name </span>is the name of the target comportement (the comportement must be defined above or below the <b>SET_COMPORTEMENT(_OBJ)</b> statement.</li>
+  <li><span class="ComParams">actor </span>is the index of the target Actor (the Actor must exist in the Scene).</li>
+</ul>
+
+<p class="just">Comportements are <i>loops</i> (similar to states in a state machine) in Life Script that constantly execute code that is inside them. When the execution goes to the <a href="end_comportement.htm">END_COMPORTEMENT</a> statement it loops back to the comportement's first command. <b>SET_COMPORTEMENT(_OBJ)</b> statements allow moving execution to another comportement. <b>The change does not occur immediately, but only when the execution reaches the END_COMPORTEMENT statement or a <a href="return.htm">RETURN</a> statement</b>. Using <b>RETURN</b> immediately after <b>SET_COMPORTEMENT</b> will skip the remaining part of the comportement and start execution from the beginning of the new one (because <b>RETURN</b> moves execution to the beginning of the <i>active</i> comportement, and calling <b>SET_COMPORTEMENT</b> sets a new active one). See <a href="../overview.htm">Life Script overview</a> for more details about comportements.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="sctrl">comportement</span> <span class="sparam">1</span><br />
+  <span class="skey indent0">if</span> <span class="svar">distance</span> <span class="sparam">1</span> <span class="sop">&lt=</span> <span class="sparam">1500</span><br />
+  <span class="scmd indent1">cam_follow</span> <span class="sparam">1</span><br />
+  <span class="sctrl indent1">set_comportement</span> <span class="sparam">2</span><br />
+  <span class="sctrl indent1">return</span> <span class="scom">//this prevents executing 'message 4' when the condition is met</span><br />
+  <span class="skey indent0">endif</span><br />
+  <span class="scmd indent0">message</span> <span class="sparam">4</span><br />
+  <span class="sctrl">end_comportement</span><br />
+  <span class="sctrl">comportement</span> <span class="sparam">2</span><br />
+  <span class="scmd indent0">midi_off</span><br />
+  <span class="sctrl">end_comportement</span><br />
+  <span class="sctrl">end</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="comportement.htm">COMPORTEMENT</a> (control statement)</li>
+  <li>Life Script: <a href="end_comportement.htm">END_COMPORTEMENT</a> (control statement)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

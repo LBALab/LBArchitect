@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - GOTO</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="overview.htm">Track Script</a>: <b>GOTO</b> (control statement)</h1>
+
+<div class="content">
+
+<p class="just"><b>GOTO</b> moves execution of the script to specified <a href="label.htm">LABEL</a>.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">GOTO</span><span class="ComParams"> id</span>(-1 to 254 integer)</li>
+  <li><span class="ComName">GOTO</span><span class="ComParams"> label_name</span>(text) (LBArchtect only)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">id</span> is the index of the target <a href="label.htm">LABEL</a>. <span class="ComParams">Id = -1</span> makes the command work exactly like <a href="stop.htm">STOP</a> (stops execution of the Script).</li>
+  <li><span class="ComParams">label_name</span> is the name of the target <b>LABEL</b>.</li>
+</ul>
+
+<p class="just">Commands after <b>GOTO</b> cannot be executed unless they start with another <b>LABEL</b> statement.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="sctrl">LABEL</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">ANIM</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">GOTO</span> <span class="sparam">walking_loop</span> <span class="scom">//Go to LABEL 103</span><br />
+  <span class="sctrl">LABEL</span> <span class="sparam">2 another_animation</span><br />
+  <span class="scmd indent0">ANIM</span> <span class="sparam">2</span><br />
+  <span class="sctrl">LABEL</span> <span class="sparam">103 walking_loop</span><br />
+  <span class="scmd indent0">GOTO_POINT</span> <span class="sparam">8</span><br />
+  <span class="scmd indent0">GOTO_POINT</span> <span class="sparam">9</span><br />
+  <span class="scmd indent0">GOTO_POINT</span> <span class="sparam">10</span><br />
+  <span class="skey indent0">GOTO</span> <span class="sparam">103</span> <span class="scom">//return to LABEL 103 (make a loop)</span><br />
+  <span class="sctrl">LABEL</span> <span class="sparam">105 stop_walking</span><br />
+  <span class="skey indent0">STOP</span><br />
+  <span class="sctrl">END</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Track Script: <a href="label.htm">LABEL</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

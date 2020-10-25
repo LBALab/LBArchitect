@@ -1,0 +1,41 @@
+=========================================
+ Manual for some of the Factory features
+=========================================
+
+ Opening files in recent versions has been slightly changed. It is now located in the File menu. You can open Bricks and Layouts in any order, but Layouts will be invisible until you have a Bricks package opened.
+ If you have opened Bricks from an lba_bkg.hqr file from LBA 2, and Layouts are opened from the same file, the saving options for Bricks and Layouts will be disabled in order to prevent situation in which you save Layouts, and the saved file will be overwritten by saving Bricks afterwards. Instead of separate saving options, you can use single option enabled to save both Bricks and Layouts into one file at the same time.
+ 
+
+ Editing Layouts
+-----------------
+
+ You have two options for editing Layouts:
+  1. Edit Layout structure, which allow you to edit some Layout parameters: dimensions, shape, sound, and which Bricks it is made of.
+  2. Edit Layout image, which you can use to change what image will be put in a Grid as the Layout. This option is disabled by default, because it is dangerous, which will be explained further in this file.
+
+
+ 1. Editing structure
+----------------------
+ After choosing this option the structure editor will popup. In the window you have to select block that you want to edit by clicking it. You will then be able to edit it's parameters: Brick index, that this block refers to, and shape of the block.
+ 
+ Below the block options there are Layout options. They allow you to change the Layout dimensions and sounds (and floor type for Lba 2). 
+ For Lba 1 you can edit Sound #1 and Sound #2 property. The sounds will be played alternately. Settings where Sound #1 is not the same as Sound #2 are used for transitions between two types of terrain (when one part of the block contains terrain of one type, and the other part contains another type). In addition to this there are two special sound indexes: F0 and F1 (can only be selected in the Sound #1 box). F0 means no sound. F1 is used for water, it will also have no sound, but characters will drown when they stand on that block.
+ For Lba 2 there is only one sound (it doesn't mean only one sound sample, it means that only one kind of a sound will be played), bu there is ability to choose floor type for a Layout.
+ You can also play the selected sound to hear how it sounds. Although the sounds are converted game files, they sound pretty noisy in the program. Of course they will sound normal in the game.
+  
+  Here you can also save a Layout into a file, but it is only for storing some Layouts outside a Library. The saved Layout cannot be put as stand-alone (or whatever) Layout into HQRs instead of regular Libraries.
+  
+ 2. Editing image
+------------------
+ This option is disabled by default. You can enable it by unchecking the "Lock dangerous features" option. This option will not be saved between sessions, and you will have to click on it every time you run the program and you want to edit Layout images. This has been made so for your safety (safety of your files, actually). Reading the message that pops up when you are unchecking that option is highly reccomended.
+ Choosing this option will cause the image editor to popup. It will allow you to edit the BRICKS (not the Layout) that the Layout is made of. It is dangerous to use this feature because it changes Bricks that can be used by another Layout(s), not only in current Library. Use it only when you are sure that the Layout you are editing doesn't contain any shared Bricks (you can be sure of that when you want to edit a Layout created before with "New Layout" option), or when it is your intention to change that Layouts too.
+ You can put any image as the Layout - use copy/paste buttons. If the image you are pasting has different colours that are in current (Lba 1 or 2) palette (e.g. when you made it in another program), the colours will be replaced with nearest ones in the palette. This can make the image look "coarse". To avoid that you should use the Lba1/2 palettes to make images in other programs if you want use that images as Layouts.
+
+ 3. Creating/moving/deleting Layouts
+-------------------------------------
+ New Layout - will create a Layout at the end of the Library (it will have the index of the current highest Layout's index plus one). It will also create a new set of Bricks, that will be used by this Layout only, so that you won't have to worry that this Layout could share any Bricks among other Layouts. This option will cause the image editor to popup and if user press the "Discard" button, the creating of the Layout will be cancelled, and no new Bricks will be created.
+ Copy this Layout - will copy the selected Layout AND all Bricks that are used by it, thus creating a completely separate Layout. This way you can create a Layout similar to the existing one, plus you don't have to worry about Brick sharing.
+ Remove Brick sharing - will create so many Bricks as the selected Layout use and will redefine its Brick references, so that it would use the new Bricks instead of the old ones. Thus you will be able to edit this Layout without worrying thet it could affect other Layouts, because the Layout will no longer share any Bricks among other Layouts. In other words, it will convert the Layout to an "unique copy".
+ Delete this Layout - Will delete the selected Layout, but will NOT delete Bricks that are used by it, because other Layouts may be still using them.
+ 
+ All these safety things will probably cause many redundant Bricks. Designer program, have some optimizations features, that remove redundant Bricks from the final HQR files.

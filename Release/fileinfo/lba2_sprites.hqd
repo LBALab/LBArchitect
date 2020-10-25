@@ -1,0 +1,509 @@
+This file contains sprites
+425
+
+
+
+*sprites*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:lsp|Text window top-left corner
+1:lsp|Text window bottom-left corner
+2:lsp|Text window bottom-right corner
+3:lsp|Text window top-right corner
+4:lsp|Text window top-left corner (filled)
+5:lsp|Text window bottom-left corner (filled)
+6:lsp|Text window bottom-right corner (filled)
+7:lsp|Text window top-right corner (filled)
+8:lsp|Twinsen running
+9:lsp|Sendell 'S' symbol (used in Save Game)
+10:lsp|Text window rounded rectange (filled)
+11:lsp|LBA 2 logo #1
+12:lsp|LBA 2 logo #2
+13:lsp|Cross
+14:lsp|Text window top-right Baldino picture
+15:lsp|Text window top-right Zoe picture
+16:lsp|Twinsen's Odyssey logo #1
+17:lsp|Twinsen's Odyssey logo #2
+18:lsp|1x1 sprite (unused)
+19:lsp|1x1 sprite (unused)
+20:lsp|1x1 sprite (unused)
+21:lsp|1x1 sprite (unused)
+22:lsp|1x1 sprite (unused)
+23:lsp|1x1 sprite (unused)
+24:lsp|1x1 sprite (unused)
+25:lsp|1x1 sprite (unused)
+26:lsp|1x1 sprite (unused)
+27:lsp|1x1 sprite (unused)
+28:lsp|1x1 sprite (unused)
+29:lsp|1x1 sprite (unused)
+30:lsp|1x1 sprite (unused)
+31:lsp|1x1 sprite (unused)
+32:lsp|1x1 sprite (unused)
+33:lsp|1x1 sprite (unused)
+34:lsp|1x1 sprite (unused)
+35:lsp|1x1 sprite (unused)
+36:lsp|1x1 sprite (unused)
+37:lsp|1x1 sprite (unused)
+38:lsp|1x1 sprite (unused)
+39:lsp|1x1 sprite (unused)
+40:lsp|1x1 sprite (unused)
+41:lsp|1x1 sprite (unused)
+42:lsp|1x1 sprite (unused)
+43:lsp|1x1 sprite (unused)
+44:lsp|1x1 sprite (unused)
+45:lsp|1x1 sprite (unused)
+46:lsp|1x1 sprite (unused)
+47:lsp|1x1 sprite (unused)
+48:lsp|1x1 sprite (unused)
+49:lsp|1x1 sprite (unused)
+50:lsp|1x1 sprite (unused)
+51:lsp|1x1 sprite (unused)
+52:lsp|1x1 sprite (unused)
+53:lsp|1x1 sprite (unused)
+54:lsp|1x1 sprite (unused)
+55:lsp|1x1 sprite (unused)
+56:lsp|1x1 sprite (unused)
+57:lsp|1x1 sprite (unused)
+58:lsp|1x1 sprite (unused)
+59:lsp|1x1 sprite (unused)
+60:lsp|1x1 sprite (unused)
+61:lsp|1x1 sprite (unused)
+62:lsp|1x1 sprite (unused)
+63:lsp|1x1 sprite (unused)
+64:lsp|1x1 sprite (unused)
+65:lsp|1x1 sprite (unused)
+66:lsp|1x1 sprite (unused)
+67:lsp|1x1 sprite (unused)
+68:lsp|1x1 sprite (unused)
+69:lsp|1x1 sprite (unused)
+70:lsp|1x1 sprite (unused)
+71:lsp|1x1 sprite (unused)
+72:lsp|1x1 sprite (unused)
+73:lsp|1x1 sprite (unused)
+74:lsp|1x1 sprite (unused)
+75:lsp|1x1 sprite (unused)
+76:lsp|1x1 sprite (unused)
+77:lsp|1x1 sprite (unused)
+78:lsp|1x1 sprite (unused)
+79:lsp|1x1 sprite (unused)
+80:lsp|1x1 sprite (unused)
+81:lsp|1x1 sprite (unused)
+82:lsp|1x1 sprite (unused)
+83:lsp|1x1 sprite (unused)
+84:lsp|1x1 sprite (unused)
+85:lsp|1x1 sprite (unused)
+86:lsp|1x1 sprite (unused)
+87:lsp|1x1 sprite (unused)
+88:lsp|1x1 sprite (unused)
+89:lsp|1x1 sprite (unused)
+90:lsp|1x1 sprite (unused)
+91:lsp|1x1 sprite (unused)
+92:lsp|1x1 sprite (unused)
+93:lsp|1x1 sprite (unused)
+94:lsp|1x1 sprite (unused)
+95:lsp|1x1 sprite (unused)
+96:lsp|1x1 sprite (unused)
+97:lsp|1x1 sprite (unused)
+98:lsp|1x1 sprite (unused)
+99:lsp|1x1 sprite (unused)
+100:lsp|Door (SE)
+101:lsp|Portait of Sendell (SW)
+102:lsp|Uncoevered text (SW)
+103:lsp|Dark-cyan door (SW)
+104:lsp|Red door (SW)
+105:lsp|Crate-moving apparatus
+106:lsp|Dark-gray elevator
+107:lsp|Cyan crate
+108:lsp|Light-brown fragile crate
+109:lsp|Unpushed lever (SE)
+110:lsp|Unpushed lever (SW)
+111:lsp|Pushed lever (SE)
+112:lsp|Pushed lever (SW)
+113:lsp|Empty Proto-Pack crate
+114:lsp|Light-cyan door, left part (SE)
+115:lsp|Light-cyan door, right part (SE)
+116:lsp|Back arrow (SW)
+117:lsp|Forward arrow (SW)
+118:lsp|Back arrow (SE)
+119:lsp|Forward arrow (SE)
+120:lsp|Wooden door with glass (SE)
+121:lsp|Portrait of yellow groboclone (SW)
+122:lsp|Unpushed tunic-releasing lever (SE)
+123:lsp|Pushed tunic-releasing lever (SE)
+124:lsp|Dark-cyan gate (SE)
+125:lsp|Dark-cyan gate (SW)
+126:lsp|Top of weather-wizard's kettle
+127:lsp|Unpushed floor lever (SW)
+128:lsp|Pushed floor lever (SW)
+129:lsp|Sewers elevator
+130:lsp|Rubbish bin top with umbrella inside
+131:lsp|Electricity switch off (SW)
+132:lsp|Electricity switch on (SW)
+133:lsp|Dark-brown door, left part (SW)
+134:lsp|Dark-brown door, right part (SW)
+135:lsp|Dark-brown door, right part (SE)
+136:lsp|Dark-brown door, left part (SE)
+137:lsp|Closed top of chest (SW)
+138:lsp|Open top of chest (SW)
+139:lsp|Spiked door (SW)
+140:lsp|Spiked door (SE)
+141:lsp|Golden flat top (SW)
+142:lsp|Hacienda elevator
+143:lsp|Black transparent ellipse
+144:lsp|Top of a light
+145:lsp|Top of a desk (covered text) (SW)
+146:lsp|Top of a desk (uncovered text) (SW)
+147:lsp|Chain (SW)
+148:lsp|Top of a white desk, with documentation (SE)
+149:lsp|Top of a white desk, closed (SE)
+150:lsp|Top of a white desk, w/ controls, w/o token (SW)
+151:lsp|Top of a white desk, w/ controls, w/ token (SW)
+152:lsp|Top of a white desk, animated token, part #1 (SW)
+153:lsp|Top of a white desk, animated token, part #2 (SW)
+154:lsp|Top of a white desk, animated token, part #3 (SW)
+155:lsp|Top of a white desk, with unpushed controls (SW)
+156:lsp|Top of a white desk, with pushed controls (SW)
+157:lsp|Yellow magic ball
+158:lsp|Open proto-pack crate
+159:lsp|Door with round window (SE)
+160:lsp|Elevator in Esmers' base
+161:lsp|Dark-cyan door (SE)
+162:lsp|Pyramid-shaped key
+163:lsp|Top of a barrel
+164:lsp|Magic slate back arrow, unpushed
+165:lsp|Magic slate forward arrow, unpushed
+166:lsp|Magic slate back arrow, pushed
+167:lsp|Magic slate forward arrow, pushed
+168:lsp|Piece of gray wall (SE)
+169:lsp|Gray-cyan gate (SE)
+170:lsp|Talking bubble (speaker at left)
+171:lsp|Talking bubble (speaker at right)
+172:lsp|Floppy disk icon
+173:lsp|Twinsen's face icon
+174:lsp|Light-gray screw-holders
+175:lsp|Dark-gray screw-holders
+176:lsp|Three mushrooms #1
+177:lsp|Two mushrooms
+178:lsp|Three mushrooms #2
+179:lsp|One mushroom
+180:lsp|Sewers 'S' symbol, w/o water
+181:lsp|Zeelichian (Otringal) elevator
+182:lsp|Dark-cyan door with keyhole (SW)
+183:lsp|Dark-cyan gate with keyhole (SE)
+184:lsp|Orange door with round window (SW)
+185:lsp|Orange door with round window (SE)
+186:lsp|Dark-cyan gate with keyhole (SW)
+187:lsp|Wall for #185
+188:lsp|Metal bar stripes (SW)
+189:lsp|Metal bar stripes (SE)
+190:lsp|Sewers 'S' symbol, animated water, part #1
+191:lsp|Sewers 'S' symbol, animated water, part #2
+192:lsp|Sewers 'S' symbol, animated water, part #3
+193:lsp|Sewers 'S' symbol, animated water, part #4
+194:lsp|Lever (SE)
+195:lsp|Lever bottom???? (SE)
+196:lsp|Lever (SW)
+197:lsp|Lever bottom???? (SW)
+198:lsp|Ventilation holes (SW)
+199:lsp|Tourist information terminal top, animation part #1 (SE)
+200:lsp|Tourist information terminal top, animation part #2 (SE)
+201:lsp|Token terminal, w/o token (SW)
+202:lsp|Token terminal, token animation, part #1
+203:lsp|Token terminal, token animation, part #2
+204:lsp|Token terminal, token animation, part #3
+205:lsp|Unpushed switch (SE)
+206:lsp|Pushed switch (SE)
+207:lsp|Unpushed switch (SW)
+208:lsp|Pushed switch (SW)
+209:lsp|Shuttle space-suit-blocking door (SW)
+210:lsp|Emerald moon-type door (SE)
+211:lsp|Animated, door-controlling, metal wheel, part #1
+212:lsp|Animated, door-controlling, metal wheel, part #2
+213:lsp|Animated, door-controlling, metal wheel, part #3
+214:lsp|Colored lever, OFF (SE)
+215:lsp|Colored level, turning ON, part #1 (SE)
+216:lsp|Colored level, turning ON, part #2 (SE)
+217:lsp|Small door-controlling lever, unpushed (SW)
+218:lsp|Small door-controlling lever, pushed (SW)
+219:lsp|Small door-controlling lever, unpushed (SE)
+220:lsp|Small door-controlling lever, pushed (SE)
+221:lsp|Empty sprite
+222:lsp|Metal cylinder with red indicator OFF
+223:lsp|Metal cylinder with red indicator ON
+224:lsp|Metal cylinder with lever, turned down (SE)
+225:lsp|Metal cylinder with lever, turned left (SE)
+226:lsp|Metal cylinder with light OFF (SE)
+227:lsp|Metal cylinder with light ON (SE)
+228:lsp|Emerald moon radio, animation part #1 (SW)
+229:lsp|Emerald moon radio, animation part #2 (SW)
+230:lsp|Emerald moon radio, broken (SW)
+231:lsp|Museum door-controlling lever, unpushed (SE)
+232:lsp|Museum door-controlling lever, pushed (SE)
+233:lsp|Proto-Pack crate with the Proto-Pack
+234:lsp|Otringal upper-city door with keyhole (SE)
+235:lsp|Otringal upper-city door with keyhole (SW)
+236:lsp|Gray-yellow door (SE)
+237:lsp|Emerald moon-type door with keyhole (SW)
+238:lsp|Notes (SW)
+239:lsp|Brown-black elevator
+240:lsp|Brown-black gate with keyhole (SW)
+241:lsp|Some turning circle animation #1, left, part #1 (SW)
+242:lsp|Some turning circle animation #1, left, part #2 (SW)
+243:lsp|Some turning circle animation #1, left, part #3 (SW)
+244:lsp|Brown-black door with keyhole (SW)
+245:lsp|Some turning circle animation #1, right, part #1 (SW)
+246:lsp|Some turning circle animation #1, right, part #2 (SW)
+247:lsp|Some turning circle animation #1, right, part #3 (SW)
+248:lsp|Many Twinsunian stones (SE)
+249:lsp|Many Twinsunian stones (SW)
+250:lsp|Dark Monk statue in deposti (SW)
+251:lsp|Covered dark-cyan crate
+252:lsp|Uncovered dark-cyan crate
+253:lsp|Some white stones
+254:lsp|Some turning circle animation #2, left, part #1 (SW)
+255:lsp|Some turning circle animation #2, left, part #2 (SW)
+256:lsp|Some turning circle animation #2, left, part #3 (SW)
+257:lsp|Orange wall piece with left arrow (SE)
+258:lsp|Orange wall piece with right arrow (SE)
+259:lsp|Unpushed lever (SW)
+260:lsp|Pushed lever (SW)
+261:lsp|Wall light, turned ON (SE)
+262:lsp|Bamboo door with keyhole (SW)
+263:lsp|Bamboo bridge (SE)
+264:lsp|Broken bamboo bridge (SE)
+265:lsp|Green apple
+266:lsp|Dark, metal, floor tile
+267:lsp|Brown door with keyhole (SE)
+268:lsp|Brown door with sign (SW)
+269:lsp|Brown door w/o sign (SW)
+270:lsp|Brown door with window (SE)
+271:lsp|Brown door with window (SW)
+272:lsp|Wall metal tile (SW)
+273:lsp|Wall metal tile (SE)
+274:lsp|Golden holder #1 (SE)
+275:lsp|Golden holder #2 (SW)
+276:lsp|Golden chain (SW)
+277:lsp|Rope with golden holders (SE)
+278:lsp|Unpushed lever on dark surface
+279:lsp|Pushed lever on dark surface
+280:lsp|Small metal floor tile
+281:lsp|Ornament, made of Zlitos (SE)
+282:lsp|Door, made of Zlitos, with keyhole (SE)
+283:lsp|Tall movable pillar
+284:lsp|Medium movable pillar
+285:lsp|Double-wheel animation, part #1
+286:lsp|Double-wheel animation, part #2
+287:lsp|Double-wheel animation, part #3
+288:lsp|Slot machine lever in initial position
+289:lsp|Turned slot machine lever
+290:lsp|Slot machine light #1
+291:lsp|Slot machine line animation #1, part #1
+292:lsp|Slot machine line animation #1, part #2
+293:lsp|Slot machine line animation #1, part #3
+294:lsp|Slot machine line animation #1, part #4
+295:lsp|Slot machine line animation #1, part #5
+296:lsp|Slot machine light #2
+297:lsp|Slot machine piece #1
+298:lsp|Slot machine piece #2
+299:lsp|Slot machine piece #3
+300:lsp|Slot machine piece #4
+301:lsp|Slot machine line animation #1, part #1
+302:lsp|Slot machine line animation #1, part #2
+303:lsp|Slot machine line animation #1, part #3
+304:lsp|Slot machine line animation #1, part #4
+305:lsp|Slot machine line animation #1, part #5
+306:lsp|Francos' factory lever (S-E) animation, part #1
+307:lsp|Francos' factory lever (S-E) animation, part #2
+308:lsp|Francos' factory lever (S-E) animation, part #3
+309:lsp|Francos' factory lever (S-W) animation #1, part #1
+310:lsp|Francos' factory lever (S-W) animation #1, part #2
+311:lsp|Francos' factory lever (S-W) animation #1, part #3
+312:lsp|Francos' factory lever (S-W) animation #2, part #1
+313:lsp|Francos' factory lever (S-W) animation #2, part #2
+314:lsp|Francos' factory lever (S-W) animation #2, part #3
+315:lsp|Big elevator
+316:lsp|Small elevator
+317:lsp|Red box with key (S-E)
+318:lsp|Open red box (S-E)
+319:lsp|Red box with key (S-W)
+320:lsp|Open red box (S-W)
+321:lsp|Light metal gate (S-E), part #2
+322:lsp|Light metal gate (S-E), part #1
+323:lsp|Cyan metal door (S-E)
+324:lsp|Cyan metal door (S-W)
+325:lsp|Temple of Bu wooden door (S-W), part #1
+326:lsp|Temple of Bu wooden door (S-W), part #2
+327:lsp|Temple of Bu wooden door (S-E), part #1
+328:lsp|Temple of Bu wooden door (S-E), part #2
+329:lsp|Closed orange container top
+330:lsp|Open orange container top
+331:lsp|Bookshelf, built into a wall
+332:lsp|Dark metal door (S-E), with keyhole
+333:lsp|Golden chain with lock
+334:lsp|Laser-sensor wall (S-E)
+335:lsp|Laser-sensor wall (S-W)
+336:lsp|Red floor tile
+337:lsp|Cyan metal door (S-E), with keyole
+338:lsp|Cyan metal door (S-W), with keyhole
+339:lsp|Mosquibee's bridge element (S-W bridge)
+340:lsp|Undergas wooden floor tile
+341:lsp|Dog "mud"
+342:lsp|Closed emperor's palace chest (S-E)
+343:lsp|Open emperor's palace chest (S-E)
+344:lsp|Closed emperor's palace chest (S-W)
+345:lsp|Open emperor's palace chest (S-W)
+346:lsp|Closed emperor's palace chest (N-W)
+347:lsp|Open emperor's palace chest (N-W)
+348:lsp|Closed emperor's palace chest (N-E)
+349:lsp|Open emperor's palace chest (N-E)
+350:lsp|Closed big emperor's palace chest (S-W)
+351:lsp|Open big emperor's palace chest (S-W)
+352:lsp|Unpushed red lever
+353:lsp|Pushed red lever
+354:lsp|Gray-yellow metal X-door (S-W)
+355:lsp|Imperial dark gray door (S-W), with keyhole
+356:lsp|Dark-cyan door, with window (S-W)
+357:lsp|Imperial elevator
+358:lsp|Reactor-control lever in initial position (S-E)
+359:lsp|Turned reactor-control lever (S-E)
+360:lsp|Yellow lever, on dark holder, up (S-W)
+361:lsp|Yellow lever, on dark holder, down (S-W)
+362:lsp|Undergas elevator activation lever, up (N-W)
+363:lsp|Undergas elevator activation lever, down (N-W)
+364:lsp|Esmers' base elevator
+365:lsp|Protective spell base elevator #1
+366:lsp|Protective spell base elevator #2
+367:lsp|Cage
+368:lsp|Protective spell base lever, down (S-E)
+369:lsp|Protective spell base lever, up (S-E)
+370:lsp|Protective spell base lever, down (S-W)
+371:lsp|Protective spell base lever, up (S-W)
+372:lsp|Protective spell protection bar #1, left
+373:lsp|Protective spell protection bar #1, right
+374:lsp|Protective spell protection bar #2, left
+375:lsp|Protective spell protection bar #2, right
+376:lsp|Protective spell protection bar #3, left
+377:lsp|Protective spell protection bar #3, right
+378:lsp|Protective spell protection bar, left, animation part #1
+379:lsp|Protective spell protection bar, left, animation part #2
+380:lsp|Protective spell protection bar, left, animation part #3
+381:lsp|Protective spell protection bar, left, animation part #4
+382:lsp|Protective spell protection bar, left, animation part #5
+383:lsp|Protective spell protection bar, left, animation part #6
+384:lsp|Protective spell protection bar, left, animation part #7
+385:lsp|Protective spell protection bar, left, animation part #8
+386:lsp|Protective spell protection bar, right, animation part #1
+387:lsp|Protective spell protection bar, right, animation part #2
+388:lsp|Protective spell protection bar, right, animation part #3
+389:lsp|Protective spell protection bar, right, animation part #4
+390:lsp|Protective spell protection bar, right, animation part #5
+391:lsp|Protective spell protection bar, right, animation part #6
+392:lsp|Protective spell protection bar, right, animation part #7
+393:lsp|Protective spell protection bar, right, animation part #8
+394:lsp|Closed big emperor's palace chest, with keyhole (S-W)
+395:lsp|In-statue metal gate with keyhole
+396:lsp|Wizards'-freeing lever (S-W), up
+397:lsp|Wizards'-freeing lever (S-W), down
+398:lsp|Unpushed red X-lever
+399:lsp|Pushed red X-lever
+400:lsp|Wizards' imprisonating helmet, lights on
+401:lsp|Wizards' imprisonating helmet, lights off
+402:lsp|In-statue elevator #1
+403:lsp|In-statue elevator #2
+404:lsp|Indication wall light (S-W), off
+405:lsp|Indication wall light (S-W), on
+406:lsp|Unpushed wall lever
+407:lsp|Pushed wall lever
+408:lsp|Elevatro with green stripes
+409:lsp|Children's cage wall (S-W)
+410:lsp|Children's cage wall (S-E)
+411:lsp|Children's cage top
+412:lsp|Some round, small metal thing
+413:lsp|News table, with Dark Monk's staute picture, and article
+414:lsp|News table, with Twinsen's photo
+415:lsp|Sewers/School Of Magic door (S-E)
+416:lsp|Emerald moon door (S-E)
+417:lsp|Light wooden door (S-W)
+418:lsp|Cyan metal door (S-E), with keyhole, yellow-black stripes bottom
+419:lsp|Cyan metal door (S-W), with keyhole, yellow-black stripes bottom
+420:lsp|Red lever, on dark holder, up (S-W)
+421:lsp|Red lever, on dark holder, down (S-W)
+422:lsp|Big snow flake
+423:lsp|Medium snow flake
+424:lsp|Small snow flake
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+=========== LBA2 ===========
+1: No COMPPORTMENT in the Actor's Life Script. Just some commands followed by END. The script will run only once, so the last command must be SUICIDE or END_LIFE.
+
+5: SWITCH structure without END_SWITCH (BREAKs point to the command after last BREAK).
+Example:
+  if current_track == 20
+    switch zone
+      case == 45
+        (commands)
+        break
+      case == 46
+        (commands)
+        break
+  endif
+
+6: BREAK for IF structure (that does not have an actual sense, because its address points to the next ENDIF).
+Example:
+  switch zone
+    case == 45
+      if current_track == 10
+        (commands)
+      else
+        (commands)
+        break
+      endif
+      break
+    case == 46
+      (commands)
+  end_switch
+
+7: Grouped CASEs - the BREAKs addresses point to the next ENDIF, same for the last CASEs in groups. Groups are never separated with ELSE, though that would be reasonable.
+Example:
+  switch zone
+    if current_track == 30
+      case == 45
+        (commands)
+        break
+      case == 46
+        (commands)
+        break
+    endif
+    if current_track != 30
+      case == 45
+        (commands)
+        break
+      case == 46
+        (commands)
+        break
+    endif
+  end_switch
+
+8: Nested CASEs - no commands in-between (perhaps the execution speed optimization).
+Example:
+  switch zone
+    case > 40
+      case == 43
+        (commands)
+        break
+      case == 46
+        (commands)
+        break
+      break
+    case <= 40
+      case == 25
+        (commands)
+        break
+      break
+  end_switch
+
+9: BREAK with the address pointing to the last BREAK instead of END_SWITCH.
+Example:
+  switch zone
+    case == 22
+      (commands)
+      break (address to the last BREAK)
+    case == 0
+      (commands)
+      break (address to the last BREAK)
+    default
+      (commands)
+      break (address to the END_SWITCH)
+  end_switch
+
+10: OR_IF without an IF, with the address pointing to the next ENDIF.
+Example:
+  swif col_obj 0 == SELF
+    (commands)
+    or_if behaviour == discreet
+      (commands)
+  endif
+
+11. Double ELSE clause in IF structures. The command under first ELSE are executed normally, when the condition is not met. The commands under the second ELSE are executed when the condition has been met (so it would work the same if the commands were just under the IF).
+Example:
+  if rnd 2 == 0
+    set_track 30
+  else
+    set_track 40
+    set_comportment 3
+  else
+    set_track 20
+    set_comportment 2
+  endif

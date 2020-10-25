@@ -1,0 +1,197 @@
+
+body {
+  font-size: 10pt;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  background: #FFFFFF;
+  text-decoration: none;
+  margin: 0px 0px 1em 0px;
+}
+
+hr { color: #000000; }
+
+table.brd {
+  border: 1px solid black;
+  border-width: 1px 0px 0px 1px;
+  border-spacing: 0px;
+  padding: 0px;
+}
+
+table.brd td {
+  border: 1px solid black;
+  border-width: 0px 1px 1px 0px;
+  border-spacing: 10px;
+  padding: 5px;
+}
+
+table.brd thead {
+  font-weight: bold;
+}
+
+*.ComName {
+  font-family: 'Courier New';
+  font-weight: bold;
+  color: #0000ff;
+}
+
+*.ComParams {
+  font-family: 'Courier New';
+  font-weight: bold;
+  color: #ff6600;
+}
+
+*.Example {
+  font-family: 'Courier New';
+  color: #000000;
+  margin: 0.5em 0px 1em 25px;
+}
+
+*.indent0 {
+  margin: 0px 0px 0px 15px;
+}
+
+*.indent1 {
+  margin: 0px 0px 0px 30px;
+}
+
+*.indent2 {
+  margin: 0px 0px 0px 50px;
+}
+
+*.Blue {
+ color: blue;
+}
+
+*.DarkBlue {
+  color: darkblue;
+}
+
+*.Bold {
+  font-weight: bold;
+}
+
+*.Comment {
+  font-style: italic;
+  font-weight: normal;
+  color: gray;
+}
+
+*.BoldGreen {
+  font-weight: bold;
+  color: green;
+}
+
+*.DarkRed {
+  color: darkred;
+  font-weight: normal;
+}
+
+div.content {
+  margin: 0.5em;
+}
+
+h1 {
+  font-size: 14pt;
+  font-weight: bold;
+  background: #c8e5c2/*b0d7eb*/;
+  padding: 5px;
+}
+
+h1.cmd {
+  font-size: 14pt;
+  font-weight: normal;
+  background: #c8e5c2/*b0d7eb*/;
+  padding: 5px;
+}
+
+h3 {
+  font-size: 120%;
+  font-weight: bold;
+  color: #000080;
+  margin: 2em 0 0 0;
+}
+
+h4 {
+  font-size: 100%;
+  font-weight: bold;
+  color: #000080;
+  margin: 2em 0 0 0;
+}
+
+h5 {
+  font-size: 100%;
+  font-weight: bold;
+  margin: 1em 0 0 0;
+}
+
+p {
+  text-align: justify;
+  text-indent: 0px;
+  /*padding: 0px 0px 0px 0px;*/
+  margin: 1em 0 0 0;
+}
+
+*.just {
+  text-align: justify;
+}
+
+*.left {
+  text-align: left;
+}
+
+*.center {
+  text-align: center;
+}
+
+p.hint {
+  font-style: italic;
+  color: #808080;
+}
+
+pre {
+  background-color: #F9F9F9;
+  border: 1px dashed #2F6FAB;
+  color: black;
+  line-height: 1.1em;
+  padding: 0.5em;
+  margin: 0;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+a: visited { color: blue; }
+
+ul {
+  margin-top: 0.5em;
+}
+
+li {
+  text-align: justify;
+}
+
+ul.spaced li {
+  margin-top: 0.5em;
+}
+
+ul.nomark {
+  list-style-type: none;
+  margin-left: 25px;
+}
+
+/* script highlight */
+
+*.sctrl  { font-weight: bold;   color: green;    }  /* control statement */
+*.skey   { font-weight: bold;   color: black;    }  /* keyword */
+*.scmd   { font-weight: normal; color: darkblue; }  /* command */
+*.svar   { font-weight: normal; color: blue;     }  /* variable */
+*.sparam { font-weight: normal; color: darkred;  }  /* parameter */
+*.sdirm  { font-weight: normal; color: olive;    }  /* dirmode */
+*.scom   { font-weight: normal; color: gray; font-style: italic; }  /* comment */
+*.sop    { font-weight: normal; color: black;    }  /* operator */

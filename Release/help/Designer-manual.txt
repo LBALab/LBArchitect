@@ -1,0 +1,48 @@
+==========================================
+ Manual for some of the Designer features
+==========================================
+
+ The main organization cell in the Designer is project. Project keeps all file paths, and settings that will have influence on the output files.
+ 
+ Program always starts with an empty project, that has default settings.
+ 
+ You can copy settings from an existing project to a new one by creating the new project when the existing one is opened.
+
+
+ Editing the file list:
+------------------------
+
+ The file list is divided into rows. Each row contains files necessary for one room or island, that is: Grid, Library, Bricks package and Scene. Number of rows determines the number of rooms in the game (it will be the number of Grids in the lba_gri or lba_bkg file).
+ If it is set in options that the program should ouptut a specific HQR file, then all the cells in column associated with that file must be filled.
+
+ Paths may be put into cells by dragging-and-dropping files from the Windows explorer. If a file is dropped on the ID column, the path will be put to all cells of the row.
+
+ If a cell contains an invalid path, it will be highlighted in red. Invalid path means one of the following cases:
+ - cell is empty and project is set to create HQR file for that column
+ - the file from the path doesn't exist or the path is not valid
+ - the file's extension is not approriate for the column, for example: path to a test.bl1 file is in the Grid column.
+
+ Cells doesn't have to contain paths, they may be also set to blank from the right-button menu. Although blank files doesn't exist in room files in LBA 1 nor 2, they may be useful for testing purposes, but users have to be careful: the game will crash if a scene tries to go to the room, for which at least one of the files is blank. Setting one file to blank will not make any difference from setting the whole row to blank - the game will not open it one way or another.
+
+ Library and Brick cells are connected in a special way. Only both or none of them in one row may be blank at the same time. This is because Bricks are optimized for Libraries - if a Library doesn't exist, the Bricks used by it have no purpose in existing (not that Grid or Scene has, but it is a bit different in this case).
+ 
+ More cell-editing features are located under right-button menu.
+
+
+ Editing project options:
+--------------------------
+
+ Project options are divided into four tabs:
+ 
+ 1. Compression - here the compression options can be set.
+ 2. Optimizations - various optimizations options, like using repeated entries, romoving doubled entries, and so on.
+ 3. Output files - paths to output files can be set here, also here the output type (LBA 1 or 2) is defined.
+ 4. Project description - here you can add custom comments to the project. The description is not used for building, it is just for your information, and for the people you give the project to.
+
+
+ Bulding the project:
+----------------------
+
+ You can build the project by choosing Actions->Build project. If there are any errors in the file list (non-existing files, files with invalid extensions, HQS files not containing a required file), the building will stop and error message will be shown.
+ 
+ The output files selected in the project options will be overwritten without asking. 

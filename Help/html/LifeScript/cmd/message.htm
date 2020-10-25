@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - MESSAGE, MESSAGE_OBJ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>MESSAGE</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>MESSAGE_OBJ</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>MESSAGE</b> makes the Actor say the specified message and shows the text of it, <b>MESSAGE_OBJ</b> does the same, but for another Actor.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">MESSAGE</span><span class="ComParams"> text_id</span>(0 to 32767 integer)</li>
+  <li><span class="ComName">MESSAGE_OBJ</span><span class="ComParams"> actor</span>(0 to 255 integer)<span class="ComParams"> text_id</span>(0 to 32767 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">text_id </span>is the mapped index of text line to be displayed. The line will also be read by the associated voice.</li>
+  <li><span class="ComParams">actor </span>is the index of the target Actor (the Actor must exist in the Scene).</li>
+</ul>
+
+<p class="just">The message text will be displayed in the regular 3-line box at the bottom of the screen. <a href="say_message.htm">SAY_MESSAGE</a> and <a href="big_message.htm">BIG_MESSAGE</a> provide other ways of displying the text.</p>
+
+<p class="just">When the Actor is saying his line, balloon will be shown over its head. This can be changed with the <a href="balloon_on.htm">BALLOON_ON/OFF</a> commands</li>.</p>
+
+<p class="just">The text indexes used for this command are not the text positions in an lbt file (even subfile of text.hqr). Correct indexes are mapped in the corresponding odd subfile of the text.hqr. LBArchitect takes this into consideration when displaying list of possible indexes for this command.</p>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="say_message.htm">SAY_MESSAGE(_OBJ)</a> (command)</li>
+  <li>Life Script: <a href="big_message.htm">BIG_MESSAGE</a> (command)</li>
+  <li>Life Script: <a href="ask_choice.htm">ASK_CHOICE</a> (command)</li>
+  <li>Life Script: <a href="text.htm">TEXT</a> (command)</li>
+  <li>Life Script: <a href="balloon_on.htm">BALLOON_ON/OFF</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

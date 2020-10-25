@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - CURRENT_TRACK, CURRENT_TRACK_OBJ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>CURRENT_TRACK</b> (variable)<br />
+    <a href="../overview.htm">Life Script</a>: <b>CURRENT_TRACK_OBJ</b> (variable)</h1>
+
+<div class="content">
+
+<p><b>CURRENT_TRACK</b> returns current Track Script Label ID, <b>CURRENT_TRACK_OBJ</b> returns the ID for another Actor.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li>if<span class="ComName"> CURRENT_TRACK </span>== <span class="ComParams">id</span>(0 to 255 integer or text)</li>
+  <li>if<span class="ComName"> CURRENT_TRACK_OBJ </span><span class="ComParams">actor</span>(0 to 255 integer) == <span class="ComParams"> id</span>(0 to 255 integer or text)</li>
+</ul>
+<p class="hint">(<b>if</b> may be also: or_if, swif, oneif; <b>==</b> may be also: !=, &gt;, &lt;, &gt;=, &lt;=)</p>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">actor </span>is the index of the target Actor (the Actor must exist in the Scene).</li>
+</ul>
+
+<h5>Return value:</h5>
+<ul>
+  <li><b>CURRENT_TRACK</b> returns Track Script Label ID that the current Actor is executing at the moment,</li>
+  <li><b>CURRENT_TRACK_OBJ</b> returns Track Script Label ID that the specified Actor is executing at the moment.</li>
+</ul>
+
+<p>The Label ID returned by this variable is determined when the Track Script execution encounters <a href="../../TrackScript/label.htm">LABEL</a> command. Manner of calling the <b>LABEL</b> does not matter, it may be with the use of <a href="../cmd/set_track.htm">SET_TRACK(_OBJ)</a>, <a href="../../TrackScript/goto.htm">GOTO</a> commands, or just by advancing from previous TrackScript command. <b>CURRENT_TRACK(_OBJ)</b> will just return ID of the Label that has been executed most recently.</p>
+
+<p>Value returned by <b>CURRENT_TRACK(_OBJ)</b> does not change when the Track Script is stopped, be it by <a href="../../TrackScript/stop.htm">STOP</a> command, end of the Track Script, or even <a href="../cmd/stop_current_track.htm">STOP_CURRENT_TRACK</a> command. It may change only when Track Script encounters another <b>LABEL</b>.</p>
+
+<p>Initially the ID of current label is -1, but this case cannot be tested. Although the Label index value is one byte, so 255 should be equal to -1, the engine keeps the value as a 4-byte (dword) integer internally, and -1 as dword (2<sup>32</sup>) is not equal to -1 as byte (255). Thus if the Track Script have not met any <b>LABEL</b> yet, the condition will be false for any comparison value.</p>
+
+<p>If a textual label ID is used, it will be replaced with the numerical ID on compilation time. <b>CURRENT_TRACK(_OBJ)</b> will never return text instead of a number. This way comparison operators other than == and != may be also used with textual IDs.</p>
+
+<h5>Examples:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="scmd">current_track</span> <span class="sop">==</span> <span class="sparam">10</span> <span class="scom">//if the Actor's last Track Script Label was 10</span><br />
+  <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+  <br />
+  <span class="skey">if</span> <span class="scmd">current_track_obj</span> <span class="sparam">5</span> <span class="sop">&lt;</span> <span class="sparam">walk</span> <span class="scom">//if last Track Script Label ID of Actor 5 was less than the 'walk' Label's ID</span><br />
+  <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="../cmd/set_track.htm">SET_TRACK(_OBJ)</a> (command)</li>
+  <li>Track Script: <a href="../../TrackScript/label.htm">LABEL</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

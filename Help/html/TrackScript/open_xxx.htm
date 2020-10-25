@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - OPEN_DOWN, OPEN_LEFT, OPEN_RIGHT, OPEN_UP</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="overview.htm">Track Script</a>: <b>OPEN_DOWN</b> (command)<br />
+    <a href="overview.htm">Track Script</a>: <b>OPEN_LEFT</b> (command)<br />
+    <a href="overview.htm">Track Script</a>: <b>OPEN_RIGHT</b> (command)<br />
+    <a href="overview.htm">Track Script</a>: <b>OPEN_UP</b> (command)</h1>
+
+<div class="content">
+
+<p class="just">These commands open the door Actor in desired direction.</p>
+
+<img src="door_dir.gif">
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">OPEN_DOWN</span><span class="ComParams"> distance</span>(-32768 to 32767 integer)</li>
+  <li><span class="ComName">OPEN_LEFT</span><span class="ComParams"> distance</span>(-32768 to 32767 integer)</li>
+  <li><span class="ComName">OPEN_RIGHT</span><span class="ComParams"> distance</span>(-32768 to 32767 integer)</li>
+  <li><span class="ComName">OPEN_UP</span><span class="ComParams"> distance</span>(-32768 to 32767 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">distance </span>is the distance the Actor should move by along the desired direction in Scene units.</li>
+</ul>
+
+<p class="just">These commands will open the door actor in desired direction. The actor must be a <a href="sprite_actors.htm">Sprite Actor</a> and must <a href="../static_flags.htm#clipped">use clipping</a>. In the example below there is another command used for doors: <a href="wait_door.htm">WAIT_DOOR</a>, which pauses execution of the script until the door is fully opened. WAIT_DOOR does not have to be used with opening commands, but without it the Script would continue execution even if the door was still moving.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="sctrl">LABEL</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">SAMPLE</span> <span class="sparam">35</span> <span class="scom">//door moving sound</span><br />
+  <span class="scmd indent0">OPEN_LEFT</span> <span class="sparam">1550</span><br />
+  <span class="scmd indent0">WAIT_DOOR</span> <span class="scom">//wait for the door to close before executing next commands</span><br />
+  <span class="skey indent0">STOP</span><br />
+  <span class="sctrl">END</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Actor Static Flags: <a href="../static_flags.htm#clipped">Uses clipping</a></li>
+  <li>Life Script: <a href="../LifeScript/cmd/set_door_xx.htm">SET_DOOR_XX</a> (command)</li>
+  <li>Track Script: <a href="wait_door.htm">WAIT_DOOR</a></li>
+  <li>Track Script: <a href="close.htm">OPEN_DOWN</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

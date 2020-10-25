@@ -1,0 +1,53 @@
+[INFORMATION BEGIN]
+File=LBA Scene Actor Template
+Version=1.0
+Description=Inivisible Actor for giving bonuses
+[INFORMATION END]
+
+[ACTOR BEGIN]
+StaticFlags=12800
+Entity=18
+Body=0
+Animation=0
+Sprite=0
+HitPower=0
+BonusType=32
+FacingAngle=0
+RotationSpd=0
+Mode=0
+CropLeft=0
+CropTop=0
+CropRight=0
+CropBottom=0
+BonusQuantity=1
+TalkColour=0
+Armour=50
+LifePoints=1
+[ACTOR END]
+
+[TRACK SCRIPT BEGIN]
+label 1 pop
+  wait_num_second 2
+label 2 after_wait
+  stop  
+END
+[TRACK SCRIPT END]
+
+[LIFE SCRIPT BEGIN]
+comportement main
+  if action == 1
+    if zone_obj 0 == 1
+      give_bonus 0
+      set_track pop
+      set_comportement pop
+    endif
+  endif    
+end_comportement
+comportement pop
+  if current_track == after_wait
+    give_bonus 0
+    set_track pop
+  endif  
+end_comportement
+END
+[LIFE SCRIPT END]

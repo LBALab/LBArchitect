@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - OBJ_COL</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>OBJ_COL</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>OBJ_COL</b> selects if the Actor can collide with other Actors.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">OBJ_COL</span><span class="ComParams"> switch</span>(0 or 1)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li>if <span class="ComParams">switch = 1</span> the Actor will collide with other Actors, if <span class="ComParams">switch = 0</span> it will be able to pass through other Actors.</li>
+</ul>
+
+<p class="just"><b>OBJ_COL</b> changes value of the <a href="../../static_flags.htm#obj_col">Can collide with Objects</a> static flag. When it is set, other Actors (Objects) are solid to the Actor. When it is not set, the Actor can pass through other Actors. Both Actors must have this flag set to be able to collide with each other.</p>
+
+<h5>See also:</h5>
+<ul>
+  <li>Actor static flags: <a href="../../static_flags.htm#obj_col">Can collide with Objects</a></li>
+  <li>Life Script: <a href="brick_col.htm">BRICK_COL</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SUB_FUEL</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SUB_FUEL</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>SUB_FUEL</b> decreases amount of fuel units for the hero character (Actor 0) by specified value.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SUB_FUEL</span><span class="ComParams"> amount</span>(0 to 255 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">amount </span>is number of fuel units that will be removed from the hero's inventory.</li>
+</ul>
+
+<p class="just"><b>SUB_FUEL</b> command takes specified amount of fuel from the Hero. The current amount of fuel can be tested with <a href="../var/fuel.htm">FUEL</a> variable. The fuel is used to let player use vehicles only if he has got at least specified amount of fuel.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="scmd">sub_fuel</span> <span class="sparam">10</span> <span class="scom">//take 10 units of fuel from the hero</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="add_fuel.htm">ADD_FUEL</a> (command)</li>
+  <li>Life Script: <a href="../var/fuel.htm">FUEL</a> (variable)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

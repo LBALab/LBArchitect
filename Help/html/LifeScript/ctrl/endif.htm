@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - ENDIF</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>ENDIF</b> (control statement)</h1>
+
+<div class="content">
+
+<p class="just"><b>ENDIF</b> marks the end of a conditional Script block.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">ENDIF</span></li>
+</ul>
+
+<p class="just">Conditional statements allow for testing variables of the world against given values and executing specified Script pieces depending whether the condition is met or not. The end of the Script block must end with <b>ENDIF</b> statement, even if it consists of a single line only.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="svar">zone</span> <span class="sop">==</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">add_fuel</span> <span class="sparam">4</span><br />
+  <span class="skey">else</span><br />
+  <span class="scmd indent0">cam_follow</span> <span class="sparam">0</span><br />
+  <span class="skey">endif</span><br />
+  <br />
+  <span class="skey">if</span> <span class="svar">zone</span> <span class="sop">==</span> <span class="sparam">2</span><br />
+  <span class="scmd indent0">full_point</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="or_if.htm">OR_IF</a> (control statement)</li>
+  <li>Life Script: <a href="oneif.htm">ONEIF</a> (control statement)</li>
+  <li>Life Script: <a href="swif.htm">SWIF</a> (control statement)</li>
+  <li>Life Script: <a href="if.htm">IF</a> (control statement)</li>
+  <li>Life Script: <a href="else.htm">ELSE</a> (control statement)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

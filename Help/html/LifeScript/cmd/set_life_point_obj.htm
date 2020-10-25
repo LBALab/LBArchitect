@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SET_LIFE_POINT_OBJ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SET_LIFE_POINT_OBJ</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>SET_LIFE_POINT_OBJ</b> sets number of life points for specified Actor to specified value.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SET_LIFE_POINT_OBJ</span><span class="ComParams"> actor</span>(0 to 255 integer)<span class="ComParams"> points</span>(0 to 255 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">actor </span>is the index of the target Actor (the Actor must exist in the Scene)</li>
+  <li><span class="ComParams">points </span>is the number of life points to set for specified Actor</li>
+</ul>
+
+<p class="just"><b>SET_LIFE_POINT_OBJ</b> sets life point amount for the Actor to the specified value. If the new value is 0, the Actor will die. There is no version of this command working on the current Actor (without '_OBJ' suffix), but the index of current Actor may be specified manually, also in LBArchitect <b>self</b> keyword can be used to reference the current Actor.</p>
+
+<h5>See also:</h5>
+<ul>
+  <li>Actor properties: <a href="../../actors.htm#life_points">Life Points</a></li>
+  <li>Life Script: <a href="sub_life_point_obj.htm">SUB_LIFE_POINT_OBJ</a> (command)</li>
+  <li>Life Script: <a href="../var/life_point.htm">LIFE_POINT(_OBJ)</a> (variable)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Introduction to LBA 1 Scenes</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1>Introduction to Scenes</h1>
+
+<div class="content">
+
+<p>Scenes in LBA 1 define the <i>active</i> part of the LBA world. While Grids (Blocks, Bricks, and such) define the static environment (ground, buldings, trees), Scenes do the living elements: the Hero, other characters, doors, vehicles, goodies hidden in garbage cans, signs and posters that can be read, sounds, music, and so on.</p>
+
+<p>Scenes consist of a set of global settings (separate for each Scene), and sets of Actors, Zones and Points.</p>
+
+<h3>Global settings</h3>
+
+<ul>
+  <li><b>Island ID (text bank)</b> - specifies number of the text bank (pair of entries in text.hqr) that will be used for all messages in the Scene. It also specifies the voice bank associated with the text bank. There is one exception to this: Ending Credits Scene, which always uses the special creadits text bank. The text banks are not indexed straightly, but start from the entry #6 (first island).</li>
+  <li><b>Game Over Scene</b> - defines index of the Scene to go after the Hero's death (with no more lucky clovers).</li>
+  <li><b>Alpha and Beta light vectors</b> - define lighting parameters for 3D model rendering engine. The exact meaning of them is not known.</li>
+  <li><b>Music ID</b> - defines the CD track to be played when the Scene is loaded. The track index here is different from the order of music tracks on the CD.</li>
+  <li><b>Ambient sounds group</b> - allows to define up to 4 sound samples that will be played in the background. This group has the following options:
+    <ul>
+      <li><b>Sample ID</b> - defines index of sound sample in samples.hqr file to be played,</li>
+      <li><b>Repeat count</b> - tells how many times the corresponding sample should be repeated; -1 will repeat the sample endlessly,</li>
+      <li><b>Pitch range</b> - determines range of the pitch the sound may be randomly scaled up or down (maximum is half of the value up and half down); zero may not be used, to disable the pitch scaling -1 should be used instead,</li>
+      <li><b>Minimal delay</b> - one value for all sounds - defines the minimal delay in seconds between two consecutive samples,</li>
+      <li><b>Minimal delay random range</b> - maximum number of seconds that the engine may add to the <i>Minimal delay</i> value when computing delay between samples; zero may not be used, to disable the randomness -1 should be used instead.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Ambient sounds are played in turns, one after another, starting from a random one. In each play the pitch is rolled and the sound is repeated specified number of times, then the next sound's pitch is rolled and it is played. The time between two sounds is rolled each time from the <i>Minimal delay</i> and <i>Minimal delay random range</i> values, and it is counted between the <b>beginnings</b> of the sounds (not from end of the first sound to the beginning of the second one). This means that two consecutive sounds may overlap if the first one is played for longer time than the resulting delay turns out to be. After playing all defined sounds, another first sound is rolled and the sounds are played one after another again.</p>
+
+<h3>Actors</h3>
+
+<p>The set of Actors consists of Actor 0, which is the Hero (he does not have any properties, as these are determined independently of the Scene he is in), and 0 to 254 other Actors.</p>
+
+<p>Each Actor has its position in the Grid (for Actor 0 it is only initial position, used only when he appears in the Scene from nowhere, and does not come from another Scene), properties (except for Actor 0), and two kinds of Scripts: Track Script, that mainly controls the Actor's movement, and Life Script, that controls everything else of the Actor and other Actors. For more information see <a href="actors.htm">Actors</a>, <a href="TrackScript/overview.htm">Track Script introduction</a> and <a href="LifeScript/overview.htm">Life Script introduction</a>.</p>
+
+<h3>Zones</h3>
+
+<p>Zones are defined areas in the 3-D space, that perform specific actions when an Actor enters them. They are described by positions of two of their corners, and set of properties that depend on type of the Zone. There are seven types of Zones:
+<ul>
+  <li><b>Cube Zones</b> - are <i>entrances</i>, they move the Hero between Scenes,</li>
+  <li><b>Camera Zones</b> - bind the camera view to specific Grid position,</li>
+  <li><b>Sceneric Zones</b> - can trigger actions coded in Actor's Life Script,</li>
+  <li><b>Grid Zones</b> - replace parts of the Grid with another Grid (<i>disappearing ceiling effect</i>),</li>
+  <li><b>Object Zones</b> - pop out various bonuses,</li>
+  <li><b>Text Zones</b> - display messages (for signs, posters, etc.),</li>
+  <li><b>Ladder Zones</b> - define ladders.</li>
+</ul>
+</p>
+
+<p>For more information see <a href="zones.htm">Zones</a>.</p>
+
+<h3>Points</h3>
+
+<p>Zones are simple positions in the 3-D space. They only server purpose as target points for various move commands. For more information see <a href="points.htm">Points</a>.</p>
+
+</div>
+
+</body>
+</html>

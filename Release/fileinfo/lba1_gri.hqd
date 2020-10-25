@@ -1,0 +1,144 @@
+This file contains islands and building interior structures from LBA 1
+134
+
+
+
+*lba_gri*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:gr1|Grid 0: Citadel Island, Prison
+1:gr1|Grid 1: Citadel Island, outside the citadel
+2:gr1|Grid 2: Citadel Island, near the tavern
+3:gr1|Grid 3: Citadel Island, near the pharmacy
+4:gr1|Grid 4: Citadel Island, near twinsens house
+5:gr1|Grid 5: Citadel Island, inside Twinsen's house
+6:gr1|Grid 6: Citadel Island, Harbor
+7:gr1|Grid 7: Citadel Island, Pharmacy
+8:gr1|Grid 8: White Leaf Desert, Temple of Bú 1st scene
+9:gr1|Grid 9: Hamalayi Mountains, landing place
+10:gr1|Grid 10: Principal Island, Library
+11:gr1|Grid 11: Principal Island, Harbor
+12:gr1|Grid 12: Principal Island, outside the fortress
+13:gr1|Grid 13: Principal Island, Lupin Burg
+14:gr1|Grid 14: Citadel Island, Tavern
+15:gr1|Grid 15: Hamalayi Mountains, Rabbibunny village
+16:gr1|Grid 16: Citadel Island, inside a Rabbibunny house
+17:gr1|Grid 17: Principal Island, Ruins
+18:gr1|Grid 18: Principal Island, outside the library
+19:gr1|Grid 19: Principal Island, Militairy camp
+20:gr1|Grid 20: Citadel Island, Architects house
+21:gr1|Grid 21: Citadel Island, secret chamber in the house
+22:gr1|Grid 22: Principal Island, Ticket office
+23:gr1|Grid 23: Principal Island, Prison
+24:gr1|Grid 24: Principal Island, Port Belooga
+25:gr1|Grid 25: Principal Island, Peg Leg Street
+26:gr1|Grid 26: Principal Island, Shop
+27:gr1|Grid 27: Principal Island, Locksmith
+28:gr1|Grid 28: Principal Island, inside a Rabbibunny house
+29:gr1|Grid 29: Principal Island, Astronimers House
+30:gr1|Grid 30: Principal Island, Tavern
+31:gr1|Grid 31: Principal Island, Basement of the Astronomer
+32:gr1|Grid 32: Principal Island, Stables
+33:gr1|Grid 33: Citadel Island, Cellar of the Tavern
+34:gr1|Grid 34: Citadel Island, Sewer of the 1st scene
+35:gr1|Grid 35: Citadel Island, Warehouse
+36:gr1|Grid 36: White Leaf Desert, outside the Temple of Bú
+37:gr1|Grid 37: Principal Island, outside the water tower
+38:gr1|Grid 38: Principal Island, inside the water tower
+39:gr1|Grid 39: White Leaf Desert, Militairy camp
+40:gr1|Grid 40: White Leaf Desert, Temple of Bú 2nd scene
+41:gr1|Grid 41: White Leaf Desert, Temple of Bú 3rd scene
+42:gr1|Grid 42: Proxima Island, Proxim City
+43:gr1|Grid 43: Proxima Island, Museum
+44:gr1|Grid 44: Proxima Island, near the Inventors house
+45:gr1|Grid 45: Proxima Island, upper rune stone
+46:gr1|Grid 46: Proxima Island, lower rune stone
+47:gr1|Grid 47: Proxima Island, befor the upper rune stone
+48:gr1|Grid 48: Proxima Island, Forgers house
+49:gr1|Grid 49: Proxima Island, Prison
+50:gr1|Grid 50: Proxima Island, Shop
+51:gr1|Grid 51: Proxima Island, Sewer
+52:gr1|Grid 52: Principal Island, house at Peg Leg Street
+53:gr1|Grid 53: Proxima Island, Grobo house
+54:gr1|Grid 54: Proxima Island, Inventors house
+55:gr1|Grid 55: Citadel Island, Sewer (secret)
+56:gr1|Grid 56: Principal Island, Sewer (secret)
+57:gr1|Grid 57: White Leaf Desert, Maze
+58:gr1|Grid 58: Principal Island, House with the TV
+59:gr1|Grid 59: Rebelion Island, Harbor
+60:gr1|Grid 60: Rebelion Island, Rebel camp
+61:gr1|Grid 61: Some room (cut-out)
+62:gr1|Grid 62: Hamalayi Mountains, 1st fighting scene
+63:gr1|Grid 63: Hamalayi Mountains, 2nd fighting scene
+64:gr1|Grid 64: Hamalayi Mountains, Prison
+65:gr1|Grid 65: Hamalayi Mountains, outside the transporter
+66:gr1|Grid 66: Hamalayi Mountains, inside the transporter
+67:gr1|Grid 67: Hamalayi Mountains, Mutation centre 1st scene
+68:gr1|Grid 68: Hamalayi Mountains, Mutation centre 2nd scene
+69:gr1|Grid 69: Hamalayi Mountains, 3rd fighting scene
+70:gr1|Grid 70: Hamalayi Mountains, Entrance to the prison
+71:gr1|Grid 71: Hamalayi Mountains, outside the prison
+72:gr1|Grid 72: Hamalayi Mountains, Catamaran dock
+73:gr1|Grid 73: Hamalayi Mountains, Bunker near clear water
+74:gr1|Grid 74: Tippet Island, Village
+75:gr1|Grid 75: Tippet Island, Secret passage scene 2
+76:gr1|Grid 76: Tippet Island, near the bar
+77:gr1|Grid 77: Tippet Island, Secret passage scene 1
+78:gr1|Grid 78: Tippet Island, near the Dino-Fly
+79:gr1|Grid 79: Tippet Island, Secret passage scene 3
+80:gr1|Grid 80: Tippet Island, Twinsun Cafe
+81:gr1|Grid 81: Hamalayi Mountains, Sacret Carrot
+82:gr1|Grid 82: Hamalayi Mountains, Backdoor of the prison
+83:gr1|Grid 83: Fortress Island, inside the fortress
+84:gr1|Grid 84: Fortress Island, outside the forstress
+85:gr1|Grid 85: Fortress Island, Secret passage scene 1
+86:gr1|Grid 86: Fortress Island, Secret in the fortress
+87:gr1|Grid 87: Fortress Island, near Zoe's cell
+88:gr1|Grid 88: Fortress Island, Swimming pool
+89:gr1|Grid 89: Fortress Island, Cloning center
+90:gr1|Grid 90: Fortress Island, Rune stone
+91:gr1|Grid 91: Hamalayi Mountains, Behind the sacret carrot
+92:gr1|Grid 92: Hamalayi Mountains, Clear water lake
+93:gr1|Grid 93: Fortress Island, outside fortress destroyed
+94:gr1|Grid 94: Brundle Island, outside the teleportation
+95:gr1|Grid 95: Brundle Island, inside the teleportation
+96:gr1|Grid 96: Hamalayi Mountains, Ski resort
+97:gr1|Grid 97: Brundle Island, Docks
+98:gr1|Grid 98: Brundle Island, Secret room
+99:gr1|Grid 99: Brundle Island, near the telepods
+100:gr1|Grid 100: Fortress Island, Docks
+101:gr1|Grid 101: Tippet Island, Shop
+102:gr1|Grid 102: Principal Island, house in port Belooga
+103:gr1|Grid 103: Brundle Island, Painters house
+104:gr1|Grid 104: Citadel Island, Ticket Office
+105:gr1|Grid 105: Principal Island, inside the fortress
+106:gr1|Grid 106: Polar Island, 2nd scene
+107:gr1|Grid 107: Polar Island, 3rd scene
+108:gr1|Grid 108: Polar Island, Before the rocky peak
+109:gr1|Grid 109: Polar Island, 4th scene
+110:gr1|Grid 110: Polar Island, The rocky peak
+111:gr1|Grid 111: Polar Island, on the rocky peak
+112:gr1|Grid 112: Polar Island, Before the end room
+113:gr1|Grid 113: Polar Island, Final Battle
+114:gr1|Grid 114: Polar Island, end scene
+115:gr1|Grid 115: Polar Island, 1st scene
+116:gr1|Grid 116: Citadel Island, end sequence (1)
+117:gr1|Grid 117: Citadel Island, end sequence (2)
+118:gr1|Grid 118: Citadel Island, Twinsen's house destroyed
+119:gr1|Grid 119: Credits List background (invisible)
+120:gr1|Fragment 0: Fragment 1 for 'Citadel Island Prison'
+121:gr1|Fragment 1: Fragment piece 2 for 'Citadel Island Prison'
+122:gr1|Fragment 2: Fragment piece 3 for 'Citadel Island Prison'
+123:gr1|Fragment 3: Fragment piece 4 for 'Citadel Island Prison'
+124:gr1|Fragment 4: Fragment piece for 'Inside Twinsen's house'
+125:gr1|Fragment 5: Fragment piece for 'Principal Island Library'
+126:gr1|Fragment 6: Fragment piece for 'Princ. Isl. Inside Water Tower'
+127:gr1|Fragment 7: Fragment piece for 'Citadel Isl. Secret Chamber'
+128:gr1|Fragment 8: Fragment piece for 'Fortress Island Swimming Pool'
+129:gr1|Fragment 9: Fragment piece for 'Fort. Isl. near Zoe's cell'
+130:gr1|Fragment 10: Fragment piece for 'Hamal. Mount. Clear Water Lake'
+131:gr1|Fragment 11: Fragment piece for 'Brundle Isl. near the telepods'
+132:gr1|Fragment 12: Fragment piece for 'Brundle Isl. in. Teleportation'
+133:gr1|Fragment 13: Fragment piece for 'Desert outside Temple of Bú'

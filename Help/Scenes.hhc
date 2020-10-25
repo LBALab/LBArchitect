@@ -1,0 +1,575 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="LBA1 Scenes help">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="html\overview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Actors">
+			<param name="Local" value="html\actors.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Actor Static Flags">
+			<param name="Local" value="html\static_flags.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Zones">
+			<param name="Local" value="html\zones.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Points">
+			<param name="Local" value="html\points.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Common scripts">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Door">
+				<param name="Local" value="html\common_scripts\door.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Nitro-Mecha-Penguin">
+				<param name="Local" value="html\common_scripts\penguin.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Track Script reference">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Introduction">
+				<param name="Local" value="html\TrackScript\overview.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ANGLE">
+				<param name="Local" value="html\TrackScript\angle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ANGLE_RND">
+				<param name="Local" value="html\TrackScript\angle_rnd.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ANIM">
+				<param name="Local" value="html\TrackScript\anim.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="BACKGROUND">
+				<param name="Local" value="html\TrackScript\background.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="BETA">
+				<param name="Local" value="html\TrackScript\beta.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="BODY">
+				<param name="Local" value="html\TrackScript\body.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="CLOSE">
+				<param name="Local" value="html\TrackScript\close.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="END">
+				<param name="Local" value="html\TrackScript\end.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="FACE_HERO">
+				<param name="Local" value="html\TrackScript\face_hero.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GOTO">
+				<param name="Local" value="html\TrackScript\goto.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GOTO_POINT">
+				<param name="Local" value="html\TrackScript\goto_point.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GOTO_POINT_3D">
+				<param name="Local" value="html\TrackScript\goto_point_3d.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GOTO_SYM_POINT">
+				<param name="Local" value="html\TrackScript\goto_sym_point.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="LABEL">
+				<param name="Local" value="html\TrackScript\label.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="NO_BODY">
+				<param name="Local" value="html\TrackScript\no_body.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="OPEN_XXX">
+				<param name="Local" value="html\TrackScript\open_xxx.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="PLAY_FLA">
+				<param name="Local" value="html\TrackScript\play_fla.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="POS_POINT">
+				<param name="Local" value="html\TrackScript\pos_point.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="REPEAT_SAMPLE">
+				<param name="Local" value="html\TrackScript\repeat_sample.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SAMPLE">
+				<param name="Local" value="html\TrackScript\sample.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SAMPLE_ALWAYS">
+				<param name="Local" value="html\TrackScript\sample_always.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SAMPLE_RND">
+				<param name="Local" value="html\TrackScript\sample_rnd.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SAMPLE_STOP">
+				<param name="Local" value="html\TrackScript\sample_stop.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SIMPLE_SAMPLE">
+				<param name="Local" value="html\TrackScript\simple_sample.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SPEED">
+				<param name="Local" value="html\TrackScript\speed.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="STOP">
+				<param name="Local" value="html\TrackScript\stop.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="WAIT_ANIM">
+				<param name="Local" value="html\TrackScript\wait_anim.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="WAIT_DOOR">
+				<param name="Local" value="html\TrackScript\wait_door.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="WAIT_NUM_ANIM">
+				<param name="Local" value="html\TrackScript\wait_num_anim.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="WAIT_NUM_SECOND">
+				<param name="Local" value="html\TrackScript\wait_num_second.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Life Script reference">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Introduction">
+				<param name="Local" value="html\LifeScript\overview.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Control statements">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="COMPORTEMENT">
+					<param name="Local" value="html\LifeScript\ctrl\comportement.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ELSE">
+					<param name="Local" value="html\LifeScript\ctrl\else.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="END">
+					<param name="Local" value="html\LifeScript\ctrl\end.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="END_COMPORTEMENT">
+					<param name="Local" value="html\LifeScript\ctrl\end_comportement.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="END_LIFE">
+					<param name="Local" value="html\LifeScript\ctrl\end_life.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ENDIF">
+					<param name="Local" value="html\LifeScript\ctrl\endif.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="IF">
+					<param name="Local" value="html\LifeScript\ctrl\if.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ONEIF">
+					<param name="Local" value="html\LifeScript\ctrl\oneif.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="OR_IF">
+					<param name="Local" value="html\LifeScript\ctrl\or_if.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="RETURN">
+					<param name="Local" value="html\LifeScript\ctrl\return.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_COMPORTEMENT(_OBJ)">
+					<param name="Local" value="html\LifeScript\ctrl\set_comportement.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SWIF">
+					<param name="Local" value="html\LifeScript\ctrl\swif.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Commands">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ADD_CHOICE">
+					<param name="Local" value="html\LifeScript\cmd\add_choice.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ADD_FUEL">
+					<param name="Local" value="html\LifeScript\cmd\add_fuel.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ANIM(_OBJ/SET)">
+					<param name="Local" value="html\LifeScript\cmd\anim.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ASK_CHOICE(_OBJ)">
+					<param name="Local" value="html\LifeScript\cmd\ask_choice.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="BALLOON_ON/OFF">
+					<param name="Local" value="html\LifeScript\cmd\balloon_on.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="BETA">
+					<param name="Local" value="html\LifeScript\cmd\beta.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="BIG_MESSAGE">
+					<param name="Local" value="html\LifeScript\cmd\big_message.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="BODY(_OBJ)">
+					<param name="Local" value="html\LifeScript\cmd\body.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="BRICK_COL">
+					<param name="Local" value="html\LifeScript\cmd\brick_col.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="BRUTAL_EXIT">
+					<param name="Local" value="html\LifeScript\cmd\brutal_exit.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CAM_FOLLOW">
+					<param name="Local" value="html\LifeScript\cmd\cam_follow.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CAN_FALL">
+					<param name="Local" value="html\LifeScript\cmd\can_fall.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CHANGE_CUBE">
+					<param name="Local" value="html\LifeScript\cmd\change_cube.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CLEAR_TEXT">
+					<param name="Local" value="html\LifeScript\cmd\clear_text.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CLR_HOLO_POS">
+					<param name="Local" value="html\LifeScript\cmd\clr_holo_pos.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="EXPLODE_OBJ">
+					<param name="Local" value="html\LifeScript\cmd\explode_obj.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="FADE_XX_XX">
+					<param name="Local" value="html\LifeScript\cmd\fade_xx.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="FOUND_OBJECT">
+					<param name="Local" value="html\LifeScript\cmd\found_object.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="FULL_POINT">
+					<param name="Local" value="html\LifeScript\cmd\full_point.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GAME_OVER">
+					<param name="Local" value="html\LifeScript\cmd\game_over.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GIVE_BONUS">
+					<param name="Local" value="html\LifeScript\cmd\give_bonus.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GIVE_GOLD_PIECES">
+					<param name="Local" value="html\LifeScript\cmd\give_gold_pieces.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="GRM_OFF">
+					<param name="Local" value="html\LifeScript\cmd\grm_off.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="HIT_OBJ">
+					<param name="Local" value="html\LifeScript\cmd\hit_obj.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="HOLOMAP_TRAJ">
+					<param name="Local" value="html\LifeScript\cmd\holomap_traj.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="INC_CHAPTER">
+					<param name="Local" value="html\LifeScript\cmd\inc_chapter.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="INC_CLOVER_BOX">
+					<param name="Local" value="html\LifeScript\cmd\inc_clover_box.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="INIT_PINGOUIN">
+					<param name="Local" value="html\LifeScript\cmd\init_pingouin.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="INVISIBLE">
+					<param name="Local" value="html\LifeScript\cmd\invisible.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="KILL_OBJ">
+					<param name="Local" value="html\LifeScript\cmd\kill_obj.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="MESSAGE(_OBJ)">
+					<param name="Local" value="html\LifeScript\cmd\message.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="MESSAGE_SENDELL">
+					<param name="Local" value="html\LifeScript\cmd\message_sendell.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="MIDI_OFF">
+					<param name="Local" value="html\LifeScript\cmd\midi_off.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="OBJ_COL">
+					<param name="Local" value="html\LifeScript\cmd\obj_col.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="PLAY_CD_TRACK">
+					<param name="Local" value="html\LifeScript\cmd\play_cd_track.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="PLAY_FLA">
+					<param name="Local" value="html\LifeScript\cmd\play_fla.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="PLAY_MIDI">
+					<param name="Local" value="html\LifeScript\cmd\play_midi.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="POS_POINT">
+					<param name="Local" value="html\LifeScript\cmd\pos_point.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="PROJ_3D/ISO">
+					<param name="Local" value="html\LifeScript\cmd\proj_3d.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="RESTORE_LAST_TRACK">
+					<param name="Local" value="html\LifeScript\cmd\restore_last_track.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SAY_MESSAGE(_OBJ)">
+					<param name="Local" value="html\LifeScript\cmd\say_message.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_BEHAVIOUR">
+					<param name="Local" value="html\LifeScript\cmd\set_behaviour.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_DIRMODE(_OBJ)">
+					<param name="Local" value="html\LifeScript\cmd\set_dirmode.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_DOOR_XX">
+					<param name="Local" value="html\LifeScript\cmd\set_door_xx.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_FLAG_CUBE/GAME">
+					<param name="Local" value="html\LifeScript\cmd\set_flag_xx.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_GRM">
+					<param name="Local" value="html\LifeScript\cmd\set_grm.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_HOLO_POS">
+					<param name="Local" value="html\LifeScript\cmd\set_holo_pos.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_LIFE_POINT_OBJ">
+					<param name="Local" value="html\LifeScript\cmd\set_life_point_obj.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_MAGIC_LEVEL">
+					<param name="Local" value="html\LifeScript\cmd\set_magic_level.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_TRACK(_OBJ)">
+					<param name="Local" value="html\LifeScript\cmd\set_track.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_USED_INVENTORY">
+					<param name="Local" value="html\LifeScript\cmd\set_used_inventory.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SET_XX_PAL">
+					<param name="Local" value="html\LifeScript\cmd\set_xx_pal.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="STOP_CURRENT_TRACK">
+					<param name="Local" value="html\LifeScript\cmd\stop_current_track.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SUB_FUEL">
+					<param name="Local" value="html\LifeScript\cmd\sub_fuel.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SUB_LIFE_POINT_OBJ">
+					<param name="Local" value="html\LifeScript\cmd\sub_life_point_obj.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SUB_MAGIC_POINT">
+					<param name="Local" value="html\LifeScript\cmd\sub_magic_point.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="SUICIDE">
+					<param name="Local" value="html\LifeScript\cmd\suicide.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="TEXT">
+					<param name="Local" value="html\LifeScript\cmd\text.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="THE_END">
+					<param name="Local" value="html\LifeScript\cmd\the_end.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="USE_ONE_LITTLE_KEY">
+					<param name="Local" value="html\LifeScript\cmd\use_one_little_key.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ZOOM">
+					<param name="Local" value="html\LifeScript\cmd\zoom.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Variables">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ACTION">
+					<param name="Local" value="html\LifeScript\var\action.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ANIM(_OBJ)">
+					<param name="Local" value="html\LifeScript\var\anim.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="BEHAVIOUR">
+					<param name="Local" value="html\LifeScript\var\behaviour.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="BODY(_OBJ)">
+					<param name="Local" value="html\LifeScript\var\body.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CARRIED_BY">
+					<param name="Local" value="html\LifeScript\var\carried_by.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CDROM">
+					<param name="Local" value="html\LifeScript\var\cdrom.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CHAPTER">
+					<param name="Local" value="html\LifeScript\var\chapter.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CHOICE">
+					<param name="Local" value="html\LifeScript\var\choice.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="COL(_OBJ)">
+					<param name="Local" value="html\LifeScript\var\col.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CONE_VIEW">
+					<param name="Local" value="html\LifeScript\var\cone_view.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="CURRENT_TRACK(_OBJ)">
+					<param name="Local" value="html\LifeScript\var\current_track.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="DISTANCE(_3D)">
+					<param name="Local" value="html\LifeScript\var\distance.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="FLAG_CUBE/GAME">
+					<param name="Local" value="html\LifeScript\var\flag_xx.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="FUEL">
+					<param name="Local" value="html\LifeScript\var\fuel.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="HIT_BY">
+					<param name="Local" value="html\LifeScript\var\hit_by.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="LIFE_POINT(_OBJ)">
+					<param name="Local" value="html\LifeScript\var\life_point.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="NUM_GOLD_PIECES">
+					<param name="Local" value="html\LifeScript\var\num_gold_pieces.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="NUM_LITTLE_KEYS">
+					<param name="Local" value="html\LifeScript\var\num_little_keys.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="USE_INVENTORY">
+					<param name="Local" value="html\LifeScript\var\use_inventory.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="ZONE(_OBJ)">
+					<param name="Local" value="html\LifeScript\var\zone.htm">
+					</OBJECT>
+			</UL>
+		</UL>
+	</UL>
+</UL>
+</BODY></HTML>

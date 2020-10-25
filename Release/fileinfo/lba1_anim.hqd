@@ -1,0 +1,526 @@
+This file contains animations for LBA 1 3D models
+516
+
+
+
+*anim*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:an1|Twinsen standing (normal mode)
+1:an1|Twinsen walking (normal mode)
+2:an1|Twinsen walking backwards (normal mode)
+3:an1|Twinsen turning right (normal mode)
+4:an1|Twinsen turning left (normal mode)
+5:an1|Twinsen jumping
+6:an1|winsen standing (aggressive mode)
+7:an1|Twinsen fighting
+8:an1|Twinsen running
+9:an1|Twinsen falling
+10:an1|Twinsen throwing magic ball
+11:an1|Twinsen getting hit 1
+12:an1|Twinsen getting hit 2
+13:an1|Twinsen getting hit 3
+14:an1|Twinsen landing (short fall)
+15:an1|Twinsen landing (long fall)
+16:an1|Twinsen wowing
+17:an1|Twinsen getting down
+18:an1|Twinsen leaning from half standing, and crawling
+19:an1|Twinsen dying, game over
+20:an1|Twinsen operating something 1
+21:an1|Twinsen climbing up ladder
+22:an1|Twinsen operating something 2
+23:an1|Twinsen jumping in place
+24:an1|Twinsen leaning from standing, and crawling
+25:an1|Twinsen finishing climbing up ladder
+26:an1|Twinsen starting climbing up ladder
+27:an1|Twinsen operating something 3
+28:an1|Twinsen blows horn
+29:an1|Twinsen drowning
+30:an1|Twinsen waving
+31:an1|Twinsen dead
+32:an1|Twinsen turning right (athletic mode)
+33:an1|Twinsen jumping backwards
+34:an1|Twinsen drawing sword
+35:an1|Twinsen fighting with sword (normal mode)
+36:an1|Twinsen crawling
+37:an1|Twinsen spilling flask
+38:an1|Twinsen standing (athletic mode)
+39:an1|Twinsen walking backwards (normal mode)
+40:an1|Twinsen turning left (athletic mode)
+41:an1|Twinsen dying
+42:an1|Twinsen dead
+43:an1|Twinsen fighting with sword (athletic mode)
+44:an1|Twinsen standing (aggressive mode)
+45:an1|Twinsen walking (aggressive mode)
+46:an1|Twinsen walking backwards (aggressive mode)
+47:an1|Twinsen turning left (aggressive mode)
+48:an1|Twinsen turning right (aggressive mode)
+49:an1|Twinsen kicking
+50:an1|Twinsen butting
+51:an1|Twinsen punching
+52:an1|Twinsen fighting with sword (agressive mode)
+53:an1|Twinsen standing (discreet mode)
+54:an1|Twinsen walking (discreet mode)
+55:an1|Twinsen walking backwards (discreet mode)
+56:an1|Twinsen turning left (discreet mode)
+57:an1|Twinsen turning right (discreet mode)
+58:an1|Twinsen hiding
+59:an1|Twinsen fighting with sword (discreet mode)
+60:an1|Twinsen standing (with Proto-Pack)
+61:an1|Twinsen hovering forwards (with Proto-Pack)
+62:an1|Twinsen turning left (with Proto-Pack)
+63:an1|Twinsen turning right (with Proto-Pack)
+64:an1|Twinsen moving left (with Proto-Pack)
+65:an1|Twinsen moving right (with Proto-Pack)
+66:an1|Twinsen getting hit (with Proto-Pack)
+67:an1|Twinsen falling (with Proto-Pack)
+68:an1|Twinsen landing (short fall) (with Proto-Pack)
+69:an1|Twinsen landing (long fall) (with Proto-Pack)
+70:an1|Twinsen drowning (with Proto-Pack)
+71:an1|Nurse writing
+72:an1|Nurse (weak) getting hit
+73:an1|Nurse (strong) getting hit
+74:an1|Nurse walking
+75:an1|Nurse rebuking, then walking
+76:an1|Nurse pulling out gun
+77:an1|Nurse shooting
+78:an1|Nurse with club standing
+79:an1|Nurse with club running to alarm button
+80:an1|Nurse with club in "move along" movement
+81:an1|Nurse with club alerted
+82:an1|Nurse with club pulling out club
+83:an1|Nurse with club getting hit 1
+84:an1|Nurse with club getting hit 2
+85:an1|Nurse with club getting hit 3
+86:an1|Nurse with club fighting with club
+87:an1|Nurse with club walking
+88:an1|Nurse with club pressing alarm button
+89:an1|Nurse with club falling 1
+90:an1|urse with club falling 2
+91:an1|urse with club stamping
+92:an1|upergro walking
+93:an1|upergro standing
+94:an1|upergro shooting
+95:an1|upergro frozen
+96:an1|upergro getting hit and moving backwards
+97:an1|upergro roaring
+98:an1|upergro falling
+99:an1|Supergro getting hit and moving forwards
+100:an1|Nurse clothing (frozen)
+101:an1|Meca Penguin frozen
+102:an1|Meca Penguin moving and ticking
+103:an1|Dump truck starting
+104:an1|Dump truck driving forwars
+105:an1|Dump truck driving backwards
+106:an1|Dump truck unloading
+107:an1|Dump truck stopping
+108:an1|Grobo standing
+109:an1|Grobo walking
+110:an1|Grobo reading
+111:an1|Grobo getting hit (frozen)
+112:an1|Grobo getting hit (animated)
+113:an1|Grobo fighting
+114:an1|Grobo sitting down
+115:an1|Grobo standing up
+116:an1|Grobo sitting
+117:an1|Grobo swinging
+118:an1|Sitting grobo getting hit
+119:an1|Grobo falling
+120:an1|Soldier standing
+121:an1|Soldier walking
+122:an1|Soldier shooting
+123:an1|Soldier alerted 1
+124:an1|Soldier alerted 2
+125:an1|Soldier saluting
+126:an1|Soldier returns gun
+127:an1|Soldier getting hit
+128:an1|Soldier running
+129:an1|Soldier hitting with gun
+130:an1|Soldier sleeping
+131:an1|Soldier waking up
+132:an1|Scared soldier running
+133:an1|Rabbibunny standing
+134:an1|Rabbibunny walking
+135:an1|Rabbibunny running 1
+136:an1|Rabbibunny saluting
+137:an1|Rabbibunny digging
+138:an1|Rabbibunny hopping
+139:an1|Rabbibunny waiting
+140:an1|Rabbibunny getting hit
+141:an1|Rabbibunny running 2
+142:an1|Rabbibunny waiter pouring
+143:an1|Rabbibunny drinking
+144:an1|Rabbibunny painter standing
+145:an1|Rabbibunny falling
+146:an1|Rabbibunny falling (frozen)
+147:an1|Rabbibunny getting hit (frozen)
+148:an1|Rabbibunny sitting
+149:an1|Rabbibunny fighting
+150:an1|Rabbibunny climbing up ladder
+151:an1|Rabbibunny painting
+152:an1|Rabbibunny waving 1
+153:an1|Rabbibunny waving 2
+154:an1|Rabbibunny clapping
+155:an1|Surveillance device scanning the area
+156:an1|Surveillance device moving
+157:an1|Surveillance device shooting
+158:an1|Surveillance device getting hit 1
+159:an1|Surveillance device getting hit 2
+160:an1|Business quetch standing
+161:an1|Business quetch walking
+162:an1|Business quetch getting hit
+163:an1|Business quetch waving
+164:an1|Groboclone standing 1
+165:an1|Groboclone standing 2
+166:an1|Groboclone walking
+167:an1|Groboclone pulling out club and fighting with club
+168:an1|Groboclone fighting with club
+169:an1|Groboclone running
+170:an1|Groboclone in "move along" movement
+171:an1|Groboclone frozen
+172:an1|Groboclone getting hit, moving right
+173:an1|Groboclone getting hit, moving left
+174:an1|Groboclone shooting
+175:an1|Groboclone turning left
+176:an1|Groboclone lying (frozen)
+177:an1|Groboclone falling
+178:an1|corrupted entry (?)
+179:an1|Green rabbibunny clone scanning the area
+180:an1|Green rabbibunny clone walking
+181:an1|Green rabbibunny clone getting hit 1
+182:an1|Green rabbibunny clone getting hit 2
+183:an1|Green rabbibunny clone shooting
+184:an1|Green rabbibunny clone getting hit 3
+185:an1|Turret frozen 1
+186:an1|Turret frozen 2
+187:an1|Turret frozen 3
+188:an1|Turret frozen 4
+189:an1|Turret shooting
+190:an1|Robot standing
+191:an1|Robot walking 1
+192:an1|Robot walking backwards
+193:an1|Robot jumping
+194:an1|Robot fighting
+195:an1|Robot walking 2
+196:an1|Robot jumping in place 1
+197:an1|Robot jumping in place 2
+198:an1|Robot going up and down
+199:an1|Tank driving
+200:an1|Tank stopping
+201:an1|Tank starting
+202:an1|Tank getting hit
+203:an1|Tank driving backwards
+204:an1|Tank frozen
+205:an1|Tank shooting
+206:an1|Female rabbibunny walking
+207:an1|Female rabbibunny standing
+208:an1|Female rabbibunny walking, looking both sides
+209:an1|Female rabbibunny getting hit
+210:an1|Female rabbibunny flirting
+211:an1|Female rabbibunny talking
+212:an1|Female rabbibunny angry
+213:an1|Female rabbibunny painting
+214:an1|Zoé standing
+215:an1|Zoé walking
+216:an1|Zoé getting hit 1
+217:an1|Zoé getting hit 2
+218:an1|Zoé approaching Twinsen
+219:an1|Zoé kissing
+220:an1|Zoé waving
+221:an1|Zoé operating something
+222:an1|Zoé kicking 1
+223:an1|Zoé headbutting
+224:an1|Zoé jumping backwards
+225:an1|Zoé kicking 2
+226:an1|Zoé falling
+227:an1|Zoé landing
+228:an1|Zoé jumping in place
+229:an1|Zoé turning left, walking
+230:an1|Catamaran swinging in place
+231:an1|Catamaran swimming forwards
+232:an1|Catamaran swimming backwards
+233:an1|Catamaran swimming right
+234:an1|Catamaran swimming left
+235:an1|Ferryboat frozen
+236:an1|Ferryboat swimming forwards
+237:an1|Ferryboat swimming backwards
+238:an1|Grobo sailor walking
+239:an1|Grobo sailor getting hit
+240:an1|Grobo sailor standing
+241:an1|Rabbibunny sailor saluting
+242:an1|Boat swimming forwards
+243:an1|Boat swinging in place
+244:an1|Skeleton sleeping (frozen)
+245:an1|Skeleton waking up
+246:an1|Skeleton standing
+247:an1|Skeleton walking angrily
+248:an1|Skeleton fighting with knife
+249:an1|Skeleton kicking
+250:an1|Skeleton getting hit 1
+251:an1|Skeleton getting hit 2
+252:an1|Skeleton getting hit 3
+253:an1|Skeleton getting hit 4
+254:an1|Skeleton walking
+255:an1|Skeleton falling
+256:an1|Skeleton bowing down
+257:an1|Spikes frozen
+258:an1|Spikes moving forwards
+259:an1|Spikes moving backwards
+260:an1|Spikes cylinder frozen
+261:an1|Spikes cylinder rolling in place
+262:an1|Spikes cylinder rolling forwards
+263:an1|Electro-plant frozen
+264:an1|Electro-plant expanding
+265:an1|Rebel boat swinging in place
+266:an1|Rebel boat swimming forwards
+267:an1|Rebel boat opening
+268:an1|Rebel boat swimming backwards
+269:an1|Soldier with machine gun observing
+270:an1|Soldier with machine gun getting hit 1
+271:an1|Soldier with machine gun getting hit 2
+272:an1|Soldier with machine gun shooting
+273:an1|Radar working
+274:an1|Rabbinuby rebel standing
+275:an1|Rabbinuby rebel crouched
+276:an1|Rabbinuby rebel walking
+277:an1|Rabbinuby rebel standing up and shooting
+278:an1|Rabbinuby rebel crouched shooting
+279:an1|Rabbinuby rebel jumping
+280:an1|Rabbinuby rebel moving on
+281:an1|Rabbinuby rebel getting hit
+282:an1|Rabbinuby rebel throwing grenade
+283:an1|Sphero rebel standing
+284:an1|Sphero rebel walking
+285:an1|Sphero rebel getting hit 1
+286:an1|Sphero rebel getting hit 2
+287:an1|Sphero rebel throwing grenade
+288:an1|Sphero rebel shooting
+289:an1|Sphero standing
+290:an1|Sphero walking
+291:an1|Sphero hopping
+292:an1|Sphero jumping backwards
+293:an1|Sphero jumping in place
+294:an1|Sphero getting hit 1
+295:an1|Sphero getting hit 2
+296:an1|Sphero waving
+297:an1|Rabbibunny clone with computer walking
+298:an1|Rabbibunny clone with computer scanning the area
+299:an1|Rabbibunny clone with computer getting hit 1
+300:an1|Rabbibunny clone with computer getting hit 2
+301:an1|Rabbibunny clone with computer getting hit (frozen)
+302:an1|Rabbibunny clone with coputer shooting
+303:an1|Car starting
+304:an1|Car driving
+305:an1|Car driving backwards
+306:an1|Car stopping
+307:an1|Car frozen
+308:an1|Praying mantis standing
+309:an1|Praying mantis walking
+310:an1|Praying mantis getting hit 1
+311:an1|Praying mantis getting hit 2
+312:an1|Praying mantis getting hit 3
+313:an1|Praying mantis fighting 1
+314:an1|Praying mantis fighting 2
+315:an1|Sphero clone standing
+316:an1|Sphero clone walking
+317:an1|Sphero clone getting hit 1
+318:an1|Sphero clone getting hit 2
+319:an1|Sphero clone getting hit 3
+320:an1|Sphero clone shooting
+321:an1|ID card (frozen)
+322:an1|Object spinning
+323:an1|Rabbiubnny fisher fishing 1
+324:an1|Rabbibunny fisher fishing 2
+325:an1|Rabbibunny fisher fishing 3
+326:an1|Rabbibunny fisher standing up
+327:an1|Rabbibunny fisher walking
+328:an1|Motorcycle starting
+329:an1|Motorcycle driving
+330:an1|Motorcycle driving backwards
+331:an1|Horse standing
+332:an1|Horse walking
+333:an1|Horse neighing
+334:an1|Horse standing wildly
+335:an1|Horse moving right
+336:an1|Horse moving left
+337:an1|Horse running
+338:an1|Horse running and jumping
+339:an1|Horse walking fast
+340:an1|Horse jumping
+341:an1|Horse running wildly
+342:an1|Horse jumping in place
+343:an1|Rabbibunny sitting
+344:an1|Rabbibunny sitting playing guitar 1
+345:an1|Rabbibunny talking
+346:an1|Rabbibunny sitting playing guitar 2
+347:an1|Rabbibunny playing guitar wildly 1
+348:an1|Rabbibunny standing up
+349:an1|Rabbibunny sitting playing guitar 3
+350:an1|Rabbibunny playing flute
+351:an1|Elf standing
+352:an1|Elf walking
+353:an1|Elf getting hit
+354:an1|Bird standing
+355:an1|Bird flying down and forwards
+356:an1|Bird flying up and forwards
+357:an1|Eye creature hopping in place
+358:an1|Eye creature hopping forwards
+359:an1|Eye creature hopping left and right
+360:an1|Eye creature hopping in circles
+361:an1|Eye creature hopping backwards
+362:an1|Eye creature hop-rolling forwards
+363:an1|Rock frozen
+364:an1|Rock rolling forwards 1
+365:an1|Rock rolling forwards 2
+366:an1|Rock rolling in place
+367:an1|Rock getting thrown
+368:an1|Book of Bu` spinning
+369:an1|Red rabbibunny clone spinning head
+370:an1|Red rabbibunny clone walking 1
+371:an1|Red rabbibunny clone getting hit and moving right
+372:an1|Red rabbibunny clone getting hit and moving left
+373:an1|Red rabbibunny clone with power off (frozen)
+374:an1|Red rabbibunny clone walking 2
+375:an1|Red rabbibunny clone shooting at Meca Penguin
+376:an1|Red rabbibunny clone getting hit and moving backwards
+377:an1|Red rabbibunny clone shooting
+378:an1|Pirate flag (frozen)
+379:an1|Snake lying
+380:an1|Snake rising head and stinging
+381:an1|Snake stinging
+382:an1|Snake getting hit 1
+383:an1|Snake getting hit 2
+384:an1|Snake crawling forwards 1
+385:an1|Snake crawling forwards 2
+386:an1|Snake getting hit 3
+387:an1|Snake getting hit 4
+388:an1|Proto-Pack (frozen)
+389:an1|Proto-Pack driving forwards
+390:an1|Big machine gun (frozen)
+391:an1|Big machine gun shooting
+392:an1|Giant crab standing
+393:an1|Giant crab turning left and walking right
+394:an1|Giant crab fighting
+395:an1|Giant crab getting hit and moving backwards
+396:an1|Giant crab getting hit and moving forwards
+397:an1|Giant crab frozen
+398:an1|Hydroglider swinging in place
+399:an1|Hydroglider driving
+400:an1|Groovy rabbibunny standing
+401:an1|Groovy rabbibunny stamping
+402:an1|Groovy rabbibunny walking
+403:an1|Groovy grobo standing
+404:an1|Groovy grobo walking
+405:an1|Groovy grobo getting hit and moving backwards
+406:an1|Groovy grobo running
+407:an1|Goo creature standing 1
+408:an1|Goo creature moving forwards
+409:an1|Goo creature standing 2
+410:an1|Goo creature standing bubbling 1
+411:an1|Goo creature standing bubbling 2
+412:an1|Goo creature fighting
+413:an1|Goo creature moving forwards fast
+414:an1|Dinofly standing
+415:an1|Dinofly starting to fly
+416:an1|Dinofly jumping backwards
+417:an1|Dinofly flying
+418:an1|Rabbibunny playing guitar wildly 2
+419:an1|Guitarist rabbibunny walking
+420:an1|Low-poly Sphero with drums (frozen)
+421:an1|Low-poly Sphero with drums playing
+422:an1|Twinsen clone lying
+423:an1|Twinsen clone standing
+424:an1|Twinsen clone waking up
+425:an1|Huge orange creature standing
+426:an1|Huge orange creature sniffing
+427:an1|Huge orange creature jumping in place
+428:an1|Huge orange creature bumping forwards
+429:an1|Huge orange creature falling
+430:an1|Huge orange creature rolling forwards
+431:an1|Huge orange creature hopping forwards
+432:an1|Huge orange creature getting hit and moving backwards
+433:an1|Huge orange creature frozen
+434:an1|FunFrock standing
+435:an1|FunFrock walking
+436:an1|FunFrock running
+437:an1|FunFrock fighting with sword
+438:an1|FunFrock jumping 1
+439:an1|FunFrock walking right
+440:an1|FunFrock walking left
+441:an1|FunFrock getting hit 1
+442:an1|FunFrock getting hit 2
+443:an1|FunFrock landing
+444:an1|FunFrock jumping 2
+445:an1|FunFrock falling
+446:an1|FunFrock going up and down
+447:an1|FunFrock talking
+448:an1|FunFrock throwing ball
+449:an1|Flying grobo flying in place
+450:an1|Flying grobo flying forwards
+451:an1|Flying grobo flying forwards, shooting
+452:an1|Flying grobo getting hit, moving backwards
+453:an1|Flying grobo getting hit, moving forwards
+454:an1|Fake shark frozen
+455:an1|Fake shark moving forwards
+456:an1|Fake shark moving forwards going up and down
+457:an1|Snowboard (frozen)
+458:an1|Flag waving
+459:an1|Twinsen with snowboard standing
+460:an1|Twinsen with snowboard skiing 1
+461:an1|Twinsen with snowboard skiing 2
+462:an1|Twinsen with snowboard skiing 3
+463:an1|Twinsen with snowboard skiing 4
+464:an1|Twinsen with snowboard skiing 5
+465:an1|Twinsen with snowboard skiing 6
+466:an1|Twinsen with snowboard skiing 7
+467:an1|Twinsen with snowboard skiing 8
+468:an1|Computer working
+469:an1|Computer getting hit
+470:an1|Construction truck driving forwards
+471:an1|Construction truck starting 1
+472:an1|Construction truck driving backwards
+473:an1|Construction truck starting 2
+474:an1|Construction worker 1 standing
+475:an1|Construction worker 1 walking
+476:an1|Construction worker 1 digging
+477:an1|Construction worker 1 alerted
+478:an1|Construction worker 1 fighting 1
+479:an1|Construction worker 1 fighting 2
+480:an1|Construction worker 1 moving left
+481:an1|Construction worker 1 moving right
+482:an1|Construction worker 1 getting hit 1
+483:an1|Construction worker 1 getting hit 2
+484:an1|Construction worker 1 walking angrily
+485:an1|Construction worker 2 standing 1
+486:an1|Construction worker 2 fighting 1
+487:an1|Construction worker 2 walking
+488:an1|Construction worker 2 standing 2
+489:an1|Construction worker 2 fighting 2
+490:an1|Construction worker 2 getting hit 1
+491:an1|Construction worker 2 getting hit 2
+492:an1|Construction worker 2 moving right
+493:an1|Construction worker 2 moving left
+494:an1|Construction worker 2 walking angrily
+495:an1|Construction worker 2 falling
+496:an1|Construction worker 2 landing
+497:an1|Construction worker 2 alerted
+498:an1|Construction worker 3 standing
+499:an1|Construction worker 3 digging
+500:an1|Construction worker 3 pulling out gun and shooting
+501:an1|Construction worker 3 shooting
+502:an1|Construction worker 3 getting hit
+503:an1|Construction worker 3 alerted
+504:an1|Construction worker 3 falling
+505:an1|Construction worker 3 landing
+506:an1|Tractor starting
+507:an1|Tractor driving forwards
+508:an1|Tractor fighting 1
+509:an1|Tractor fighting 2
+510:an1|Tractor working
+511:an1|Tractor driving backwards
+512:an1|Tractor frozen
+513:an1|Tractor jumping in place
+514:an1|Groovy sphero standing
+515:an1|Groovy sphero walking

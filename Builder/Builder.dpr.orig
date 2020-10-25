@@ -1,0 +1,167 @@
+//******************************************************************************
+// Little Big Architect: Builder - editing grid files containing rooms
+//                                 in Little Big Adventure 1 & 2
+//
+// This is the main program file.
+//
+// Copyright Zink
+// e-mail: zink@poczta.onet.pl
+//
+// This source code is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This source code is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License (License.txt) for more details.
+//******************************************************************************
+
+//Conditional compilation constants:
+// NO_BUFFER - Disables double buffering when drawing Grid (drawing will
+//   be performed directly on pbGrid's canvas). For debugging only.
+
+// Note: define the constants in Project -> Options -> Directories/Confitionals
+// If defined in the code using the {$define ...} directive, because they
+//   are visible in one unit only.
+// Don't forget to rebuild all after changing one of the defines.
+
+program Builder;
+
+uses
+  SysUtils,
+  StrUtils,
+  Windows,
+  Forms,
+  Main in 'Main.pas' {fmMain},
+  ProgBar in '..\Libs\ProgBar.pas' {ProgBarForm},
+  Sett in 'Sett.pas' {SetForm},
+  Open in 'Open.pas' {fmOpen},
+  BEngine in 'BEngine.pas',
+  Engine in '..\Libs\Engine.pas',
+  Hints in 'Hints.pas',
+  OpenSim in 'OpenSim.pas' {fmOpenSim},
+  Clipping in 'Clipping.pas' {frClip: TFrame},
+  ListDialog in 'ListDialog.pas' {fmListForm},
+  Scene in 'Scene.pas',
+  CompMods in '..\..\Libs\CompMods.pas',
+  Grids in '..\Libs\Grids.pas',
+  CompDialog in 'CompDialog.pas' {CompForm},
+  Libraries in '..\Libs\Libraries.pas',
+  DePack in '..\Libs\DePack.pas',
+  About in 'About.pas' {fmAbout},
+  Bricks in 'Bricks.pas',
+  ScenarioProp in '..\Libs\ScenarioProp.pas' {fmScenarioProp},
+  Scenario in 'Scenario.pas' {Form2},
+  OpScenGrid in 'OpScenGrid.pas' {fmOpScenGrid},
+  HQDesc in '..\Libs\HQDesc.pas',
+  ListForm in '..\Libs\ListForm.pas' {fmList},
+  ManSel in 'ManSel.pas' {fmManSel},
+  scLifeScript1HL in 'SceneLib\scLifeScript1HL.pas',
+  scTrackScript1HL in 'SceneLib\scTrackScript1HL.pas',
+  scScriptEd in 'SceneLib\scScriptEd.pas' {fmScScriptEd},
+  SceneLib in 'SceneLib\SceneLib.pas',
+  SceneObj in 'SceneObj.pas' {frSceneObj: TFrame},
+  SpinMod in '..\Libs\SpinMod.pas',
+  ImgExport in 'ImgExport.pas',
+  ActorInfo in 'ActorInfo.pas',
+  ComboMod in '..\Libs\ComboMod.pas',
+  SceneProp in 'SceneProp.pas' {fmSceneProp},
+  ExitSave in 'ExitSave.pas' {fmExitSave},
+  ScenarioDlg in 'ScenarioDlg.pas',
+  SceneUndo in 'SceneUndo.pas',
+  Utils in '..\Libs\Utils.pas',
+  Globals in 'Globals.pas';
+
+{$R *.res}
+//{$R napisy.res}
+{$R Images.res}
+{$R cursor.res}
+
+var a, b: Integer;
+    ErrorText: String;
+
+begin
+  Application.Initialize;
+  Application.OnException:= fmMain.AppException;
+  Application.OnHint:= fmMain.AppShowHint;
+  Application.Title:= 'Little Grid Builder';
+  Application.HintPause:= 0;
+  Application.CreateForm(TfmMain, fmMain);
+  Application.CreateForm(TProgBarForm, ProgBarForm);
+  Application.CreateForm(TSetForm, SetForm);
+  Application.CreateForm(TfmOpen, fmOpen);
+  Application.CreateForm(TfmOpenSim, fmOpenSim);
+  Application.CreateForm(TfmListForm, fmListForm);
+  Application.CreateForm(TfmAbout, fmAbout);
+  Application.CreateForm(TfmScenarioProp, fmScenarioProp);
+  Application.CreateForm(TfmScenario, fmScenario);
+  Application.CreateForm(TfmOpScenGrid, fmOpScenGrid);
+  Application.CreateForm(TfmList, fmList);
+  Application.CreateForm(TfmManSel, fmManSel);
+  Application.CreateForm(TfmScScriptEd, fmScScriptEd);
+  Application.CreateForm(TfmSceneProp, fmSceneProp);
+  Application.CreateForm(TfmExitSave, fmExitSave);
+  //Application.CreateForm(TCompForm, CompForm);
+
+  LoadSettings();
+
+  LoadGriToBllTables();
+
+  fmOpen.rb21Click(fmOpen);
+  fmOpen.rb11Click(fmOpen);
+  fmOpen.rb41Click(fmOpen);
+  If fmOpen.rb11.Checked or fmOpen.rb12.Checked then
+    fmOpen.laCombo.ItemIndex:= LastBlComboIndex;
+  If fmOpen.rb21.Checked or fmOpen.rb22.Checked then
+    fmOpen.grCombo.ItemIndex:= LastGrComboIndex;
+  If fmOpen.rb41.Checked or fmOpen.rb42.Checked then
+    fmOpen.scCombo.ItemIndex:= LastScComboIndex;
+  fmOpenSim.rb21Click(fmOpenSim);
+  fmOpenSim.grSimCombo.ItemIndex:= LastSimIndex;
+
+  UpdateComponents();
+
+  If not FileExists(ChangeFileExt(Application.ExeName,'.ini')) and
+   (Application.MessageBox('If you want to open standard LBA rooms, you should set up paths to LBA directories in the settings window (View->Settings). Open the settings now?','LBA Builder',MB_ICONQUESTION+MB_YESNO)
+    =ID_YES) then begin
+     SetForm.PageControl1.ActivePageIndex:= 1;
+     SetForm.ShowSettings();
+    end;
+
+  If (ParamCount > 0) and AnsiContainsText(ParamStr(1),'noprog') then
+    NoProgress:= True; //disables the progress bar for easier debugging
+
+  //parameters: scenemode x y
+  // x = Lba version (1 or 2) or path to a scenario file
+  // y = room number (counted from 1) (not necessary if scenario)
+  {ErrorText:= '';
+  If ParamCount>0 then begin
+   If AnsiContainsText(ParamStr(1),'scenemode') then begin
+    If ParamCount>1 then begin
+     If TryStrToInt(ParamStr(2),a) and (a = 1) or (a = 2) then begin
+      If ParamCount>2 then begin
+       If TryStrToInt(ParamStr(3),b) and (b > 0) then
+        OpenSceneMode(a,b)
+       else ErrorText:= 'Invalid third parameter';
+      end else ErrorText:= 'Three paramters required';
+     end
+     else if FileExists(ParamStr(2)) and ExtIs(ParamStr(2),'.hqs') then begin
+      OpenSceneMode(ParamStr(2));
+     end
+     else ErrorText:= 'Invalid second parameter';
+    end else ErrorText:= 'Three parameters required';
+   end else
+    if FileExists(ParamStr(1)) and ExtIs(ParamStr(1),'.hqs') then begin
+    OpenScenario(ParamStr(1));
+    OpenFinalize;
+   end
+   else ErrorText:= 'Invalid first parameter';
+   If ErrorText<>'' then Application.MessageBox(PChar(ErrorText),'Error',MB_ICONERROR+MB_OK);
+  end;}
+
+  Application.Run;
+
+  SaveSettings;
+end.

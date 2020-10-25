@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Actor Static Flags</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1>Actor Static Flags</h1>
+
+<div class="content">
+
+<p class="Bold">Static flags set various Actor boolean properties:</p>
+
+<a name="obj_col"></a>
+<h4>Can collide with objects</h4>
+<p>This flag changes the way the Actor interacts with other Actors. If this flag is set, the Actor will behave like a real wold object, colliding with other Actors. If the flag is not set, the Actor will push other Actors if it walks into them, like they didn't exist. Also he won't be able to attack other Actors (won't give any damage). If two Actors have the flag not set, they will be able to walk through each other like ghosts.</p>
+<p>This flag can be changed at run time using the <a href="LifeScript/cmd/obj_col.htm">OBJ_COL</a> Life Script command.</p>
+
+<a name="brick_col"></a>
+<h4>Can collide with Bricks</h4>
+<p>If this flag is set, the Actor will be bound by the world physics, like gravitation (will fall if not standing on the ground), and walls will be solid to it. While this flag is not set, the Actor will be able to walk though walls, walk in the air, won't fall, and he won't be able to jump on higher ground levels.</p>
+<p>This flag can be changed at run time using the <a href="LifeScript/cmd/brick_col.htm">BRICK_COL</a> Life Script command.</p>
+
+<a name="detect_zones"></a>
+<h4>Can detect Zones</h4>
+<p>If the flag is set, the Actor will be able to detect if it's inside a Sceneric Zone or not. Otherwise the Life Script ZONE variable will always report that the Actor is not inside any Zone.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="scond">zone</span> == <span class="sparam">2</span><br />
+  <span class="scmd indent0">explode_obj</span> <span class="sparam">1</span><br />
+  <span class="skey">else</span><br />
+  <span class="scmd indent0">message</span> <span class="sparam">20</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<p">In the above example, if the flag is not set the <span class="scmd">message</span> <span class="sparam">20</span> line will always be executed instead of <span class="scmd">explode_obj</span> <span class="sparam">1</span> line, even if the Actor is inside the Zone 2.</p>
+
+<a name="clipped"></a>
+<h4>Uses clipping</h4>
+<p>This flag works for Sprite Actors only. If this flag is set, the Actor will be invisible (clipped) outside the clipping rectangle. This flag is used to make the doors slide "into" the walls and not appear on the other side (if the wall is thinner than the door's width).</p>
+
+<a name="pushable"></a>
+<h4>Can be pushed</h4>
+<p>If the flag is set, other Actors will push the Actor if it stands on their way. This flag should be used for Sprites only. If it is used for a 3D Actor, it will work rather strangely depending on the Can collide with objects flag.</p>
+
+<a name="low_col"></a>
+<h4>Low collision</h4>
+<p>Unknown.</p>
+
+<a name="tests_floor"></a>
+<h4>Can test floor type</h4>
+<p>If the flag is set, the Actor will die if he walks into the water. Otherwise it will be able to walk over the water as it was a solid floor.</p>
+
+<a name="hidden"></a>
+<h4>Hidden</h4>
+<p>If the flag is set, the Actor will not be present in the world.</p>
+
+<p>This flag can be changed at run-time using the <a href="LifeScript/cmd/invisible.htm">INVISIBLE</a> Life Script command. An invisible Actor is still an obstacle, and plays animations and sounds (though you can't see the animations :)).</p>
+
+<a name="sprite"></a>
+<h4>Is Sprite</h4>
+<p>If the flag is set, the Actor will be a Sprite Actor. Sprite Actors do not have Bodies or Animations, but static images (sprites) instead. Their dimentions in isometric 3D Scene are described in entry 3 (counting from 0) of the ress.hqr file.</p>
+
+<p>Sprite Actors have special commands to <i>open</i> and <i>close</i> them if they seve purpose of doors, set their speed, and move them.</p>
+
+<a name="can_fall"></a>
+<h4>Can fall</h4>
+<p>If the flag is set, the Actor will be able to fall if he's not standing on the ground. For this flag to work, <a href="#brick_col">Can collide with Bricks</a> flag must be also set.</p>
+
+<p>This flag can be changed at run-time using the <a href="LifeScript/cmd/can_fall.htm">CAN_FALL</a> Life Script command.</p>
+
+<a name="no_shadow"></a>
+<h4>Doesn't cast shadow</h4>
+<p>If the flag is <b>not set</b> the Actor will cast shadow: a small semi-transparent gray circle on the ground right below the Actor. The shadow circle is always the same size (about one Brick in width and height).</p>
+
+<a name="background"></a>
+<h4>Backgrounded</h4>
+<p>If this flag is set, the Actor will not be redrawn all the time, but only when the screen is refreshed by an other event (another Actor passing by, conversation text drawing, etc.) For example if the flag is set for an Actor, and the Actor is moving, its movement won't be shown. It will stay still at the same place all the time. Only when the old place is redrawn because of another event, it will disappear from there, and when the place where it is now is redrawn by another event, the Actor will be drawn too.</p>
+
+<p>This flag can be changed at run-time using the <a href="TrackScript/background.htm">BACKGROUND</a> Track Script command.</p>
+
+<a name="carrier"></a>
+<h4>Carrier</h4>
+<p>If the flag is set, the Actor will be able to carry another actor on its top, otherwise no other Actor will be able to stand on top of it.</p>
+
+<a name="mini_zv"></a>
+<h4>Uses Mini ZV</h4>
+<p>"ZV" stands for <i>Zone Volume</i>. If the Flag is set, the Actor's bounding box dimensions in X and Z (horizontal) axes will be set to the smaller Actor dimension of the X and Z axes. If the Flag is unset, average of the X and Z dimensions will be taken instead. This Flag does not influence Y (vertical) axis.</p>
+
+<p>This flag applies to 3D Actors only.</p>
+
+<h5>See also:</h5>
+<ul>
+  <li><a href="actors.htm">Actor properties</a></li>
+</ul>
+
+</div
+
+</body>
+</html>

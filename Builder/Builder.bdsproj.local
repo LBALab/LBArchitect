@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2010-04-11 11:49:07.717.pas,E:\Delphi Progs\=LBA=\LBArchitect\Builder\Unit1.pas=E:\Delphi Progs\=LBA=\LBArchitect\Components\SpinEdit.pas</Transaction>
+    <Transaction>2010-04-11 11:49:07.717.dfm,E:\Delphi Progs\=LBA=\LBArchitect\Builder\Unit1.dfm=E:\Delphi Progs\=LBA=\LBArchitect\Components\SpinEdit.dfm</Transaction>
+    <Transaction>2010-04-17 19:03:59.734.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\SpinEdit.pas=E:\Delphi Progs\=LBA=\LBArchitect\Components\BetterSpin.pas</Transaction>
+    <Transaction>2010-04-17 19:03:59.734.dfm,E:\Delphi Progs\=LBA=\LBArchitect\Components\SpinEdit.dfm=E:\Delphi Progs\=LBA=\LBArchitect\Components\BetterSpin.dfm</Transaction>
+    <Transaction>2010-04-17 19:13:59.046.pas,E:\Delphi Progs\=LBA=\LBArchitect\Libs\SpinMod.pas=</Transaction>
+    <Transaction>2010-07-20 19:14:00.890.pas,E:\Delphi Progs\=LBA=\LBArchitect\Builder\Unit1.pas=E:\Delphi Progs\=LBA=\LBArchitect\Builder\Dialogs\CurrentFiles.pas</Transaction>
+    <Transaction>2010-07-20 19:14:00.906.dfm,E:\Delphi Progs\=LBA=\LBArchitect\Builder\Unit1.dfm=E:\Delphi Progs\=LBA=\LBArchitect\Builder\Dialogs\CurrentFiles.dfm</Transaction>
+    <Transaction>2010-12-27 17:46:34.214.pas,E:\Delphi Progs\=LBA=\LBArchitect\Builder\Unit1.pas=E:\Delphi Progs\=LBA=\LBArchitect\Builder\AddFiles.pas</Transaction>
+    <Transaction>2011-04-13 14:11:25.060.pas,E:\Delphi Progs\=LBA=\Libs\CompMods.pas=</Transaction>
+    <Transaction>2013-03-29 09:26:52.430.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\SceneLibComp.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\Scene1LibComp.pas</Transaction>
+    <Transaction>2013-03-29 09:28:02.903.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\SceneLibDecomp.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\Scene1LibDecomp.pas</Transaction>
+    <Transaction>2013-03-29 18:53:29.356.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\Scene2LibDecomp.pas=</Transaction>
+    <Transaction>2013-03-30 14:33:17.588.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\SceneLib2Tab.pas</Transaction>
+    <Transaction>2013-05-03 14:38:35.385.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\SearchScript.pas</Transaction>
+    <Transaction>2013-05-03 14:38:35.385.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.dfm=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\SearchScript.dfm</Transaction>
+    <Transaction>2013-05-04 09:20:26.022.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\BatchAnalyse.pas</Transaction>
+    <Transaction>2013-05-04 09:20:26.092.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.dfm=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\BatchAnalyse.dfm</Transaction>
+    <Transaction>2013-05-18 20:26:27.584.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\SceneLib1Tab.pas</Transaction>
+    <Transaction>2013-06-17 20:53:58.671.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\ManSel.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Select.pas</Transaction>
+    <Transaction>2013-06-17 20:53:58.671.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\ManSel.dfm=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Select.dfm</Transaction>
+    <Transaction>2013-06-22 10:21:31.926.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\SceneVis.pas</Transaction>
+    <Transaction>2013-06-22 10:21:31.972.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.dfm=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\SceneVis.dfm</Transaction>
+    <Transaction>2013-06-23 09:13:28.991.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\scScriptEd.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\ScriptEd.pas</Transaction>
+    <Transaction>2013-06-23 09:13:28.991.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\scScriptEd.dfm=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\ScriptEd.dfm</Transaction>
+    <Transaction>2013-06-29 09:45:38.656.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\Scene2LibComp.pas=</Transaction>
+    <Transaction>2013-06-29 16:47:28.109.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\Scene1LibDecomp.pas=</Transaction>
+    <Transaction>2013-06-29 19:17:22.359.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\Scene2LibDecomp.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\SceneLibDecomp.pas</Transaction>
+    <Transaction>2013-07-12 18:16:54.238.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\Scene1LibComp.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\SceneLib\SceneLibComp.pas</Transaction>
+    <Transaction>2013-07-12 18:47:13.720.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\DebugMsg.pas</Transaction>
+    <Transaction>2013-07-12 18:47:13.720.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Unit1.dfm=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\DebugMsg.dfm</Transaction>
+    <Transaction>2013-07-12 18:54:07.871.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\DebugMsg.pas=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\DebugLog.pas</Transaction>
+    <Transaction>2013-07-12 18:54:07.871.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\DebugMsg.dfm=D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\Dialogs\DebugLog.dfm</Transaction>
+    <Transaction>2013-07-12 18:58:21.708.pas,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\LtUsage.pas=</Transaction>
+    <Transaction>2013-07-12 18:58:21.708.dfm,D:\Programowanie\Delphi-Win\=LBA=\LBArchitect\Builder\LtUsage.dfm=</Transaction>
+  </Transactions>
+</BorlandProject>

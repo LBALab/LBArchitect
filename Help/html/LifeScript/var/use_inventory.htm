@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - USE_INVENTORY</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>USE_INVENTORY</b> (variable)</h1>
+
+<div class="content">
+
+<p><b>USE_INVENTORY</b> returns 1 if specified inventory item has been <i>used</i> by the player. It also displays the item animation if so.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li>if<span class="ComName"> USE_INVENTORY </span><span class="ComParams">item</span>(0 to 255 integer) == <span class="ComParams">active</span>(0 or 1)</li>
+</ul>
+<p class="hint">(<b>if</b> may be also: or_if, swif, oneif; <b>==</b> may be also: !=, &gt;, &lt;, &gt;=, &lt;=)</p>
+
+<h5>Return value:</h5>
+<ul>
+  <li><b>USE_INVENTORY</b> returns 1 if the specified item has ben <i>used</i>, 0 otherwise.</li>
+</ul>
+
+<p><b>USE_INVENTORY</b> returns 1 if the player has <i>used</i> the inventory item, that is if he has pressed <i>Enter</i> key while having selected the item in the inventory, or if the <i>auto-usage</i> of the item has been enabled (see <a href="../cmd/set_used_inventory.htm">SET_USED_INVENTORY</a> command). If the variable returns 1 it will also display small item animation in the top left screen corner.</p>
+
+<p><b>USE_INVENTORY</b> works only for items that are present in the inventory. It does not work for empty inventory spaces. Adding and removing an item from the invetory can be done by setting corresponding Game Flag (see <a href="../cmd/set_flag_xx.htm">SET_FLAG_GAME</a> command). Game Flags from 0 to 27 are reserved for inventory items.</p>
+
+<p>The Scripts are executing very fast, the current <i>Comportement</i> is looped hundreds of times per second (faster than the player would release the key), so it is certain that using an item it will be <i>noticed</i> by the Script.</p>
+
+<p>It makes no sense to check the variable against other values than 1, or use other operators than == and !=.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="svar">use_inventory</span> <span class="sparam">2</span> <span class="sop">==</span> <span class="sparam">1</span> <span class="scom">//test if player has used item 2</span><br />
+    <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="../cmd/set_used_inventory.htm">SET_USED_INVENTORY</a> (command)</li>
+  <li>Life Script: <a href="../cmd/set_flag_xx.htm">SET_FLAG_GAME</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - SPEED</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="overview.htm">Track Script</a>: <b>SPEED</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>SPEED</b> changes movement speed of the Sprite Actor.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SPEED</span><span class="ComParams"> value</span>(0 to 32767 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">value </span>is the new speed. The larger value the higher speed the Sprite Actor will have. This command sets speed for <a href="goto_point_3d.htm">GOTO_POINT_3D</a> command. It does not influence <a href="open_xxx.htm">OPEN_XXX</a> or <a href="close.htm">CLOSE</a> commands.</li>
+</ul>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="scmd">SPEED</span> <span class="sparam">900</span> <span class="Comment">//set Actor's speed</span><br />
+  <span class="scmd">GOTO_POINT_3D</span> <span class="sparam">1</span> <span class="Comment">//make the Actor move to the point</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Track Script: <a href="goto_point_3d.htm">GOTO_POINT_3D</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

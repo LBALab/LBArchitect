@@ -1,0 +1,128 @@
+This file contains sprites
+118
+
+
+
+*sprites*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:lsp|Tank bullet ??
+1:lsp|Magic ball
+2:lsp|Green magic ball
+3:lsp|Coin
+4:lsp|Life heart
+5:lsp|Magic
+6:lsp|Key
+7:lsp|Leaf
+8:lsp|Yellow bullet
+9:lsp|Red bullet
+10:lsp|Groboclone white bullet
+11:lsp|Door #1 (house)
+12:lsp|Door #2 (house)
+13:lsp|Fire magic ball
+14:lsp|Plataform #1
+15:lsp|Prison door (grid)
+16:lsp|Prison door (harmed)
+17:lsp|Prison door (with the F word)
+18:lsp|Fence #1
+19:lsp|Fence #2
+20:lsp|Bomb
+21:lsp|Bolt bullet
+22:lsp|Fence #3
+23:lsp|Fence #4
+24:lsp|Door #3 (last scene) ??
+25:lsp|Moving plataform machine #1
+26:lsp|Platform #2 (Prison)
+27:lsp|Platform #3
+28:lsp|Moving plataform machine #2
+29:lsp|Platform #4 (sewer access)
+30:lsp|Barrel
+31:lsp|Wood door #1 (Twinsen house)
+32:lsp|Wood door #2 (Twinsen's house secret scene)
+33:lsp|Bottle of Syrup
+34:lsp|Passage to the electric thing #1 ??
+35:lsp|Metal fence #1
+36:lsp|Passage to the electric thing #2 ??
+37:lsp|Prison door #4 (wood)
+38:lsp|FunFrock bust
+39:lsp|Cadre
+40:lsp|Grey bullet #1 ??
+41:lsp|Clover leaf
+42:lsp|Green magic ball (same as 3 ?? )
+43:lsp|Red magic ball
+44:lsp|Transparent yellow magic ball
+45:lsp|Library door #1
+46:lsp|Library door #2
+47:lsp|Package
+48:lsp|Ground square #1 (Temple of Bu`)
+49:lsp|Quetch statue (Temple of Bu`)
+50:lsp|Wood door #3 (Temple of Bu`)
+51:lsp|Wood door #4 (Temple of Bu`)
+52:lsp|Wall (false door ??)
+53:lsp|Double Lever (Temple of Bu`)
+54:lsp|Metal fence #2 (Temple of Bu`)
+55:lsp|Single Lever (Temple of Bu`)
+56:lsp|Ground square #2 (Temple of Bu`)
+57:lsp|Frozen mushroom
+58:lsp|Door padlock (Forger's house)
+59:lsp|?? (some bullet - Temple of Bu`)
+60:lsp|Runic Stone
+61:lsp|Sendell's sign #1 (near Runic Stone)
+62:lsp|Sendell's sign #2 (White Leaf Desert)
+63:lsp|Sendell's sign #3
+64:lsp|Grey bullet #2 ??
+65:lsp|Grey bullet #3 ??
+66:lsp|Grey bullet #4 ??
+67:lsp|??
+68:lsp|??
+69:lsp|Missile
+70:lsp|Red Bullet
+71:lsp|Twinsun globe
+72:lsp|Z (sleeping guard)
+73:lsp|Platform #5
+74:lsp|Wall
+75:lsp|Book #1
+76:lsp|Reinforce door
+77:lsp|Wall (Library secret passage)
+78:lsp|Book #2
+79:lsp|Hatchway #1
+80:lsp|Hatchway #2
+81:lsp|Sendell's sign #4 (visible)
+82:lsp|Sendell's sign #5 (hiden)
+83:lsp|Metal fence #3
+84:lsp|Sendell's sign #6
+85:lsp|Lever #1 (up)
+86:lsp|Lever #2 (down)
+87:lsp|Sendell's sign #7 (painted - hiden)
+88:lsp|Sendell's sign #8 (painted - visible)
+89:lsp|False frozen ground (Rabbibunny Village)
+90:lsp|Talk symbol #1 (right)
+91:lsp|Talk symbol #2 (left)
+92:lsp|Mushroom
+93:lsp|Keypad
+94:lsp|??
+95:lsp|Broken lever (clones Factory)
+96:lsp|False ground (some platform ??)
+97:lsp|Explosion sequence #4
+98:lsp|Explosion sequence #5
+99:lsp|Explosion sequence #6
+100:lsp|Explosion sequence #7
+101:lsp|Explosion sequence #1
+102:lsp|Explosion sequence #2
+103:lsp|Explosion sequence #3
+104:lsp|Door #4
+105:lsp|FunFrock safe
+106:lsp|Twinsen & Zoé statue (covered)
+107:lsp|Door #5
+108:lsp|Platform with Sendell's sign
+109:lsp|Transparent green magic ball
+110:lsp|Transparent red magic ball
+111:lsp|Some sequence #1
+112:lsp|Some sequence #2
+113:lsp|Some sequence #3
+114:lsp|Some sequence #4
+115:lsp|Some sequence #5
+116:lsp|Some sequence #6
+117:lsp|Some sequence #7

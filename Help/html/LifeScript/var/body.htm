@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - BODY, BODY_OBJ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>BODY</b> (variable)<br />
+    <a href="../overview.htm">Life Script</a>: <b>BODY_OBJ</b> (variable)</h1>
+
+<div class="content">
+
+<p><b>BODY</b> returns body index for the current Actor, <b>BODY_OBJ</b> returns body index for the Actor specified in the parameter.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li>if<span class="ComName"> BODY </span>== <span class="ComParams">index</span>(-1 to 254 integer)</li>
+  <li>if<span class="ComName"> BODY_OBJ </span><span class="ComParams">actor</span>(0 to 255 integer) == <span class="ComParams"> index</span>(-1 to 254 integer)</li>
+</ul>
+<p class="hint">(<b>if</b> may be also: or_if, swif, oneif; <b>==</b> may be also: !=, &gt;, &lt;, &gt;=, &lt;=)</p>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">actor </span>is the index of the target Actor (the Actor must exist in the Scene).</li>
+</ul>
+
+<h5>Return value:</h5>
+<ul>
+  <li><b>BODY</b> returns virtual index of the body that is currently assigned to the current Actor, or -1 if the Actor currently does not have any Body,</li>
+  <li><b>BODY_OBJ</b> returns virtual index of the body that is currently assigned to the specified Actor, or -1.</li>
+</ul>
+
+<p>Operators &gt; and &gt;= should be used with care, because the game engine treats Body index = -1 as 255 (unsigned byte), so a conditional statement like <span class="scmd">BODY</span> &gt; <span class="sparam">10</span> will be true if the Actor's Body is -1.</p>
+
+<h5>Examples:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="scmd">body</span> <span class="sop">&lt;=</span> <span class="sparam">3</span> <span class="scom">//if current body is less or equal to 3</span><br />
+  <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+  <br />
+  <span class="skey">if</span> <span class="scmd">body_obj</span> <span class="sparam">5</span> <span class="sop">==</span> <span class="sparam">1</span> <span class="scom">//if current body of Actor 5 is equal to 1</span><br />
+  <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Actor properties: <a href="../../actors.htm#body">Body</a></li>
+  <li>Life Script: <a href="anim.htm">ANIM(_OBJ)</a> (variable)</li>
+  <li>Life Script: <a href="../cmd/body.htm">BODY(_OBJ)</a> (command)</li>
+  <li>Track Script: <a href="../../TrackScript/body.htm">BODY</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

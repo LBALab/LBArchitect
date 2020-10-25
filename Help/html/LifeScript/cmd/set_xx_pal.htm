@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SET_DARK_PAL, SET_NORMAL_PAL</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SET_DARK_PAL</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>SET_NORMAL_PAL</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>SET_XX_PAL</b> commands change current game palette woithout fading.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SET_DARK_PAL</span></li>
+  <li><span class="ComName">SET_NORMAL_PAL</span></li>
+</ul>
+
+<p class="just">These commands immediately change the current game palette to the dark or normal palette. Changed palette does not influence the <a href="fade_xx.htm">FADE_XX</a> commands, for example if current plaette is dark palette the <b>FADE_PAL_ALARM</b> will still fade from normal palette to alarm, not from dark to alarm.</p>
+
+<p><img src="pal_pal.png" width="200" height="150" border="0" alt="Regular palette" style="vertical-align: middle">
+Regular (normal) game palette</p>
+
+<p><img src="pal_dark.png" width="200" height="150" border="0" alt="Alarm palette" style="vertical-align: middle">
+Dark palette - used for building interiors during night</p>
+
+<div style="clear: both"></div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="fade_xx.htm">FADE_XX</a> (commands)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

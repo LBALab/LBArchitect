@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Introduction to LBA 1 Life Script</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1>Introduction to LBA 1 Life Script</h1>
+
+<div class="content">
+
+<p>Life Script is much more sophisticated and powerful than Track Script, though not as advanced as today's programming languages. Life Script is the <i>Main</i> script that controls Actor behaviour.</p>
+
+<p>Life Script is divided into so-called <i>Comportements</i>. Comportements are separated blocks of code, one of which is constantly executed in a loop. At any time one of the Comportements is executing (unless the Script has been stopped), and when the execution gets to its end (END_COMPORTEMENT statement), it is looped back to the beginning (or to another comportement's beginning, if SET_COMPORTEMENT(_OBJ) has been called), and so on. Execution can be moved to another Comportement with the SET_COMPORTEMENT(_OBJ) statement, but the move occurs only at the end of the current comportement (or at the next <a href="ctrl/return.htm">RETURN</a> command). Life Scripts of each Actor are run simultaneously.</p>
+
+<p>Initially the first Comportement of Life Script is executed. Usually the Actor initial behaviour is set here, and then the execution is moved to another Comportements which perform interactions with other Actors and the Hero.</p>
+
+<p>Life Script does not have <i>for</i> or <i>while</i> loops. Although effect similar to a <i>while</i> loop can be achived by using conditional and the SET_COMPORTEMENT statements.</p>
+
+<p>Life Script does not have functions, only some mechanisms that barely resemble them - Comportements and Track Script. Each <i>Comportement</i> may be set up so it will execute itself once and call another Comportement, but it is not possible to <i>return</i> to the Comportement that called it, not it is possible to return to a specific command in the caller Comportement. Second alternative - Track Script - also does not provide means for that, but in addition it is executed paralelly to the Life Script. If a Track Script <a href="../TrackScript/label.htm">LABEL</a> is called with SET_TRACK(_OBJ) command, the execution of Track Script will start from that Label, but execution of Life Script will immediately advance to the next statement without waiting for the Track Script to complete.</p>
+
+<p>Life Script does not have variables in a common sense, only <i>Flags</i> that can perform only two operations: store value and compare value with another constant value (not even with another Flag). No arithmetical or logical operations are possible on the Flags.</p>
+
+<p>Life Script supports conditional statements. The conditional statement structure looks as follows:</p>
+<div class="Example">
+  <span class="skey">key</span> <span class="scmd">variable</span> [<span class="sparam">parameter</span>] <span class="sop">operator</span> <span class="sparam">value</span><br />
+  <span class="scom indent0">commands to be executed when the condition is true</span><br />
+  <span class="skey">else</span><br />
+  <span class="scom indent0">commands to be executed when the condition is false</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<ul>
+  <li><b>key</b> is one of the keywords: if, swif, oneif, or_if,</li>
+  <li><b>variable</b> is one of the Life Script variables,</li>
+  <li><b>parameter</b> is the parameter for the variable, if it requires one,</li>
+  <li><b>operator</b> is the comparison operator, it can be one of: ==, !=, &gt;, &lt;, &gt;=, &lt;=,</li>
+  <li><b>value</b> is the value the varible will be compared with, it can be numerical or textual, depending on variable.</li>
+</ul>
+
+<p><b>else</b> block can be omitted entirely if it is not necessary.</p>
+
+<p><b>or_if</b> is a special keyword, that provides possibility to define a conditional statement in which the commands will be executed if at least one of the conditions has been met. It should be placed in the line before regular conditional statement, like in the example below. Other elements are identical as for the regular keys.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">or_if</span> <span class="scmd">action</span> <span class="sop">==</span> <span class="sparam">1</span><br />
+  <span class="skey">or_if</span> <span class="scmd">zone</span> <span class="sop">&gt;=</span> <span class="sparam">20</span><br />
+  <span class="skey">if</span> <span class="scmd">zone_obj</span> <span class="sparam">3</span> <span class="sop">==</span> <span class="sparam">20</span><br />
+  <span class="scom indent0">commands to be executed when the condition is true</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h3>Life Script commands by topic</h3>
+
+<h5>Control statements:</h5>
+<ul>
+  <li><a href="ctrl/comportement.htm">COMPORTEMENT</a> - marks beginning of a Comportement,</li>
+  <li><a href="ctrl/else.htm">ELSE</a> - begins ELSE block of a conditional statement,</li>
+  <li><a href="ctrl/end.htm">END</a> - marks end of the Life Script,</li>
+  <li><a href="ctrl/end_comportement.htm">END_COMPORTEMENT</a> - marks end of a Comportement,</li>
+  <li><a href="ctrl/end_life.htm">END_LIFE</a> - stops execution of the current Life Script,</li>
+  <li><a href="ctrl/endif.htm">ENDIF</a> - marks end of a conditional block,</li>
+  <li><a href="ctrl/if.htm">IF</a>, <a href="ctrl/oneif.htm">ONEIF</a>, <a href="ctrl/or_if.htm">OR_IF</a>, <a href="ctrl/swif.htm">SWIF</a> - begin conditional statements,</li>
+  <li><a href="ctrl/return.htm">RETURN</a> - returns execution to the beginning of current Comportement,</li>
+  <li><a href="ctrl/set_comportement.htm">SET_COMPORTEMENT(_OBJ)</a> - jumps execution to another Comportement,</li>
+</ul>
+
+<h5>Move/angle/position commands nad variables:</h5>
+<ul>
+  <li><a href="cmd/beta.htm">BETA</a> (command) - immediately sets the Actor to sepcified angle of facing,</li>
+  <li><a href="var/current_track.htm">CURRENT_TRACK(_OBJ)</a> (variable) - returns index of the last Track Script Label,</li>
+  <li><a href="cmd/pos_point.htm">POS_POINT</a> (command) - immediately moves the Actor to specified Point,</li>
+  <li><a href="cmd/restore_last_track.htm">RESTORE_LAST_TRACK</a> (command) - restores Track Script execution from the last position,</li>
+  <li><a href="cmd/set_dirmode.htm">SET_DIRMODE(_OBJ)</a> (command) - sets Actor's movement mode,</li>
+  <li><a href="cmd/set_door_xx.htm">SET_DOOR_DOWN, SET_DOOR_LEFT, SET_DOOR_RIGHT, SET_DOOR_UP</a> (command) - sets door Actor at specified position,</li>
+  <li><a href="cmd/set_track.htm">SET_TRACK(_OBJ)</a> (command) - executes Track Script from specified Label,</li>
+  <li><a href="cmd/stop_current_track.htm">STOP_CURRENT_TRACK</a> (command) - stops Track Script execution for the Actor,</li>
+  <li><a href="var/zone.htm">ZONE(_OBJ)</a> (variable) - returns index of Sceneric Zone the specified Actor is in,</li>
+</ul>
+
+<h5>World interaction commands and variables:</h5>
+<ul>
+  <li><a href="var/behaviour.htm">BEHAVIOUR</a> (variable) - returns current Behaviour index of the Hero,</li>
+  <li><a href="cmd/brick_col.htm">BRICK_COL</a> (command) - enables/disables collisions with Bricks for the Actor,</li>
+  <li><a href="cmd/can_fall.htm">CAN_FALL</a> (command) - enables/disables the Actor's ability to fall,</li>
+  <li><a href="var/carried_by.htm">CARRIED_BY</a> (variable) - returns index of Actor that is carrying the current Actor,</li>
+  <li><a href="var/col.htm">COL(_OBJ)</a> (variable) - returns index of Actor that collides with specified Actor,</li>
+  <li><a href="var/cone_view.htm">CONE_VIEW</a> (variable) - ,</li>
+  <li><a href="var/distance.htm">DISTANCE</a> (variable) - returns disance to specified Actor,</li>
+  <li><a href="var/hit_by.htm">HIT_BY</a> (variable) - returns id of Actor that hit current Actor,</li>
+  <li><a href="cmd/hit_obj.htm">HIT_OBJ</a> (command) - make the Actor give damage to another Actor,</li>
+  <li><a href="cmd/obj_col.htm">OBJ_COL</a> (command) - enables/disables collisions with other Actors,</li>
+  <li><a href="cmd/set_behaviour.htm">SET_BEHAVIOUR</a> (command) - sets Hero behaviour,</li>
+  <li><a href="cmd/set_magic_level.htm">SET_MAGIC_LEVEL</a> (command) - sets Hero Magic Level,</li>
+  <li><a href="cmd/suicide.htm">SUICIDE</a> (command) - kills the Actor without any effects,</li>
+</ul>
+
+<h5>Actor appearance commands and variables:</h5>
+<ul>
+  <li><a href="cmd/anim.htm">ANIM(_OBJ)</a> (command) - selects a new Animation for the Actor,</li>
+  <li><a href="var/anim.htm">ANIM(_OBJ)</a> (variable) - returns current Animation index of the Actor,</li>
+  <li><a href="cmd/body.htm">BODY(_OBJ)</a> (command) - selects a new Body for the Actor,</li>
+  <li><a href="var/body.htm">BODY(_OBJ)</a> (variable) - returns current Body index of the Actor,</li>
+  <li><a href="cmd/explode_obj.htm">EXPLODE_OBJ</a> (command) - shows explosion animation overlay on the Actor,</li>
+  <li><a href="cmd/invisible.htm">INVISIBLE</a> (command) - switches Actor visibility,</li>
+  <li><a href="cmd/kill_obj.htm">KILL_OBJ</a> (command) - kills specified Actor,</li>
+</ul>
+
+<h5>Text and message commands and variables:</h5>
+<ul>
+  <li><a href="cmd/add_choice.htm">ADD_CHOICE</a> (command) - adds an option to the list of choices,</li>
+  <li><a href="cmd/ask_choice.htm">ASK_CHOICE(_OBJ)</a> (command) - asks the player specified question with list of choices,</li>
+  <li><a href="cmd/balloon_on.htm">BALLOON_ON/OFF</a> (command) - enables/disables diplaying ballons when Actors say messages,</li>
+  <li><a href="cmd/big_message.htm">BIG_MESSAGE</a> (command) - shows a fullscreen message,</li>
+  <li><a href="var/choice.htm">CHOICE</a> (variable) - returns player's answer for the ASK_CHOICE command,</li>
+  <li><a href="cmd/clear_text.htm">CLEAR_TEXT</a> (command) - clears upper half of the screen,</li>
+  <li><a href="cmd/message.htm">MESSAGE(_OBJ)</a> (command) - shows regular message from specified Actor,</li>
+  <li><a href="cmd/message_sendell.htm">MESSAGE_SENDELL</a> (command) - shows the Sendell with Twinsen and Zoe screen,</li>
+  <li><a href="cmd/say_message.htm">SAY_MESSAGE</a> (command) - shows message floating above the Actor's head,</li>
+  <li><a href="cmd/text.htm">TEXT</a> (command) - displays message in the upper left corner of the screen,</li>
+</ul>
+
+<h5>Inventory commands and variables:</h5>
+<ul>
+  <li><a href="cmd/add_fuel.htm">ADD_FUEL</a> (command) - adds fuel units to the Hero's inventory,</li>
+  <li><a href="cmd/clr_holo_pos.htm">CLR_HOLO_POS</a> (command) - clears position marked on the Holomap,</li>
+  <li><a href="cmd/found_object.htm">FOUND_OBJECT</a> (command) - displays "you have found..." message,</li>
+  <li><a href="var/fuel.htm">FUEL</a> (variable) - returns number of fuel units in the Hero's inventory,</li>
+  <li><a href="cmd/full_point.htm">FULL_POINT</a> (command) - restores all Life and Magic points for the Hero,</li>
+  <li><a href="cmd/give_bonus.htm">GIVE_BONUS</a> (command) - makes the Actor pop out its bonus,</li>
+  <li><a href="cmd/give_gold_pieces.htm">GIVE_GOLD_PIECES</a> (command) - makes the Hero give gold to another Actor,</li>
+  <li><a href="cmd/holomap_traj.htm">HOLOMAP_TRAJ</a> (command) - shows Holomap trajectory animation,</li>
+  <li><a href="cmd/inc_clover_box.htm">INC_CLOVER_BOX</a> (command) - increases number of Hero's clover boxes by one,</li>
+  <li><a href="var/life_point.htm">LIFE_POINT(_OBJ)</a> (variable) - returns number of Life Points for specified Actor,</li>
+  <li><a href="var/num_gold_pieces.htm">NUM_GOLD_PIECES</a> (variable) - returns amount of Hero's gold,</li>
+  <li><a href="var/num_little_keys.htm">NUM_LITTLE_KEYS</a> (variable) - returns number of little keys that the Hero has,</li>
+  <li><a href="cmd/set_holo_pos.htm">SET_HOLO_POS</a> (command) - marks specified position on the Holomap,</li>
+  <li><a href="cmd/set_life_point_obj.htm">SET_LIFE_POINT_OBJ</a> (command) - sets Life Point of an Actor to specified value,</li>
+  <li><a href="cmd/set_used_inventory.htm">SET_USED_INVENTORY</a> (command) - enables <i>auto-use</i> for specified inventory item,</li>
+  <li><a href="cmd/sub_fuel.htm">SUB_FUEL</a> (command) - takes fuel units from the Hero's inventory,</li>
+  <li><a href="cmd/sub_life_point_obj.htm">SUB_LIFE_POINT_OBJ</a> (command) - takes an amount of Life Points from specified Actor,</li>
+  <li><a href="cmd/sub_magic_point.htm">SUB_MAGIC_POINT</a> (command) - takes an amount of Magic Points from the Hero,</li>
+  <li><a href="var/use_inventory.htm">USE_INVENTORY</a> (variable) - tells if player used specified inventory item,</li>
+  <li><a href="cmd/use_one_little_key.htm">USE_ONE_LITTLE_KEY</a> (command) - takes one little key from the Hero,</li>
+</ul>
+
+<h5>Game management commands and variables:</h5>
+<ul>
+  <li><a href="cmd/brutal_exit.htm">BRUTAL_EXIT</a> (command) - ends current game and exits to the main menu,</li>
+  <li><a href="cmd/change_cube.htm">CHANGE_CUBE</a> (command) - loads another Scene,</li>
+  <li><a href="var/chapter.htm">CHAPTER</a> (variable) - returns current value of the global variable,</li>
+  <li><a href="var/flag_xx.htm">FLAG_CUBE, FLAG_GAME</a> (variable) - return value of specified Flag,</li>
+  <li><a href="cmd/game_over.htm">GAME_OVER</a> (command) - ends the game with the rotating GAME OVER text animation,</li>
+  <li><a href="cmd/inc_chapter.htm">INC_CHAPTER</a> (command) - increases global variable CHAPTER,</li>
+  <li><a href="cmd/init_pingouin.htm">INIT_PINGOUIN</a> (command) - initializes Nitro-Mecha-Penguin Actor,</li>
+  <li><a href="cmd/set_flag_xx.htm">SET_FLAG_CUBE, SET_FLAG_GAME</a> (command) - set Flags to specified value,</li>
+  <li><a href="cmd/set_grm.htm">SET_GRM</a> (command) - merges sepcified Fragment with current Grid,</li>
+  <li><a href="cmd/the_end.htm">THE_END</a> (command) - shows (successful) ending sequence,</li>
+</ul>
+
+<h5>Media commands and variables:</h5>
+<ul>
+  <li><a href="var/cdrom.htm">CDROM</a> (variable) - returns 1 if the game CD is in the drive,</li>
+  <li><a href="cmd/midi_off.htm">MIDI_OFF</a> (command) - stops playing current MIDI music,</li>
+  <li><a href="cmd/play_cd_track.htm">PLAY_CD_TRACK</a> (command) - plays specified CD track,</li>
+  <li><a href="cmd/play_fla.htm">PLAY_FLA</a> (command) - plays specified FLA animation,</li>
+  <li><a href="cmd/play_midi.htm">PLAY_MIDI</a> (command) - plays specified MIDI music,</li>
+</ul>
+
+<h5>Other commands and variables:</h5>
+<ul>
+  <li><a href="var/action.htm">ACTION</a> (variable) - tells if player pressed <i>Action</i> key,</li>
+  <li><a href="cmd/cam_follow.htm">CAM_FOLLOW</a> (command) - makes the camera follow specified Actor,</li>
+  <li><a href="cmd/fade_xx.htm">FADE_ALARM_PAL, FADE_ALARM_RED, FADE_PAL_ALARM, FADE_PAL_RED, FADE_RED_ALARM, FADE_RED_PAL</a> (command) - fade the screen between specified palettes,</li>
+  <li><a href="cmd/grm_off.htm">GRM_OFF</a> (command) - hides all Fragments merged with the Grid,</li>
+  <li><a href="cmd/proj_3d.htm">PROJ_3D, PROJ_ISO</a> (command) - switch projection to 3D or isometric,</li>
+  <li><a href="cmd/set_xx_pal.htm">SET_DARK_PAL, SET_NORMAL_PAL</a> (command) - set specified screen palette,</li>
+  <li><a href="cmd/zoom.htm">ZOOM</a> (command) - switches to zoomed view,</li>
+</ul>
+
+<h5>See also:</h5>
+<ul>
+  <li><a href="../TrackScript/overview.htm">Track Script introduction</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

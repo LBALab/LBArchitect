@@ -1,0 +1,109 @@
+---------------------------------------------------------------
+ General information about rooms in LBA 1 and 2
+  (and islands in LBA 1) construction
+ Author: Kazimierz Król (zink)
+ Revision: 1.2
+---------------------------------------------------------------
+
+Convention (applies to all specification files in this package):
+-----------------------------------------------------------------
+
+ All numbers in format 0x00 are hexadecimal numbers. For example 0x1A = 26 decimal.
+ All other numbers are decimal.
+
+ Number formats:
+
+ BYTE     - unsigned byte (8 bits)
+ sBYTE    - signed byte (8 bits: 7 bits for number, 1 bit for sign, U2 code)
+ WORD     - unsigned word (2 bytes, 16 bits)
+ DWORD    - unsigned double word (4 bytes, 32 bits)
+
+ nibble   - is a half of a byte (4 bits), or "digit" 
+             (e.g. first nibble of 0x4D byte is 0x4, last is 0xD)
+
+
+
+ In LBA 1
+-----------
+
+ Rooms and islands are made of three files: 
+
+ lba_brk.hqr - The name means "LBA Bricks".
+               The file contains bricks (each entry is one brick).
+               Bricks are just images (sprites to be accurate) in special 
+                format.
+
+ lba_bll.hqr - The name means "LBA BLock Libraries", 
+                but I will call them "Layout Libraries", because I did so
+                till now (which was incorrect), and don't want to confuse
+                people by changing the name.
+               The file contains libraries (each entry is one library).
+               Libraries contain layouts which are bricks put together to 
+                make such objects as tables, chairs, wall fragments, etc.
+
+ lba_gri.hqr - The name means "LBA Grids".
+               The file contains grids (each entry is one grid).
+               Grids are rooms, that are designed using references to
+                layout libraries. 
+
+ lba_bll and lba_gri have the same number of entries, and each Grid file uses Library file that has the same position inside lba_bll file as it has in lba_gri file. Most entries in lba_bll file are repeated because one Library can be used by many Grids.
+
+
+
+ In LBA 2
+-----------
+
+ All room stuff fits one file:
+
+ lba_bkg.hqr - The name means "LBA Backgrounds".
+               The file holds all types of entries: Bricks, Libraries,
+                Grids, Fragments, and more.
+
+ First entry contains information which entries are Grids, Layouts, etc. It is described further.
+ Entries 2 ~ 149 are Grids.
+ Entries 150 ~ 169 are Grid Fragments.
+ Entries 170 ~ 197 are Layout Libraries.
+ Entries 198 ~ 18100 are Bricks.
+ Last entry - 18101 contains unknown data (it is somehow connected with scenes I suppose) 
+
+ In the LBA 2 lba_bkg file there are additional Fragment entries, which are used by the Scene Script to be put instead of existing Grid areas during playing. Disappearing ceilings, opening Esmer Shuttle entrances and some other dynamic elements are made this way.
+
+ First entry of lba_bkg file contains numbers from which the entries groups start and other information:
+
+ Offset Type  Value  Meaning
+              (dec)
+  0x00  WORD    1    It means that entry #1 (counting from 0) is the first Grid
+                      in the lba_bkg file.
+  0x02  WORD   149   It means that entry #149 is the first Grid Fragment file in 
+                      the lba_bkg file.
+  0x04  WORD   179   It means that entry #179 is the first Library in the file.
+  0x06  WORD   197   It means that entry #197 is the first Brick in the file.
+  0x08  WORD  17903  It means that there is 17903 Bricks in the file.
+  0x0A  WORD   126   It means that Brick 126 (counting from 0) is transparent (used
+                      for invisible walls) and don't have to be drawn. 
+  0x0C  DWORD 27151  It is the size in bytes of the largest Grid file (*.gr2)
+                      decreased by 2. This value is used for memory management.
+  0x10  DWORD 14164  It is the size in bytes of the largest Library file (*.bl2).
+                      This value is probably used for memory management, but the
+                      game won't crash (under Win XP) if the value is any other
+                      (even zero).
+  0x14  DWORD 387434 Unknown
+  0x18  DWORD 86875  Unknown. This value is somehow connected with the largest amount
+                      (or size?) of Layouts used in a Grid at once.
+
+ Last entry of lba_bkg contains unknown data.
+
+ Brick and library files have identical formats as the ones from LBA 1, but some bytes of Library files have different meaning. Some parts of Grid files are identical in LBA 1 and LBA 2, but other are not.
+ 
+
+--------------------------------------------------------------------
+ That is all I know. 
+ If you know something more, I will be grateful if you let me know.
+ e-mail:   zink@poczta.onet.pl
+ web page: moonbase.kazekr.net
+--------------------------------------------------------------------
+
+Revision history:
+ 1.2  - fragment index information updated for Grids, Shapes.gif is now included in the archive
+ 1.1  - added new info about LBA 2 first entry, added inforamtion about Grid Fragment files.
+ 1.0a - added new info about LBA 1 grid files.

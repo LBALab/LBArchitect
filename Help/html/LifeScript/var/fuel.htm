@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - FUEL</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>FUEL</b> (variable)</h1>
+
+<div class="content">
+
+<p><b>FUEL</b> tells how many fuel units the Hero has.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li>if<span class="ComName"> FUEL </span>== <span class="ComParams">value</span>(0 to 255 integer)</li>
+</ul>
+<p class="hint">(<b>if</b> may be also: or_if, swif, oneif; <b>==</b> may be also: !=, &gt;, &lt;, &gt;=, &lt;=)</p>
+
+<h5>Return value:</h5>
+<ul>
+  <li><b>FUEL</b> returns number of fuel units the Hero has.</li>
+</ul>
+
+<p><b>FUEL</b> can be used to test amount of fuel carried by the Hero. The amount of fuel may be increased with <a href="../cmd/add_fuel.htm">ADD_FUEL</a> command, and decreased with <a href="../cmd/sub_fuel.htm">SUB_FUEL</a> command. The fuel is used to let player use vehicles only if he has got at least specified amount of fuel.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="svar">fuel</span> <span class="sop">&gt;=</span> <span class="sparam">5</span> <span class="scom">//test if the Hero has at least 5 units of fuel</span><br />
+    <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="../cmd/add_fuel.htm">ADD_FUEL</a> (command)</li>
+  <li>Life Script: <a href="../cmd/sub_fuel.htm">SUB_FUEL</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

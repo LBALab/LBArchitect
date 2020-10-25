@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2010-04-18 16:32:53.609.pas,E:\Delphi Progs\=LBA=\LBArchitect\Designer\Unit1.pas=E:\Delphi Progs\=LBA=\LBArchitect\Designer\HQDOut.pas</Transaction>
+    <Transaction>2012-03-29 08:51:34.315.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPCommonObjects.pas=</Transaction>
+    <Transaction>2012-03-29 08:51:37.422.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPCommonUtilities.pas=</Transaction>
+    <Transaction>2012-03-29 08:51:40.266.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPCommonWizardHelpers.pas=</Transaction>
+    <Transaction>2012-03-29 08:51:43.565.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPCommonWizardTemplates.pas=</Transaction>
+    <Transaction>2012-03-29 08:51:46.826.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPDataObject.pas=</Transaction>
+    <Transaction>2012-03-29 08:51:49.429.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPResources.pas=</Transaction>
+    <Transaction>2012-03-29 08:51:52.096.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPShellTypes.pas=</Transaction>
+    <Transaction>2012-03-29 08:51:54.839.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPShellUtilities.pas=</Transaction>
+    <Transaction>2012-03-29 08:51:57.420.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\MPCommonLib\MPThreadManager.pas=</Transaction>
+    <Transaction>2012-03-29 09:00:06.355.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\Source\EasyListview.pas=</Transaction>
+    <Transaction>2012-03-29 09:00:08.635.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\Source\EasyLVResources.pas=</Transaction>
+    <Transaction>2012-03-29 09:00:10.635.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\Source\EasyScrollFrame.pas=</Transaction>
+    <Transaction>2012-03-29 09:00:12.775.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\EasyListView\Source\EasyTaskPanelForm.pas=</Transaction>
+    <Transaction>2012-03-29 09:32:27.895.pas,E:\Delphi Progs\=LBA=\LBArchitect\Components\MPCommonLib\Source\MPCommonWizardHelpers.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

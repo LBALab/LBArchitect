@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - ASK_CHOICE, ASK_CHOICE_OBJ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>ASK_CHOICE</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>ASK_CHOICE_OBJ</b> (command)</h1>
+
+<div class="content">
+
+<p><b>ASK_CHOICE</b> asks player the specified question with answers defined using preceding <a href="add_choice.htm">ADD_CHOICE</a> commands, <b>ASK_CHOICE_OBJ</b> does the same, but displays balloon for the Actor specified in the first parameter.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName"> ASK_CHOICE</span><span class="ComParams"> index</span>(0 to 32767 integer)</li>
+  <li><span class="ComName"> ASK_CHOICE_OBJ</span><span class="ComParams"> actor</span>(0 to 255 integer)<span class="ComParams"> index</span>(0 to 32767 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">index </span>is the mapped index of text line to be displayed for the question. The line will also be read by the associated voice.</li>
+  <li><span class="ComParams">actor </span>is the index of the target Actor (the Actor must exist in the Scene).</li>
+</ul>
+
+<p><b>ASK_CHOICE(_OBJ)</b> command allows asking player questions, like "Do you want to buy that?" in a shop. To use it, all the possible answers must be first added with <a href="add_choice.htm">ADD_CHOICE</a> command. The list of answers is cleared after the choice has been made, so it is not possible to ask two questions with the same list of answers only adding the answers once. In such case the answers must be added again for the second question. Further the line chosen by player can be tested with <a href="../var/choice.htm">CHOICE</a> variable.</p>
+
+<p>When the Actor is asking the question, balloon will be shown over its head. This can be changed with the <a href="balloon_on.htm">BALLOON_ON/OFF</a> commands</li>.</p>
+
+<p>The text indexes used for this command are not the text positions in an lbt file (even subfile of text.hqr). Correct indexes are mapped in the corresponding odd subfile of the text.hqr. LBArchitect takes this into consideration when displaying list of possible indexes for this command.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="scmd">add_choice</span> <span class="sparam">1</span> <span class="scom">//add text line 1 as first possible answer</span><br />
+  <span class="scmd">add_choice</span> <span class="sparam">4</span> <span class="scom">//second possible answer</span><br />
+  <span class="scmd">add_choice</span> <span class="sparam">5</span> <span class="scom">//third possible answer</span><br />
+  <span class="scmd">ask_choice</span> <span class="sparam">7</span> <span class="scom">//ask the question saying line 7</span><br />
+  <span class="skey">if</span> <span class="svar">choice</span> <span class="sop">==</span> <span class="sparam">5</span> <span class="scom">//test if player have chosen line 5</span><br />
+    <span class="scmd indent0">cam_follow</span> <span class="sparam">1</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="add_choice.htm">ADD_CHOICE</a> (command)</li>
+  <li>Life Script: <a href="../var/choice.htm">CHOICE</a> (variable)</li>
+  <li>Life Script: <a href="balloon_on.htm">BALLOON_ON/OFF</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

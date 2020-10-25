@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - WAIT_NUM_ANIM</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="overview.htm">Track Script</a>: <b>WAIT_NUM_ANIM</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>WAIT_NUM_ANIM</b> pauses execution of the Track Script until the current 3D Actor animation plays for spcified number of times.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">WAIT_NUM_ANIM</span><span class="ComParams"> value</span>(0 to 255 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">value </span>is the number of animation repetitions. The next Track Script line will be executed only after the animation has been played for specified number of times.</li>
+</ul>
+
+<p class="just">This command will wait for the current animation to play specified number of times <b>since the command has been executed</b>. If <b>WAIT_NUM_ANIM</b> is called while an animation has been played for a number of times it will still wait the defined number of animations (not the defined number minus number of animations already played).</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="sctrl">LABEL</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">ANIM</span> <span class="sparam">2</span> <span class="scom">//do something</span><br />
+  <span class="scmd indent0">WAIT_NUM_ANIM</span> <span class="sparam">5</span> <span class="scom">//wait for animation 2 to play 5 times</span><br />
+  <span class="scmd indent0">ANIM</span> <span class="sparam">1</span> <span class="scom">//walk</span><br />
+  <span class="scmd indent0">GOTO_POINT</span> <span class="sparam">4</span><br />
+  <span class="scmd indent0">ANIM</span> <span class="sparam">0</span> <span class="scom">//stop</span><br />
+  <span class="skey indent0">STOP</span><br />
+  <span class="sctrl">END</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Track Script: <a href="wait_anim.htm">WAIT_ANIM</a></li>
+  <li>Track Script: <a href="wait_num_second.htm">WAIT_NUM_SECOND</a></li>
+  <li>Track Script: <a href="wait_door.htm">WAIT_DOOR</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

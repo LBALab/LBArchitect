@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - ACTION</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>ACTION</b> (variable)</h1>
+
+<div class="content">
+
+<p><b>ACTION</b> returns 1 if the player is using the <i>Action</i> command.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li>if<span class="ComName"> ACTION </span>== <span class="ComParams">value</span>(0 or 1)</li>
+</ul>
+<p class="hint">(<b>if</b> may be also: or_if, swif, oneif; <b>==</b> may be also: !=, &gt;, &lt;, &gt;=, &lt;=)</p>
+
+<h5>Return value:</h5>
+<ul>
+  <li><b>ACTION</b> returns 1 if the player is using the <i>Action</i> command at the moment, 0 otherwise.</li>
+</ul>
+
+<p>Usually there is no need to worry that player will press the <i>Action</i> key for a short while, and the Script will be doing something else at the moment and will not <i>notice</i> that. The scripts are looped thousands of times per second, unless a Script is very long and complex (which is not recommended in general).</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="scmd">action</span> <span class="sop">==</span> <span class="sparam">1</span> <span class="scom">//if player is 'doing Action'</span><br />
+  <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="behaviour.htm">BEHAVIOUR</a> (variable)</li>
+  <li>Life Script: <a href="use_inventory.htm">USE_INVENTORY</a> (variable)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

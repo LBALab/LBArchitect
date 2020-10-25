@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - CONE_VIEW</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>CONE_VIEW</b> (variable)</h1>
+
+<div class="content">
+
+<p><b>CONE_VIEW</b> returns distance to specified Actor if it is in specific view angle.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li>if<span class="ComName"> CONE_VIEW </span><span class="ComParams">actor</span>(0 to 255 integer) == <span class="ComParams"> distance</span>(0 to 32000 integer)</li>
+</ul>
+<p class="hint">(<b>if</b> may be also: or_if, swif, oneif; <b>==</b> may be also: !=, &gt;, &lt;, &gt;=, &lt;=)</p>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">actor </span>is index of the target Actor (the Actor must exist in the Scene).</li>
+</ul>
+
+<h5>Return value:</h5>
+<ul>
+  <li><b>CONE_VIEW</b> returns distance to specified Actor if it is in -45&deg;+45&deg; range to the current Actor's face. <b>If target Actor is 0</b> (the Hero), the angle range is ignored, and the variable will always return distance between the Actors.</li>
+</ul>
+
+<p><b>CONE_VIEW</b> will return 32000 if the target Actor is outside the -45&deg;+45&deg; angle range.</p>
+
+<h5>Examples:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="scmd">cone_view</span> <span class="sparam">2</span> <span class="sop">&lt;</span> <span class="sparam">3000</span> <span class="scom">//if current Actor 'sees' Actor 2 in -45&deg;+45&deg; field and is less thn 3000 units away from it</span><br />
+  <span class="scom indent0">//perform operations</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="../var/distance.htm">DISTANCE</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+[General]
+AutoFragment=1
+OverrideFrag=0
+OvFragValue=171
+
+[Compression]
+Lba1=3
+Lba2=3
+Lba2Auto=0
+MinSizeBenVal=1
+MinSizeBenUnit=0
+MinTimeBenVal=1
+MinTimeBenUnit=0
+MaxSizeLossVal=1
+MaxSizeLossUnit=0
+
+[Optimizations]
+UseRepeated=1
+BricksRemoveUnused=1
+BricksRemoveDoubled=1
+ForceInvisibleBrick=0
+ForceInvBrickValue=0
+LayoutsRemoveUnused=0
+
+[Output]
+OutputType=1
+Lba1OutputGrid=1
+Lba1GridPath=
+Lba1OutputLibBrk=1
+Lba1LibraryPath=
+Lba1BrickPath=
+Lba2OutputBkg=1
+Lba2BkgPath=
+OutputScene=1
+ScenePath=
+
+[ProjectData]
+Count=2
+1gri=<B>
+1lib=F:\Instalki\do win 7\ShellFolderFix64\ReadMe.txt
+1brk=F:\Elektronika\Schematy\Wzmacniacz WS318 (WS418).gif
+1des=test1
+2lib=<B>
+2brk=<B>
+2sce=F:\Elektronika\Schematy\WS418-przeróbka.png
+2des=rweterter
+
+[ProjectDataF]
+Count=4
+1fra=<B>
+1fri=0
+1lib=<B>
+1brk=<B>
+2fra=<B>
+2fri=0
+2lib=F:\Instalki\do win 7\ShellFolderFix64\ReadMe.txt
+2des=testfrag
+3lib=E:\Fajne rzeczy\nowe\Ronaldinho_vs_Cristi67526.flv
+4brk=F:\Instalki\do win 7\ShellFolderFix64\ReadMe.txt
+

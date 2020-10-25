@@ -1,0 +1,641 @@
+
+LBA1 Binary Script commands descriptions
+
+Each command code is one byte long, and after it there are params (or not), or other things. After params there is a next command byte, and so on. At the end of the script there is a 0x00 (END) command.
+
+This document describes the command parameters (short descriptions) only. It does not describe how particular commands work. For such kind of information see other sources (LBArchitect help may contain some).
+
+"[no params]" means that the command does not have any additional bytes (next command starts immediately after this command byte).
+
+===============================
+ TRACK SCRIPT
+===============================
+
+0x00 ( 0) END
+          [no params]
+
+0x01 ( 1) NOP
+          [no params]
+
+0x02 ( 2) BODY
+          param1: 1 byte unsigned (0..255) - ID of the new body for the Actor
+
+0x03 ( 3) ANIM
+          param1: 1 byte unsigned (0..255) - ID of the new anim for the Actor
+
+0x04 ( 4) GOTO_POINT
+          param1: 1 byte unsigned (0..255) - ID of the Track to go to
+
+0x05 ( 5) WAIT_ANIM
+          [no params]
+
+0x06 ( 6) LOOP
+          [no params]
+
+0x07 ( 7) ANGLE
+          param1: 2 bytes (unsigned?) (0..65535) - new angle
+
+0x08 ( 8) POS_POINT
+          param1: 1 byte unsigned (0..255) - ID of the Track to move to
+
+0x09 ( 9) LABEL
+          param1: 1 byte unsigned (0..255) - ID of the label
+
+0x0A (10) GOTO
+          param1: 2 bytes signed (-1..32767) - address (offset) in the script to go to. -1 causes stopping execution of the script (and even SET_TRACK Life command won't run it anymore until reset of the Scene)
+
+0x0B (11) STOP
+          [no params]
+
+0x0C (12) GOTO_SYM_POINT
+          param1: 1 byte unsigned (0..255) - ID of the Track to go to
+
+0x0D (13) WAIT_NUM_ANIM
+          param1: 1 byte unsigned (0..255) - number of animation repearts to wait
+          param2: 1 byte unsigned - dummy, always 0
+
+0x0E (14) SAMPLE
+          param1: 2 bytes (unsigned?) (0..65535) - ID of a sound sample to play
+
+0x0F (15) GOTO_POINT_3D
+          param1: 1 byte unsigned (0..255) - ID of the Track to go to
+
+0x10 (16) SPEED
+          param1: 2 bytes (unsigned?) (0..65535) - speed (?)
+
+0x11 (17) BACKGROUND
+          param1: 1 byte unsigned (0..1) - (boolean) if Actor is backgrounded (flag)
+
+0x12 (18) WAIT_NUM_SECOND
+          param1: 1 byte (unsigned?) (0..255) - number of seconds to wait
+          param2: 4 bytes - dummy
+
+0x13 (19) NO_BODY
+          [no params]
+
+0x14 (20) BETA
+          param1: 2 bytes (signed?) (-32768..32767) - relative angle
+
+0x15 (21) OPEN_LEFT
+          param1: 2 bytes (signed?) (-32768..32767) - distance to move
+
+0x16 (22) OPEN_RIGHT
+          param1: 2 bytes (signed?) (-32768..32767) - distance to move
+
+0x17 (23) OPEN_UP
+          param1: 2 bytes (signed?) (-32768..32767) - distance to move
+
+0x18 (24) OPEN_DOWN
+          param1: 2 bytes (signed?) (-32768..32767) - distance to move
+
+0x19 (25) CLOSE
+          [no params]
+
+0x1A (26) WAIT_DOOR
+          [no params]
+
+0x1B (27) SAMPLE_RND
+          param1: 2 bytes (unsigned?) (0..65535) - ID of the sample to play
+
+0x1C (28) SAMPLE_ALWAYS
+          param1: 2 bytes (unsigned?) (0..65535) - ID of the sample to play
+
+0x1D (29) SAMPLE_STOP
+          param1: 2 bytes (unsigned?) (0..65535) - ID of the sample to stop
+
+0x1E (30) PLAY_FLA
+          param1: null-terminated string - name of the fla file to play (extension may be included, but it's not required)
+
+0x1F (31) REPEAT_SAMPLE
+          param1: 2 bytes (unsigned?) (0..65535) - ID of the sample to play
+
+0x20 (32) SIMPLE_SAMPLE
+          param1: 2 bytes (unsigned?) (0..65535) - ID of the sample to play
+
+0x21 (33) FACE_HERO
+          param1: 2 bytes (signed?) (-32768..32767) - distance
+
+0x22 (34) ANGLE_RND
+          param1: 2 bytes (unsigned?) (0..65535) - new angle
+          param2: 2 bytes - dummy
+
+
+
+===============================
+ LIFE SCRIPT
+===============================
+
+Some commands in the Life Script are virtual - this means that the command is present in decompiled script (text form), and does not serve any purpose in compiled (binary) form of the script, so it may or may not be there. Virtual commands still have opcodes associated to them.
+
+
+0x00 (  0) END
+           [no params]
+
+0x01 (  1) NOP
+           [no params]
+
+0x02 (  2) SNIF  (IF type)
+           [no params]
+
+0x03 (  3) OFFSET
+           param1: 2 bytes (unsigned?) (0..65535) - address (offset) in the script to go to
+
+0x04 (  4) NEVERIF  (IF type)
+           [no params]
+
+0x05 (  5) (unused)
+
+0x06 (  6) NO_IF  (IF type)
+           [no params]
+
+0x07 (  7) (unused)
+
+0x08 (  8) (unused)
+
+0x09 (  9) (unused)
+
+0x0A ( 10) LABEL
+           param1: 1 byte unsigned (0..255) - ID of the label
+
+0x0B ( 11) RETURN
+           [no params]
+
+0x0C ( 12) IF  (IF type)
+           [no params]
+
+0x0D ( 13) SWIF  (IF type)
+           [no params]
+
+0x0E ( 14) ONEIF  (IF type)
+           [no params]
+
+0x0F ( 15) ELSE  (works the same as OFFSET)
+           param1: 2 bytes (unsigned?) (0..65535) - address (offset) to go to (skip the next block)
+
+0x10 ( 16) ENDIF  (virtual)
+           [no params]
+
+0x11 ( 17) BODY
+           param1: 1 byte unsigned (0..255) - ID of the new body for the Actor
+
+0x12 ( 18) BODY_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 1 byte unsigned (0..255) - ID of the new body for the target Actor
+
+0x13 ( 19) ANIM
+           param1: 1 byte unsigned (0..255) - ID of the new anim for the Actor
+
+0x14 ( 20) ANIM_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 1 byte unsigned (0..255) - ID of the new anim for the target Actor
+
+0x15 ( 21) SET_LIFE  (never used, same as SET_COMPORTEMENT)
+           param1: 2 bytes (unsigned?) (0..65535) - address (offset) of the target COMPORTEMENT's beginning to go to
+
+0x16 ( 22) SET_LIFE_OBJ  (never used, same as SET_COMPORTEMENT_OBJ)
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 2 bytes (unsigned?) (0..65535) - address (offset) of the target COMPORTEMENT's beginning in the target Actor's Life Script to go to
+
+0x17 ( 23) SET_TRACK
+           param1: 2 bytes signed (-1..32767) - address (offset) in the Track Script to go to. -1 causes stopping execution of the script (and even SET_TRACK Life command won't run it anymore until reset of the Scene)
+
+0x18 ( 24) SET_TRACK_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 2 bytes signed (-1..32767) - address (offset) in the target Actor's Track Script to go to. -1 causes stopping execution of the script (and even SET_TRACK Life command won't run it anymore until reset of the Scene)
+
+0x19 ( 25) MESSAGE
+           param1: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be displayed
+
+0x1A ( 26) FALLABLE
+           param1: 1 byte unsigned (0..1) - (boolean) 1 = Actor can fall, 0 = it can't
+
+0x1B ( 27) SET_DIRMODE
+           param1: 1 byte unsigned (0..7) - ID of the mode to set. If this param is 2 (foolow) or 4 (follow_2), then param2 exists, otherwise there is one param only.
+           (param2): 1 byte unsigned (0..255) - ID of the Actor to follow
+
+0x1C ( 28) SET_DIRMODE_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 1 byte unsigned (0..7) - ID of the mode to set. If this param is 2 (foolow) or 4 (follow_2), then param3 exists, otherwise there are two params only.
+           (param3): 1 byte unsigned (0..255) - ID of the Actor to follow
+
+0x1D ( 29) CAM_FOLLOW
+           param1: 1 byte unsigned (0..255) - ID of the actor to be followed by the camera
+
+0x1E ( 30) SET_BEHAVIOUR
+           param1: 1 byte unsigned (0..4) - ID of the behaviour to set (0 = normal, 1 = athletic, 2 = aggressive, 3 = discrete, 4 = proto-pack)
+
+0x1F ( 31) SET_FLAG_CUBE
+           param1: 1 byte unsigned (0..255) - ID of the Cube Flag to set
+           param2: 1 byte unsigned (0..255) - new value of the Flag to be set to
+
+0x20 ( 32) COMPORTEMENT  (virtual)
+           param1: 1 byte (unsigned?) (0..255) - probably ID of the comportement
+
+0x21 ( 33) SET_COMPORTEMENT
+           param1: 2 bytes (unsigned?) (0..65535) - address (offset) of the target comportement
+
+0x22 ( 34) SET_COMPORTEMENT_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 2 bytes (unsigned?) (0..65535) - address (offset) of the target comportement in the target Actor's Life Script
+
+0x23 ( 35) END_COMPORTEMENT
+           [no params]
+
+0x24 ( 36) SET_FLAG_GAME
+           param1: 1 byte unsigned (0..255) - ID of the Game Flag to set
+           param2: 1 byte unsigned (0..255) - new value of the Flag to be set to
+
+0x25 ( 37) KILL_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the Actor to be killed
+
+0x26 ( 38) SUICIDE
+           [no params]
+
+0x27 ( 39) USE_ONE_LITTLE_KEY
+           [no params]
+
+0x28 ( 40) GIVE_GOLD_PIECES
+           param1: 2 bytes (unsigned?) (0..65535) - number of gold pieces to be given
+
+0x29 ( 41) END_LIFE
+           [no params]
+
+0x2A ( 42) STOP_L_TRACK
+           [no params]
+
+0x2B ( 43) RESTORE_L_TRACK
+           [no params]
+
+0x2C ( 44) MESSAGE_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be displayed
+
+0x2D ( 45) INC_CHAPTER
+           [no params]
+
+0x2E ( 46) FOUND_OBJECT
+           param1: 1 byte unsigned (0..255) - ID of the inventory object to be displayed
+
+0x2F ( 47) SET_DOOR_LEFT
+           param1: 2 bytes (signed?) (-32768..32767) - distance to move
+
+0x30 ( 48) SET_DOOR_RIGHT
+           param1: 2 bytes (signed?) (-32768..32767) - distance to move
+
+0x31 ( 49) SET_DOOR_UP
+           param1: 2 bytes (signed?) (-32768..32767) - distance to move
+
+0x32 ( 50) SET_DOOR_DOWN
+           param1: 2 bytes (signed?) (-32768..32767) - distance to move
+
+0x33 ( 51) GIVE_BONUS
+           param1: 1 byte (unsigned?) (0..255) - ???
+
+0x34 ( 52) CHANGE_CUBE
+           param1: 1 byte unsigned (0..255) - ID of the target Scene
+
+0x35 ( 53) OBJ_COL
+           param1: 1 byte unsigned (0..1) - (boolean) 1 = Actor can collide with objects (other Actors)
+
+0x36 ( 54) BRICK_COL
+           param1: 1 byte unsigned (0..2) - (boolean???) 1 = Actor can collide with bricks, 2 = ???
+
+0x37 ( 55) OR_IF  (IF type)
+           [no params]
+
+0x38 ( 56) INVISIBLE
+           param1: 1 byte unsgined (0..1) - (boolean) 0 = Actor will be visible, 1 = Actor will be invisible
+
+0x39 ( 57) ZOOM
+           param1: 1 byte unsigned (0..1) - (boolean) 1 = enable zoomed mode, 0 = disable zoomed mode
+
+0x3A ( 58) POS_POINT
+           param1: 1 byte unsigned (0..255) - ID of the Track to move the Actor to
+
+0x3B ( 59) SET_MAGIC_LEVEL
+           param1: 1 byte unsigned (0..4) - new magic level for the Actor
+
+0x3C ( 60) SUB_MAGIC_POINT
+           param1: 1 byte (unsigned?) (0..255) - amount of magic points to be subtracted
+
+0x3D ( 61) SET_LIFE_POINT_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 1 byte (unsigned?) (0..255) - amount of life points to be set for the target Actor
+
+0x3E ( 62) SUB_LIFE_POINT_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 1 byte (unsigned?) (0..255) - amount of life points to be subtracted from the target Actor's life points
+
+0x3F ( 63) HIT_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 1 byte (unsigned?) (0..255) - ??? (damage amount maybe?)
+
+0x40 ( 64) PLAY_FLA
+           param1: null-terminated string - name of the fla file to play (file extension is allowed but not required)
+
+0x41 ( 65) PLAY_MIDI
+           param1: 1 byte (unsigned?) (0..255) - ID of the MIDI track to be played
+
+0x42 ( 66) INC_CLOVER_BOX
+           [no params]
+
+0x43 ( 67) SET_USED_INVENTORY
+           param1: 1 byte (unsigned?) (0..255) - ID of the inventory item to be set as used
+
+0x44 ( 68) ADD_CHOICE
+           param1: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be added as the choice
+
+0x45 ( 69) ASK_CHOICE
+           param1: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be displayed as the choice question
+
+0x46 ( 70) BIG_MESSAGE
+           param1: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be displayed
+
+0x47 ( 71) INIT_PINGOUIN
+           param1: 1 byte (unsigned?) (0..255) - probably ID of the Actor to init as pingouin
+
+0x48 ( 72) SET_HOLO_POS
+           param1: 1 byte (unsigned?) (0..255) - ID of the holomap position to be set
+
+0x49 ( 73) CLR_HOLO_POS
+           param1: 1 byte (unsigned?) (0..255) - ID of the holomap position to be cleared
+
+0x4A ( 74) ADD_FUEL
+           param1: 1 byte (unsigned?) (0..255) - amount of fuel units to be added to the player's inventory
+
+0x4B ( 75) SUB_FUEL
+           param1: 1 byte (unsigned?) (0..255) - amount of fuel units to be subtracted from the player's inventory
+
+0x4C ( 76) SET_GRM
+           param1: 1 byte unsigned (0..255) - ID of the Grid to be (merged with the current Grid?)
+
+0x4D ( 77) SAY_MESSAGE
+           param1: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be displayed
+
+0x4E ( 78) SAY_MESSAGE_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be displayed
+
+0x4F ( 79) FULL_POINT
+           [no params]
+
+0x50 ( 80) BETA
+           param1: 2 bytes (signed?) (-32768..32767) - the new angle
+
+0x51 ( 81) GRM_OFF
+           [no params]
+
+0x52 ( 82) FADE_PAL_RED
+           [no params]
+
+0x53 ( 83) FADE_ALARM_RED
+           [no params]
+
+0x54 ( 84) FADE_ALARM_PAL
+           [no params]
+
+0x55 ( 85) FADE_RED_PAL
+           [no params]
+
+0x56 ( 86) FADE_RED_ALARM
+           [no params]
+
+0x57 ( 87) FADE_PAL_ALARM
+           [no params]
+
+0x58 ( 88) EXPLODE_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+
+0x59 ( 89) BUBBLE_ON
+           [no params]
+
+0x5A ( 90) BUBBLE_OFF
+           [no params]
+
+0x5B ( 91) ASK_CHOICE_OBJ
+           param1: 1 byte unsigned (0..255) - ID of the target Actor
+           param2: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be displayed as the choice question
+
+0x5C ( 92) SET_DARK_PAL
+           [no params]
+
+0x5D ( 93) SET_NORMAL_PAL
+           [no params]
+
+0x5E ( 94) MESSAGE_SENDELL
+           [no params]
+
+0x5F ( 95) ANIM_SET
+           param1: 1 byte (unsigned?) (0..255) - ID of the animation to be set ???
+
+0x60 ( 96) HOLOMAP_TRAJ
+           param1: 1 byte (unsigned?) (0..255) - ID of the holomap trajectory to be displayed
+
+0x61 ( 97) GAME_OVER
+           [no params]
+
+0x62 ( 98) THE_END
+           [no params]
+
+0x63 ( 99) MIDI_OFF
+           [no params]
+
+0x64 (100) PLAY_CD_TRACK
+           param1: 1 byte (unsigned?) (0..255) - ID of the CD track to be played
+
+0x65 (101) PROJ_ISO
+           [no params]
+
+0x66 (102) PROJ_3D
+           [no params]
+
+0x67 (103) TEXT
+           param1: 2 bytes (unsigned?) (0..65535) - ID of the text entry to be displayed
+
+0x68 (104) CLEAR_TEXT
+           [no params]
+
+0x69 (105) BRUTAL_EXIT
+           [no params]
+
+
+====================================
+ LIFE SCRIPT CONDITIONS (VARIABLES)
+====================================
+
+Conditions have opcodes and parameters, like regular commands, but they occur only after IF-type commands.
+The conditional construction is following:
+
+In case the condition doesn't have any parameters:
+
+   byte: |     1     |      2      |     3     |        4         |  5 & 6
+----------------------------------------------------------------------------
+Command: |  IF-type  |  Condition  | Operator  | value to compare | address
+----------------------------------------------------------------------------
+Example: | 0x0C (IF) | 0x03 (ZONE) | 0x00 (==) |       0x03       | 0x002D
+
+The bytes 5 and 6 are the address (offset) to jump to when the condition result is false (if it is true, the execution will continue to the lines following the conditional construction (no jump)).
+
+In case the condition has a parameter:
+
+   byte: |     1     |        2        |     3     |     4     |        5         |  6 & 7
+--------------------------------------------------------------------------------------------
+Command: |  IF-type  |    Condition    | parameter | Operator  | value to compare | address
+--------------------------------------------------------------------------------------------
+Example: | 0x0C (IF) | 0x04 (ZONE_OBJ) |   0x04    | 0x00 (==) |       0x03       | 0x002D
+
+OR_IF - special case:
+OR_IF can be used to execute a block of code if at least one of the conditions is met, its syntax is following:
+
+OR_IF ANIM == 1
+OR_IF ANIM == 3
+IF ANIM == 6
+...code...
+ENDIF
+
+All the OR_IF lines must precede the IF line. Their compiled syntax is following:
+
+   byte: |     1     |      2      |     3     |        4         |  5 & 6
+----------------------------------------------------------------------------
+Command: |   OR_IF   |  Condition  | Operator  | value to compare | address
+----------------------------------------------------------------------------
+Example: |   0x37    | 0x03 (ZONE) | 0x00 (==) |       0x03       | 0x002D
+
+The syntax is the same as regular IF statement, but this time the addres bytes (5 and 6) contain an address where to jump when condition is TRUE. In case it is FALSE the execution will continue to the next line (no jump) (another condition should be there).
+
+
+Each condition has a specified range of values it can be compared with. For example COL can be compared to 1-byte values only. One can imagine the comparison values as "function return" values, but it doesn't exactly work this way. For example ZONE conditional will be always false if the Actor is not inside any Zone, no matter what value to compare is in the statement.
+
+
+0x00 ( 0) COL
+          [no params]
+          compare value: 1 byte unsigned (0..255) - ID of the Actor to test collision with
+
+0x01 ( 1) COL_OBJ
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 1 byte unsigned (0..255) - ID of the Actor to test collision with the target Actor
+
+0x02 ( 2) DISTANCE
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 2 bytes (unsigned?) (0..32000) - distance to the target Actor in Scene units
+
+0x03 ( 3) ZONE
+          [no params]
+          compare value: 1 byte unsigned (0..255) - ID of the Zone to test if the current Actor is inside
+
+0x04 ( 4) ZONE_OBJ
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 1 byte unsigned (0..255) - ID of the Zone to test if the tested Actor is inside
+
+0x05 ( 5) BODY
+          [no params]
+          compare value: 1 byte unsigned (0..255) - ID of the body to test if it's set for the current Actor
+
+0x06 ( 6) BODY_OBJ
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 1 byte unsigned (0..255) - ID of the body to test if it's set for the target Actor
+
+0x07 ( 7) ANIM
+          [no params]
+          compare value: 1 byte unsigned (0..255) - ID of the animation to test if it's set for the current Actor
+
+0x08 ( 8) ANIM_OBJ
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 1 byte unsigned (0..255) - ID of the animation to test if it's set for the target Actor
+
+0x09 ( 9) L_TRACK
+          [no params]
+          compare value: 1 byte unsigned (0..255) - ID of the Track Script LABEL to test if it's set for the current Actor
+
+0x0A (10) L_TRACK_OBJ
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 1 byte unsigned (0..255) - ID of the Track Script LABEL to test if it's set for the target Actor
+
+0x0B (11) FLAG_CUBE
+          param1: 1 byte unsigned (0..255) - ID of the Cube Flag to test
+          compare value: 1 byte unsigned (0..255) - value of the Cube Flag to test
+
+0x0C (12) CONE_VIEW
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 2 bytes (unsigned?) (0..32000) - distance to the targer Actor in Scene units
+
+0x0D (13) HIT_BY
+          [no params]
+          compare value: 1 byte unsigned (0..255) - ID of the Actor to test if it has hit the current Actor
+
+0x0E (14) ACTION
+          [no params]
+          compare value: 1 byte unsigned (0..1) - (boolean) 1 = player is pressing "Action" command
+
+0x0F (15) FLAG_GAME
+          param1: 1 byte unsigned (0..255) - ID of the Game Flag to test
+          compare value: 1 byte unsigned (0..255) - value of the Game Flag to test
+
+0x10 (16) LIFE_POINT
+          [no params]
+          compare value: 1 byte (unsigned?) (0..255) - amount of life points to compare the current Actor's amount of life points with
+
+0x11 (17) LIFE_POINT_OBJ
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 1 byte (unsigned?) (0..255) - amount of life points to compare the target Actor's amount of life points with
+
+0x12 (18) NUM_LITTLE_KEYS
+          [no params]
+          compare value: 1 byte (unsigned?) (0..255) - amount of little keys to compare the Hero's amount of little keys with
+
+0x13 (19) NUM_GOLD_PIECES
+          [no params]
+          compare value: 2 bytes (unsigned?) (0..65535) - amount of gold to compare the Hero's amount of gold with
+
+0x14 (20) BEHAVIOUR
+          [no params]
+          compare value: 1 byte unsigned (0..4) - ID of the behaviour to test for the Hero (0 = normal, 1 = athletic, 2 = aggressive, 3 = discrete, 4 = proto-pack)
+
+0x15 (21) CHAPTER
+          [no params]
+          compare value: 1 byte unsigned (0..255) - value of the Chapter variable to test
+
+0x16 (22) DISTANCE_3D
+          param1: 1 byte unsigned (0..255) - ID of the target Actor
+          compare value: 2 bytes (unsigned?) (0..65535) - distance to the target Actor in Scene units
+
+0x17 (23) (unused)
+
+0x18 (24) (unused)
+
+0x19 (25) USE_INVENTORY
+          param1: 1 byte unsigned (0..255) - ID of the (inventory item to test?)
+          compare value: 1 byte unsigned (0..255) - ???
+
+0x1A (26) CHOICE
+          [no params]
+          compare value: 2 bytes (unsigned?) (0..65535) - ID of the text to check if it has been chosen
+
+0x1B (27) FUEL
+          [no params]
+          compare value: 1 byte unsigned (0..255) - amount of fuel to test
+
+0x1C (28) CARRIED_BY
+          [no params]
+          compare value: 1 byte unsigned (0..255) - ID of the Actor to test if the current Actor is being carried by it
+
+0x1D (29) CDROM
+          [no params]
+          compare value: 1 byte (unsigned?) (0..255) - ???
+
+
+===============================
+ LIFE SCRIPT OPERATORS
+===============================
+
+0x00 (0) ==  - tests if the Condition value is equal to the given value to compare
+
+0x01 (1) >   - tests if the Condition value is larger than given value to compare
+
+0x02 (2) <   - tests if the Condition value is less than given value to compare
+
+0x03 (3) >=  - tests if the Condition value is larger or equal than given value to compare
+
+0x04 (4) <=  - tests if the Condition value is less or equal than given value to compare
+
+0x05 (5) !=  - tests if the Condition value is not equal to given value to compare

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Zones</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1>Zones</h1>
+
+<div class="content">
+
+<p class="Bold">In LBA 1 there are seven types of Zones:</p>
+
+<a name="cube"></a>
+<h4>Cube Zones</h4>
+<p>These zones move player to another Scene and Grid. Two parameters can be set:
+<ol>
+  <li>Target Scene index - is an index of the target Scene in the Scenes.hqr file, starting with 0.</li>
+  <li>Target Scene position - is the position of the player Actor in the target Scene (in Scene units).</li>
+</ol>
+</p>
+
+<p>Care needs to be taken when setting target position for the Zone. The actual spawning point depends on the point in which player entered the source Zone. The point will be moved by the distance from the Zone's back-bottom corner to the point of player entry. This provides more <i>natural</i> way of passing between scenes. For example, if player enters the passage on the right side, he will appear in the target Scene at the right side of the passage. This causes problems when setting up a passage between Scenes, if one passage entry is aligned along X axis, and the other one is along Z axis.<br>
+Cube Zones should always be 511 Scene units wide along the thinnest axis. Other widths may cause strange behaviour. Although 512 width seems to work well, original LBA Cube Zones are 511.</p>
+
+<a name="camera"></a>
+<h4>Camera Zones</h4>
+<p>Camera zones bind the camera to specific point of the Scene when player is inside the Zone. The point the camera is bound to is defined as number of Bricks from Scene starting point (Scene point [0, 0, 0]).</p>
+
+<a name="sceneric"></a>
+<h4>Sceneric Zones</h4>
+<p>These Zones can be used in Actor Life Scripts (other Zones cannot). They have special <i>Script index</i> that each Sceneric Zone can be referenced by in the Scripts (with the <a href="LifeScript\var\zone.htm">ZONE(_OBJ)</a> condition that test if particular Actor is inside a particular Sceneric Zone).</p>
+
+<p>More than one Zone can have the same <i>Script index</i>, thus it is easy to set up several Zones to serve the same purpose. All Zones that have the same <i>Script index</i> will trigger condition <span class="skey">if</span> <span class="scond">zone</span> <span class="sop">==</span> <span class="sparam">xx</span>.</p>
+
+<a name="grid"></a>
+<h4>Grid Zones</h4>
+<p>Grid Zones show an additional Fragment Grid (also called <i>disappearring ceiling Grid</i>) when player enters them, and hide it when player exits. This is commonly used to hide ceilings of particular rooms when player enters them, but can also serve other purposes. This kind of Zone needs only one parameter: index of the Fragment to show, which is index of the appropriate Grid in the lba_gri.hqr file decreased by <i>Fragment offset</i>. In LBArchitect Builder you can define a name of the target Fragment (it must be a name of one of the Framgnets that are saved in the same Scenrio as The current Scene and Grid) to determine the index automatically later during the stage compilation (in Designer program).</p>
+
+<p><i>Fragment offset</i> is a constant value, it equals 120 in the original LBA1 engine, and probably can be modified by hex-editing the game exe file.</p>
+
+<a name="bonus"></a>
+<h4>Bonus Zones</h4>
+<p>This type of Zone gives player a bonus when he uses <i>Action</i> while inside it. The type and quantity of the bonus can be defined in the Zone's parameters. If more than one type of bonus is selected the actual type of bonus will be chosen randomly when player uses <i>Action</i>.</p>
+
+<a name="text"></a>
+<h4>Text Zones</h4>
+<p>Text Zones display defined text message to the player when he uses <i>Action</i> while inside it. This is commonly used for road and building signs. The only parameter for this type of Zone is index of the text to be shown.</p>
+
+<a name="ladder"></a>
+<h4>Ladder Zones</h4>
+<p>This type of Zone tells the game that the wall fragment it is at can be used as a ladder. No parameters can be defined for this type.</p>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="LifeScript\var\zone.htm">ZONE(_OBJ)</a> (variable)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

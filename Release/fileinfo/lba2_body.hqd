@@ -1,0 +1,479 @@
+This file contains 3D models of LBA 2 characters
+469
+
+
+
+*body*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:lm2|Twinsen without tunic model
+1:lm2|Twinsen with tunic model
+2:lm2|Twinsen with tunic and sword model
+3:lm2|Twinsen with tunic and blowgun model
+4:lm2|Twinsen with tunic and blowtron model
+5:lm2|Twinsen with tunic and wannie glove model
+6:lm2|Twinsen with tunic and laser pistol model
+7:lm2|Twinsen with wizard's tunic model
+8:lm2|Twinsen with wizard's tunic and blowgun model
+9:lm2|Twinsen with tunic (darker shading) model
+10:lm2|Twinsen with tunic (darker shading) and pick-axe model
+11:lm2|Twinsen with tunic (darker shading) and portable radio model
+12:lm2|Twinsen burning model
+13:lm2|Twinsen falling in Dome of the Slate model
+14:lm2|Twinsen with tunic and car closed model
+15:lm2|Twinsen with wizard's tunic and car closed model
+16:lm2|Twinsen with tunic and protopack model
+17:lm2|Twinsen with tunic and Zoé model
+18:lm2|Twinsen with tunic and Horn of Blue Triton model
+19:lm2|Twinsen with wizard's tunic and Horn of Blue Triton model
+20:lm2|Twinsen with space suit model
+21:lm2|Twinsen with tunic and super jetpack model
+22:lm2|Twinsen with tunic and car open model
+23:lm2|Twinsen with wizard's tunic and car open model
+24:lm2|Twinsen X-Rayed model
+25:lm2|Nitro-meca-penguin model
+26:lm2|Zoé model
+27:lm2|Zoé with umbrella model
+28:lm2|Piece of flying saucer model
+29:lm2|Dot model
+30:lm2|Holomap model
+31:lm2|Three darts model
+32:lm2|Raph, the lighthouse keeper model
+33:lm2|The Tralu model
+34:lm2|Snake model
+35:lm2|Rabbibunny skeleton model
+36:lm2|The flying rat model
+37:lm2|The quetch not being from Citadel Island model
+38:lm2|Drunk rabbibunny in Luc's bar model
+39:lm2|Luc, the boss model
+40:lm2|Tim, waiter model
+41:lm2|A sphero (Raph's friend) model
+42:lm2|Another sphero model
+43:lm2|A third sphero model
+44:lm2|Quetch girl, Raph's friend model
+45:lm2|Quetch girl, Raph's friend model
+46:lm2|Sup in light green dressing model
+47:lm2|Sup in light green dressing with gun model
+48:lm2|Sup in light green dressing with newspaper model
+49:lm2|Yellow franco with green pistol model
+50:lm2|Yellow franco with red pistol model
+51:lm2|Gray esmer dog without mouth protection model
+52:lm2|Gray esmer dog with mouth protection model
+53:lm2|Brown esmer dog without mouth protection model
+54:lm2|Grobo in the baggage claim model
+55:lm2|Propeller of the crate-moving apparatus model
+56:lm2|Rabbibunny in the baggage claim model
+57:lm2|Crate-pushing apparatus model
+58:lm2|Quetch in the baggage claim model
+59:lm2|Mr. Paul model
+60:lm2|Grobo no. 1 in Temple of Bù model
+61:lm2|Quetch in the Inter-Islands Ferry (Cit. Island) model
+62:lm2|Mrs. Brune (Inter-Islands rabbibunny) model
+63:lm2|Neighbor without gallic acid model
+64:lm2|Neighbor with gallic acid model
+65:lm2|Cart in Temple of Bù model
+66:lm2|Arrow in Temple of Bù model
+67:lm2|Painter from Citadel Island sewers model
+68:lm2|Rabbibunny in blue-white dressing model
+69:lm2|Nitro-Meca-Penguin model
+70:lm2|Flying saucer (UFO) with closed door and lights off model
+71:lm2|Flying saucer (UFO) with quarter-open door model
+72:lm2|Flying saucer (UFO) with closed door and lights on model
+73:lm2|Flying saucer (UFO) with closed door, lights on, and feet out model
+74:lm2|Royal saucer (UFO) with quarter-open door model
+75:lm2|Royal saucer (UFO) with closed door model
+76:lm2|Royal saucer (UFO) with closed door and feet in model
+77:lm2|Royal saucer (UFO) with closed door and feet out model
+78:lm2|Small flying saucer (UFO) model
+79:lm2|Boat is Esmers' secret base model
+80:lm2|Franco guard with spike model
+81:lm2|Franco guard with spike model
+82:lm2|Franco guard with spike model
+83:lm2|Franco guard with spike model
+84:lm2|Sup in dark green dressing (clone of Johnny Rocket) model
+85:lm2|Sup in red dressing model
+86:lm2|Franco policeman with red helmet and gun model
+87:lm2|Franco policeman with black hat and gun model
+88:lm2|X-rayed franco red-helmet policeman model
+89:lm2|Franco policeman with green hat and stick model
+90:lm2|Franco survivor from Island CX model
+91:lm2|Yellow-red franco guard dressing (from secret base) model
+92:lm2|Baldino with space suit without helmet model
+93:lm2|Baldino with space suit with helmet in hand model
+94:lm2|Baldino with space suit with helmet model
+95:lm2|Light gray franco guard model
+96:lm2|Franco dissident model
+97:lm2|Light gray franco guard with gun model
+98:lm2|Light gray franco guard with tool model
+99:lm2|Mr. Bazoo (grobo in shop on Citadel Island) model
+100:lm2|Clerk in Mrs. Bloop's museum model
+101:lm2|Quetch guard of Temple Park model
+102:lm2|Quetch visitor of Mrs. Bloop's museum model
+103:lm2|Quetch guard of Temple Park with umbrella model
+104:lm2|Mrs. Bloop model
+105:lm2|Container in museum with Tunic model
+106:lm2|Container in museum without Tunic model
+107:lm2|Trunk in the sewers model
+108:lm2|Bird on Citadel Island model
+109:lm2|Little Tralu model
+110:lm2|Joe the Elf model
+111:lm2|Weather wizard model
+112:lm2|Creature in weather wizard's stove model
+113:lm2|Pharmacist model
+114:lm2|Sphero customer of pharmacy model
+115:lm2|Sphero customer of pharmacy with vacuum cleaner model
+116:lm2|Sphero customer of pharmacy with umbrella model
+117:lm2|The Citadel Island thief model
+118:lm2|The Citadel Island thief with customer's umbrella model
+119:lm2|Nomad grobo from Desert Island model
+120:lm2|A quetch model
+121:lm2|Female rabbibunny in swimming costume (in Hacienda bath) model
+122:lm2|Female grobo in Hacienda bath model
+123:lm2|Dean of the School of Magic model
+124:lm2|Female rabbibunny in the School of Magic model
+125:lm2|Ghost in the School of Magic model
+126:lm2|Sad grobo student in the School of Magic model
+127:lm2|Black nomad sphero from Desert Island model
+128:lm2|Male grobo in Hacienda bath model
+129:lm2|Empty space suit model
+130:lm2|Blowgun test magic symbol in the School of Magic model
+131:lm2|Hourglass (blowgun test) model
+132:lm2|Flask of gallic acid model
+133:lm2|Rabbibunny in shop on Desert Island model
+134:lm2|Rabbibunny child model
+135:lm2|Teacher of the kindergarten on Citadel Island model
+136:lm2|Grobo child model
+137:lm2|Quetch child 1 model
+138:lm2|Quetch child 2 with rope model
+139:lm2|Jerome Baldino model
+140:lm2|Memory viewer model
+141:lm2|Notes model
+142:lm2|Grobo in the hotel on Desert Island model
+143:lm2|Sub in blue dressing in the flying saucer model
+144:lm2|Female sup in the flying saucer model
+145:lm2|Female sup in the flying saucer with pull bell model
+146:lm2|Female sup in the flying saucer with pull bell and safety jacket model
+147:lm2|The translator model
+148:lm2|Rabbibunny with motorbike model
+149:lm2|Rabbibunny with motorbike and Twinsen with Tunic model
+150:lm2|Rabbibunny with motorbike and Twinsen with Wizard's Tunic model
+151:lm2|Bob with covered head model
+152:lm2|Bob with uncovered head model
+153:lm2|Sup in dark green dressing (clone of Johnny Rocket) model
+154:lm2|Johnny Rocket model
+155:lm2|Johnny Rocket in pyjamas model
+156:lm2|Elevator (big) model
+157:lm2|Robot on Otringal (prison guard) model
+158:lm2|Robot on Desert Island model
+159:lm2|Robot on Citadel Island model
+160:lm2|Felix with covered head model
+161:lm2|Felix with uncovered head model
+162:lm2|Crab model
+163:lm2|Top of giant crab model
+164:lm2|Front scissors (or feet) of giant crab model
+165:lm2|Ferry (you can call it hovercraft) model
+166:lm2|Dino-Fly with Twinsen with Tunic model
+167:lm2|Dino-Fly model
+168:lm2|Dino-Fly with Twinsen with Wizard's Tunic model
+169:lm2|Zed model
+170:lm2|Quetch, in love with the pharmacist model
+171:lm2|Mushroom model
+172:lm2|Raph's fiance model
+173:lm2|Piece of giant crab's scissor (or foot) model
+174:lm2|Light from a lighthouse model
+175:lm2|Twinsen and Zoé with the umbrella down model
+176:lm2|Quetch child 2 without rope model
+177:lm2|Rosa the cow model
+178:lm2|Quetch child 3 (on top of the pharmacy) model
+179:lm2|Quetch child 3 without his head model
+180:lm2|Quetch in black dressing (Quetch child 1's big brother) model
+181:lm2|Trash can (hidden Esmer) 1 model
+182:lm2|Trash can (hidden Esmer) 2 model
+183:lm2|The Citadel Island thies with his sister (Rabbibunny child) model
+184:lm2|The teacher of the kindergarten with Quetch child 2 model
+185:lm2|Luc, the boss, with his brother (Grobo child) model
+186:lm2|Franco guy with plates model
+187:lm2|Franco guy with glass model
+188:lm2|Sphero wizard (Ker'aooc) model
+189:lm2|Female quetch wizard (Tabata)
+190:lm2|Grobo wizard model
+191:lm2|The usually drunk franco guy model
+192:lm2|Mosquibee guy 1 model
+193:lm2|Mosquibee guy 2 model
+194:lm2|Wannie guy 1 model
+195:lm2|Wannie guy 2 model
+196:lm2|Queen of the Mosquibees model
+197:lm2|Mosquibee Queen's ventilation guy model
+198:lm2|Quetch child #3 with plate with piece of cake model
+199:lm2|Female rabbibunny in the School of Magic model
+200:lm2|Sup sailor with glass model
+201:lm2|Twinsen with Tunic with piece of cake model
+202:lm2|Mosquibee guy with containe full of liquid model
+203:lm2|Zoé not pregnant anymore with child-carry thing 1 model
+204:lm2|Zoé not pregnant anymore with child-carry thing 2 model
+205:lm2|Franco nurse with franco child 1 model
+206:lm2|Franco child 2 model
+207:lm2|Wannie child 1 model
+208:lm2|Zed on the beach model
+209:lm2|Control-wheel for the woodbridge model
+210:lm2|Woodbridge transport wood model
+211:lm2|Giand spider (Citadel Island cliffs) model
+212:lm2|Moya the turtle model
+213:lm2|Silhuette of the turtle model
+214:lm2|The turtle slightly rising model
+215:lm2|The turtle greatly rising model
+216:lm2|The turtle almost out model
+217:lm2|Cactus (hidden Esmer) model
+218:lm2|The turtle-calling bell model
+219:lm2|Empty car model
+220:lm2|Clover box model
+221:lm2|One of the many desert flowers model
+222:lm2|Desert sphero 1 model
+223:lm2|Desert sphero 1 with guitar model
+224:lm2|Desert sphero 2 model
+225:lm2|Camel 1 model
+226:lm2|Camel 2 model
+227:lm2|Car with racer model
+228:lm2|Sphero bowl player model
+229:lm2|Quetch bowl player model
+230:lm2|Ball 1 (big gray ball) model
+231:lm2|Ball 2 (small red ball) model
+232:lm2|Quetch girl in swimming costume with book model
+233:lm2|Franco guy with beard (bowl player) model
+234:lm2|Sup in light green dressing (bowl player) model
+235:lm2|Quetch guard of Temple Park model
+236:lm2|Sup guy in swimming costume (Imerial Hotel) model
+237:lm2|Green shell (Joe the Elf imprisoned) model
+238:lm2|The Eye 1 of the School of Magic model
+239:lm2|The Eye 2 of the School of Magic model
+240:lm2|Chedil Amiradoo model
+241:lm2|The balsam flower model
+242:lm2|Piece of a plant model
+243:lm2|The sphero near Port-Ludo model
+244:lm2|Grobo policeman, guard of Temple Park model
+245:lm2|Rabbibunny, don't know, where he appears model
+246:lm2|Small yellow duck model
+247:lm2|Twinsen with Tunic and balloons model
+248:lm2|Twinsen with Wizard's Tunic and balloons model
+249:lm2|The balloons model
+250:lm2|Desert grobo model
+251:lm2|Old rabbibunny with guitar model
+252:lm2|Old rabbibunny with magic flute model
+253:lm2|The chest with old rabbibunny's domestic snake model
+254:lm2|The chest empty model
+255:lm2|Sup in space suit model
+256:lm2|Giraffe guy with camera on Zeelich model
+257:lm2|Ant guy with backpack on Zeelich model
+258:lm2|Ant guy 2 on Zeelich model
+259:lm2|Two-headed monster in Emperor's palace model
+260:lm2|Emperor's sup soldier 1 model
+261:lm2|Emperor's sup soldier 2 model
+262:lm2|Sup in swimming costume in water model
+263:lm2|Old sup lady in Imperial Hotel model
+264:lm2|Franco guard in Imperial Hotel model
+265:lm2|Franco policeman with stick down model
+266:lm2|Franco policeman with stick in hand model
+267:lm2|Female franco model
+268:lm2|Narrow electric barrier model
+269:lm2|Wider electric barrier model
+270:lm2|Mosquibee dissident model
+271:lm2|Sup guard of Emperor's palace model
+272:lm2|Sup guard of Emperor's palace with sword out model
+273:lm2|Leontine (zeppelin-boat of the old franco) model
+274:lm2|Leontine with the old franco aboard model
+275:lm2|Leontine with the old franco and Twinsen aboard model
+276:lm2|The old franco model
+277:lm2|Driver 1 of the motor-flyer model
+278:lm2|Driver 2 of the motor-flyer model
+279:lm2|The motor-flyer model
+280:lm2|Motor-flyer with driver 1 aboard model
+281:lm2|Motor-flyer with driver 1 and Twinsen aboard model
+282:lm2|Motor-flyer with driver 2 aboard model
+283:lm2|Motor-flyer with driver 2 and Twinsen aboard model
+284:lm2|Open crate in the undergas center model
+285:lm2|Closed crate in the undergas center model
+286:lm2|Open crate in the undergas center with Twinsen inside model
+287:lm2|Small closed crate model
+288:lm2|Franco policeman with red hat and gun on the car model
+289:lm2|Shotgun model
+290:lm2|Franco trooper model
+291:lm2|Franco trooper with UZI model
+292:lm2|Sup priest model
+293:lm2|Franco at the gas station on Otringal with gas-piston model
+294:lm2|Franco at the gas station on Otringal with hammer model
+295:lm2|Green gloom (alligator) model
+296:lm2|Green gloom (alligator) with tie model
+297:lm2|Gray gloom (alligator) model
+298:lm2|Small gloom (alligator), casino exit guard model
+299:lm2|Big gray gloom (alligator), holding Twinsen model
+300:lm2|Big gray gloom (alligator) model
+301:lm2|Franco with drum model
+302:lm2|Car at the gas station on Otringal model
+303:lm2|Zeelichian car without the gun model
+304:lm2|The gun of the car model
+305:lm2|Dark Monk's key model
+306:lm2|Fire ball model
+307:lm2|Franco survivor from Island CX model
+308:lm2|Kangaroo 1 model
+309:lm2|Kangaroo 2 model
+310:lm2|Franco priest model
+311:lm2|Dark Monk (hidden FunFrock) model
+312:lm2|FunFrock unihidding himself model
+313:lm2|Unhidden FunFrock model
+314:lm2|Unhidden FunFrock with sword out model
+315:lm2|Teleporting FunFrock model
+316:lm2|Standing stone 1 (for lava) model
+317:lm2|Standing stone 2 (for lava) model
+318:lm2|Mosquibee guy with beard model
+319:lm2|Wannie priest model
+320:lm2|Gas monster 1 model
+321:lm2|Silhuette of gas monster's head 1 model
+322:lm2|Gas monster 2 model
+323:lm2|Wannie guy 1 model
+324:lm2|Wannie guy 2 model
+325:lm2|Wannie guy 3 model
+326:lm2|Wannie guy 4 model
+327:lm2|Wannie child model
+328:lm2|Wannie child with red ball model
+329:lm2|Wannie grandma model
+330:lm2|Wannie grandma with plate with piece of tart model
+331:lm2|Wannie child capturing fireflies model
+332:lm2|Firefly model
+333:lm2|Frog model
+334:lm2|Ferryman with boat model
+335:lm2|Ferryman with boat with Twinsen aboard model
+336:lm2|Wannie guy 5 model
+337:lm2|Gem model
+338:lm2|Elevator to the undergas model
+339:lm2|Elevator to the undergas with Twinsen inside model
+340:lm2|Small gas monster 1 (blue) model
+341:lm2|Small gas monster 2 (gray) model
+342:lm2|Wannie guy with pick-axe model
+343:lm2|Undergas bulldozer model
+344:lm2|Undergas bulldozer pick-thing part 1 model
+345:lm2|Undergas bulldozer pick-thing part 2 model
+346:lm2|Little yellow pig model
+347:lm2|Main train wagon with wannie inside model
+348:lm2|Train wagon model
+349:lm2|Train wagon with stones model
+350:lm2|100% Firefly tart model
+351:lm2|5/6 Firefly tart model
+352:lm2|3/4 Firefly tart model
+353:lm2|2/3 Firefly tart model
+354:lm2|Wannie child's red ball model
+355:lm2|Wannie's glove model
+356:lm2|Gas monster 3 (gray) model
+357:lm2|Glass plate model
+358:lm2|Cover of the box with the mosquibees key fragment model
+359:lm2|Green mosquibee guy model
+360:lm2|Franco trooper with explosive box model
+361:lm2|Green mosquibee guy with flag model
+362:lm2|Mosquibee guy with Twinsen model
+363:lm2|Monkey monster with sword model
+364:lm2|Franco trooper with parachute model
+365:lm2|Mosquibee flag model
+366:lm2|Emperor's flag model
+367:lm2|Rope to get into the mosquibee fortress model
+368:lm2|Rope to get into the mosquibee fortress with Twinsen model
+369:lm2|Franco trooper with UZI and explosive ball model
+370:lm2|The two-zeppelin transport method to the elevator model
+371:lm2|Female dog on the Island of the Francos model
+372:lm2|Franco worker on the Island of the Francos model
+373:lm2|Franco with metal-detector on the Island of the Francos model
+374:lm2|Franco worker with red hat on the Island of the Francos model
+375:lm2|Mechanic owl model
+376:lm2|Gas monster 4 model
+377:lm2|Rocket-shooter on Island CX model
+378:lm2|Wannie guy with one glove model
+379:lm2|Sup in orange dressing (in Imperial Hotel and saucer) model
+380:lm2|Sup getting in garbage can in saucer model
+381:lm2|Sup getting in cactus in saucer model
+382:lm2|Wannie guy digging model
+383:lm2|Wannie child #1's toys model
+384:lm2|The wannies key fragment model
+385:lm2|Spider net model
+386:lm2|Old wannie model
+387:lm2|Old wannie with piece of tart model
+388:lm2|Monkey monster model
+389:lm2|Monkey monster with wooden box model
+390:lm2|Wannie child with captured firefly model
+391:lm2|"Feet" for something 1 model
+392:lm2|"Feet" for something 2 model
+393:lm2|Sup 1 with cigar in the undergas agency model
+394:lm2|Sup 2 sitting down with papers in the undergas agency model
+395:lm2|Gray ball model
+396:lm2|Fat yellow/black mosquibee guy model
+397:lm2|Blowtron model
+398:lm2|Green mosquibee guy with red flag model
+399:lm2|Lava fire ball model
+400:lm2|The wheel of fortune model
+401:lm2|Big gray gloom (alligator) with big stick model
+402:lm2|Female franco dancer model
+403:lm2|Franco fireman model
+404:lm2|Sup heavy metal guy in black dressing model
+405:lm2|Female franco dancer model
+406:lm2|The reptile-thing in the casino (come to papa) model
+407:lm2|Brown dog in the casino model
+408:lm2|Orange dog in the casino model
+409:lm2|Cyan dog in the casino model
+410:lm2|Yellow dog in the casino model
+411:lm2|Sup 1 in the casino model
+412:lm2|Sup 2 in the casino model
+413:lm2|Green gloom (alligator) 1 in the casino model
+414:lm2|Green gloom (alligator) 2 in the casino model
+415:lm2|Sailor (maybe pink wannie) 1 model
+416:lm2|Sailor (maybe pink wannie) 1 with gun model
+417:lm2|Glass of drink model
+418:lm2|Sailor (maybe pink wannie) 2 model
+419:lm2|Sailor (maybe pink wannie) 3 model
+420:lm2|Sailor (maybe brown wannie) model
+421:lm2|Sup sailor with glass of drink model
+422:lm2|Young wannie with stone in front of him model
+423:lm2|Half of a franco sitting down model
+424:lm2|Franco with gray hat and glass model
+425:lm2|Rick the sup model
+426:lm2|Silhuette of gas monster's head 2 model
+427:lm2|Gas monster 5 model
+428:lm2|Female franco model
+429:lm2|Can of gazogem model
+430:lm2|Sup 1 in the shop (I love Twinsun) model
+431:lm2|Sup 2 in the shop (I hate Twinsun) model
+432:lm2|Wizard's diploma model
+433:lm2|Ferry ticket model
+434:lm2|Customer's umbrella model
+435:lm2|Small spider model
+436:lm2|Pighead in red dressing with hammer (Emperor's palace) model
+437:lm2|Pighead in brown dressing with gardening tool (Emperor's palace) model
+438:lm2|Pighead in yellow dressing with broom (Emperor's palace) model
+439:lm2|Stan (from Time Commando) model
+440:lm2|Shy sup girl in Imperial Hotel model
+441:lm2|Light gray franco guard listening to music in Imperial Hotel model
+442:lm2|The above franco's tape player model
+443:lm2|Female franco in the shop on the Island of the Francos model
+444:lm2|Pick-axe model
+445:lm2|Glass-cleaning (at least I think) franco model
+446:lm2|Old franco scientist model
+447:lm2|Female franco nurse in the nursery model
+448:lm2|Franco child with red rapper hat model
+449:lm2|A small franco child modeld
+450:lm2|Brother of francos' burgermaster (De La Fontaine) model
+451:lm2|Gas monster 6 (gray) model
+452:lm2|Silhuette of gas monster's head 3 model
+453:lm2|The emperor model
+454:lm2|The emperor's wife model
+455:lm2|Spikes in the protection spell's cave model
+456:lm2|Monster guarding the protection spell model
+457:lm2|The protection spell model
+458:lm2|Vertical electric bar of teleporting machine model
+459:lm2|Gray mechanic grobo near the end model
+460:lm2|Green mechanic grobo with box of missiles near the end model
+461:lm2|Quetch child 1 model
+462:lm2|Very long and thin vertical piece of metal model
+463:lm2|Two such pieces of metal model
+464:lm2|Grobo child model
+465:lm2|Rabbibunny child model
+466:lm2|Quetch child 2 model
+467:lm2|Extremely long and thin vertical/horizontal pieces of metal model
+468:lm2|Mechanic rabbibunny near the end model

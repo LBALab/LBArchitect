@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Actors</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1>Actors</h1>
+
+<div class="content">
+
+<h5>Actors have the following properties:</h5>
+
+<a name="control_mode"></a>
+<h4>Control Mode</h4>
+<p>Specifies the initial Actor Control Mode. The possible modes are:
+<ul class="spaced">
+  <li><b>No move</b> - the Actor's Track Script is stopped. Track Script execution may be started with Life Script of the Actor or other Actors (with <a href="LifeScript/cmd/set_track.htm">SET_TRACK(_OBJ)</a> command). This mode does not mean the Actor will literally <i>not move</i>, but rather that it's Track Script (also called Move Script) is initially stopped. The Actor may move if it is assigned a moving animation.</li>
+  <li><b>Manual</b> - the Actor is controlled by the player. This works good only for the Hero Actor in general. To use it for other Actors they would have to have necessary animations that would be also correctly indexed. The primary purpose for this mode is to re-enable player's control over the Hero after it has been disabled for some reasons.</li>
+  <li><b>Follow Actor</b> - the Actor <i>tries</i> to move towards the target Actor. This only means that it will always face in its direction (as fast as the <a href="#rotation">Rotation delay</a> property allows). To make it really follow anything it must be assigned a moving amination first, and the Actor will not stop by itself after reaching the target. To make a <i>real</i> following, the Actor's animation must be changed for example to standing animation when the Actor is near the target, and changed back to a moving animation when it's far from it. The <i>Follow</i> mode handles only the facing angle.</li>
+  <li><b>Move along track</b> - the Actor's Track Script is run from the first command, and when it reaches <a href="TrackScript/end.htm">END</a> or <a href="TrackScript/stop.htm">STOP</a> it starts over again.</li>
+  <li><b>Follow Actor in X nad Z only</b> - is used to make na Actor to follow specified Actor's X and Z (horizontal) coordinates. This is mainly used for Sprite Actors to be always above other Sprite Actors (like platforms). Unlike the <i>Follow Actor</i> mode, this mode really sets the Actor's position. If the Actor is a Sprite Actor, its <a href="TrackScript/speed.htm">speed</a> is not taken into consideration in this mode.</li>
+  <li><b>Move randomly</b> - makes the Actor walk and turn by random angles and at random moments. In original game it is only used for Nitro-Mecha-Penguins, but it can be used for any 3-D Actor that has standing and walking animation (with regular virtual indexes 0 and 1 respectively). Tris mode requires the <i>Randomize interval (Info1)</i> property to be less or equal to 117, otherwise the Actor will just walk without turning. Exact meaning of the property is not known.</li>
+</ul>
+Control mode can be also changed from Life Script with <a href="LifeScript/cmd/set_dirmode.htm">SET_DIRMODE(_OBJ)</a> command. The respective mode names are: <i>NO_MOVE</i>, <i>MANUAL</i>, <i>FOLLOW</i>, <i>TRACK</i>, <i>SAME_XZ</i> and <i>RANDOM</i>. For <i>follow</i> and <i>same_xz</i> modes the traget Actor must be provided as the last parameter.</p>
+
+<a name="clipping"></a>
+<h4>Clipping</h4>
+<p>Specifies the rectangle outside which the Sprite Actor will not be drawn. It is commonly used for doors. For the clipping to work, <a href="static_flags.htm#clipped">Uses clipping</a> static flag must be set. Clipping is only applicable to Sprite Actors.</p>
+
+<p>Bounds of the clipping rectangle are defined relatively to the pixel [0,0] position of the Grid (top left corner of the [0,0,0] Brick).</p>
+
+<a name="hit_power"></a>
+<h4>Hit Power</h4>
+<p>Is an integer number that specifies damage given by the Actor to other Actors when he hits them in melee fight (it is not applicable to weapons). The damage is dealt only if the Hit Power of the Actor is higher or equal to the Armour of the target (otherwise the target Actor will play its <i>getting hit</i> animation, but will not lose any life.</p>
+
+<p>Hit Power of the Hero (Actor 0) is determined by his Magic Level (see <a href="LifeScript/cmd/set_magic_level.htm">SET_MAGIC_LEVEL</a> Life Script command for details).</p>
+
+<a name="armour"></a>
+<h4>Armour</h4>
+<p>Any damage that is lower than the armour value will not take any life points from the Actor.</p>
+
+<a name="life_points"></a>
+<h4>Life Points</h4>
+<p>Describes <i>health</i> of the Actor (this applies to both 3D and Sprite Actors). If Life Points of an Actor fall to zero or less, it will die (and pop out a bonus, if defined).</p>
+
+<p>All Actors must have initial Life Points larger than zero (including Sprite Actors), otherwise they will not exist in the Scene.</p>
+
+<a name="angle"></a>
+<h4>Angle</h4>
+<p>For 3D Actors - spcifies initial Actor facing direction. See <a href="TrackScript/angle.htm">ANGLE</a> Track Script command for details.</p>
+
+<p>For Sprite Actors - it should be always 0. Other values cause strange behaviour.</p>
+
+<a name="rotation"></a>
+<h4>Rotation delay</h4>
+<p>For 3D Actors - specifies <i>slowness</i> of the Actor's rotation. If the property is set to 0, the Actor will rotate to the specified angle immediately. 255 is the maximum delay, i.e. the lowest rotation speed.</p>
+
+<p>For Sprite Actors - it should be always 0. Other values cause strange behaviour.</p>
+
+<a name="colour"></a>
+<h4>Talk colour</h4>
+<p>Sets colour of the speech text when the Actor is saying a message. Colour index in the palette is computed from equation: Talk_colour * 16 + 12.</p>
+
+<a name="entity"></a>
+<h4>File 3D Entity</h4>
+<p>Entities separate different kinds of Actors, like different people. Each entity has set of bodies (with different clothing or equipment) and set of animations. Bodies and animations for each Entity can be changed at run time with appropriate Life Script and Track Script commands. Entities are applicable to 3D Actors only.</p>
+
+<a name="body"></a>
+<h4>Body</h4>
+<p>Defines inital body (3D model) for the Actor.</p>
+
+<a name="animation"></a>
+<h4>Animation</h4>
+<p>Defines initial Animation for the Actor.</p>
+
+<a name="sprite"></a>
+<h4>Sprite ID</h4>
+<p>Defines index of a sprite entry from Sprites.hqr file. This property is applicable to Sprite Actors only. It cannot be changed at run time.</p>
+
+<a name="static_flags"></a>
+<h4>Static flags</h4>
+<p>See <a href="static_flags.htm">Static Flags section</a> for detailed description.</p>
+
+<a name="bonus"></a>
+<h4>Bonus flags and quantity</h4>
+<p>Determine bonus given by the Actor when he dies or <a href="LifeScript/cmd/give_bonus.htm">GIVE_BONUS</a> command is executed in its Life Script.</p>
+
+<h5>See also:</h5>
+<ul>
+  <li><a href="static_flags.htm">Static Flags</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,659 @@
+unit scScriptEd;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, SynEdit, SynEditHighlighter, scLifeScript1HL, scTrackScript1HL,
+  SynCompletionProposal, StdCtrls, Spin, ComCtrls, Buttons, Scene, SceneLib, Sett,
+  ActorInfo, SynEditTextBuffer;
+
+type
+  TScrUndoRedoList = record 
+    Index: Integer;
+    TrackUndo: TSynEditUndoList;
+    TrackRedo: TSynEditUndoList;
+    LifeUndo: TSynEditUndoList;
+    LifeRedo: TSynEditUndoList;
+  end;
+
+  TfmScScriptEd = class(TForm)
+    scpLifeScript: TSynCompletionProposal;
+    scpTrackScript: TSynCompletionProposal;
+    Label1: TLabel;
+    btCompile: TBitBtn;
+    paEditors: TPanel;
+    spHoriz: TSplitter;
+    Splitter2: TSplitter;
+    seLifeScript: TSynEdit;
+    seTrackScript: TSynEdit;
+    pcBottom: TPageControl;
+    tsMessages: TTabSheet;
+    lbMessages: TListBox;
+    tsHelp: TTabSheet;
+    btSettings: TBitBtn;
+    cbEditorOnTop: TCheckBox;
+    btNextActor: TBitBtn;
+    btPrevActor: TBitBtn;
+    eActor: TEdit;
+    paUndoRedo: TPanel;
+    btLifeUndo: TSpeedButton;
+    btLifeRedo: TSpeedButton;
+    btTrackUndo: TSpeedButton;
+    btTrackRedo: TSpeedButton;
+    Bevel1: TBevel;
+    procedure FormCreate(Sender: TObject);
+    procedure scpTrackScriptExecute(Kind: TSynCompletionType;
+      Sender: TObject; var CurrentInput: String; var x, y: Integer;
+      var CanExecute: Boolean);
+    procedure scpLifeScriptExecute(Kind: TSynCompletionType;
+      Sender: TObject; var CurrentInput: String; var x, y: Integer;
+      var CanExecute: Boolean);
+    procedure btCompileClick(Sender: TObject);
+    procedure lbMessagesData(Control: TWinControl; Index: Integer;
+      var Data: String);
+    function lbMessagesDataFind(Control: TWinControl;
+      FindString: String): Integer;
+    procedure lbMessagesDrawItem(Control: TWinControl; Index: Integer;
+      Rect: TRect; State: TOwnerDrawState);
+    procedure lbMessagesDblClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btSettingsClick(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure seLifeScriptChange(Sender: TObject);
+    procedure seTrackScriptChange(Sender: TObject);
+    procedure btPrevActorClick(Sender: TObject);
+    procedure eActorChange(Sender: TObject);
+    procedure btUndoRedoClick(Sender: TObject);
+    procedure spHorizMoved(Sender: TObject);
+  private
+    CompMsgs: TCompMessages;
+    scLifeScript1HL: TSynLifeScript1HL;
+    scTrackScript1HL: TSynTrackScript1HL;
+    Actor: Integer;
+    procedure CreateParams(var Params: TCreateParams); override;
+    procedure InitHighlighters();
+    procedure SetEditorParams(SynEdit: TSynEdit; Lba1, Life: Boolean);
+    procedure WriteActorScripts();
+    procedure ActorBtnEnable();
+    procedure ActivateUndoRedoButtons();
+    procedure FreeActorUndoRedo(var AUR: TScrUndoRedoList);
+    function FindActorUndoRedo(): Integer;
+    procedure StoreActorUndoRedo();
+    procedure RestoreActorUndoRedo();
+  public
+    ScriptsVisible: Boolean; //To show the window again when switching to Scene Mode
+    LastActor: Integer;
+    procedure OpenScripts(AActor: Integer);
+    procedure SetEditorsOptions();
+    function CompileAllScripts(): Boolean; //Returns True if there are no errors
+    procedure ClearMessages();
+    procedure DeleteAllActorUndoRedo();
+    procedure DeleteUnusedActorUndoRedo();
+  end;
+
+var
+  fmScScriptEd: TfmScScriptEd;
+
+  //TrackScriptItems, TrackScriptInserts: TStringList;
+  LifeScriptCommandItems, LifeScriptCommandInserts: TStringList;
+  LifeScriptConditionItems, LifeScriptConditionInserts: TStringList;
+  LifeScriptBehaviourItems, LifeScriptBehaviourInserts: TStringList;
+  LifeScriptDirModeItems, LifeScriptDirModeInserts: TStringList;
+
+  ScrUndoRedo: array of TScrUndoRedoList; //One item for each Actor
+  NextUndoIndex: Cardinal = 1;
+
+procedure OnCompMessage(Msg: TCompMessage);
+
+implementation
+
+uses Math, Main;
+
+{$R *.dfm}
+
+procedure TfmScScriptEd.OpenScripts(AActor: Integer);
+begin
+ If (AActor < 0) or (AActor > High(VScene.Actors)) then Exit; //Just in case
+ If Actor > -1 then begin
+   WriteActorScripts();
+   StoreActorUndoRedo();
+ end;
+ Actor:= AActor;
+ LastActor:= Actor;
+ Caption:= 'Script editor - Actor ' + IntToStr(Actor);
+ seLifeScript.Text:= VScene.Actors[Actor].LifeScriptTxt;
+ seTrackScript.Text:= VScene.Actors[Actor].TrackScriptTxt;
+ eActor.Text:= IntToStr(Actor);
+ RestoreActorUndoRedo();
+ ActivateUndoRedoButtons();
+ ActorBtnEnable();
+ If not Visible then Show();
+ If WindowState = wsMinimized then
+   SendMessage(Handle, WM_SYSCOMMAND, SC_RESTORE, 0);
+end;
+
+procedure TfmScScriptEd.InitHighlighters();
+begin
+ scLifeScript1HL:= TSynLifeScript1HL.Create(fmScScriptEd);
+ scTrackScript1HL:= TSynTrackScript1HL.Create(fmScScriptEd);
+end;
+
+procedure TfmScScriptEd.SetEditorParams(SynEdit: TSynEdit; Lba1, Life: Boolean);
+begin
+ If Lba1 then begin
+   If Life then begin
+     SynEdit.Highlighter:= scLifeScript1HL;
+   end
+   else begin
+     SynEdit.Highlighter:= scTrackScript1HL;
+   end;
+ end;
+end;
+
+procedure TfmScScriptEd.SetEditorsOptions();
+begin
+ If Settings.Scene.CompletionProp then begin
+   scpLifeScript.Options:= scpLifeScript.Options + [scoUseBuiltinTimer];
+   scpTrackScript.Options:= scpLifeScript.Options + [scoUseBuiltinTimer];
+ end
+ else begin
+   scpLifeScript.Options:= scpLifeScript.Options - [scoUseBuiltinTimer];
+   scpTrackScript.Options:= scpLifeScript.Options - [scoUseBuiltinTimer];
+ end;
+end;
+
+procedure TfmScScriptEd.WriteActorScripts();
+begin
+ If Actor > -1 then begin
+   VScene.Actors[Actor].TrackScriptTxt:= seTrackScript.Text;
+   VScene.Actors[Actor].LifeScriptTxt:= seLifeScript.Text;
+ end;  
+end;
+
+procedure TfmScScriptEd.FormCreate(Sender: TObject);
+begin
+ Actor:= -1;
+ InitHighlighters();
+ SetEditorParams(seLifeScript,True,True);
+ SetEditorParams(seTrackScript,True,False);
+ ScriptsVisible:= False;
+end;
+
+procedure TfmScScriptEd.CreateParams(var Params: TCreateParams);
+begin
+  inherited;
+  Params.ExStyle:= Params.ExStyle or WS_EX_APPWINDOW;
+end;
+
+procedure TfmScScriptEd.scpTrackScriptExecute(Kind: TSynCompletionType;
+  Sender: TObject; var CurrentInput: String; var x, y: Integer;
+  var CanExecute: Boolean);
+begin
+ If Trim(Copy(scpTrackScript.Editor.LineText, 1,
+         scpTrackScript.Editor.CaretX - Length(CurrentInput) - 1)) <> '' then
+   CanExecute:= False;
+end;
+
+procedure TfmScScriptEd.scpLifeScriptExecute(Kind: TSynCompletionType;
+  Sender: TObject; var CurrentInput: String; var x, y: Integer;
+  var CanExecute: Boolean);
+var Temp: String;
+begin
+ scpLifeScript.ItemList.Clear;
+ scpLifeScript.InsertList.Clear;
+ temp:= Trim(Copy(scpLifeScript.Editor.LineText, 1,
+             scpLifeScript.Editor.CaretX - Length(CurrentInput) - 1));
+ If temp = '' then begin
+   scpLifeScript.ItemList.Assign(LifeScriptCommandItems);
+   scpLifeScript.InsertList.Assign(LifeScriptCommandInserts);
+ end
+ else if AnsiSameText(temp,'IF') or AnsiSameText(temp,'ONEIF')
+      or AnsiSameText(temp,'SWIF') or AnsiSameText(temp,'OR_IF')
+      or AnsiSameText(temp,'NEVERIF') or AnsiSameText(temp,'SNIF') then begin
+   scpLifeScript.ItemList.Assign(LifeScriptConditionItems);
+   scpLifeScript.InsertList.Assign(LifeScriptConditionInserts);
+ end
+ else if AnsiSameText(temp,'SET_BEHAVIOUR') or AnsiSameText(temp,'BEHAVIOUR') then begin
+   scpLifeScript.ItemList.Assign(LifeScriptBehaviourItems);
+   scpLifeScript.InsertList.Assign(LifeScriptBehaviourInserts);
+ end
+ else if AnsiSameText(temp,'SET_DIRMODE')
+      or AnsiSameText(temp,'SET_DIRMODE_OBJ') then begin
+   scpLifeScript.ItemList.Assign(LifeScriptDirModeItems);
+   scpLifeScript.InsertList.Assign(LifeScriptDirModeInserts);
+ end
+ else CanExecute:= False;
+end;
+
+procedure TfmScScriptEd.btCompileClick(Sender: TObject);
+var a: Integer;
+    LH: array of TLbHashTable;
+    CL: array of TCompList;
+    LT: array of TTransTable;
+    OK: Boolean;
+begin
+ pcBottom.ActivePage:= tsMessages;
+ ClearMessages();
+ WriteActorScripts();
+ StoreActorUndoRedo();
+ SetLength(LH, Length(VScene.Actors));
+ SetLength(CL, Length(VScene.Actors));
+ SetLength(LT, Length(VScene.Actors));
+ OK:= True;
+
+ //Current Actor has a prority, so compile its Scripts first, then the rest
+ //  (because we need all the scripts to pass through one stage to
+ //  be able to perform next stage on anything (except for stage 4, which
+ //  can be performed without all the scripts passed stage 3)).
+ //  Stages are:
+ //    1. Track Scripts compilation
+ //    2. Life Scritps conversion to Trans Table
+ //    3. Life Scripts offsets resolving
+ //    4. Life Scripts translating to binary form
+
+ //Compilig Track
+ OK:= CompileTrackScript(VScene.Actors[Actor].TrackScriptTxt, Actor,
+        VScene.Actors[Actor].TrackScriptBin, LH[Actor], OnCompMessage,
+        ActorEntities, VScene);
+
+ If OK then
+   for a:= 0 to High(VScene.Actors) do
+     If a <> Actor then //Skip the Actor that has been processed already
+       If not CompileTrackScript(VScene.Actors[a].TrackScriptTxt, a,
+         VScene.Actors[a].TrackScriptBin, LH[a], OnCompMessage, ActorEntities,
+         VScene) then begin
+         OK:= False;
+         Break;
+       end;
+
+ If OK then begin
+   AddMessage(OnCompMessage, True, ciTrackCompiled, -1, 0, 0, 0);
+
+   //Parsing Life
+   OK:= LifeCompToTransTable(VScene.Actors[Actor].LifeScriptTxt, Actor,
+          CL[Actor], LT[Actor], OnCompMessage, ActorEntities, VScene);
+ end;
+
+ If OK then
+   for a:= 0 to High(VScene.Actors) do
+     If a <> Actor then
+       If not LifeCompToTransTable(VScene.Actors[a].LifeScriptTxt, a,
+         CL[a], LT[a], OnCompMessage, ActorEntities, VScene) then begin
+         OK:= False;
+         Break;
+       end;
+
+ If OK then begin
+   AddMessage(OnCompMessage, False, ciLifeParsed, -1, 0, 0, 0);
+
+   //Resolving Life
+   OK:= LifeCompResolveOffsets(LT, Actor, LH, CL, OnCompMessage);
+ end;
+
+ If OK then
+   for a:= 0 to High(VScene.Actors) do
+     If a <> Actor then
+       If not LifeCompResolveOffsets(LT, a, LH, CL, OnCompMessage) then begin
+         OK:= False;
+         Break;
+       end;
+
+ If OK then begin
+   AddMessage(OnCompMessage, False, ciLifeResolved, -1, 0, 0, 0);
+
+   //Checking Usage
+   LifeCompCheckUsage(LH, CL, OnCompMessage);
+
+   //Converting to binary form
+   OK:= LifeCompTransToBin(LT[Actor], VScene.Actors[Actor].LifeScriptBin, Actor,
+          OnCompMessage);
+ end;
+
+ If OK then
+   AddMessage(OnCompMessage, False, ciLifeCompSing, -1, 0, 0, 0)
+ else if ScrSet.Comp.AutoHLError
+ and (Length(CompMsgs) > 0) and (CompMsgs[High(CompMsgs)].mType = mtError)
+ and (ScrSet.Comp.AutoHLAlways or (Actor = CompMsgs[High(CompMsgs)].Actor))
+ then
+   lbMessagesDblClick(lbMessages);
+end;
+
+//In case of more than one editor window this will have to be changed to a
+//  procedure of object, and probably compilation routines will have to be
+//  updated also.
+procedure OnCompMessage(Msg: TCompMessage);
+begin
+  SetLength(fmScScriptEd.CompMsgs, Length(fmScScriptEd.CompMsgs) + 1);
+  fmScScriptEd.CompMsgs[High(fmScScriptEd.CompMsgs)]:= Msg;
+  fmScScriptEd.lbMessages.Count:= fmScScriptEd.lbMessages.Count + 1;
+  fmScScriptEd.lbMessages.ItemIndex:= fmScScriptEd.lbMessages.Items.Count - 1;
+end;
+
+procedure TfmScScriptEd.lbMessagesData(Control: TWinControl;
+  Index: Integer; var Data: String);
+begin
+  Data:= CompMsgs[Index].Text;
+end;
+
+function TfmScScriptEd.lbMessagesDataFind(Control: TWinControl;
+  FindString: String): Integer;
+begin
+  Result:= -1; //This is not working (because it's not necessary)
+end;
+
+procedure TfmScScriptEd.lbMessagesDrawItem(Control: TWinControl;
+  Index: Integer; Rect: TRect; State: TOwnerDrawState);
+begin
+  If odSelected in State then
+    (Control as TListBox).Canvas.Brush.Color:= $FFE0E0 //$80FFFF
+  else
+    (Control as TListBox).Canvas.Brush.Color:= (Control as TListBox).Color;
+  (Control as TListBox).Canvas.FillRect(Rect);
+  case CompMsgs[Index].mType of
+    mtError: (Control as TListBox).Canvas.Font.Color:= clRed;
+    mtWarning: (Control as TListBox).Canvas.Font.Color:= $0070E0; //orange
+    mtInfo: (Control as TListBox).Canvas.Font.Color:= clGreen;
+  end;
+
+  (Control as TListBox).Canvas.TextOut(Rect.Left + 1, Rect.Top + 1,CompMsgs[Index].Text);
+end;
+
+procedure TfmScScriptEd.lbMessagesDblClick(Sender: TObject);
+var a: Integer;
+    bb: TBufferCoord;
+    sm: TSynEdit;
+begin
+  a:= lbMessages.ItemIndex;
+  If (a >= 0) and (a <= High(CompMsgs)) then begin
+    If CompMsgs[a].TrackScript then sm:= seTrackScript
+                               else sm:= seLifeScript;
+    If CompMsgs[a].Actor > -1 then begin
+      eActor.Text:= IntToStr(CompMsgs[a].Actor);
+      If (CompMsgs[a].mType <> mtInfo) and (CompMsgs[a].Line > 0) then begin
+        bb.Line:= CompMsgs[a].Line;  //for some reason BlockBegin members cannot be assigned directly
+        bb.Char:= CompMsgs[a].PosEnd + 1;
+        sm.CaretXY:= bb;
+        bb.Char:= CompMsgs[a].PosStart + 1;
+        sm.BlockBegin:= bb;
+        bb.Char:= CompMsgs[a].PosEnd + 1;
+        sm.BlockEnd:= bb;
+        //sm.CaretXY:= bb;
+        sm.SetFocus();
+      end;
+    end;
+  end;
+end;
+
+procedure TfmScScriptEd.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  If Actor > -1 then begin
+    WriteActorScripts();
+    StoreActorUndoRedo();
+  end;
+  Actor:= -1;
+end;
+
+procedure TfmScScriptEd.btSettingsClick(Sender: TObject);
+begin
+ SetForm.PageControl1.ActivePage:= SetForm.tsScripts;
+ SetForm.ShowSettings();
+end;
+
+procedure TfmScScriptEd.FormResize(Sender: TObject);
+begin
+ If (seTrackScript.Width < 187) or (seLifeScript.Width > paEditors.Width - 100) then
+   seLifeScript.Width:= paEditors.Width - 194;
+ If (seLifeScript.Height < 6) or (pcBottom.Height > paEditors.Height - 5) then
+   pcBottom.Height:= paEditors.Height - 13;
+ paUndoRedo.Left:= seLifeScript.Width - 57;  
+end;
+
+procedure TfmScScriptEd.seLifeScriptChange(Sender: TObject);
+begin
+ VScene.Actors[Actor].TrackScriptTxt:= seTrackScript.Text;
+ SetSceneModified();
+ ActivateUndoRedoButtons();
+end;
+
+procedure TfmScScriptEd.seTrackScriptChange(Sender: TObject);
+begin
+ VScene.Actors[Actor].LifeScriptTxt:= seLifeScript.Text;
+ SetSceneModified();
+ ActivateUndoRedoButtons();
+end;
+
+function TfmScScriptEd.CompileAllScripts(): Boolean;
+var a: Integer;
+    LH: array of TLbHashTable;
+    CL: array of TCompList;
+    LT: array of TTransTable;
+begin
+ pcBottom.ActivePage:= tsMessages;
+ ClearMessages();
+ WriteActorScripts();
+ StoreActorUndoRedo();
+ SetLength(LH, Length(VScene.Actors));
+ SetLength(CL, Length(VScene.Actors));
+ SetLength(LT, Length(VScene.Actors));
+ Result:= True;
+
+ //Compilig Track Scripts
+ for a:= 0 to High(VScene.Actors) do
+   If not CompileTrackScript(VScene.Actors[a].TrackScriptTxt, a,
+     VScene.Actors[a].TrackScriptBin, LH[a], OnCompMessage, ActorEntities,
+     VScene) then begin
+     Result:= False;
+     Break;
+   end;
+
+ If Result then begin
+   AddMessage(OnCompMessage, True, ciTrackCompiled, -1, 0, 0, 0);
+
+   for a:= 0 to High(VScene.Actors) do
+     If not LifeCompToTransTable(VScene.Actors[a].LifeScriptTxt, a,
+       CL[a], LT[a], OnCompMessage, ActorEntities, VScene) then begin
+       Result:= False;
+       Break;
+     end;
+ end;
+
+ If Result then begin
+   AddMessage(OnCompMessage, False, ciLifeParsed, -1, 0, 0, 0);
+
+   //Resolving Life Scripts
+   for a:= 0 to High(VScene.Actors) do
+     If not LifeCompResolveOffsets(LT, a, LH, CL, OnCompMessage) then begin
+       Result:= False;
+       Break;
+     end;
+ end;
+
+ If Result then begin
+   AddMessage(OnCompMessage, False, ciLifeResolved, -1, 0, 0, 0);
+
+   //Checking Usage
+   LifeCompCheckUsage(LH, CL, OnCompMessage);
+
+   //Converting to binary form
+   for a:= 0 to High(VScene.Actors) do
+     If not LifeCompTransToBin(LT[a], VScene.Actors[a].LifeScriptBin, a,
+       OnCompMessage) then begin
+       Result:= False;
+       Break;
+     end;
+ end;
+
+ If Result then
+   AddMessage(OnCompMessage, False, ciLifeCompSing, -1, 0, 0, 0);
+end;
+
+procedure TfmScScriptEd.ClearMessages();
+begin
+ SetLength(CompMsgs, 0);
+ lbMessages.Count:= 0;
+ lbMessages.Repaint();
+end;
+
+procedure TfmScScriptEd.ActorBtnEnable();
+begin
+ btPrevActor.Enabled:= Actor > 0;
+ btNextActor.Enabled:= Actor < High(VScene.Actors);
+end;
+
+procedure TfmScScriptEd.btPrevActorClick(Sender: TObject);
+begin
+ if Sender = btPrevActor then begin
+   if Actor > 0 then OpenScripts(Actor - 1);
+ end
+ else if Sender = btNextActor then begin
+   if Actor < High(VScene.Actors) then OpenScripts(Actor + 1);
+ end;
+end;
+
+procedure TfmScScriptEd.eActorChange(Sender: TObject);
+var a: Integer;
+begin
+ If TryStrToInt(eActor.Text, a)
+ and (a >= 0) and (a <= High(VScene.Actors)) then begin
+   eActor.Color:= clWindow;
+   if a = Actor then Exit; //Don't do anything if the selected Actor is already opened
+   eActor.OnChange:= nil; //disable the event to avoid double update
+   If Settings.Scene.ScriptToActor then
+     fmMain.frSceneObjProps.seAId.Value:= a //SelectObject(otActor, a)
+   else
+     OpenScripts(a);
+   eActor.OnChange:= eActorChange;
+   ActorBtnEnable();
+ end
+ else
+   eActor.Color:= $8080FF;
+end;
+
+procedure TfmScScriptEd.btUndoRedoClick(Sender: TObject);
+begin
+      if Sender = btLifeUndo  then seLifeScript.Undo()
+ else if Sender = btLifeRedo  then seLifeScript.Redo()
+ else if Sender = btTrackUndo then seTrackScript.Undo()
+ else if Sender = btTrackRedo then seTrackScript.Redo();
+ ActivateUndoRedoButtons();
+end;
+
+procedure TfmScScriptEd.spHorizMoved(Sender: TObject);
+begin
+ paUndoRedo.Left:= seLifeScript.Width - 57;
+end;
+
+procedure TfmScScriptEd.ActivateUndoRedoButtons();
+begin
+ btLifeUndo.Enabled:= seLifeScript.UndoList.CanUndo;
+ btLifeRedo.Enabled:= seLifeScript.RedoList.CanUndo;
+ btTrackUndo.Enabled:= seTrackScript.UndoList.CanUndo;
+ btTrackRedo.Enabled:= seTrackScript.RedoList.CanUndo;
+end;
+
+procedure TfmScScriptEd.FreeActorUndoRedo(var AUR: TScrUndoRedoList);
+begin
+ AUR.TrackUndo.Free();
+ AUR.TrackRedo.Free();
+ AUR.LifeUndo.Free();
+ AUR.LifeRedo.Free();
+end;
+
+procedure TfmScScriptEd.DeleteAllActorUndoRedo();
+var a: Integer;
+begin
+ for a:= 0 to High(ScrUndoRedo) do
+   FreeActorUndoRedo(ScrUndoRedo[a]);
+ SetLength(ScrUndoRedo, 0);
+end;
+
+procedure TfmScScriptEd.DeleteUnusedActorUndoRedo();
+var a, b: Integer;
+    Used: Boolean;
+begin
+ for a:= High(ScrUndoRedo) downto 0 do begin
+   Used:= False;
+   for b:= 0 to High(VScene.Actors) do
+     if ScrUndoRedo[a].Index = VScene.Actors[b].UndoRedoIndex then begin
+       Used:= True;
+       Break;
+     end;
+   if not Used then begin
+     FreeActorUndoRedo(ScrUndoRedo[a]);
+     for b:= a + 1 to High(ScrUndoRedo) do
+       ScrUndoRedo[b - 1]:= ScrUndoRedo[b];
+     SetLength(ScrUndoRedo, Length(ScrUndoRedo) - 1);
+   end;
+ end;
+end;
+
+function TfmScScriptEd.FindActorUndoRedo(): Integer;
+var a, index: Integer;
+begin
+ index:= VScene.Actors[Actor].UndoRedoIndex;
+ if index > 0 then begin
+   for a:= 0 to High(ScrUndoRedo) do
+     if ScrUndoRedo[a].Index = index then begin
+       Result:= a;
+       Exit;
+     end;
+ end;
+ Result:= -1;
+end;
+
+procedure TfmScScriptEd.StoreActorUndoRedo();
+var a, id, firstfree: Integer;
+    found: Boolean;
+begin
+ id:= FindActorUndoRedo();
+
+ if id < 0 then begin //need to create new lists
+   firstfree:= NextUndoIndex; //First free index
+   repeat
+     found:= True;
+     for a:= 0 to High(ScrUndoRedo) do
+       if ScrUndoRedo[a].Index = firstfree then begin
+         found:= False;
+         Inc(firstfree);
+         Break;
+       end;
+   until found;
+   NextUndoIndex:= Cardinal(firstfree + 1);
+   if NextUndoIndex = 0 then NextUndoIndex:= 1;
+
+   id:= Length(ScrUndoRedo);
+   SetLength(ScrUndoRedo, id + 1);
+   ScrUndoRedo[id].Index:= firstfree;
+   ScrUndoRedo[id].TrackUndo:= TSynEditUndoList.Create();
+   ScrUndoRedo[id].TrackRedo:= TSynEditUndoList.Create();
+   ScrUndoRedo[id].LifeUndo:= TSynEditUndoList.Create();
+   ScrUndoRedo[id].LifeRedo:= TSynEditUndoList.Create();
+   VScene.Actors[Actor].UndoRedoIndex:= firstfree;
+ end;
+
+ //Here we have the right index for sure
+ ScrUndoRedo[id].TrackUndo.Assign(seTrackScript.UndoList);
+ ScrUndoRedo[id].TrackRedo.Assign(seTrackScript.RedoList);
+ ScrUndoRedo[id].LifeUndo.Assign(seLifeScript.UndoList);
+ ScrUndoRedo[id].LifeRedo.Assign(seLifeScript.RedoList);
+end;
+
+procedure TfmScScriptEd.RestoreActorUndoRedo();
+var id: Integer;
+begin
+ id:= FindActorUndoRedo();
+ if id >= 0 then begin
+   seTrackScript.UndoList.Assign(ScrUndoRedo[id].TrackUndo);
+   seTrackScript.RedoList.Assign(ScrUndoRedo[id].TrackRedo);
+   seLifeScript.UndoList.Assign(ScrUndoRedo[id].LifeUndo);
+   seLifeScript.RedoList.Assign(ScrUndoRedo[id].LifeRedo);
+ end;
+end;
+
+initialization
+
+{$I AutoComplete.inc}
+
+end.

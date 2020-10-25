@@ -1,0 +1,24 @@
+This file contains Layout Libraries from LBA 1
+134
+
+
+
+*lba_bll*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:bl1|Prisons, factories, industrial buildings
+1:bl1|Islands
+5:bl1|Houses
+7:bl1|Yellow brick buildings (e.g. Library)
+8:bl1|Caves
+9:bl1|Snow scenes
+12:bl1|Military islands
+17:bl1|Ruins
+34:bl1|Sewers
+36:bl1|Desert scenes
+59:bl1|Ruined military islands (e.g. Rebellion)
+93:bl1|Ruined scenes (e.g. Fortress)
+106:bl1|Working areas (e.g. Polar Island)
+116:bl1|Decorated scenes

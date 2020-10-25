@@ -1,0 +1,49 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=..\Release\Help\Scenes.chm
+Contents file=Scenes.hhc
+Default topic=html\overview.htm
+Display compile progress=Yes
+Full-text search=Yes
+Language=0x809 Angielski (Wielka Brytania)
+Title=LBA Scenes
+
+
+[FILES]
+html\TrackScript\angle.htm
+html\TrackScript\angle_rnd.htm
+html\TrackScript\anim.htm
+html\TrackScript\background.htm
+html\TrackScript\beta.htm
+html\TrackScript\body.htm
+html\TrackScript\close.htm
+html\TrackScript\end.htm
+html\TrackScript\face_hero.htm
+html\TrackScript\goto.htm
+html\TrackScript\goto_point.htm
+html\TrackScript\goto_point_3d.htm
+html\TrackScript\goto_sym_point.htm
+html\static_flags.htm
+html\TrackScript\no_body.htm
+html\TrackScript\open_xxx.htm
+html\TrackScript\play_fla.htm
+html\TrackScript\pos_point.htm
+html\TrackScript\repeat_sample.htm
+html\TrackScript\sample.htm
+html\TrackScript\sample_always.htm
+html\TrackScript\sample_rnd.htm
+html\TrackScript\sample_stop.htm
+html\TrackScript\simple_sample.htm
+html\TrackScript\speed.htm
+html\TrackScript\wait_anim.htm
+html\TrackScript\wait_door.htm
+html\TrackScript\wait_num_anim.htm
+html\TrackScript\wait_num_second.htm
+html\zones.htm
+html\TrackScript\label.htm
+html\TrackScript\stop.htm
+html\overview.htm
+
+[INFOTYPES]
+

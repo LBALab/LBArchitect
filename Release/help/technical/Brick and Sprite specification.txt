@@ -1,0 +1,72 @@
+---------------------------------------------------------------
+ LBA Brick and Sprite file format 
+  they are described together because they are almost the same
+ Author: Kazimierz Król (zink)
+ Revision: 1.0a
+---------------------------------------------------------------
+
+ Brick files are all entries of lba_brk.hqr file from LBA 1
+  and entries 198 ~ 18100 of lba_bkg.hqr file from LBA 2.
+
+ Sprite files are all entries of sprites.hqr files from LBA 1 and 2
+
+ Main difference between sprites and sricks is that sprites have additional 8 bytes at the file beginning. All rest data (besides two bytes that will be explained further) has identical meaning.
+
+ The Bricks/Sprites are images compressed in special format. The compression is lossless, and it's similar to RLE compression used in some bitmaps (*.bmp).
+
+ 
+ First 8 bytes of sprite files:
+--------------------------------
+
+ Offset Type   Meaning
+
+ 0x00:  DWORD  Describes the offset of data block in the file, usually 
+                (if not always) it is value of 8.
+ 0x04:  DWORD  Describes the size of data block in the file, usually 
+                (if not always) it is value of FileSize minus 8.
+
+ 
+ Common data block:
+--------------------
+ Offsets here are in format 0x41(0x49): 
+  Number without brackets means offset in the brick file.
+  Number with brackets means offset in sprite file (+8).
+
+ Offset         Type   Meaning
+
+ 0x00(0x08):    BYTE   Width of brick/sprite in pixels
+ 0x01(0x09):    BYTE   Height of brick/sprite in pixels
+ 0x02(0x0A):  (s)BYTE  Screen offset in X axis
+ 0x03(0x0B):  (s)BYTE  Screen offset in Y axis
+  
+ In brick files and in LBA 1 sprite files the offsets are unsigned bytes. Only in LBA 2 sprite files the offsets are signed bytes. This is the last difference between bricks and sprites. The remaining data is identical.
+
+ The next data describes the lines. It repeats as many times as the height of brick/sprite is.
+
+ First byte of a line describes number of sub-lines that the line is made of.
+ The next data describes sub-lines of specified line. It repeats as many times as the number of sub-lines is.
+ Each sub-line has format as follows:
+  First byte contains flags and length of the sub-line in pixels:
+   bits 7 and 6 are flags and their values can be as follows:
+    00 - the sub-line is transparent, no colour bytes after the first byte
+    01 - each pixel of the sub-line has its own colour, there are so many colour bytes as the lenght of sub-line value is. The colour bytes are right after the first byte.
+    10 - all pixels of the sub-line have the same colour, there is one colour byte after the first byte.
+    11 - same as 01 (but never used).
+   bits 5 ~ 0 describe the length of the sub-line decreased by 1 (000000(bin) = 1 pixel).
+ 
+  After the flag/length byte there may be no bytes or a number of colour bytes (depending on the flags). The colour bytes refer to colours in the palette.
+
+ Sum of all sub-lines widths in one line must be equal to brick/sprite width, otherwise it may be displayed in a wrong way. If your line ends before it reaches the brick/sprite width, put there a transparent line of appropriate length.      
+
+
+ Thanks to Alexfont for telling me about sprite and brick format similarities.
+
+--------------------------------------------------------------------
+ That is all I know. 
+ If you know something more, I will be grateful if you let me know.
+ e-mail:   zink@poczta.onet.pl
+ web page: moonbase.kazekr.net
+--------------------------------------------------------------------
+
+Revision history:
+ 1.0a: specification revised 

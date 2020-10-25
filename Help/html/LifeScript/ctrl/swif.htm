@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SWIF</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SWIF</b> (control statement)</h1>
+
+<div class="content">
+
+<p class="just"><b>SWIF</b> begins conditional statements, that allow executing particular piece of code only if some conditions are met. It works just like <a href="if.htm">IF</a>, but will repeat execution only if the condition result has changed.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SWIF</span><span class="ComParams"> variable </span>[<span class="ComParams">actor</span>(0 to 255 integer)]<span class="ComParams"> operator</span><span class="ComParams"> value</span></li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">variable </span>is name of the world property to be evaluated. For list of variables see <a href="../overview.htm">Life Script overview</a>.</li>
+  <li><span class="ComParams">actor </span> is index of the Actor to test the variable for. This parameter is required only for some variables (mostly the ones that end with _OBJ).</li>
+  <li><span class="ComParams">operator </span>can be one of the following:
+    <table cellspacing=0 class="brd" style="margin: 0 0 0 30px; font-size:100%;">
+    <tr><td class="brd" align="center"><span class="ComParams">==</span></td><td class="brd">equal</td></tr>
+    <tr><td class="brd" align="center"><span class="ComParams">!=</span></td><td class="brd">not equal</td></tr>
+    <tr><td class="brd" align="center"><span class="ComParams">&gt;</span></td><td class="brd">greater than</td></tr>
+    <tr><td class="brd" align="center"><span class="ComParams">&lt;</span></td><td class="brd">less than</td></tr>
+    <tr><td class="brd" align="center"><span class="ComParams">&gt;=</span></td><td class="brd">greater or equal</td></tr>
+    <tr><td class="brd" align="center"><span class="ComParams">&lt;=</span></td><td class="brd">less or equal</td></tr>
+    </table></li>
+  <li><span class="ComParams">value </span>is the value to compare the variable with. Data type of the value depends on the variable used. The value must be constant, it cannot be a variable.</li>
+</ul>
+
+<p class="just">Conditional statements allow for testing variables of the world against given values and executing specified Script pieces depending whether the condition is met or not. The end of the Script block must end with <a href="endif.htm">ENDIF</a> statement, even if it consists of a single line only. <b>SWIF</b> checks one condition and executes associated Script block if the condition is met, but executes it only once. Next execution may be performed only if the condition has been "noticed" in a false (not met) state, and then turned true again. The Script block will be executed only once per each false->true condition cycle. <b>SWIF</b> should not be nested in other <b>SWIF</b> statements, because in most cases the Script block will never execute. However it may be useful for some unusual solutions. <a href="or_if.htm">OR_IF</a> statement cannot be used with <b>SWIF</b> (it will allow execution of the block more than once per cycle).</p>
+
+<p class="just">In the example below the <span class="scmd">message</span> <span class="sparam">23</span> will be shown once when the Actor enters Zone 1, then it may be executed again only if the Actor leaves the Zone 1 and enters it again.</p>
+
+<p class="just"><a href="else.htm">ELSE</a> statement will be executed always when the block under condition is not executed. This means: when the condition is false and also when the condition is true, but the 'true' Script block had been executed before (and has not changed since).</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">swif</span> <span class="svar">zone</span> <span class="sop">==</span> <span class="sparam">1</span><br />
+  <span class="scmd indent0">message</span> <span class="sparam">23</span><br />
+  <span class="skey">endif</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="if.htm">IF</a> (control statement)</li>
+  <li>Life Script: <a href="oneif.htm">ONEIF</a> (control statement)</li>
+  <li>Life Script: <a href="else.htm">ELSE</a> (control statement)</li>
+  <li>Life Script: <a href="endif.htm">ENDIF</a> (control statement)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

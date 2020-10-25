@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Track Script - BACKGROUND</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="overview.htm">Track Script</a>: <b>BACKGROUND</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>BACKGROUND</b> selects if the Actor is a background Actor.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName"> BACKGROUND</span><span class="ComParams"> switch</span>(0 or 1)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li>if <span class="ComParams">switch = 1</span> the Actor will become a background Actor, if <span class="ComParams">switch = 0</span> it will become a regular Actor.</li>
+</ul>
+
+<p class="just">If an Actor is a background Actor it is not redrawn all the time, but only once, when the screen is drawn. It is useful to save processor power, when the Actor's appearance doesn't change (it doesn't have an animation selected), it doesn't need to be refreshed too often. This command probably only works for Sprite Actors, and it works the same as <a href="../static_flags.htm#background">Backgrounded</a> Static Flag</a>.
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="scmd">BACKGROUND</span> <span class="sparam">1</span> <span class="scom">//set the Actor to be a background Actor</span>
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Actor Static Flags: <a href="../static_flags.htm#background">Backgrounded</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

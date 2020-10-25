@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Introduction to LBA 1 Track Script</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1>Introduction to LBA 1 Track Script</h1>
+
+<div class="content">
+
+<p>Track Script is the simpler of two kinds of Scripts that define behaviour of Scene Actors in LBA 1. Its main purpose is to provide a set of <i>functions</i> for use in Life Script, that make the Actor move in specified ways and produce specified sounds.</p>
+
+<p>Initially the Track Script is stopped (however this depends on <a href="../actors.htm#control_mode">Actor control mode</a>). It can be started only by calling <a href="../LifeScript/cmd/set_track.htm">SET_TRACK(_OBJ)</a> Life Script command. Once started, the commands are executed one after another to the end or to a <a href="stop.htm">STOP</a> command. Track Scripts of each Actor are run simultaneously.</p>
+
+<h3>Track Script commands by topic</h3>
+
+<h5>Control statements:</h5>
+<ul>
+  <li><a href="end.htm">END</a> - marks end of the Track Script,</li>
+  <li><a href="goto.htm">GOTO</a> - jumps execution of the Script to specified Label,</li>
+  <li><a href="label.htm">LABEL</a> - marks beginning of a block, provides an entry point to start the Script fragment from,</li>
+  <li><a href="stop.htm">STOP</a> - stops execution of current Track Script, used as end of a <i>function</i>,</li>
+  <li><a href="wait_anim.htm">WAIT_ANIM</a> - pauses execution of the Script until the current Actor Animation ends,</li>
+  <li><a href="wait_door.htm">WAIT_DOOR</a> - pauses execution of the Script until the door Actor is fully closed or opened,</li>
+  <li><a href="wait_num_anim.htm">WAIT_NUM_ANIM</a> - pauses execution of the Script until the Actor Animation has been played for specified number of times,</li>
+  <li><a href="wait_num_second.htm">WAIT_NUM_SECOND</a> - pauses execution of the Script for specified number of seconds,</li>
+</ul>
+
+<h5>Move and angle commands:</h5>
+<ul>
+  <li><a href="angle.htm">ANGLE</a> - rotates the Actor to face specified angle,</li>
+  <li><a href="angle_rnd.htm">ANGLE_RND</a> - rotates the Actor by a semi-random angle,</li>
+  <li><a href="beta.htm">BETA</a> - immediately sets new angle for the Actor,</li>
+  <li><a href="close.htm">CLOSE</a> - closes the door Actor,</li>
+  <li><a href="face_hero.htm">FACE_HERO</a> - rotates the Actor to face the Hero,</li>
+  <li><a href="goto_point.htm">GOTO_POINT</a> - makes the Actor head towards the specified Point,</li>
+  <li><a href="goto_point_3d.htm">GOTO_POINT_3D</a> - makes the Sprite Actor move to specified Point,</li>
+  <li><a href="goto_sym_point.htm">GOTO_SYM_POINT</a> - makes the Actor head back to the specified Point,</li>
+  <li><a href="open_xxx.htm">OPEN_DOWN, OPEN_LEFT, OPEN_RIGHT, OPEN_UP</a> - open the door Actor,</li>
+  <li><a href="pos_point.htm">POS_POINT</a> - immediately moves the Actor to specified Point,</li>
+  <li><a href="speed.htm">SPEED</a> - sets movement speed for the Sprite Actor,</li>
+</ul>
+
+<h5>Appearance commands:</h5>
+<ul>
+  <li><a href="anim.htm">ANIM</a> - selects a new Animation for the Actor,</li>
+  <li><a href="background.htm">BACKGROUND</a> - enables/disables redrawing of the Actor,</li>
+  <li><a href="body.htm">BODY</a> - selects a new Body for the Actor,</li>
+  <li><a href="no_body.htm">NO_BODY</a> - removes the Actor's Body,</li>
+</ul>
+
+<h5>Sound and video commands:</h5>
+<ul>
+  <li><a href="play_fla.htm">PLAY_FLA</a> - plays speified FLA movie,</li>
+  <li><a href="repeat_sample.htm">REPEAT_SAMPLE</a> - sets number of repetitions for the subsequent SIMPLE_SAMPLE command,</li>
+  <li><a href="sample.htm">SAMPLE</a> - plays specified sound sample,</li>
+  <li><a href="sample_always.htm">SAMPLE_ALWAYS</a> - plays specified sound sample looping it infinitely,</li>
+  <li><a href="sample_rnd.htm">SAMPLE_RND</a> - plays specified sound sample with randomly lowered pitch,</li>
+  <li><a href="sample_stop.htm">SAMPLE_STOP</a> - stops playing specified sound sample,</li>
+  <li><a href="simple_sample.htm">SIMPLE_SAMPLE</a> - plays sound sample specified number of times,</li>
+</ul>
+
+<h3>Commands specific to 3D Actors</h3>
+<ul>
+  <li><a href="angle.htm">ANGLE</a></li>
+  <li><a href="angle_rnd.htm">ANGLE_RND</a></li>
+  <li><a href="anim.htm">ANIM</a></li>
+  <li><a href="beta.htm">BETA</a></li>
+  <li><a href="body.htm">BODY</a></li>
+  <li><a href="face_hero.htm">FACE_HERO</a></li>
+  <li><a href="goto_point.htm">GOTO_POINT</a></li>
+  <li><a href="goto_sym_point.htm">GOTO_SYM_POINT</a></li>
+  <li><a href="no_body.htm">NO_BODY</a></li>
+  <li><a href="wait_anim.htm">WAIT_ANIM</a></li>
+  <li><a href="wait_num_anim.htm">WAIT_NUM_ANIM</a></li>
+</ul>
+
+<h3>Commands specific to Sprite Actors</h3>
+<ul>
+  <li><a href="close.htm">CLOSE</a></li>
+  <li><a href="open_xxx.htm">OPEN_DOWN, OPEN_LEFT, OPEN_RIGHT, OPEN_UP</a></li>
+  <li><a href="speed.htm">SPEED</a></li>
+  <li><a href="wait_door.htm">WAIT_DOOR</a></li>
+</ul>
+
+<h5>See also:</h5>
+<ul>
+  <li><a href="../LifeScript/overview.htm">Life Script introduction</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

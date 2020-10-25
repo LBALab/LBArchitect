@@ -1,0 +1,240 @@
+This file contains the LBA1 sound samples
+243
+230
+0
+13
+*samples*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:voc|Twinsen hit
+1:voc|Rabbibunny hit
+2:voc|Quetch grumble
+3:voc|Truck horn
+4:voc|Soldier hit
+5:voc|Rabbibunny clone turn
+6:voc|Puff (long)
+7:voc|Puff (short)
+8:voc|Soldiers marching
+9:voc|Rabbibunny calculate
+10:voc|Dumpster dumps twinsen
+11:voc|Item popup
+12:voc|Puff (very long)
+13:voc|Puff (very long)
+14:voc|Grobo hit
+15:voc|Rabbibunny clone walk
+16:voc|Rabbibunny clone (red) shoot
+17:voc|Skeleton attack
+18:voc|Rabbibunny clone hit
+19:voc|Rabbibunny clone turn
+20:voc|Rabbibunny clone shoot
+21:voc|Stone rolling
+22:voc|Twinsen angry
+23:voc|Throwing ball
+24:voc|Crab hit
+25:voc|Twinsen amazed
+26:voc|Soldier shoot
+27:voc|Walk over stone
+28:voc|Walk over stone
+29:voc|Teleport
+30:voc|Twinsen hit
+31:voc|Twinsen hits ground
+32:voc|Zoé hit
+33:voc|Kiss
+34:voc|Factory/Citadel area sound
+35:voc|Door open
+36:voc|Area sound
+37:voc|Explode
+38:voc|
+39:voc|
+40:voc|
+41:voc|Big item found / task completed
+42:voc|Skeleton wake up 1
+43:voc|Skeleton wake up 2
+44:voc|Rabbibunny clone (green) shoot
+45:voc|
+46:voc|Stone rolling 1
+47:voc|Stone rolling 2
+48:voc|Fireball
+49:voc|
+50:voc|Boobytrap
+51:voc|
+52:voc|
+53:voc|
+54:voc|Skeleton walk 1
+55:voc|Skeleton walk 2
+56:voc|Temple of Bù area sound
+57:voc|Twinsen jump
+58:voc|Shoot
+59:voc|
+60:voc|Rabbibunny clone hit
+61:voc|
+62:voc|Survailence system
+63:voc|Clone hit
+64:voc|Rabbibunny clone move
+65:voc|Truck stop
+66:voc|Area sound
+67:voc|
+68:voc|Quetch hit
+69:voc|
+70:voc|Hit
+71:voc|Grobo attack
+72:voc|Elevator move
+73:voc|Grobo clone shoot
+74:voc|Heartbeat
+75:voc|Twinsen land on ground
+76:voc|Alarm
+77:voc|Rabbibunny clone move
+78:voc|
+79:voc|
+84:voc|Wind
+85:voc|Sewer area sound
+86:voc|Hit
+87:voc|Temple of Bù area sound
+88:voc|Clone hit
+89:voc|Knock on door
+90:voc|
+91:voc|Key lock
+92:voc|Whistle
+93:voc|Ocean
+94:voc|Ship's horn
+95:voc|Swing 1
+96:voc|Swing 2
+97:voc|Item found
+98:voc|Gate open
+99:voc|Twinsen hit
+100:voc|
+101:voc|Twinsen die
+102:voc|
+103:voc|Hit
+104:voc|Grobo alarm
+105:voc|Twinsen in discreet mode 1
+106:voc|Twinsen in discreet mode 2
+107:voc|Zoé gigle
+108:voc|Truck move 1
+109:voc|Truck move 2
+110:voc|Boat motor
+111:voc|Drinking
+112:voc|Truck motor
+113:voc|Truck stop
+114:voc|Digging rabbibunny
+116:voc|Space guitar 1
+117:voc|Space guitar 2
+119:voc|Space guitar 3
+121:voc|Space guitar 4
+122:voc|Crowd unhappy
+123:voc|Crowd happy
+126:voc|Walk over floor 1
+127:voc|Walk over carpet 1
+128:voc|Walk over metal 1
+129:voc|Walk over wood 1
+130:voc|Walk over snow 1
+131:voc|Walk in a cave 1
+132:voc|Walk over sand 1
+133:voc|Walk over wet floor 1
+134:voc|Walk over grass 1
+135:voc|Walk over flower 1
+136:voc|Walk over stone 1
+137:voc|Walk over rubber 1
+138:voc|Water 1
+141:voc|Walk over floor 2
+142:voc|Walk over carpet 2
+143:voc|Walk over metal 2
+144:voc|Walk over wood 2
+145:voc|Walk over snow 2
+146:voc|Walk in a cave 2
+147:voc|Walk over sand 2
+148:voc|Walk over wet floor 2
+149:voc|Walk over grass 2
+150:voc|Walk over flower 2 (same as 1)
+151:voc|Walk over stone 2
+152:voc|Walk over rubber 2
+153:voc|Water 2
+156:voc|Proto-pack
+157:voc|Water drain
+158:voc|Area sound
+159:voc|Desert area sound
+160:voc|Fisher
+161:voc|Bells
+162:voc|Swing
+163:voc|Lever toggle
+164:voc|
+165:voc|Fireballs
+166:voc|Rabbibunny clone calculate 1
+167:voc|Rabbibunny clone calculate 2
+168:voc|Rabbibunny clone calculate 3
+169:voc|Sacred Carrot area sound
+170:voc|Music
+171:voc|Horse galloping 1
+172:voc|Horse galloping 2
+173:voc|Horse
+174:voc|Horse galloping 3
+175:voc|Horse galloping 4
+176:voc|Horse
+177:voc|Horse
+178:voc|Buzzing 1
+179:voc|Motor
+180:voc|Area sound
+181:voc|
+182:voc|Shoot
+183:voc|Temple of Bù guards
+184:voc|
+185:voc|
+186:voc|Explode
+187:voc|Soldier wake-up
+188:voc|Soldier scared
+189:voc|Machine gun 1
+190:voc|Machine gun 2
+191:voc|Explosion
+192:voc|Sewer area sound
+193:voc|Sewer area sound
+194:voc|Water drop in cave 1
+195:voc|Water drop in cave 2
+196:voc|Sphero jump
+197:voc|Sphero hit
+198:voc|Sphero clone hit 1
+199:voc|Sphero clone hit 2
+200:voc|
+201:voc|Shoot
+202:voc|
+203:voc|
+204:voc|
+205:voc|
+206:voc|
+207:voc|Clone walking
+208:voc|Clone sound
+209:voc|Meca-Penguin ticking 1
+210:voc|Meca-Penguin ticking 2
+211:voc|Sword
+212:voc|
+213:voc|Truck move 1
+214:voc|Truck move 2
+215:voc|Construction 1
+216:voc|Construction area sound 1
+217:voc|Construction area sound 2
+218:voc|Dr. FunFrock grin
+219:voc|Snore
+220:voc|Hiccup
+221:voc|Snowboard 1
+222:voc|Snowboard 2
+223:voc|Snowboard 3
+224:voc|Alarm
+225:voc|Water
+226:voc|Drown 1
+227:voc|Drown 2
+228:voc|Drown 3
+229:voc|Tank hit
+230:voc|Swing
+231:voc|
+232:voc|Construction 2
+233:voc|Construction 3
+234:voc|Tone 1
+235:voc|Tone 2
+236:voc|Hovercraft
+237:voc|Digging
+238:voc|Tone 3
+239:voc|Tone 4
+240:voc|Buzzing 2
+241:voc|Water flush
+242:voc|

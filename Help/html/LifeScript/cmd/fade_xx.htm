@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - FADE_ALARM_PAL, FADE_ALARM_RED, FADE_PAL_ALARM, FADE_PAL_RED, FADE_RED_ALARM, FADE_RED_PAL</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>FADE_ALARM_PAL</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>FADE_ALARM_RED</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>FADE_PAL_ALARM</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>FADE_PAL_RED</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>FADE_RED_ALARM</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>FADE_RED_PAL</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>FADE_XX</b> commands change current game palette using fading.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">FADE_ALARM_PAL</span></li>
+  <li><span class="ComName">FADE_ALARM_RED</span></li>
+  <li><span class="ComName">FADE_PAL_ALARM</span></li>
+  <li><span class="ComName">FADE_PAL_RED</span></li>
+  <li><span class="ComName">FADE_RED_ALARM</span></li>
+  <li><span class="ComName">FADE_RED_PAL</span></li>
+</ul>
+
+<p class="just">Each of these commands fade the screen from the palette speicified in the middle segment of the commmand name (ALARM, PAL or RED) to the palette specified in the last segment. For example <b>FADE_ALARM_PAL</b> fades from alarm palette to the normal game palette.</p>
+
+<p><img src="pal_pal.png" width="200" height="150" border="0" alt="Regular palette" style="vertical-align: middle">
+Regular game palette</p>
+
+<p><img src="pal_alarm.png" width="200" height="150" border="0" alt="Alarm palette" style="vertical-align: middle">
+Alarm palette - used for alarm indication</p>
+
+<p><img src="pal_red.png" width="200" height="150" border="0" alt="Red palette" style="vertical-align: middle">
+Red palette - used only to fade to other palettes</p>
+
+<p class="just">Each fading takes about one second, and during the transition all screen movement is paused (including Actor animations). If a new Scene is loaded the normal palette will be restored.</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="scmd">fade_pal_red</span> <span class="scom">//fade to red</span><br />
+  <span class="scmd">fade_red_alarm</span> <span class="scom">//and immediately fade to alarm palette</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="set_xx_pal.htm">SET_XX_PAL</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

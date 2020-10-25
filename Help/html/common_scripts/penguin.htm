@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Common Nitro-Mecha-Penguin script</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1>Common Nitro-Mecha-Penguin script</h1>
+
+<div class="content">
+
+<p>This script must be used for Nitro-Mecha-Penguin Actors. If is not, the Penguin will not work for the Scene.</p>
+
+<p>The script includes part (comportement 1) which makes the Penguin pop out bonuses when his life goes below defined thresholds. That part is optional and can be removed.</p>
+
+<p>The script has been copied from LBA 1.</p>
+
+<h5>Life Script:</h5>
+<div class="Example">
+  <span class="sctrl">comportement</span> <span class="sparam">main</span><br />
+    <span class="scmd indent0">init_pingouin</span> <span class="skey">SELF</span><br />
+    <span class="sctrl indent0">set_comportement</span> <span class="sparam">1</span><br />
+  <span class="sctrl">end_comportement</span><br />
+  <span class="sctrl">comportement</span> <span class="sparam">1</span><br />
+    <span class="skey indent0">oneif</span> <span class="svar">life_point</span> <span class="sop">&lt;=</span> <span class="skey">45</span><br />
+      <span class="scmd indent1">give_bonus</span> <span class="sparam">0</span><br />
+    <span class="skey indent0">endif</span><br />
+    <span class="skey indent0">oneif</span> <span class="svar">life_point</span> <span class="sop">&lt;=</span> <span class="skey">30</span><br />
+      <span class="scmd indent1">give_bonus</span> <span class="sparam">0</span><br />
+    <span class="skey indent0">endif</span><br />
+    <span class="skey indent0">oneif</span> <span class="svar">life_point</span> <span class="sop">&lt;=</span> <span class="skey">15</span><br />
+      <span class="scmd indent1">give_bonus</span> <span class="sparam">0</span><br />
+    <span class="skey indent0">endif</span><br />
+  <span class="sctrl">end_comportement</span><br />
+  <span class="sctrl">end</span>
+</div>
+
+<h5 class="prelabel">Editor-friendly version:</h5>
+<pre>
+comportement main
+  init_pingouin SELF
+  set_comportement 1
+end_comportement
+comportement 1
+  oneif life_point <= 45
+    give_bonus 0
+  endif
+  oneif life_point <= 30
+    give_bonus 0
+  endif
+  oneif life_point <= 15
+    give_bonus 0
+  endif
+end_comportement
+end
+</pre>
+
+<h5>Track Script:</h5>
+<div class="Example">
+  <span class="sctrl">end</span> <span class="scom">//no Track Script is necessary</span><br />
+</div>
+
+<h5 class="prelabel">Editor-friendly version:</h5>
+<pre>
+end //no Track Script is necessary
+</pre>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="../LifeScript/cmd/init_pingouin.htm">INIT_PINGOUIN</a> (command)</li>
+  <li>Life Script: <a href="../LifeScript/var/life_point.htm">LIFE_POINT</a> (variable)</li>
+  <li>Life Script: <a href="../LifeScript/cmd/give_bonus.htm">GIVE_BONUS</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

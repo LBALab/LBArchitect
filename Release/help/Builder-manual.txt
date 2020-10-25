@@ -1,0 +1,94 @@
+=========================================
+ Manual for some of the Builder features
+=========================================
+
+ In this manual I will describe each component briefly and explain some Builder functions that can be hard to understand.
+
+
+ Opening rooms/islands:
+------------------------
+
+ You can open rooms/islands in two ways:
+
+ A. Simple opening (File->Open (simple)) - shows simple dialog that enables you only to select what room/island you want to open and from which game. It is useful for quick opening, but only original LBA 1/2 rooms/islands can be opened this way and it needs paths to the original LBA files to be defined in settings first. If you want to open a room/island from a single file (*.gr1, *.gr2) you will have to use advanced opening.
+
+ B. Andvanced opening (File->Open (advenced)) - enables you to open a room/island using any set of necessary files, you can even specify your own palette. To open a room/island this way, follow these steps:
+
+ 1. Click File -> Open (adbanced).
+ 2. In the dialog you have to specify three files: brick package, layout library, and grid. For each of them you may select one from Lba 1, Lba 2, or specify a custom one. If Lba 1 or Lba 2 choices are disabled, you will have to specify paths for necessary files first. To do it, close the open dialog and go to View->Settings menu. You may also specify palette, but you don't have to set any files for it.
+ 3. Click "Open" and wait until files load.
+
+ After loading you can scroll the image by dragging it with mouse, or by clicking on the thumbnail. All settings in "Mode & Display" box work immediately.
+
+
+ Modes:
+--------
+
+ Hand: is useful for panning the image. To pan the image press left mouse button on the image and move the mouse.
+ Placer: in this mode you can add layouts to the grid. Details of this function are described later in this file.
+ Selector: with it you can select parts of the grid and move or delete them. Details of this function are described later in this file.
+ Invisible Brick Mode - in this mode you can focus on invisible bricks, which are commonly used in buildings to prevent Twinsen from jumping off the walls.
+
+
+ Display options:
+---------------------
+
+ Frames: draws frame around each brick of the room.
+ Net: draws flat net at the all three axes planes.
+ Only to layer: draws room only to specified leyer (0 = ground layer), you may see nothing if you set this to 0, because some rooms are above the ground level.
+ Coordinates: diaplys small frame at the bottom right corner of the image, that contains current coordinates. All of them (except Scene) are brick coordinates. Note that the frame is not visible in Hand mode. You can specify what coordinates will be visible in the options.
+ Highlight invisible bricks: causes all invisible bricks to be framed in all modes. Note that they are always framed in Invisible Bricks Mode regardless this option.
+
+
+ Placing layouts on the grid:
+------------------------------
+
+ To enable "Placer" mode click on "Placer" button in "Mode" box.
+ Panel with available layouts should appear on the left edge of the program. If not, drag bevelled edge at the left side and move it right, so the layout panel will appear. You can set it to any width you want.
+ Layout that is currently selected can be placed on the grid. To do that, move mouse cursor (without holding any button) to the image and observe how it works. If nothing happens around the mouse cursor, the layout is probably under the layer that the mouse is pointing to. To move it up hold the right mouse button and move it up. It will change the vertical position of the layout. Another way to change it is to change value in the "Place at layer" edit box in the "Place options" group. When you click left mouse button when the mouse is above the image, the layout will be placed at current coordinates. If you hold left mouse button you can also adjust vertical position of the layout. In that case, the layout is placed after releasing the mouse button.
+ Remember that when you place a layout it will replace all objects cells that were there before.
+
+ In the "Placer" mode also the clipping panel is visible (or at least the button in one of the image corners that can show the clipping panel when pressed). Using the clipping panel you can specify what part of the selected layout will be placed on the grid. This feature will be only needed when the layout you want to place is too large and would replace some parts of the grid that you don't want to be replaced (for example if you set them before and you don't want to do that again). Setting the clipping is not hard, but it's difficult to explain ;) So you will know it the best by clicking on the measure cells (the ones with numbers inside) and watching what they do.
+ In most cases you will not need the clipping panel, so it can be simply minimized by clicking on the button in the top right cornet of it.
+ The "R" button specifies if the clipping have to be reset (set to full layout) after placing the current layout. Note that clipping will be always reset when selecting another layout.
+
+ There is also the small button with the triangle in the bottom part of the clipping panel. Clicking on it will expand another panel, in which you can make the current layout to be larger that it actually is. The empty space will be filled with copies of this layout, so it will be repeated. Anyway, I can't explain it, better try it by yourself.
+
+
+ Moving parts of the grid:
+---------------------------
+
+ Moving is possible in "Selector mode. To enable this mode click the "Selector" button in the "Mode" box.
+ Selection feature has three modes:
+  1. Single brick - means that only one brick will be selected after clicking on it. More bricks can be selected by pressing and moving mouse cursor.
+  2. Single column - means that when you click on a brick the whole column will be selected. Also in this mode selecting more that one column is possible. Using this mode is not recommended because it selects also the bricks that are under the ground layer and are invisible, but will be moved together with the visible ones.
+  3. Single layout - means that when you click on a brick all neighbour brick that belong to the same layout will be selected. In this mode you cannot select more layouts by moving the mouse cursor. This mode may work weird when selecting a layout that touches another copy of it (both will be selected then), for example: a water. This mode is only useful for selecting sticking objects like flowerpots or garbage cans.
+
+ After selecting wanted area, you can move it by dragging it with the left mouse button (if you want to move it vertically drag it with the right button). If you want to copy selected fragment, hold Ctrl during moving. If you want to delete selected fragment, press Del. Warning that moved fragment will replace the old bricks that are in the target area, just like during placing. It will happen immediately after releasing the mouse button.
+
+
+ Selecting bricks can be done with two methods (don't confuse with "modes"):
+  1. Selecting by first non-transparent - with this method when you click on the image, the program gets the pixel under the mouse cursor and checks what bricks this pixel belongs to, and then selects this brick.
+  2. Selecting by forst non-empty - with this method when you click on the image, the program gets the brick that is nearest (in hypothetical axis perpendicular to the screen) the "user", and then selects this brick.
+ Which brick will be selected after clicking can be easily determined by checking the "Cursor" option on the "Selection mode and options" panel. It will enable "brick cursor" that will show what brick will be selected after clicking.
+ 
+ 
+ Keyboard shortcuts list:
+--------------------------
+ In any mode:
+   Ctrl + M - Switch between Grid and Scene Modes
+   Ctrl + H - Enable Hand tool
+   Ctrl + S - depending on the "State":
+                In "Scenario State": saves Scenario
+                In "Grid+Scene State": depending on the current Mode:
+                    In Grid Mode: saves the Grid
+                    In Scene Mode: saves the Scene
+
+ In Grid Mode:
+   Ctrl + P - Enable Placer tool
+   Ctrl + L - Enable Selector tool
+   Ctrl + I - Enable Invisible Bricks tool
+   Ctrl + Z - Undo
+
+ In Scene Mode:
+   Ctrl + E - Enable Editing

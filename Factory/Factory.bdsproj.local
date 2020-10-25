@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011-04-25 11:38:23.629.pas,E:\Delphi Progs\=LBA=\LBArchitect\Factory\Unit1.pas=E:\Delphi Progs\=LBA=\LBArchitect\Factory\LayImport.pas</Transaction>
+    <Transaction>2011-04-25 11:38:23.629.dfm,E:\Delphi Progs\=LBA=\LBArchitect\Factory\Unit1.dfm=E:\Delphi Progs\=LBA=\LBArchitect\Factory\LayImport.dfm</Transaction>
+    <Transaction>2011-04-26 11:19:48.895.pas,E:\Delphi Progs\=LBA=\Libs\CompMods.pas=</Transaction>
+    <Transaction>2011-04-27 20:55:39.609.pas,E:\Delphi Progs\=LBA=\LBArchitect\Factory\Unit1.pas=E:\Delphi Progs\=LBA=\LBArchitect\Libs\Version.pas</Transaction>
+    <Transaction>2011-04-27 21:01:20.218.pas,E:\Delphi Progs\=LBA=\LBArchitect\Libs\Version.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

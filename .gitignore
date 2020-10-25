@@ -1,0 +1,6 @@
+/Source/LBArchitect/
+/Source/*.7z
+/Release/*.7z
+/Release/*.zip
+/Release/*.exe
+/Release/*.ini

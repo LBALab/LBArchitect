@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SET_USED_INVENTORY</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SET_USED_INVENTORY</b> (command)</h1>
+
+<div class="content">
+
+<p><b>SET_USED_INVENTORY</b> enables auto-use of specified inventory item.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SET_USED_INVENTORY</span><span class="ComParams"> id</span>(0 to 255 integer)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">id</span> is index of the inventory cell.</li>
+</ul>
+
+<p><b>SET_USED_INVENTORY</b> enabled specified inventory item to be <i>used</i> automatically under specific conditions. Normally the player can <i>use</i> an item from the inventory by pressing <i>enter</i> while having the item selected in the inventory. This action can be tested with <a href="../var/use_inventory.htm">USE_INVENTORY</a> variable (it returns 1). If the auto-use is enabled for an item, the variable will always return 1 for that item without any actions from the player. This is commonly used for access cards - for example, if the player uses a card while being in specified Zone (near the card scanner), the <b>SET_USED_INVENTORY</b> will be called and when the player comes to that spot again, the card will be activated automatically (only if it is still in the inventory).</p>
+
+<p>Once enabled the auto-use cannot be disabled, however it will not work when the card is not in the inventory (corresponding Game Flag unset).</p>
+
+<h5>Example:</h5>
+<div class="Example">
+  <span class="skey">if</span> <span class="svar">use_inventory</span> <span class="sparam">9</span> <span class="sop">==</span> <span class="sparam">1</span><br />
+    <span class="scmd indent0">set_used_inventory</span> <span class="sparam">9</span>  <span class="scom">//enable auto-use for next times</span><br />
+    <span class="scom indent0">// perform other actions</span><br />
+  <span class="skey">endif</span>
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="../var/use_inventory.htm">USE_INVENTORY</a> (variable)</li>
+  <li>Life Script: <a href="set_flag_xx.htm">SET_FLAG_GAME</a> (command)</li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SET_DIRMODE, SET_DIRMODE_OBJ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SET_DIRMODE</b> (command)<br />
+    <a href="../overview.htm">Life Script</a>: <b>SET_DIRMODE_OBJ</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>SET_DIRMODE</b> sets the control (direction) mode for the Actor, <b>SET_DIRMODE_OBJ</b> sets the control mode for another Actor.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SET_DIRMODE</span><span class="ComParams"> mode</span> [<span class="ComParams"> f_actor</span>(0 to 255 integer)]</li>
+  <li><span class="ComName">SET_DIRMODE</span><span class="ComParams"> actor</span>(0 to 255 integer)<span class="ComParams"> mode</span> [<span class="ComParams"> actor</span>(0 to 255 integer)]</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">mode</span> can be one of the following:
+      <ul>
+        <li>NO_MOVE</li>
+        <li>MANUAL</li>
+        <li>FOLLOW</li>
+        <li>TRACK</li>
+        <li>SAME_XZ</li>
+        <li>RANDOM</li>
+      </ul>
+  </li>
+  <li><span class="ComParams">f_actor </span>is index of the Actor to follow (the Actor must exist in the Scene). This parameter is required only for FOLLOW and SAME_XZ modes,</li>
+  <li><span class="ComParams">actor </span>is index of the Actor to set the mode for (the Actor must exist in the Scene).</li>
+</ul>
+
+<p class="just">For description of control modes see <a href="../../actors.htm#control_mode">Actors</a>.</p>
+
+<h5>Examples:</h5>
+<div class="Example">
+  <span class="scmd">set_dirmode</span> <span class="sdirm">no_move</span><br />
+  <span class="scmd">set_dirmode</span> <span class="sdirm">follow</span> <span class="sparam">0</span><br />
+  <span class="scmd">set_dirmode</span> <span class="sparam">1</span> <span class="sdirm">follow</span> <span class="sparam">0</span><br />
+</div>
+
+</div>
+
+</body>
+</html>

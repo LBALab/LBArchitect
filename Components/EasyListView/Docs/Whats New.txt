@@ -1,0 +1,227 @@
+Nov 24, 2006 Version 1.5.0 Prerelease
+  - WARNING WARNING WARNING: A bug was discovered in the streaming of the Collection Items (the core class for 
+    Items, Groups and Columns).  I had to fix it to make the streaming extendable in the future.. and now.  
+    I extended TEasyColumn in the last release so that means that all designtime AND persistent streams that 
+    contain the ELV Header information will crash on start up.  The problem is the wrong stream version was written
+    to the stream so there is no way to identify it on read in.  It will give a stream read error when it is loaded.
+    I can't apologize enough for this mistake, it will be a painful upgrade.
+  - Fixed bug in the Collection Editor that caused a random AV in the IDE if the ELV was deleted
+
+
+Nov 23, 2006 Version 1.5.0 Prerelease
+  - OnCustomView event has been renamed to OnItemCustomView and OnGroupCustomView and OnColumnCustomView added.  
+    this will break your DFM file sorry... but it had to be changed.
+  - Some internal renaming of classes, for the TEasy... prefix
+  - Reworked the way the default views were stored.  They are no longer stored a static properties they
+    call the new event handlers and dynamically callback everytime they are needed
+  - This means the way the View property works.  This should fix the issue in the last SVN update
+  - TEAsyColumn.AutoToggleSort has been renamed to TEAsyColumn.AutoToggleSortGlyph to more accurately reflect
+    what it does.  It should translate to the new property in the DFM without notice
+  - There is a new property TEasyColumn.AutoSortOnClick.  This causes the Sorter to sort the list if the 
+    header is clicked even if the ELV.Sort.AutoSort is False.
+  - Added TEasyBaseTaskBand.AutoScrollPanels to allow for the scroll bars of the panels to be shown or 
+    not used if the band is smaller then the Panel
+  - Fixed a bug in the Theming with the TaskPanels
+  - Fixed bug in NavigateItemInternal, gave an AV under special conditions
+  - Added default parameter to DeleteSelected
+      procedure DeleteSelected(SelectPrevItem: Boolean = False);
+  - Added:
+      function CanMoveDown: Boolean;
+      function CanMoveUp: Boolean;
+      function MoveDown: Boolean;
+      function MoveUp: Boolean;
+     to allow selected items to be moved up or down.  Make sure AutoSort is off.  
+
+Nov 12, 2006 Version 1.5.0 Prerelease
+  - YOU MUST UPGRADE THE COMMON LIBRARY TO VERSION 1.5.0 FIRST..............................
+  - Renamed and moved IEasyExtractObj to ICommonExtractObj in the Common Library Package
+  - Moved and renamed the follow to the Common Library Package 
+       TWideStringDynArray to TCommonWideStringDynArray
+       TIntegerDynArray to TCommonIntegerDynArray;
+       TEasyFormatEtcArray to TCommonFormatEtcArray  
+       TEasyVAlignment to TCommonVAlignment
+  - Number of renamings to support the above changes
+  - Added new component TEasyTaskPanelBand see the TaskPanel demo.
+      New panels are created in the File > New > Other... and the "New" tab under "EasyListview TaskPanel"
+  - New demo for the TEasyTaskPanelBand
+  - Moved the EasyDataObject into the Common Library Package (CommonDataObject)
+  - Added new Gradient "glass effect" (similar to vista) for item selection, see the Overview Demo.
+  - Added an OnPaintBkGnd event for custom painting of the background, see to Overview Demo.
+  - Added properties to the ELV.Background object to allow for text to be shown in the background,
+      see the Overview demo.
+  - Added OnClipboardXXXX events to handle custom clipboard actions
+  - Changed the way the focus rectangle was drawn to be consistent with VirtualTreevew
+  - Fixed issues with Column captions and fonts, caused a lot of "C..." with plenty of room for the text.
+  - Added option to hide the caption in Thumbnail and Filmstrip views (ELV.PaintInfoItem.HideCaption)
+
+Oct 8, 2006
+  - Published the Tag property in the stored collection items
+  - Added SetSize to TEasyCellSize
+  - Minor fixes
+  - Fixed bug with ContextMenu hotkeys
+  - Fixed problem with Compilers.inc 
+  - Fixed bug with context menu showing after right mouse drag/drop
+  - Fix for flicker if selection when drag selecting
+  - Added TNTSUPPORT compiler define to Options.inc to enable unicode-aware inplace editors.
+  - Fixed bug with context menu showing after right mouse drag/drop
+  - Added an ELV.Selection.SelectedToArray method to return the selected items in an array
+  - Added an ELV.Selection.DeleteSelected method
+  - Major internal change to adding/deleting items.  For large data sets the speed of the control
+    may be significantly slower.  This is because the items are reindexed for every addition
+    and deleting of an item for robustness under all conditions.  This can be manually shutoff
+    with the new property ReIndexDisable.  For instance:
+
+         ELV.Items.ReIndexDisable := True;
+         try
+           // Add the items here
+         finally
+           ELV.Items.ReIndexDisable := False
+         end
+
+          or 
+
+         ELV.Groups.ReIndexDisable := True;
+         try
+           // Add the items here
+         finally
+           ELV.Groups.ReIndexDisable := False
+         end;
+    
+  - Added SpTBX support for painting.  Need to add the conditional define "SpTBX"
+  - Fixed bug when setting a custom PaintInfo object to an Item
+  - Fixed bug where drag selection would unselect item if the selection rect was (0, 0, 0, 0);
+  - Reworked the order for when the LosingSelection, LosingFocus, and LosingVisiblility
+    was being called during an item destruction.  Should make it more robust.
+  - Fixed problem with grouping and disabling reindexing
+  - Added OnItemMouseDown/Up events
+  - Fixed some painting bugs in Thumbnail view.
+  - Added internal streaming versioning to update stream without invalidating older streams
+  - The Edit method now takes a column parameter. This will put different columns into edit mode in report view.  
+    This is not a great solution since there is no visual feedback that you can actually put the columns into edit mode
+  - MakeVisible now functional for the columns in ReportMode
+  - Added FirstVisibleColumn, NextVisibleColumn, PrevVisibleColumn, LastVisibleColumn to the Header object
+  - Added support for Grid Lines in ReportView, see the PaintInfoItem.GridLines and GridLineColor.
+  - Added support for hilighting the columns in Report and Grid Mode
+      property HilightFocused: Boolean
+      property HilightFocusedColor: TColor 
+  - Fixed bug with new support for grid lines
+  - Fixed Demos to compile with latest changes
+  - Fixed bug with GroupExpand and Collapse Events
+  - Fixed but introduced lat release with column header captions
+  - Added CacheDoubleBufferBits property, it is off by default (different then prev version).  
+     If true the bitmap for the background is cached to the current window size.  
+     Has a speed advantage at the expense of memory usage.
+  - Changed the sorting to have a Sort.BeginUpdate/EndUpdate to keep from sorting redundantly
+  -  Fixed the String Editor so it is an Edit for single line caption views and TMemo for Multiline views.
+  - Added event to allow application to supply the text for the initial edit string
+  - Fixed bug that showed the wrong context menu in report view on the last item if the header was shown
+  - Fixed the ELV.Group.ReIndexDisable property to actually work :^)
+  - Gave the details view a 2 pixel margin on top to not "blend" into the Header
+  - Simplified the code to resize the string edit box
+  - Updated Main Demo to compile with new code.
+  - Minor enhancements (SelectFirst method added)
+  - Bug fixes for last column not resizing if invisible column is the last in the List
+  - Added default parameter to Sort.SortAll to force it to sort regardless of the update Count
+  - Added default value for published property Selection.MouseButtonSelRect
+  - Fixed bug if OLE drag and drop when dragging the headers
+
+
+July 28, 2006
+  - Complete rework of the component structure, EasyListview now requires the
+    new MustangPeak Common Library components to be installed first.
+    Most issues can in compiling existing EasyListview code can be solved by replacing 
+    any missing unit in your compile with...
+    
+    uses
+      MPCommonUtilities, MPCommonObjects, MPShellTypes;
+
+    If you are using TWideFileStream or TWideStringList I suggest you use the Tnt Unicode package
+    available from 
+
+    http://www.tntware.com/delphicontrols/unicode/
+
+    There is no point in me duplicating this work.
+
+    Any function used in the old VirtualUtilities or VirtualWideStrings that ended with a "W" is now
+    like the Tnt functions and begin with "Wide"
+      
+      FileExistsW is now WideFileExists
+      ect...    
+      DirExistsW is an exception it maps to WideDirectoryExists
+
+    If any object that use to be called TVirtualXXXXX or TEasyXXXX it is likely now 
+    called TCommonXXXXX and in the MPCommonObjects.pas file of the Mustangpeak 
+    Common Library Package.
+
+    Other issues that may be noticable at design time are:
+
+      An invalid stream read on a MouseButton type.  This was a misspelling so just 
+    ignore it.  You may have to reset the mouse buttons that will allow a drag 
+    select for nondefault buttons (left, right).
+
+    TEasyKeyStates => TCommonKeyStates
+    TEasyDropEffects => TCommonDropEffects
+    TEasyDropEffect => TCommonDropEffect
+
+    edeCopy, edeMove, edeLink => cdeCopy, cdeMove, cdeLink 
+    edeNone, ..... edeScroll => cdeNone, ..... cdeScroll
+
+    THDrop => TCommonHDrop
+
+    TEasyMouseButton => TCommonMouseButton
+
+
+May 28, 2006
+  - Added ELV.paintInfoItem.ShowBorder to not show a border
+    on views with Borders.
+  - Added TEasyAlphaBlender.BasicBlend with the same parameters 
+    as the old blend method.
+
+May 27, 2006
+  - Added OnItemSelectionsChanged to notify when item selection
+    has changed in volumn.  OnItemSelectionChange is fired for
+    every item that changes selection state.  This new event
+    only fires once when 1 or a block of items has changed
+    selection in one action (SelectAll for instance), Mantis #87
+  - Finished implementing the Hot-Tracking.
+  - TaskBand Hot-tracking now works as in Explorer, Mantis #83
+
+May 26, 2006
+  - Release of version 1.0.0 Beta
+  - Added new component TEasySrollButton for more interesting 
+    scrolling options.  See the ThumbScroller Demo.
+  - Bug fixes.
+  - UPdated the component structure to allow descendants to more
+    easily hide unwanted properties.
+
+May 22, 2006
+  - Fixed bug when deleting items and the scrollbar was not at 0.
+  - Added new TEasyTaskBand component that closely mimics the 
+    ExplorerBand in Windows Explorer XP.
+
+May 18, 2006
+  - Added to Tcolumn
+       - property AutoSizeOnDblClk;
+       - property AutoSpring;
+    AutoSizeOnDblClk resized the column to fit all captions if doubled clicks in
+    resize area of the header.
+    AutoSpring works like in VT.  The columns try to stay in the same proportion
+    to other columns as the window is resized.
+
+May 15, 2006
+  - Fixed bug in CustomDrawing TEasyAlphaBlender
+  - Added MergeSort to TEasySortManager, Code donated by Milan
+  - Fixed memory leak with AutoGroupSort
+  - Made Interfaced Sorting more robust to unallowed mixed item types
+    (with interfaced sorting ALL items must be of type TEasyInterfacedXXXX)
+
+May 14, 2006
+  - Resizing Column would fire and AutoSort, fixed
+  - Image not clipped if column was at minimum width, fixed
+  - Added to TEasyListview
+      property DisabledBlendAlpha; 
+      property DisabledBlendColor;
+    for blending of image when item is disabled.
+  - Added to TEasySelectionManager
+      property BlendAlphaTextRect
+    for blending of selection rectangles on text

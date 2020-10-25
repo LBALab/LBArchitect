@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Life Script - SET_GRM</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <link type="text/css" href="../../default.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<h1 class="cmd"><a href="../overview.htm">Life Script</a>: <b>SET_GRM</b> (command)</h1>
+
+<div class="content">
+
+<p class="just"><b>SET_GRM</b> shows specified Fragment in the current Grid.</p>
+
+<h5>Syntax:</h5>
+<ul class="nomark">
+  <li><span class="ComName">SET_GRM</span> fragment_id</span>(0 to 255 integer) [<span class="ComParams">fragment_name</span>(text)]</li>
+  <li><span class="ComName">SET_GRM</span> fragment_name</span>(text)</li>
+</ul>
+
+<h5>Parameters:</h5>
+<ul>
+  <li><span class="ComParams">fragment_id </span>is index of the Fragment to show.</li>
+  <li><span class="ComParams">fragment_name </span> (optional) is the textual name of the Fragment to show. This parameter is supported by LBArchitecy only.</li>
+</ul>
+
+<p class="just">Fragments are small Grid pieces (in LBA 1 they have the same format as Grids) that can be <i>merged</i> with the current Grid. This merging is performed by replacing Bricks of the original Grid with corresponding non-empty Bricks of the Fragment. The merging can be reverted by using <a href="grm_off.htm">GRM_OFF</a> command. The <b>GRM_OFF</b> command clears all Fragments that have been shown with <b>SET_GRM</b>.</p>
+
+<p class="just"><i>Fragment_id</i> is index of the Framgent in lba_gri.hqr. It is automatically increased by 120 by the game engine. All Fragments in the game are placed after all the main Grids (but they cannot start from index lower than 120). It is possible to use more than 120 main Grids by increasing all Fragment indexes manually by their offsets from 120. If the target Fragment entry does not exist in the lba_gri.hqr file, the game will most likely crash, so care must be taken when dealing with the indexes. The index is not validated during compilation.</p>
+
+<p class="just"><i>Fragment_name</i>, is used in LBArchitect to automatically add and index Fragments that are used by the current Grid. This is realized during project compilation in the Stage Designer. The name used here must be the name of a Fragment belonging to the same workspace (Scanario) as the Main Grid, and further saved in the same Scenario file.</p>
+
+<p class="just">At least one of the parameters (<i>fragment_id</i> or <i>fragment_name</i>) must be present. Also both of them may be present at the same time; in such case the <i>fragment_id</i> will be used as default value (if the auto-fragment routine fails to create the Fragment for any reason). If the <i>fragment_id </i> is omitted, zero will be used for default. When <i>fragment_name</i> is used, the default id is only a placeholder for the actual value, that will be determined at later time, so its value does not really matter.</p>
+
+<p class="just">Simple operation that merges specified Fragment when player enters specified Zone and un-merges it when player leaves the Zone can be performed with <a href="../../zones.htm#grid">Grid Zones</a> without a single line of Script.</p>
+
+<h5>Examples:</h5>
+<div class="Example">
+  <span class="scmd">set_grm</span> <span class="sparam">6</span> <span class="scom">//show Fragment 6 from lba_gri.hqr</span><br />
+  <span class="scmd">set_grm</span> <span class="sparam">6</span> <span class="sparam">Fragment_1</span> <span class="scom">//show Fragment_1 from current workspace (and use 6 as default id)</span><br />
+  <span class="scmd">set_grm</span> <span class="sparam">Fragment_1</span> <span class="scom">//show Fragment_1 from current workspace (and use 0 as default id)</span><br />
+</div>
+
+<h5>See also:</h5>
+<ul>
+  <li>Life Script: <a href="grm_off.htm">GRM_OFF</a> (command)</li>
+  <li><a href="../../zones.htm#grid">Grid Zones</a></li>
+</ul>
+
+</div>
+
+</body>
+</html>

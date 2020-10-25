@@ -1,0 +1,90 @@
+[INFORMATION BEGIN]
+File=LBA Scene Actor Template
+Version=1.0
+Description=
+[INFORMATION END]
+
+[ACTOR BEGIN]
+StaticFlags=-26621
+Entity=47
+Body=39
+Animation=0
+Sprite=0
+HitPower=0
+BonusType=0
+FacingAngle=300
+RotationSpd=40
+Mode=0
+CropLeft=-1
+CropTop=-1
+CropRight=-1
+CropBottom=-1
+BonusQuantity=1
+TalkColour=10
+Armour=51
+LifePoints=50
+[ACTOR END]
+
+[TRACK SCRIPT BEGIN]
+label 0
+  wait_num_second 4
+  anim 27
+  goto_point 8
+  goto_point 6
+  anim 151
+  goto_point 7
+  anim 150
+  goto_point 3
+  goto_point 4
+  anim 151
+  goto_point 5
+  anim 150
+  goto_point 2
+  anim 51
+  wait_anim
+  anim 0
+label 1
+  wait_num_anim 2
+  anim 26
+  wait_anim
+  anim 0
+  goto 1
+  stop
+end
+[TRACK SCRIPT END]
+
+[LIFE SCRIPT BEGIN]
+comportement main
+  set_track 0
+  set_comportement 1
+end_comportement
+comportement 1
+  if chapter <= 5
+    oneif distance 0 <= 1800
+      message 64
+    endif
+  endif
+end_comportement
+comportement 2
+  or_if chapter == 13
+  if chapter == 14
+    message 65
+  endif
+  or_if chapter == 6
+  or_if chapter == 8
+  or_if chapter == 9
+  if chapter == 15
+    message 61
+  endif
+  if chapter == 7
+    message 63
+  endif
+  if flag_game 113 == 0
+    message 66
+  else
+    message 67
+  endif
+  set_comportement 1
+end_comportement
+end
+[LIFE SCRIPT END]

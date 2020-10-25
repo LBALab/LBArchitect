@@ -1,0 +1,208 @@
+This is hqr description for the lba_bkg.hqr file from LBA 2.
+18101
+
+
+
+*lba_bkg*.hqr
+Reserved
+Reserved
+Reserved
+Reserved
+0:|Information entry
+1:gr2|Grid 0: Citadel Island, Twinsen's house
+2:gr2|Grid 1: Citadel Island, Twinsen's house Secret room
+3:gr2|Grid 2: Citadel Island, Tralu 1st scene
+4:gr2|Grid 3: Citadel Island, Tavern
+5:gr2|Grid 4: Citadel Island, Cellar of the Tavern
+6:gr2|Grid 5: Citadel Island, Baggage claim building, 1st room
+7:gr2|Grid 6: Citadel Island, Baggage claim building, 2st room
+8:gr2|Grid 7: Citadel Island, Mr. Paul House
+9:gr2|Grid 8: Citadel Island, Ticket office
+10:gr2|Grid 9: Citadel Island, Neighbor house
+11:gr2|Grid 10: White Leaf Desert, Temple of Bú, 1st room
+12:gr2|Grid 11: White Leaf Desert, Temple of Bú, 2nd room
+13:gr2|Grid 12: White Leaf Desert, Esmer Base
+14:gr2|Grid 13: Emerald Moon, Outside Baldino's cell
+15:gr2|Grid 14: Citadel Island, Shop
+16:gr2|Grid 15: Citadel Island, Miss Bloop's Private Museum
+17:gr2|Grid 16: Citadel Island, Baggage claim building Secret room, 3st room
+18:gr2|Grid 17: Citadel Island, Sewer (below Downtown)
+19:gr2|Grid 18: Citadel Island, Sewer Secret room
+20:gr2|Grid 19: Citadel Island, Tralu 2nd room
+21:gr2|Grid 20: Citadel Island, Tralu 3rd room
+22:gr2|Grid 21: Citadel Island, Tent of the Weather Wizard
+23:gr2|Grid 22: Citadel Island, Downtown Pharmacy
+24:gr2|Grid 23: Emerald Moon, next to outside Baldino's cell
+25:gr2|Grid 24: White Leaf Desert, Hacienda, 1st room
+26:gr2|Grid 25: White Leaf Desert, Turkish bath (women)
+27:gr2|Grid 26: Citadel Island, Dome of the Slate
+28:gr2|Grid 27: White Leaf Desert, School of Magic, 2nd room
+29:gr2|Grid 28: White Leaf Desert, School of Magic, 1st room
+30:gr2|Grid 29: White Leaf Desert, Hacienda, 2nd room
+31:gr2|Grid 30: White Leaf Desert, Turkish bath (men)
+32:gr2|Grid 31: Emerald Moon, diamond shape room
+33:gr2|Grid 32: White Leaf Desert, Secret passage in Turkish bath (mans)
+34:gr2|Grid 33: White Leaf Desert, School of Magic training room
+35:gr2|Grid 34: Citadel Island, Sendell's ball room
+36:gr2|Grid 35: White Leaf Desert, House of Ker'aooc the Healer
+37:gr2|Grid 36: White Leaf Desert, Bazaar
+38:gr2|Grid 37: Citadel Island, School
+39:gr2|Grid 38: White Leaf Desert, J. Baldino's House
+40:gr2|Grid 39: White Leaf Desert, Bar
+41:gr2|Grid 40: White Leaf Desert, Ticket office
+42:gr2|Grid 41: White Leaf Desert, Esmer shuttle
+43:gr2|Grid 42: Citadel Island, Spider Cave
+44:gr2|Grid 43: Emerald Moon, entrance circle symbol room
+45:gr2|Grid 44: Emerald Moon, entrance X symbol room
+46:gr2|Grid 45: Emerald Moon, Baldino's cell
+47:gr2|Grid 46: Otringal, Emperor's palace departure room
+48:gr2|Grid 47: Otringal, Emperor's palace 1st room
+49:gr2|Grid 48: Otringal, Emperor's palace last room
+50:gr2|Grid 49: Otringal, the Imperial Hotel
+51:gr2|Grid 50: Otringal, the elevators to the Lower City
+52:gr2|Grid 51: Otringal, Prison entrance
+53:gr2|Grid 52: Otringal, Prison
+54:gr2|Grid 53: Otringal, control tower entrance
+55:gr2|Grid 54: Otringal, the space port
+56:gr2|Grid 55: Celebration Island, inside the temple
+57:gr2|Grid 56: Wannies Island, the mine, 2nd room
+58:gr2|Grid 57: Wannies Island, the house of the firefly tart-giving family
+59:gr2|Grid 58: Mosquibees Island, the Mosquibee Queen's throne
+60:gr2|Grid 59: Mosquibees Island, the maze
+61:gr2|Grid 60: Wannies Island, the mine, 3rd room
+62:gr2|Grid 61: Wannies Island, near the temple on the main
+63:gr2|Grid 62: White Leaf Desert, Pearl of Incandescence room
+64:gr2|Grid 63: White Leaf Desert, Esmer shuttle
+65:gr2|Grid 64: Emerald Moon, Esmer shuttle
+66:gr2|Grid 65: Wannies Island, the monk house
+67:gr2|Grid 66: Wannies Island, mine temple
+68:gr2|Grid 67: Wannies Island, the city
+69:gr2|Grid 68: Wannies Island, the way to the city temple
+70:gr2|Grid 69: Wannies Island, the city temple
+71:gr2|Grid 70: Wannies Island, the mine, 1st room
+72:gr2|Grid 71: Wannies Island, inside the elevator
+73:gr2|Grid 72: Wannies Island, the box transport building
+74:gr2|Grid 73: Wannies Island, Building Company
+75:gr2|Grid 74: Wannies Island, Warehouse
+76:gr2|Grid 75: White Leaf Desert, Temple of Bù Secret passage
+77:gr2|Grid 76: Mosquibees Island, Bee test room
+78:gr2|Grid 77: Island Under Celebration, the hide out
+79:gr2|Grid 78: Otringal, Casino jackpot room
+80:gr2|Grid 79: Otringal, Bar backstage
+81:gr2|Grid 80: Otringal, Casino entrance
+82:gr2|Grid 81: Otringal, Bar entrance
+83:gr2|Grid 82: Otringal, Bar - Rick's room
+84:gr2|Grid 83: Otringal, the lowest elevators
+85:gr2|Grid 84: Francos gazogem factory, 1st room
+86:gr2|Grid 85: Francos gazogem factory, 2nd room
+87:gr2|Grid 86: Francos gazogem factory, 3rd room
+88:gr2|Grid 87: Francos gazogem factory, 4th room
+89:gr2|Grid 88: Francos Island, passage to the docks
+90:gr2|Grid 89: Francos gazogem factory, 1st secret room
+91:gr2|Grid 90: Francos gazogem factory, 2nd secret room
+92:gr2|Grid 91: Otringal, the Twinsunian souvenir shop
+93:gr2|Grid 92: Otringal, the Dissidents' hide out
+94:gr2|Grid 93: Mosquibees Island, the passage to the fragment
+95:gr2|Grid 94: Otringal, the elevator to the Upper City
+96:gr2|Grid 95: Otringal, one of the rooms in the Emperor's palace
+97:gr2|Grid 96: Otringal, one of the rooms in the Emperor's palace
+98:gr2|Grid 97: Otringal, one of the rooms in the Emperor's palace
+99:gr2|Grid 98: Otringal, one of the rooms in the Emperor's palace
+100:gr2|Grid 99: Otringal, one of the rooms in the Emperor's palace
+101:gr2|Grid 100: Otringal, one of the rooms in the Emperor's palace
+102:gr2|Grid 101: Otringal, one of the rooms in the Emperor's palace
+103:gr2|Grid 102: Otringal, one of the rooms in the Emperor's palace
+104:gr2|Grid 103: Otringal, one of the rooms in the Emperor's palace
+105:gr2|Grid 104: Otringal, one of the rooms in the Emperor's palace
+106:gr2|Grid 105: Otringal, one of the rooms in the Emperor's palace
+107:gr2|Grid 106: Otringal, one of the rooms in the Emperor's palace
+108:gr2|Grid 107: Otringal, one of the rooms in the Emperor's palace
+109:gr2|Grid 108: Otringal, one of the rooms in the Emperor's palace
+110:gr2|Grid 109: Otringal, one of the rooms in the Emperor's palace
+111:gr2|Grid 110: Otringal, one of the rooms in the Emperor's palace
+112:gr2|Grid 111: Emerald Moon, entrance triangle symbol room
+113:gr2|Grid 112: Emerald Moon, entrance square symbol room
+114:gr2|Grid 113: Otringal, Bathroom in the Imperial Hotel
+115:gr2|Grid 114: Otringal, Imperial Hotel, 2nd room
+116:gr2|Grid 115: Francos Island, Shop
+117:gr2|Grid 116: Francos Island, Tavern
+118:gr2|Grid 117: Francos Island, Scientist's house
+119:gr2|Grid 118: Francos Island, Nursery
+120:gr2|Grid 119: Francos Island, Burgermaster's house
+121:gr2|Grid 120: Mosquibees Island, the passage to Island CX
+122:gr2|Grid 121: Island CX, Top of the control tower
+123:gr2|Grid 122: Island CX, Control tower, room #2
+124:gr2|Grid 123: Island CX, Control tower, room #1 (entrance)
+125:gr2|Grid 124: Island CX, Secret passage
+126:gr2|Grid 125: Island CX, Emperor's room
+127:gr2|Grid 126: Island CX, Esmer shuttle
+128:gr2|Grid 127: The protection spell cave, 1st room
+129:gr2|Grid 128: The protection spell cave, 2nd room
+130:gr2|Grid 129: The Dark Monk statue, the wizards, 1st room
+131:gr2|Grid 130: The Dark Monk statue, the top, 2nd room
+132:gr2|Grid 131: The Dark Monk statue, 3rd room
+133:gr2|Grid 132: The Dark Monk statue, 4th room (last)
+134:gr2|Grid 133: Esmer shuttle (same as from Island CX)
+135:gr2|Grid 134: The Dark Monk statue, lava room (where you fall down)
+136:gr2|Grid 135: White Leaf Desert and Otringal, Esmer shuttle
+137:gr2|Grid 136: The Dark Monk statue Secret room
+138:gr2|Grid 137: Demo Room - Citadel Island, Twinsen's house
+139:gr2|Grid 138: Demo Room - Citadel Island, Twinsen's house Secret room
+140:gr2|Grid 139: Demo Room - Citadel Island, Dome of the Slate
+141:gr2|Grid 140: Demo Room - White Leaf Desert, Temple of Bù
+142:gr2|Grid 141: Demo Room - Otringal, Casino
+143:gr2|Grid 142: Demo Room - Wannies Island, the mine
+144:gr2|Grid 143: Demo Room - Mosquibees Island, the Mosquibee Queen's throne
+145:gr2|Grid 144: Demo Room - Otringal, Emperor's palace room
+146:gr2|Grid 145: Demo Room - The Dark Monk statue (last)
+147:gr2|Grid 146: Demo Room - White Leaf Desert, Esmer Base
+148:gr2|Grid 147: Demo Room - Island CX, Control tower, 2nd room
+149:grf|Fragment 0: Desert, Temple of Bu - changing way down
+150:grf|Fragment 1: Citadel, museum - hiding place in the wall
+151:grf|Fragment 2: Desert, blackboard at the Baldino's house
+152:grf|Fragment 3: Esmer shuttle - closed
+153:grf|Fragment 4: Otringal, moved stained glass window in the Emperor's palace's last room
+154:grf|Fragment 5: Otringal, guardian statue in the Emperor's palace's last room
+155:grf|Fragment 6: Twinsen's cell in the prison
+156:grf|Fragment 7: Esmer shuttle - closed (again)
+157:grf|Fragment 8: Esmer shuttle - front left half of wall
+158:grf|Fragment 9: Wannies, the elevator
+159:grf|Fragment 10: Wannies, Building company, first disappearing room
+160:grf|Fragment 11: Wannies, B. co., second disapp. room, third room visible
+161:grf|Fragment 12: Wannies, B. co., second disapp. room, third room covered
+162:grf|Fragment 13: Wannies, warehouse boxes
+163:grf|Fragment 14: Mosquibees, test room exit ladder
+164:grf|Fragment 15: Otringal, casino jackpot room waterfall passage
+165:grf|Fragment 16: Francos, hiding place in the Burgermaster's house
+166:grf|Fragment 17: Island CX, hiding box in the control room
+167:grf|Fragment 18: Esmer shuttle - front left half of wall with Emperor's sign
+168:grf|Fragment 19: Dark Monk's statue, FunFrock's elevator cover
+169:grf|Fragment 20: Dark Monk's statue, first room, broken bars
+170:grf|Fragment 21: Dark Monk's statue, broken telepod
+171:grf|Fragment 22: Dark Monk's statue, FunFrock's elevator cover (another)
+172:grf|Fragment 23: Dark Monk's statue, broken telepod (another)
+173:grf|Fragment 24: Dark Monk's statue, FunFrock's elevator cover (another)
+174:grf|Fragment 25: Dark Monk's statue, broken telepod (another)
+175:grf|Fragment 26: Dark Monk's statue, broken telepod (another)
+176:grf|Fragment 27: Demo room - Desert, Temple of Bu - changed way down
+177:grf|Fragment 28: Demo room - Dark Monk's statue, FunFrock's elevator cover
+178:grf|Fragment 29: Demo room - Dark Monk's statue, broken telepod
+179:bl2|Library 0: Houses on Citadel Island
+180:bl2|Library 1: Sewers
+181:bl2|Library 2: Cellars and some buildings (gray bricks)
+182:bl2|Library 3: Caves (e.g. temple of Bu)
+183:bl2|Library 4: Buildings on Emerald Moon
+184:bl2|Library 5: Buildings on Desert Island
+185:bl2|Library 6: Esmer shuttles
+186:bl2|Library 7: Factories and buildings on Zeelish
+187:bl2|Library 8: Imperial hotel
+188:bl2|Library 9: Rooms in Emperor's palace
+189:bl2|Library 10: Dark Monk's statue
+190:bl2|Library 11: Buildings in the under-gas
+191:bl2|Library 12: Mosquibees buildings
+192:bl2|Library 13: Casino, bar, and souvenir shop
+193:bl2|Library 14: Gazogem rafinery
+194:bl2|Library 15: Buildings on Francos island
+195:bl2|Library 16: Shuttle control rooms
+196:bl2|Library 17: Sewers and other rooms on Island CX
+18100:|Scene align information data

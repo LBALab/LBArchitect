@@ -1,0 +1,62 @@
+[INFORMATION BEGIN]
+File=LBA Scene Actor Template
+Version=1.0
+Description=Standard door opening in X axis (don't forget to update clipping!)
+[INFORMATION END]
+
+[ACTOR BEGIN]
+StaticFlags=21513
+Entity=-1
+Body=0
+Animation=0
+Sprite=12
+HitPower=0
+BonusType=0
+FacingAngle=0
+RotationSpd=0
+Mode=0
+CropLeft=-829
+CropTop=795
+CropRight=-768
+CropBottom=922
+BonusQuantity=1
+TalkColour=0
+Armour=51
+LifePoints=1
+[ACTOR END]
+
+[TRACK SCRIPT BEGIN]
+label 0
+  background 0
+  sample 35
+  open_left 1500
+  wait_door
+  stop
+label 1
+  sample 35
+  close
+  wait_door
+  background 1
+  stop
+end
+[TRACK SCRIPT END]
+
+[LIFE SCRIPT BEGIN]
+comportement main
+  set_door_left 1550
+  set_comportement 1
+end_comportement
+comportement 1
+  if distance 0 > 3000
+    set_track 1
+    set_comportement 2
+  endif
+end_comportement
+comportement 2
+  if col_obj 0 == SELF
+    set_track 0
+    set_comportement 1
+  endif
+end_comportement
+end
+[LIFE SCRIPT END]
