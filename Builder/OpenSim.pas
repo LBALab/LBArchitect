@@ -285,6 +285,9 @@ begin
    Dest.Tag:= Tag;
    If Dest.Name = 'grCombo' then
      fmOpen.cbLibIndex.ItemIndex:= -1;
+
+   if Dest is TSmartComboBox then
+     (Dest as TSmartComboBox).InitSmartCombo();
  end;
 end;
 
@@ -356,7 +359,7 @@ procedure TfmOpenSim.rbLba1Click(Sender: TObject);
 begin
  if rbLba1.Checked then LoadCombo(cbSimGrid, 1, etGridFrag)
  else if rbLba2.Checked then LoadCombo(cbSimGrid, 2, etGridFrag);
- cbSimGrid.InitSmartCombo();
+ //cbSimGrid.InitSmartCombo();
  cbSimGrid.Visible:= rbLba1.Checked or rbLba2.Checked;
  stSimGrid.Visible:= not cbSimGrid.Visible;
  btSimGrid.Visible:= stSimGrid.Visible;

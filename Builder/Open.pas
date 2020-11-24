@@ -17,7 +17,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DePack, Engine, Grids, Libraries, ExtCtrls, ComCtrls,
-  ListForm, Buttons, Scene, SceneLib, Math, Maps, Utils;
+  ListForm, Buttons, Scene, SceneLib, Math, Maps, Utils, SmartCombo;
 
 type
   TfmOpen = class(TForm)
@@ -27,7 +27,6 @@ type
     gbLib: TGroupBox;
     rbLibOrigin: TRadioButton;
     rbLibCustom: TRadioButton;
-    cbLibIndex: TComboBox;
     btBrkPath: TButton;
     btLibPath: TButton;
     DlgOpen: TOpenDialog;
@@ -47,7 +46,6 @@ type
     btScnPath: TButton;
     stScnPath: TStaticText;
     rbScnNew: TRadioButton;
-    cbScnIndex: TComboBox;
     gbGrid: TGroupBox;
     rbGriOrigin: TRadioButton;
     rbGriCustom: TRadioButton;
@@ -61,7 +59,6 @@ type
     eLibIndex: TEdit;
     eFragIndex: TEdit;
     tsGridOpen: TTabSheet;
-    cbGriIndex: TComboBox;
     btGriPath: TButton;
     stGriPath: TStaticText;
     paMode: TPanel;
@@ -90,6 +87,9 @@ type
     function AutoLibrary(): Boolean;
     procedure CheckAutoLib();
   public
+    cbLibIndex: TSmartComboBox;
+    cbGriIndex: TSmartComboBox;
+    cbScnIndex: TSmartComboBox;
     function ShowDialog(Scenario: Boolean; Lib: Boolean = True;
       Grid: Boolean = True; Scene: Boolean = True; Pal: Boolean = True): TModalResult;
     procedure OpenFiles(ALib: Boolean = True; AGrid: Boolean = True;
@@ -346,8 +346,8 @@ begin
      if a = 2 then
        while Copy(cbGriIndex.Items.Strings[cbGriIndex.Items.Count-1],1,10) = '[fragment]' do
          cbGriIndex.Items.Delete(cbGriIndex.Items.Count - 1);
-   end
-   else LoadCombo(cbGriIndex, a, etGridFrag);
+   end else
+     LoadCombo(cbGriIndex, a, etGridFrag);
  end;
  //If rb21.Checked or rb22.Checked then cbAutoLib.Checked:= True
  //else if rb24.Checked then cbAutoLib.Checked:= False;
@@ -362,7 +362,8 @@ begin
  a:= IfThen(rbLba1.Checked, 1, 2);
  if rbLibOrigin.Checked then begin
    LoadCombo(cbLibIndex, a, etLibs);
-   If cbGriIndex.ItemIndex > -1 then cbGriIndexChange(cbGriIndex);
+   If cbGriIndex.ItemIndex > -1 then
+     cbGriIndexChange(cbGriIndex);
  end;
  //CheckEnabled();
  ShowControls();
@@ -395,29 +396,78 @@ procedure TfmOpen.FormCreate(Sender: TObject);
 begin
  //rb21Click(Self);
  //rb11Click(Self);
+ cbLibIndex:= TSmartComboBox.Create(Self);
+ cbLibIndex.Name:= 'cbLibIndex';
+ cbLibIndex.Parent:= gbLib;
+ cbLibIndex.DropDownCount:= 20;
+ cbLibIndex.Left:= 16;
+ cbLibIndex.Top:= 36;
+ cbLibIndex.Width:= 403;
+ cbLibIndex.Height:= 21;
+ cbLibIndex.ItemHeight:= 13;
+ cbLibIndex.TabOrder:= 2;
+ cbLibIndex.ParentFont:= False;
+ cbLibIndex.Font.Style:= [];
+ cbLibIndex.AutoDropDown:= True;
+ cbLibIndex.OnChange:= eLibIndexChange;
+
+ cbGriIndex:= TSmartComboBox.Create(Self);
+ cbGriIndex.Name:= 'cbGriIndex';
+ cbGriIndex.Parent:= tsGridOpen;
+ cbGriIndex.DropDownCount:= 20;
+ cbGriIndex.Left:= 4;
+ cbGriIndex.Top:= 0;
+ cbGriIndex.Width:= 403;
+ cbGriIndex.Height:= 21;
+ cbGriIndex.ItemHeight:= 13;
+ cbGriIndex.TabOrder:= 0;
+ cbGriIndex.ParentFont:= False;
+ cbGriIndex.Font.Style:= [];
+ cbGriIndex.AutoDropDown:= True;
+ cbGriIndex.OnChange:= cbGriIndexChange;
+
+ cbScnIndex:= TSmartComboBox.Create(Self);
+ cbScnIndex.Name:= 'cbScnIndex';
+ cbScnIndex.Parent:= gbScene;
+ cbScnIndex.DropDownCount:= 20;
+ cbScnIndex.Left:= 16;
+ cbScnIndex.Top:= 36;
+ cbScnIndex.Width:= 403;
+ cbScnIndex.Height:= 21;
+ cbScnIndex.ItemHeight:= 13;
+ cbScnIndex.TabOrder:= 5;
+ cbScnIndex.ParentFont:= False;
+ cbScnIndex.Font.Style:= [];
+ cbScnIndex.AutoDropDown:= True;
+ cbScnIndex.OnChange:= cbScnIndexChange;
+
+    
 end;
 
 procedure TfmOpen.cbGriIndexChange(Sender: TObject);
-var a, b: Integer;
+var a, b, gid: Integer;
 begin
- if rbGriOrigin.Checked then begin
-   if rbLba1.Checked then begin
-     b:= GriToBll1[GridList1[cbGriIndex.ItemIndex]];
-     for a:= 0 to High(BllList1) do
-       if BllList1[a] = b then begin
-         cbLibIndex.ItemIndex:= a;
-         Break;
-       end;
-   end
-   else if rbLba2.Checked then
-     cbLibIndex.ItemIndex:= GriToBll2[cbGriIndex.ItemIndex] - GriToBll2[0];
+ gid:= cbGriIndex.ItemIndex;
+ if gid >= 0 then begin
+   if rbGriOrigin.Checked then begin
+     if rbLba1.Checked then begin
+       b:= GriToBll1[GridList1[gid]];
+       for a:= 0 to High(BllList1) do
+         if BllList1[a] = b then begin
+           cbLibIndex.ItemIndex:= a;
+           Break;
+         end;
+     end
+     else if rbLba2.Checked then
+       cbLibIndex.ItemIndex:= GriToBll2[gid] - GriToBll2[0];
 
-   if rbScnOrigin.Checked then begin
-     if rbLba1.Checked and (cbGriIndex.ItemIndex < cbScnIndex.Items.Count) then
-       cbScnIndex.ItemIndex:= cbGriIndex.ItemIndex
-     else if rbLba2.Checked and (GriToScene2[cbGriIndex.ItemIndex] < cbScnIndex.Items.Count) then
-       cbScnIndex.ItemIndex:= GriToScene2[cbGriIndex.ItemIndex];
-   end;    
+     if rbScnOrigin.Checked then begin
+       if rbLba1.Checked and (gid < cbScnIndex.Items.Count) then
+         cbScnIndex.ItemIndex:= gid
+       else if rbLba2.Checked and (GriToScene2[gid] < cbScnIndex.Items.Count) then
+         cbScnIndex.ItemIndex:= GriToScene2[gid];
+     end;
+   end;
  end;
  EnableOpen();
 end;
@@ -679,7 +729,8 @@ var FStr: TFileStream;
     p: TSmallPoint;
 begin
  Result:= False;
- if not FileExists(path) then ErrorFileNotExists(path,'Grid');
+ if not FileExists(path) then
+   ErrorFileNotExists(path,'Grid');
  FStr:= TFileStream.Create(path,fmOpenRead,fmShareDenyWrite);
  ext:= LowerCase(ExtractFileExt(path));
  if (ext = '.gr1') or (ext = '.gr2') then begin
@@ -861,8 +912,8 @@ begin
    else if rbGriCustom.Checked then begin
      GPath:= Sett.OpenDlg.GridPath;
      GIndex:= Sett.OpenDlg.GridIndex;
-   end
-   else MainMapIsGrid:= True; //rbGriNew
+   end else
+     MainMapIsGrid:= True; //rbGriNew
    GLIndex:= GetGridLibIndex(GPath, GIndex);
  end;
 
@@ -878,7 +929,8 @@ begin
    end
    else begin
      if rbLibOrigin.Checked then begin
-       if Lba1 then OpenLibrary(GetFilePath(Lba1_BLL, 1), BllList1[cbLibIndex.ItemIndex])
+       if Lba1 then
+         OpenLibrary(GetFilePath(Lba1_BLL, 1), BllList1[cbLibIndex.ItemIndex])
        else begin
          p:= BkgEntriesCount(GetFilePath(Lba2_BKG, 2), itLibs);
          OpenLibrary(GetFilePath(Lba2_BKG, 2), cbLibIndex.ItemIndex + p.x - 1);

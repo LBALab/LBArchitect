@@ -1,3 +1,8 @@
+### Changes in version 1.2:
+Builder:
+ - Fixed: Old Sceario (HQS) files could not be opened
+ - Feature: Combo boxes in Open Simple and Open Advanced dialogs are now searchable
+
 ### Changes in version 1.1:
 Builder:
  - Fixed: Actor was always placed on the lowest layer

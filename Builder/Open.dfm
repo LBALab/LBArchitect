@@ -141,23 +141,6 @@ object fmOpen: TfmOpen
     ParentColor = False
     ParentFont = False
     TabOrder = 1
-    object cbLibIndex: TComboBox
-      Left = 16
-      Top = 36
-      Width = 403
-      Height = 21
-      Style = csDropDownList
-      DropDownCount = 20
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      ItemHeight = 0
-      ParentFont = False
-      TabOrder = 2
-      OnChange = eLibIndexChange
-    end
     object btLibPath: TButton
       Left = 401
       Top = 38
@@ -170,7 +153,7 @@ object fmOpen: TfmOpen
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       OnClick = btLibPathClick
     end
     object stLibPath: TStaticText
@@ -187,7 +170,7 @@ object fmOpen: TfmOpen
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 3
     end
     object rbLibOrigin: TRadioButton
       Left = 15
@@ -347,23 +330,6 @@ object fmOpen: TfmOpen
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 5
-    object cbScnIndex: TComboBox
-      Left = 16
-      Top = 36
-      Width = 403
-      Height = 21
-      Style = csDropDownList
-      DropDownCount = 20
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      ItemHeight = 0
-      ParentFont = False
-      TabOrder = 5
-      OnChange = cbScnIndexChange
-    end
     object rbScnOrigin: TRadioButton
       Left = 15
       Top = 16
@@ -611,23 +577,6 @@ object fmOpen: TfmOpen
         ExplicitTop = 0
         ExplicitWidth = 0
         ExplicitHeight = 0
-        object cbGriIndex: TComboBox
-          Left = 4
-          Top = 0
-          Width = 403
-          Height = 21
-          Style = csDropDownList
-          DropDownCount = 20
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
-          Font.Name = 'MS Sans Serif'
-          Font.Style = []
-          ItemHeight = 0
-          ParentFont = False
-          TabOrder = 0
-          OnChange = cbGriIndexChange
-        end
         object btGriPath: TButton
           Left = 389
           Top = 2
@@ -640,7 +589,7 @@ object fmOpen: TfmOpen
           Font.Name = 'MS Sans Serif'
           Font.Style = []
           ParentFont = False
-          TabOrder = 1
+          TabOrder = 0
           OnClick = btGriPathClick
         end
         object stGriPath: TStaticText
@@ -657,7 +606,7 @@ object fmOpen: TfmOpen
           Font.Name = 'MS Sans Serif'
           Font.Style = []
           ParentFont = False
-          TabOrder = 2
+          TabOrder = 1
         end
       end
     end

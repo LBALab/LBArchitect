@@ -1,5 +1,4 @@
-/Source/LBArchitect/
-/Source/*.7z
+/Source/*
 /Release/*.7z
 /Release/*.zip
 /Release/*.exe
@@ -7,3 +6,5 @@
 __history
 *.dcu
 *.~dsk
+*.identcache
+/Release/Builder_MemoryManager_EventLog.txt
