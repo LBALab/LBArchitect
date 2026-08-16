@@ -476,6 +476,11 @@ begin
    pcClipModeChange(Self);
  end;
 
+ if IsSprite then
+   pcBody.ActivePage:= tsSpriteBody
+ else
+   pcBody.ActivePage:= ts3DBody;
+
  seObjId.Enabled:=      not DisAll;
  btObjFind.Enabled:=    not DisAll;
  acScripts.Enabled:=    not DisAll;

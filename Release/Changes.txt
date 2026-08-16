@@ -1,3 +1,7 @@
+### Changes in version 1.3:
+Builder:
+ - Fixed: Sprite body selector didn't show up after selecting a sprite actor.
+
 ### Changes in version 1.2:
 Builder:
  - Fixed: Old Sceario (HQS) files could not be opened

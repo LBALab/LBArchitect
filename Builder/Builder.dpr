@@ -22,7 +22,7 @@
 // NO_BUFFER - Disables double buffering when drawing Grid (drawing will
 //   be performed directly on pbGrid's canvas). For debugging only.
 
-// Note: define the constants in Project -> Options -> Directories/Confitionals
+// Note: define the constants in Project -> Options -> Directories/Conditionals
 // If defined in the code using the {$define ...} directive, because they
 //   are visible in one unit only.
 // Don't forget to rebuild all after changing one of the defines.
