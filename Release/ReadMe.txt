@@ -1,8 +1,8 @@
 ------------------------------------------------------------------------
 Little Big Architect
 
-     Version: 1.2
-Release date: 24.11.2020
+     Version: 1.3
+Release date: 16.08.2026
       Status: Freeware (GNU GPL license)
       Author: kazink@gmail.com           <- feedback is welcome
     Homepage: http://moonbase.kaziq.net <- latest stable version is always there first
@@ -11,7 +11,7 @@ Release date: 24.11.2020
  This program allows you to edit Grid files (*.gr1 and *.gr2) that
 contain islands and rooms in Lba 1 and rooms only in Lba 2.
 
-Copyright 2004/2020 Zink
+Copyright 2004/2026 Zink
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
